@@ -1,0 +1,504 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAINWINDOW          ICON    DISCARDABLE     "Particle.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "FlyGTools Inc.\0"
+            VALUE "FileDescription", "ParEditor\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ParEditor\0"
+            VALUE "LegalCopyright", "Copyright (C) Yish. 2009\0"
+            VALUE "OriginalFilename", "ParEditor.exe\0"
+            VALUE "ProductName", "FlyGTools Inc. ParEditor\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建场景(&N)",                IDM_FILE_NEW
+        MENUITEM "打开场景(&O)",                IDM_FILE_OPEN
+        MENUITEM "保存场景(&S)",                IDM_FILE_SAVE
+        MENUITEM "另存为...(&A)",               IDM_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "导入XML文件(&I)",             IDM_FILE_IMPXML
+        MENUITEM "导出XML文件(&E)",             IDM_FILE_EXPXML
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    IDM_FILE_EXIT
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "预览场景(&P)",                IDM_VIEW_PREVIEW
+        MENUITEM "停止预览(&S)",                IDM_VIEW_STOPPREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "重置相机(&R)",                IDM_VIEW_RESETCAM
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(H)",                 IDM_HELP_HELP
+        MENUITEM "关于 粒子编辑器(&A)",         IDM_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_ABOUT DIALOGEX 0, 0, 136, 179
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 粒子编辑器"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         115,IDC_STATIC,"Static",SS_BITMAP,7,7,122,89
+    LTEXT           "    本工具用于编写奇幻美妙的粒子效果，适用于制作游戏中的各种特效以及战斗魔法等效果。\n    祝您用的愉快！\n\n    作者：Yish\n  (C) FlyGTools Inc. @2009.6",
+                    IDC_STATIC,7,105,122,67,0,WS_EX_STATICEDGE
+END
+
+IDD_DLG_ADDCONTROLLER DIALOG DISCARDABLE  0, 0, 181, 155
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加粒子控制器"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,31,134,50,14
+    PUSHBUTTON      "取消",IDCANCEL,98,134,50,14
+    GROUPBOX        "控制器信息",IDC_STATIC,7,7,167,115
+    LTEXT           "名字:",IDC_STATIC,15,23,21,8
+    EDITTEXT        IDC_CTRL_NAME,47,22,118,12,ES_AUTOHSCROLL
+    LTEXT           "粒子:",IDC_STATIC,15,43,21,8
+    COMBOBOX        IDC_CTRL_PARLIST,47,40,118,98,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "发射器:",IDC_STATIC,15,62,29,8
+    COMBOBOX        IDC_CTRL_EMITTERLIST,47,59,118,98,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "最大粒子数:",IDC_STATIC,15,82,45,8
+    EDITTEXT        IDC_CTRL_MAXPARS,64,80,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_CTRL_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,105,79,12,14
+    CONTROL         "循环发射",IDC_CTRL_LOOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,122,81,48,10
+    LTEXT           "渲染模式:",IDC_STATIC,15,101,37,8
+    CONTROL         "颜色叠加",IDC_CTRL_RSADD,"Button",BS_AUTORADIOBUTTON,71,
+                    101,48,10
+    CONTROL         "颜色融合",IDC_CTRL_RSBLEND,"Button",BS_AUTORADIOBUTTON,
+                    122,101,48,10
+END
+
+IDD_DLG_ADDPARTEM DIALOGEX 0, 0, 187, 239
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加粒子模板"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,35,218,50,14
+    PUSHBUTTON      "取消",IDCANCEL,104,218,50,14
+    GROUPBOX        "基本属性",IDC_STATIC,7,7,173,131
+    LTEXT           "名字:",IDC_STATIC,17,23,21,8
+    EDITTEXT        IDC_PAR_NAME,44,22,126,12,ES_AUTOHSCROLL
+    LTEXT           "纹理:",IDC_STATIC,17,42,21,8
+    LTEXT           "",IDC_PAR_TEXNAME,44,41,92,11,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "选取",IDC_PAR_SELTEX,138,40,32,14
+    LTEXT           "动画数量:",IDC_STATIC,17,61,37,8
+    EDITTEXT        IDC_PAR_ANIMNUM,56,60,29,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PAR_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,86,59,11,14
+    LTEXT           "帧数:",IDC_STATIC,105,61,21,8
+    LTEXT           "重力加速度:",IDC_STATIC,17,80,45,8
+    EDITTEXT        IDC_PAR_GRAVITY,65,79,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_PAR_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,106,78,12,14
+    EDITTEXT        IDC_PAR_NUMFRAME,128,60,29,12,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_PAR_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,158,59,11,14
+    CONTROL         "空气阻力",IDC_PAR_AIRRESIST,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,124,81,48,10
+    LTEXT           "空气阻力最小速度:",IDC_STATIC,17,100,69,8
+    EDITTEXT        IDC_PAR_MINSPEED,90,99,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_PAR_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,131,98,11,14
+    LTEXT           "空气阻力系数:",IDC_STATIC,17,118,53,8
+    EDITTEXT        IDC_PAR_RESISTVAL,73,117,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_PAR_SPIN5,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,114,116,12,14
+    GROUPBOX        "粒子周期",IDC_STATIC,7,145,173,62
+    PUSHBUTTON      "大小变化",IDC_PAR_SIZEDATA,16,160,77,19
+    PUSHBUTTON      "透明度变化",IDC_PAR_ALPHADATA,94,160,77,19
+    PUSHBUTTON      "旋转角度变化",IDC_PAR_ANGLEDATA,16,179,77,19
+    PUSHBUTTON      "颜色变化",IDC_PAR_COLORDATA,94,179,77,19
+END
+
+IDD_DLG_SELTEX DIALOG DISCARDABLE  0, 0, 166, 155
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选取纹理文件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,29,134,50,14
+    PUSHBUTTON      "取消",IDCANCEL,88,134,50,14
+    LISTBOX         IDC_SELTEX_TEXLIST,7,7,152,116,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_ADDEMITTER DIALOGEX 0, 0, 325, 231
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加粒子发射器"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,196,210,50,14
+    PUSHBUTTON      "取消",IDCANCEL,255,210,50,14
+    GROUPBOX        "发射器属性",IDC_STATIC,7,7,162,57
+    LTEXT           "名字:",IDC_STATIC,16,23,21,8
+    EDITTEXT        IDC_EMITTER_NAME,41,21,119,12,ES_AUTOHSCROLL
+    LTEXT           "位置:",IDC_STATIC,16,41,21,8
+    PUSHBUTTON      "(0.000,0.000,0.000)",IDC_EMITTER_POSITION,41,40,119,14
+    LTEXT           "发射器生命值:",IDC_STATIC,185,23,53,8
+    EDITTEXT        IDC_EMITTER_LIFE,257,22,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMITTER_SPIN1,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,297,21,
+                    12,14
+    GROUPBOX        "发射器形状",IDC_STATIC,7,69,162,156
+    CONTROL         "方形",IDC_EMITTER_CUBE,"Button",BS_AUTORADIOBUTTON,17,
+                    83,32,10
+    CONTROL         "球形",IDC_EMITTER_SPHERE,"Button",BS_AUTORADIOBUTTON,61,
+                    83,32,10
+    CONTROL         "自定义形状",IDC_EMITTER_USER,"Button",
+                    BS_AUTORADIOBUTTON,103,83,56,10
+    GROUPBOX        "方形",IDC_STATIC,17,99,142,47
+    LTEXT           "最小顶点:",IDC_STATIC,25,113,37,8
+    PUSHBUTTON      "(0.00,0.00,0.00)",IDC_EMITTER_MINPOS,65,111,85,14
+    LTEXT           "最大顶点:",IDC_STATIC,25,129,37,8
+    PUSHBUTTON      "(0.00,0.00,0.00)",IDC_EMITTER_MAXPOS,65,127,85,14
+    GROUPBOX        "球形",IDC_STATIC,17,151,142,31
+    LTEXT           "热区:",IDC_STATIC,26,164,21,8
+    EDITTEXT        IDC_EMITTER_HOT,48,163,33,12,ES_AUTOHSCROLL
+    LTEXT           "衰减区:",IDC_STATIC,88,164,29,8
+    EDITTEXT        IDC_EMITTER_ATTENUATION,117,163,33,12,ES_AUTOHSCROLL
+    GROUPBOX        "自定义形状",IDC_STATIC,17,187,142,29
+    LTEXT           "轨迹文件:",IDC_STATIC,26,200,37,8
+    PUSHBUTTON      "...",IDC_EMITTER_SELFILE1,131,198,21,14
+    GROUPBOX        "发射器周期",IDC_STATIC,176,7,142,132
+    LTEXT           "随机速度X(+/-):",IDC_STATIC,185,39,61,8
+    LTEXT           "随机速度Y(+/-):",IDC_STATIC,185,55,61,8
+    LTEXT           "随机速度Z(+/-):",IDC_STATIC,185,71,61,8
+    EDITTEXT        IDC_EMITTER_RANDVELX,257,38,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_EMITTER_SPIN5,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,297,37,
+                    12,14
+    EDITTEXT        IDC_EMITTER_RANDVELY,257,54,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_EMITTER_SPIN6,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,297,53,
+                    12,14
+    EDITTEXT        IDC_EMITTER_RANDVELZ,257,70,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin7",IDC_EMITTER_SPIN7,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,297,69,
+                    12,14
+    PUSHBUTTON      "速度方向变化",IDC_EMITTER_VELDIRDATA,185,103,62,14
+    PUSHBUTTON      "速度变化",IDC_EMITTER_VELDATA,247,103,62,14
+    PUSHBUTTON      "新粒子生命变化",IDC_EMITTER_LIFEDATA,185,117,62,14
+    PUSHBUTTON      "发射频率变化",IDC_EMITTER_EMITRATEDATA,247,117,62,14
+    LTEXT           "",IDC_EMITTER_SHAPEFILE,63,199,67,10,0,WS_EX_STATICEDGE
+    LTEXT           "发射频率缩放:",IDC_STATIC,185,87,53,8
+    EDITTEXT        IDC_EMITTER_EMITSCALE,257,85,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin7",IDC_EMITTER_SPIN8,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,297,85,
+                    11,12
+    GROUPBOX        "发射器运动轨迹",IDC_STATIC,176,145,142,54
+    CONTROL         "启用",IDC_EMITTER_ENABLETRACK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,185,160,32,10
+    LTEXT           "运动周期:",IDC_STATIC,220,161,37,8
+    EDITTEXT        IDC_EMITTER_TRACKCYCLE,257,160,40,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMITTER_SPIN9,"msctls_updown32",
+                    UDS_ARROWKEYS,298,159,11,14
+    LTEXT           "轨迹文件:",IDC_STATIC,185,178,37,8
+    LTEXT           "",IDC_EMITTER_TRACKFILE,224,178,64,10,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_EMITTER_SELFILE2,289,177,20,12
+END
+
+IDD_DLG_SETVECTOR DIALOG DISCARDABLE  0, 0, 143, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置矢量"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,20,76,50,14
+    PUSHBUTTON      "取消",IDCANCEL,73,76,50,14
+    LTEXT           "X:",IDC_STATIC,18,12,9,8
+    EDITTEXT        IDC_SETVEC_X,31,10,82,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SETVEC_SPIN1,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,114,9,11,
+                    14
+    LTEXT           "Y:",IDC_STATIC,18,33,9,8
+    EDITTEXT        IDC_SETVEC_Y,31,31,82,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SETVEC_SPIN2,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,114,30,
+                    11,14
+    LTEXT           "Z:",IDC_STATIC,18,52,9,8
+    EDITTEXT        IDC_SETVEC_Z,31,51,82,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SETVEC_SPIN3,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,114,50,
+                    11,14
+END
+
+IDD_DLG_KEYFRAME DIALOG DISCARDABLE  0, 0, 187, 249
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置关键帧"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "关键帧数据",IDC_STATIC,7,7,173,120
+    LISTBOX         IDC_KEYF_KFLIST,16,23,155,74,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",IDC_KEYF_ADDKF,27,105,41,14
+    PUSHBUTTON      "删除",IDC_KEYF_DELKF,74,105,41,14
+    PUSHBUTTON      "修改",IDC_KEYF_MODIFYKF,120,105,41,14
+    GROUPBOX        "数据图",IDC_STATIC,7,133,173,109
+    LTEXT           "",IDC_KEYF_COMMENT,16,230,155,8
+END
+
+IDD_DLG_SETKF DIALOG DISCARDABLE  0, 0, 167, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加关键帧"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,30,80,50,14
+    PUSHBUTTON      "取消",IDCANCEL,88,80,50,14
+    GROUPBOX        "帧数据",IDC_STATIC,7,7,153,62
+    LTEXT           "时间: 0.00",IDC_FK_TIME,15,21,41,8
+    CONTROL         "Slider1",IDC_FK_SETTIME,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,56,17,100,15
+    LTEXT           "X:",IDC_STATIC,15,38,9,8
+    EDITTEXT        IDC_FK_X,27,37,29,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_FK_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_HORZ,32,51,18,11
+    EDITTEXT        IDC_FK_Y,75,37,29,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_FK_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_HORZ,81,51,18,11
+    LTEXT           "Y:",IDC_STATIC,64,38,9,8
+    LTEXT           "Z:",IDC_STATIC,112,38,9,8
+    EDITTEXT        IDC_FK_Z,122,37,29,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_FK_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_HORZ,128,51,18,11
+END
+
+IDD_DLG_SELSHAPE DIALOG DISCARDABLE  0, 0, 166, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择轨迹文件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,29,134,50,14
+    PUSHBUTTON      "取消",IDCANCEL,88,134,50,14
+    LISTBOX         IDC_SELSHP_FILELIST,7,7,152,116,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_ADDAFFECTOR DIALOG DISCARDABLE  0, 0, 187, 147
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加作用器"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,35,126,50,14
+    PUSHBUTTON      "取消",IDCANCEL,103,126,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 129
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 172
+    END
+
+    IDD_DLG_ADDCONTROLLER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_DLG_ADDPARTEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_DLG_SELTEX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_DLG_ADDEMITTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 318
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_DLG_SETVECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_DLG_KEYFRAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 242
+    END
+
+    IDD_DLG_SETKF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_DLG_SELSHAPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_DLG_ADDAFFECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 140
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ABOUTIMG            BITMAP  DISCARDABLE     "1.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

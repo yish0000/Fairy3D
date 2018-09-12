@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{080B8604-6A72-4FDF-B1E6-B93C1D182826}</ProjectGuid>
+    <RootNamespace>Common</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../Source/Common;../../../EngineSDK/include/3rdSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>tinyxml_d.lib;zziplib_d.lib;MiniLZO_d.lib;dbghelp.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>../../../EngineSDK/lib/win32/3rdSDK;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\EngineSDK\include\Common mkdir ..\..\..\EngineSDK\include\Common
+xcopy ..\..\..\Source\Common\*.h ..\..\..\EngineSDK\include\Common\ /Y /D /R /S
+xcopy ..\..\..\Source\Common\*.inl ..\..\..\EngineSDK\include\Common\ /Y /D /R /S
+copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(ProjectName)_d.lib
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>../../../Source/Common;../../../EngineSDK/include/3rdSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>tinyxml.lib;zziplib.lib;MiniLZO.lib;dbghelp.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../EngineSDK/lib/win32/3rdSDK;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\EngineSDK\include\Common mkdir ..\..\..\EngineSDK\include\Common
+xcopy ..\..\..\Source\Common\*.h ..\..\..\EngineSDK\include\Common\ /Y /D /R /S
+xcopy ..\..\..\Source\Common\*.inl ..\..\..\EngineSDK\include\Common\ /Y /D /R /S
+copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\Common\FAllocBase.h" />
+    <ClInclude Include="..\..\..\Source\Common\FMemConfig.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTempMemBuffer.h" />
+    <ClInclude Include="..\..\..\Source\Common\FMemManager.h" />
+    <ClInclude Include="..\..\..\Source\Common\FMemTracker.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTempMemManager.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTempMemPool.h" />
+    <ClInclude Include="..\..\..\Source\Common\Fairy.h" />
+    <ClInclude Include="..\..\..\Source\Common\FBase.h" />
+    <ClInclude Include="..\..\..\Source\Common\FBaseType.h" />
+    <ClInclude Include="..\..\..\Source\Common\FBitset.h" />
+    <ClInclude Include="..\..\..\Source\Common\FContainer.h" />
+    <ClInclude Include="..\..\..\Source\Common\FSmartPtr.h" />
+    <ClInclude Include="..\..\..\Source\Common\FDelegate.h" />
+    <ClInclude Include="..\..\..\Source\Common\FFixArray.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTemplate.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTimer.h" />
+    <ClInclude Include="..\..\..\Source\Common\FXMLReader.h" />
+    <ClInclude Include="..\..\..\Source\Common\FXMLWriter.h" />
+    <ClInclude Include="..\..\..\Source\Common\FCompress.h" />
+    <ClInclude Include="..\..\..\Source\Common\FCounter.h" />
+    <ClInclude Include="..\..\..\Source\Common\FIniFile.h" />
+    <ClInclude Include="..\..\..\Source\Common\FPerformance.h" />
+    <ClInclude Include="..\..\..\Source\Common\FProperty.h" />
+    <ClInclude Include="..\..\..\Source\Common\FStrUtil.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTextTabFile.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTokenFile.h" />
+    <ClInclude Include="..\..\..\Source\Common\FMemFileStream.h" />
+    <ClInclude Include="..\..\..\Source\Common\FVFile.h" />
+    <ClInclude Include="..\..\..\Source\Common\FVFilePack.h" />
+    <ClInclude Include="..\..\..\Source\Common\FVFileStream.h" />
+    <ClInclude Include="..\..\..\Source\Common\FVFileSystem.h" />
+    <ClInclude Include="..\..\..\Source\Common\FSysFilePack.h" />
+    <ClInclude Include="..\..\..\Source\Common\FSysFileStream.h" />
+    <ClInclude Include="..\..\..\Source\Common\FZipFilePack.h" />
+    <ClInclude Include="..\..\..\Source\Common\FZipFileStream.h" />
+    <ClInclude Include="..\..\..\Source\Common\FFpkFilePack.h" />
+    <ClInclude Include="..\..\..\Source\Common\FFpkFileStream.h" />
+    <ClInclude Include="..\..\..\Source\Common\FBase64.h" />
+    <ClInclude Include="..\..\..\Source\Common\FCRC32.h" />
+    <ClInclude Include="..\..\..\Source\Common\FMD5.h" />
+    <ClInclude Include="..\..\..\Source\Common\FPerlinNoise.h" />
+    <ClInclude Include="..\..\..\Source\Common\FRandom.h" />
+    <ClInclude Include="..\..\..\Source\Common\FThread.h" />
+    <ClInclude Include="..\..\..\Source\Common\FThreadPool.h" />
+    <ClInclude Include="..\..\..\Source\Common\Platform\Windows\FWinThread.h" />
+    <ClInclude Include="..\..\..\Source\Common\FLogManager.h" />
+    <ClInclude Include="..\..\..\Source\Common\FLogTarget.h" />
+    <ClInclude Include="..\..\..\Source\Common\FDModule.h" />
+    <ClInclude Include="..\..\..\Source\Common\FSysAPI.h" />
+    <ClInclude Include="..\..\..\Source\Common\FCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Common\FMemManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FMemTracker.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FTempMemManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FTempMemPool.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FBitset.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FTimer.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FXMLReader.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FXMLWriter.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FCompress.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FIniFile.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FPerformance.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FProperty.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FSingletonInit.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FStrUtil.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FTextTabFile.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FTokenFile.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FMemFileStream.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FVFile.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FVFilePack.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FVFileStream.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FVFileSystem.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FSysFilePack.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FSysFileStream.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FZipFilePack.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FZipFileStream.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FFpkFilePack.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FFpkFileStream.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FBase64.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FCRC32.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FMD5.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FPerlinNoise.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FRandom.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FThread.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FThreadPool.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\Platform\Windows\FWinThread.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FLogManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FLogTarget.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\Platform\Windows\FWinAPI.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\Platform\Windows\FWinDModule.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\Common\Platform\Windows\FWinTypes.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3rdSDK\freetype\freetype.vcxproj">
+      <Project>{823179f8-dfa2-46bf-8fc7-28da88fbbecd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\jpeglib\jpeglib.vcxproj">
+      <Project>{22384faa-9f7e-4335-bd0d-9c233739781f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\libpng\libpng.vcxproj">
+      <Project>{dbbfb6f2-3650-4db2-8d7c-bebf5deb3ae1}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\lua\lua.vcxproj">
+      <Project>{9b0b972c-e1d4-4504-8570-1a5d7681f309}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\minilzo\minilzo.vcxproj">
+      <Project>{ab597d0e-7696-4be6-bcd0-4b398ececb6e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\tinyxml\tinyxml.vcxproj">
+      <Project>{a4445337-d429-42e4-acd9-11a946eb6c53}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\zlib\zlib.vcxproj">
+      <Project>{147c7a50-3349-4c35-96b4-928b4ddd997b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdSDK\zziplib\zziplib.vcxproj">
+      <Project>{cb440073-2ed3-48ce-a1a1-b6eacb3a44bd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,536 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\FairyPacker.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\FairyPacker.ico"
+IDR_FairyPackerTYPE     ICON                    "res\\FairyPackerDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_TREEVIEW            BITMAP                  "res\\LeftView.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE_AS
+    SEPARATOR
+    BUTTON      ID_EDIT_ADDFILE
+    BUTTON      ID_EDIT_ADDFOLDER
+    BUTTON      ID_EDIT_EXTRACTTO
+    BUTTON      ID_EDIT_DELETE
+    BUTTON      ID_TOOL_INFO
+    SEPARATOR
+    BUTTON      ID_VIEW_LARGEICON
+    BUTTON      ID_VIEW_SMALLICON
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_DETAILS
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "打开(&O)",                      ID_EDIT_OPEN
+        MENUITEM "搜索文件(&S)",                    ID_EDIT_SEARCHFILES
+        MENUITEM SEPARATOR
+        MENUITEM "添加文件(&F)",                    ID_EDIT_ADDFILE
+        MENUITEM "添加目录(&D)",                    ID_EDIT_ADDFOLDER
+        MENUITEM SEPARATOR
+        MENUITEM "解压到当前目录(&C)",                 ID_EDIT_EXTRACT
+        MENUITEM "解压到...(&E)",                  ID_EDIT_EXTRACTTO
+        MENUITEM SEPARATOR
+        MENUITEM "删除(&R)",                      ID_EDIT_DELETE
+    END
+    POPUP "工具(&T)"
+    BEGIN
+        MENUITEM "显示信息(&I)",                    ID_TOOL_INFO
+        MENUITEM "整理碎片(&D)",                    ID_TOOL_DEDRAG
+        MENUITEM SEPARATOR
+        MENUITEM "选项(&O)",                      ID_TOOL_OPTION
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "大图标(&B)",                     ID_VIEW_LARGEICON
+        MENUITEM "小图标(&S)",                     ID_VIEW_SMALLICON
+        MENUITEM "列表(&L)",                      ID_VIEW_LIST
+        MENUITEM "详细信息(&D)",                    ID_VIEW_DETAILS, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "工具栏(&T)",                     ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 FairyPacker(&A)...",       ID_APP_ABOUT
+    END
+END
+
+IDR_VIEWMENU MENU
+BEGIN
+    POPUP "右键菜单"
+    BEGIN
+        MENUITEM "打开(&O)",                      ID_EDIT_OPEN
+        MENUITEM "搜索文件(&S)",                    ID_EDIT_SEARCHFILES
+        MENUITEM SEPARATOR
+        MENUITEM "添加文件(&F)",                    ID_EDIT_ADDFILE
+        MENUITEM "添加目录(&D)",                    ID_EDIT_ADDFOLDER
+        MENUITEM SEPARATOR
+        MENUITEM "解压到当前目录(&C)",                 ID_EDIT_EXTRACT
+        MENUITEM "解压到...(&E)",                  ID_EDIT_EXTRACTTO
+        MENUITEM SEPARATOR
+        MENUITEM "删除(&R)",                      ID_EDIT_DELETE
+    END
+END
+
+IDR_SEARCHMENU MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "打开",                          ID_SEARCH_OPEN
+        MENUITEM "解压到",                         ID_SEARCH_EXTRACT
+        MENUITEM "删除",                          ID_SEARCH_DELETE
+        MENUITEM "打开文件位置",                      ID_SEARCH_OPENFOLDER
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE_AS,        VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "A",            ID_EDIT_SELECTALL,      VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 FairyPacker"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "FairyPacker 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) Yish Studio 2011 All right observed.",IDC_STATIC,40,25,122,23
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_DLG_PROGRESS DIALOGEX 0, 0, 215, 69
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "解压..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,83,48,50,14
+    LTEXT           "静态",IDC_CURRENTFILE,7,7,201,8
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",PBS_SMOOTH | WS_BORDER,7,20,201,14
+END
+
+IDD_DLG_OPTION DIALOGEX 0, 0, 182, 146
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选项"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,29,125,50,14
+    PUSHBUTTON      "取消",IDCANCEL,103,125,50,14
+    GROUPBOX        "压缩算法",IDC_STATIC,7,7,82,105
+    COMBOBOX        IDC_COMPRESSTYPE,14,20,68,73,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "512KB",IDC_BUFFER_LOW,"Button",BS_AUTORADIOBUTTON,19,52,36,10
+    CONTROL         "1MB",IDC_BUFFER_NORMAL,"Button",BS_AUTORADIOBUTTON,19,65,29,10
+    CONTROL         "4MB",IDC_BUFFER_HIGH,"Button",BS_AUTORADIOBUTTON,19,78,29,10
+    LTEXT           "缓冲区大小：",IDC_STATIC,14,39,49,8
+    LTEXT           "不压缩的文件类型",IDC_STATIC,97,7,65,8
+    LISTBOX         IDC_NOCOMP_LIST,96,17,79,61,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",IDC_BTN_ADD,96,97,39,14
+    PUSHBUTTON      "删除",IDC_BTN_DELETE,136,97,39,14
+    EDITTEXT        IDC_FILE_EXT,96,81,79,14,ES_AUTOHSCROLL
+    CONTROL         "整体压缩",IDC_BUFFER_ENTIRE,"Button",BS_AUTORADIOBUTTON,19,90,48,10
+END
+
+IDD_DLG_FILEDUP DIALOGEX 0, 0, 235, 69
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "提示"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "是",IDC_DUP_YES,7,48,50,14
+    PUSHBUTTON      "否",IDC_DUP_NO,122,48,50,14
+    CTEXT           "",IDC_DUPINFO,7,7,221,30
+    PUSHBUTTON      "是(全部)",IDC_DUP_YESALL,65,48,50,14
+    PUSHBUTTON      "否(全部)",IDC_DUP_NOALL,178,48,50,14
+END
+
+IDD_DLG_SEARCHFILES DIALOGEX 0, 0, 369, 238
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "搜索文件"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "搜索",IDC_SEARCH,192,18,84,34
+    GROUPBOX        "参数",IDC_STATIC,7,7,355,55
+    LTEXT           "关键字：",IDC_STATIC,14,20,33,8
+    EDITTEXT        IDC_KEYWORD,54,18,131,14,ES_AUTOHSCROLL
+    LTEXT           "当前路径：",IDC_STATIC,14,40,41,8
+    EDITTEXT        IDC_CURRENT_PATH,54,38,131,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_LISTFILES,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,68,355,163
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "Yish Studio"
+            VALUE "FileDescription", "Fairy3D Engine Package Packer."
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "FairyPacker.exe"
+            VALUE "LegalCopyright", "CopyRight (C) Yish Studio. All right observed."
+            VALUE "OriginalFilename", "FairyPacker.exe"
+            VALUE "ProductName", "FairyPacker"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DLG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+
+    IDD_DLG_OPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_DLG_FILEDUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+
+    IDD_DLG_SEARCHFILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 231
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 初始化失败。请确保 OLE 库是正确的版本。"
+    IDS_OPENWAIT0           "正在打开，请稍后"
+    IDS_OPENWAIT1           "正在打开，请稍后."
+    IDS_OPENWAIT2           "正在打开，请稍后.."
+    IDS_OPENWAIT3           "正在打开，请稍后..."
+    IDS_OPENWAIT4           "正在打开，请稍后...."
+    IDS_OPENWAIT5           "正在打开，请稍后....."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "FairyPacker\n\nFPK\nFairy Engine Package(*.fpk)\n.fpk\nFairyPacker.Document\nFPK压缩包"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "FairyPacker"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "用新名称保存活动文档\n另存为"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+    ID_VIEW_AUTOARRANGE     "以网格方式排列图标。"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_SMALLICON       "使用小图标显示各项。\n小图标"
+    ID_VIEW_LARGEICON       "使用大图标显示各项。\n大图标"
+    ID_VIEW_LIST            "以列表方式显示各项。\n列表"
+    ID_VIEW_DETAILS         "显示窗口中每一项的相关详细信息。\n详细信息"
+    ID_VIEW_LINEUP          "以网格方式排列图标。"
+    ID_VIEW_BYNAME          "按字母顺序对图标排序。"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_OPEN            "打开当前选定的项"
+    ID_EDIT_ADDFILE         "添加指定的文件到压缩包"
+    ID_EDIT_ADDFOLDER       "添加指定的目录到压缩包"
+    ID_EDIT_EXTRACT         "解压选定的内容到当前目录"
+    ID_EDIT_EXTRACTTO       "解压选定的项到指定的目录"
+    ID_EDIT_DELETE          "删除选定的项"
+END
+
+STRINGTABLE
+BEGIN
+    ID_32804                "搜索包内指定的文件。"
+    ID_EDIT_SEARCHFILES     "搜索包内指定的文件。"
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\FairyPacker.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

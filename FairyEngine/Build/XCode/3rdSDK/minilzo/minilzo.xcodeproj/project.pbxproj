@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D27F02071ABC4E4700F01086 /* lzoconf.h in Headers */ = {isa = PBXBuildFile; fileRef = D27F02021ABC4E4700F01086 /* lzoconf.h */; };
+		D27F02081ABC4E4700F01086 /* lzodefs.h in Headers */ = {isa = PBXBuildFile; fileRef = D27F02031ABC4E4700F01086 /* lzodefs.h */; };
+		D27F02091ABC4E4700F01086 /* minilzo.c in Sources */ = {isa = PBXBuildFile; fileRef = D27F02041ABC4E4700F01086 /* minilzo.c */; };
+		D27F020A1ABC4E4700F01086 /* minilzo.h in Headers */ = {isa = PBXBuildFile; fileRef = D27F02051ABC4E4700F01086 /* minilzo.h */; };
+		D27F05F31ABC4ECE00F01086 /* minilzo.c in Sources */ = {isa = PBXBuildFile; fileRef = D27F02041ABC4E4700F01086 /* minilzo.c */; };
+		D27F05F61ABC4ECE00F01086 /* lzodefs.h in Headers */ = {isa = PBXBuildFile; fileRef = D27F02031ABC4E4700F01086 /* lzodefs.h */; };
+		D27F05F71ABC4ECE00F01086 /* lzoconf.h in Headers */ = {isa = PBXBuildFile; fileRef = D27F02021ABC4E4700F01086 /* lzoconf.h */; };
+		D27F05F81ABC4ECE00F01086 /* minilzo.h in Headers */ = {isa = PBXBuildFile; fileRef = D27F02051ABC4E4700F01086 /* minilzo.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D27F00F81ABC4DAB00F01086 /* libminilzo_mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libminilzo_mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27F02021ABC4E4700F01086 /* lzoconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzoconf.h; sourceTree = "<group>"; };
+		D27F02031ABC4E4700F01086 /* lzodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzodefs.h; sourceTree = "<group>"; };
+		D27F02041ABC4E4700F01086 /* minilzo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minilzo.c; sourceTree = "<group>"; };
+		D27F02051ABC4E4700F01086 /* minilzo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minilzo.h; sourceTree = "<group>"; };
+		D27F02061ABC4E4700F01086 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		D27F05FC1ABC4ECE00F01086 /* libminilzo_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libminilzo_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D27F00F51ABC4DAB00F01086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27F05F41ABC4ECE00F01086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D27F00EF1ABC4DAA00F01086 = {
+			isa = PBXGroup;
+			children = (
+				D27F02011ABC4E4700F01086 /* minilzo */,
+				D27F00F91ABC4DAB00F01086 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D27F00F91ABC4DAB00F01086 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D27F00F81ABC4DAB00F01086 /* libminilzo_mac.a */,
+				D27F05FC1ABC4ECE00F01086 /* libminilzo_ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D27F02011ABC4E4700F01086 /* minilzo */ = {
+			isa = PBXGroup;
+			children = (
+				D27F02021ABC4E4700F01086 /* lzoconf.h */,
+				D27F02031ABC4E4700F01086 /* lzodefs.h */,
+				D27F02041ABC4E4700F01086 /* minilzo.c */,
+				D27F02051ABC4E4700F01086 /* minilzo.h */,
+				D27F02061ABC4E4700F01086 /* ReadMe.txt */,
+			);
+			name = minilzo;
+			path = ../../../../Source/3rdSDK/minilzo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D27F00F61ABC4DAB00F01086 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27F02081ABC4E4700F01086 /* lzodefs.h in Headers */,
+				D27F02071ABC4E4700F01086 /* lzoconf.h in Headers */,
+				D27F020A1ABC4E4700F01086 /* minilzo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27F05F51ABC4ECE00F01086 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27F05F61ABC4ECE00F01086 /* lzodefs.h in Headers */,
+				D27F05F71ABC4ECE00F01086 /* lzoconf.h in Headers */,
+				D27F05F81ABC4ECE00F01086 /* minilzo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D27F00F71ABC4DAB00F01086 /* minilzo_mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27F01031ABC4DAB00F01086 /* Build configuration list for PBXNativeTarget "minilzo_mac" */;
+			buildPhases = (
+				D27F00F41ABC4DAB00F01086 /* Sources */,
+				D27F00F51ABC4DAB00F01086 /* Frameworks */,
+				D27F00F61ABC4DAB00F01086 /* Headers */,
+				D251E2D31ACF8CFE008E56E8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = minilzo_mac;
+			productName = minilzo;
+			productReference = D27F00F81ABC4DAB00F01086 /* libminilzo_mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D27F05F11ABC4ECE00F01086 /* minilzo_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27F05F91ABC4ECE00F01086 /* Build configuration list for PBXNativeTarget "minilzo_ios" */;
+			buildPhases = (
+				D27F05F21ABC4ECE00F01086 /* Sources */,
+				D27F05F41ABC4ECE00F01086 /* Frameworks */,
+				D27F05F51ABC4ECE00F01086 /* Headers */,
+				D251E2D21ACF8C88008E56E8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = minilzo_ios;
+			productName = minilzo;
+			productReference = D27F05FC1ABC4ECE00F01086 /* libminilzo_ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D27F00F01ABC4DAA00F01086 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = YishSoft;
+				TargetAttributes = {
+					D27F00F71ABC4DAB00F01086 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = D27F00F31ABC4DAA00F01086 /* Build configuration list for PBXProject "minilzo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D27F00EF1ABC4DAA00F01086;
+			productRefGroup = D27F00F91ABC4DAB00F01086 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D27F00F71ABC4DAB00F01086 /* minilzo_mac */,
+				D27F05F11ABC4ECE00F01086 /* minilzo_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D251E2D21ACF8C88008E56E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../../EngineSDK/include/3rdSDK/minilzo\nENGINESDK_LIB=../../../../EngineSDK/lib/ios/3rdSDK\nINCLUDE_SRC_FOLDER=../../../../Source/3rdSDK/minilzo\nINCLUDE_SRC_FILES=${INCLUDE_SRC_FOLDER}/*.h\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${PLATFORM_NAME} == \"iphoneos\" ]\n    then\n    if [ ${CONFIGURATION} == \"Debug\" ]\n        then\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\n    else\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\n    fi\nelse\n    if [ ${CONFIGURATION} == \"Debug\" ]\n        then\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim_d.a\"\n    else\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim.a\"\n    fi\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+		D251E2D31ACF8CFE008E56E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../../EngineSDK/include/3rdSDK/minilzo\nENGINESDK_LIB=../../../../EngineSDK/lib/mac/3rdSDK\nINCLUDE_SRC_FOLDER=../../../../Source/3rdSDK/minilzo\nINCLUDE_SRC_FILES=${INCLUDE_SRC_FOLDER}/*.h\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${CONFIGURATION} == \"Debug\" ]\n    then\n    cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\n    cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D27F00F41ABC4DAB00F01086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27F02091ABC4E4700F01086 /* minilzo.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27F05F21ABC4ECE00F01086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27F05F31ABC4ECE00F01086 /* minilzo.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D27F01011ABC4DAB00F01086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D27F01021ABC4DAB00F01086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D27F01041ABC4DAB00F01086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D27F01051ABC4DAB00F01086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D27F05FA1ABC4ECE00F01086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = minilzo_ios;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D27F05FB1ABC4ECE00F01086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				PRODUCT_NAME = minilzo_ios;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D27F00F31ABC4DAA00F01086 /* Build configuration list for PBXProject "minilzo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27F01011ABC4DAB00F01086 /* Debug */,
+				D27F01021ABC4DAB00F01086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27F01031ABC4DAB00F01086 /* Build configuration list for PBXNativeTarget "minilzo_mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27F01041ABC4DAB00F01086 /* Debug */,
+				D27F01051ABC4DAB00F01086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27F05F91ABC4ECE00F01086 /* Build configuration list for PBXNativeTarget "minilzo_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27F05FA1ABC4ECE00F01086 /* Debug */,
+				D27F05FB1ABC4ECE00F01086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D27F00F01ABC4DAA00F01086 /* Project object */;
+}

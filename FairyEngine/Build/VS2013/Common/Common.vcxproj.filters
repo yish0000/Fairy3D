@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{79b4180b-19c8-420a-baee-c5098c2e05f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory\InternalManager">
+      <UniqueIdentifier>{c47758c8-b4f0-4b8e-8f37-db119506ad58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory\InternalManager\TempPolicy">
+      <UniqueIdentifier>{e9889055-8bd1-4ffa-9784-e901e9d3e81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseType">
+      <UniqueIdentifier>{f332361d-ef7e-416a-bf62-a5de22e40535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseType\Template">
+      <UniqueIdentifier>{378215c3-80f4-4dd8-8827-e03937408e09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{eb1c5c60-9387-4322-9938-f2ba8617a498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{f1c7f86d-8867-452e-a8e5-5f285c482b27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{f9a2d222-7832-4df7-8623-a50b0117a9f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem\Disk Files">
+      <UniqueIdentifier>{98b2dd0f-d136-4fc9-b620-f5fbf1914800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem\ZIP Package">
+      <UniqueIdentifier>{26cf9307-f1e2-4a2a-8878-64f521491986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem\FPK Package">
+      <UniqueIdentifier>{27398f65-184e-43f9-afc2-8620ca0d6f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encrypt">
+      <UniqueIdentifier>{8813f975-e72d-4efe-a70b-0879943fd48f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Random">
+      <UniqueIdentifier>{10686a77-fbfc-4e81-aae9-7a083d4effdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{561cff54-456c-425d-88fc-fd7e1a5296d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{a1d818e6-8f69-40ce-8ba8-26ddc0719f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{6cecea81-cd0f-4fe0-8bb2-0577e7db00c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{f0d31f32-2315-49c9-ac12-53248e9e3cc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Lua">
+      <UniqueIdentifier>{210ce258-e632-4284-8de6-41d2c98b0fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\JavaScript">
+      <UniqueIdentifier>{a57288f8-9a1e-420c-8c84-80d2bf4169ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\C#">
+      <UniqueIdentifier>{cf9b6104-6ac0-46b3-ac84-de36616a2213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Json">
+      <UniqueIdentifier>{ad61e230-2945-4082-9323-fd8cc3ddce36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event">
+      <UniqueIdentifier>{6ef83480-13f8-43b9-bc74-e5252b88c551}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\Common\FAllocBase.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FMemConfig.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTempMemBuffer.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FMemManager.h">
+      <Filter>Memory\InternalManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FMemTracker.h">
+      <Filter>Memory\InternalManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTempMemManager.h">
+      <Filter>Memory\InternalManager\TempPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTempMemPool.h">
+      <Filter>Memory\InternalManager\TempPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\Fairy.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FBase.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FBaseType.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FBitset.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FContainer.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FSmartPtr.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FDelegate.h">
+      <Filter>BaseType\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FFixArray.h">
+      <Filter>BaseType\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTemplate.h">
+      <Filter>BaseType\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FXMLReader.h">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FXMLWriter.h">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FCompress.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FCounter.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FIniFile.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FPerformance.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FProperty.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FStrUtil.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTextTabFile.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTokenFile.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FMemFileStream.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FVFile.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FVFilePack.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FVFileStream.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FVFileSystem.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FSysFilePack.h">
+      <Filter>FileSystem\Disk Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FSysFileStream.h">
+      <Filter>FileSystem\Disk Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FZipFilePack.h">
+      <Filter>FileSystem\ZIP Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FZipFileStream.h">
+      <Filter>FileSystem\ZIP Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FFpkFilePack.h">
+      <Filter>FileSystem\FPK Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FFpkFileStream.h">
+      <Filter>FileSystem\FPK Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FBase64.h">
+      <Filter>Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FCRC32.h">
+      <Filter>Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FMD5.h">
+      <Filter>Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FPerlinNoise.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FRandom.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FThread.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FThreadPool.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\Platform\Windows\FWinThread.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FLogManager.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FLogTarget.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FDModule.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FSysAPI.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FCommon.h" />
+    <ClInclude Include="..\..\..\Source\Common\FTimer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Common\FMemManager.cpp">
+      <Filter>Memory\InternalManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FMemTracker.cpp">
+      <Filter>Memory\InternalManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FTempMemManager.cpp">
+      <Filter>Memory\InternalManager\TempPolicy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FTempMemPool.cpp">
+      <Filter>Memory\InternalManager\TempPolicy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FBitset.cpp">
+      <Filter>BaseType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FXMLReader.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FXMLWriter.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FCompress.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FIniFile.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FPerformance.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FProperty.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FSingletonInit.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FStrUtil.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FTextTabFile.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FTokenFile.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FMemFileStream.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FVFile.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FVFilePack.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FVFileStream.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FVFileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FSysFilePack.cpp">
+      <Filter>FileSystem\Disk Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FSysFileStream.cpp">
+      <Filter>FileSystem\Disk Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FZipFilePack.cpp">
+      <Filter>FileSystem\ZIP Package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FZipFileStream.cpp">
+      <Filter>FileSystem\ZIP Package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FFpkFilePack.cpp">
+      <Filter>FileSystem\FPK Package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FFpkFileStream.cpp">
+      <Filter>FileSystem\FPK Package</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FBase64.cpp">
+      <Filter>Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FCRC32.cpp">
+      <Filter>Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FMD5.cpp">
+      <Filter>Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FPerlinNoise.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FRandom.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FThread.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FThreadPool.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\Platform\Windows\FWinThread.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FLogManager.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FLogTarget.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\Platform\Windows\FWinAPI.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\Platform\Windows\FWinDModule.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FTimer.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\Common\Platform\Windows\FWinTypes.inl">
+      <Filter>BaseType</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FairyPacker", "FairyPacker\FairyPacker.vcxproj", "{09696D75-E5BD-4273-8EB8-B5248340FEDC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FUIEditor", "FUIEditor\FUIEditor.vcxproj", "{7AB23AAA-0FF6-449C-BD89-A4E769204F4D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FPKCmd", "FPKCmd\FPKCmd.vcxproj", "{6C02D4ED-4438-4D36-933B-A62A671A683F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TexConverterCmd", "TexConverterCmd\TexConverterCmd.vcxproj", "{9C3AEE2F-E9F5-46AA-BBDB-DFFBCF23B2E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09696D75-E5BD-4273-8EB8-B5248340FEDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09696D75-E5BD-4273-8EB8-B5248340FEDC}.Debug|Win32.Build.0 = Debug|Win32
+		{09696D75-E5BD-4273-8EB8-B5248340FEDC}.Release|Win32.ActiveCfg = Release|Win32
+		{09696D75-E5BD-4273-8EB8-B5248340FEDC}.Release|Win32.Build.0 = Release|Win32
+		{7AB23AAA-0FF6-449C-BD89-A4E769204F4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7AB23AAA-0FF6-449C-BD89-A4E769204F4D}.Debug|Win32.Build.0 = Debug|Win32
+		{7AB23AAA-0FF6-449C-BD89-A4E769204F4D}.Release|Win32.ActiveCfg = Release|Win32
+		{7AB23AAA-0FF6-449C-BD89-A4E769204F4D}.Release|Win32.Build.0 = Release|Win32
+		{6C02D4ED-4438-4D36-933B-A62A671A683F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6C02D4ED-4438-4D36-933B-A62A671A683F}.Debug|Win32.Build.0 = Debug|Win32
+		{6C02D4ED-4438-4D36-933B-A62A671A683F}.Release|Win32.ActiveCfg = Release|Win32
+		{6C02D4ED-4438-4D36-933B-A62A671A683F}.Release|Win32.Build.0 = Release|Win32
+		{9C3AEE2F-E9F5-46AA-BBDB-DFFBCF23B2E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9C3AEE2F-E9F5-46AA-BBDB-DFFBCF23B2E1}.Debug|Win32.Build.0 = Debug|Win32
+		{9C3AEE2F-E9F5-46AA-BBDB-DFFBCF23B2E1}.Release|Win32.ActiveCfg = Release|Win32
+		{9C3AEE2F-E9F5-46AA-BBDB-DFFBCF23B2E1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

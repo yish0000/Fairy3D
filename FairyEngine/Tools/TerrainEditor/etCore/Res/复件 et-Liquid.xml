@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<effect version="1.0">
+    <parameter type="float" name="g_TexScale" />
+    <parameter type="float" name="g_Opacity" />
+    <parameter type="float" name="g_Distortion" />
+    <parameter type="float" name="g_Speed" />
+    <parameter type="sampler2D" name="g_Surface" />
+    <parameter type="sampler2D" name="g_ReflectMap" />
+    <parameter type="sampler2D" name="g_DudvMap" />
+    <parameter type="float4" name="g_CameraPos" />
+    <parameter type="float4x4" name="g_WorldViewProj" auto="true" autotype="worldviewproj" />
+    <parameter type="float4" name="g_LightPos" />
+
+    <shader>
+        <function name="LiquidPS" />
+        <function name="LiquidVS" />
+
+        <code><![CDATA[
+        struct VS_OUTPUT
+        {
+            float4 Pos       : POSITION;
+            float2 DupCoord0 : TEXCOORD0;
+            float4 ViewCoord : TEXCOORD1;
+        };
+        VS_OUTPUT LiquidVS( float3 vPosition  : POSITION,
+                            float2 vTexCoord0 : TEXCOORD0 )
+        {
+            VS_OUTPUT Out;
+
+            float4x4 mat =
+            {
+                0.5f,0.0f,0.0f,0.0f,
+                0.0f,0.5f,0.0f,0.0f,
+                0.0f,0.0f,0.5f,0.0f,
+                0.5f,0.5f,0.5f,1.0f
+            };
+
+            Out.Pos = mul(float4(vPosition,1.0f),g_WorldViewProj);
+            Out.ViewCoord = mul(float4(vPosition,1.0f),g_WorldViewProj);
+            Out.DupCoord0 = vTexCoord0;
+            return Out;
+        }
+
+        float4 LiquidPS( //float4 Pos       : POSITION,
+                         float2 DupCoord0 : TEXCOORD0,
+                         float4 ViewCoord : TEXCOORD1 ) : COLOR
+        {
+            float4 finalColor;
+
+            // get normal from dudv map
+            float3 norm = normalize(tex2D(g_DudvMap,DupCoord0).xyz*2.0f-1.0f);
+            float3 dudv = norm * 0.5f;
+
+            // compute reflection texture coordinates and distortion
+            float2 txp = ViewCoord.xy / ViewCoord.w;
+            float4 refl = tex2D(g_ReflectMap,txp/*+dudv.xy*/);
+
+            // compute lighting and specular
+            //float3 lightDir = g_LightPos.xyz;
+
+            //float NDotL = max(dot(norm,lightDir),0.0f);
+            //NDotL = (NDotL * 0.5f) + 0.5f;
+
+            finalColor = refl;
+
+            //float3 view = g_CameraPos - Pos;
+            //float dist = length(view);
+            //view = normalize(view);
+
+            //float alpha = 1.0f-clamp(view.y,0.0f,1.0f)+dist/5.0f;
+            //alpha = clamp(alpha,0.4f,1.0f);
+            //finalColor.a = alpha;
+            return finalColor;
+        }
+        ]]></code>
+    </shader>
+
+    <technique name="LiquidTechnique">
+        <pass name="p0">
+            <state name="vertex_shader" value="LiquidVS" />
+            <state name="pixel_shader" value="LiquidPS" profile="ps_2_0" />
+
+            <state name="alphablend_enable" value="true" />
+            <state name="srcblend" value="srcalpha" />
+            <state name="destblend" value="invsrcalpha" />
+        </pass>
+    </technique>
+</effect>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<effect version="1.0">
+    <parameter type="float" name="g_fCamDist" />
+    <parameter type="float" name="g_fRenderDist" />
+    <parameter type="sampler2D" name="g_Texture" />
+
+    <shader>
+        <function name="calcAlpha" />
+
+        <code><![CDATA[
+        float4 calcAlpha( float2 vTexCoord : TEXCOORD0 ) : COLOR
+        {
+            float fAlpha;
+            float4 finalColor = tex2D( g_Texture,vTexCoord );
+
+            float fDist = g_fRenderDist - g_fCamDist;
+            if( fDist > 10.0f ) fAlpha = 1.0f;
+            else fAlpha = fDist * 0.1f;
+
+            finalColor.a = finalColor.a * fAlpha;
+            return finalColor;
+        }
+        ]]></code>
+    </shader>
+
+    <technique name="Polygon">
+        <pass name="p0">
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="calcAlpha" profile="ps_2_0" />
+
+            <state name="cullmode" value="none" />
+            <state name="depthmode" value="readonly" />
+            <state name="alphablend_enable" value="true" />
+            <state name="srcblend" value="srcalpha" />
+            <state name="destblend" value="invsrcalpha" />
+        </pass>
+    </technique>
+    <technique name="Mesh">
+        <pass name="p0">
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="calcAlpha" profile="ps_2_0" />
+
+            <state name="depthmode" value="readonly" />
+            <state name="alphablend_enable" value="true" />
+            <state name="srcblend" value="srcalpha" />
+            <state name="destblend" value="invsrcalpha" />
+        </pass>
+    </technique>
+</effect>

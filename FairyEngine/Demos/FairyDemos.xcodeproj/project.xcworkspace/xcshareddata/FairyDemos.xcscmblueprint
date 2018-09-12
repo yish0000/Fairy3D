@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "44f45fe8-b99a-4cb8-a1a0-c3a71567c662",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "44f45fe8-b99a-4cb8-a1a0-c3a71567c662" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "44f45fe8-b99a-4cb8-a1a0-c3a71567c662" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4A6CDE46-2FF1-437A-8BD2-0EDEBEE3B2A6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "44f45fe8-b99a-4cb8-a1a0-c3a71567c662" : "Fairy3D\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FairyDemos",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/FairyEngine\/Demos\/FairyDemos.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn.code.sf.net\/p\/fairy3d\/code-0",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "44f45fe8-b99a-4cb8-a1a0-c3a71567c662"
+    }
+  ]
+}

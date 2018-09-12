@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D21FAB4D1C58FC1D0060C738 /* FInputDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB441C58FC1D0060C738 /* FInputDevice.h */; };
+		D21FAB4E1C58FC1D0060C738 /* FInputEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB451C58FC1D0060C738 /* FInputEngine.h */; };
+		D21FAB4F1C58FC1D0060C738 /* FInputEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB461C58FC1D0060C738 /* FInputEvent.h */; };
+		D21FAB501C58FC1D0060C738 /* FInputJoystick.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB471C58FC1D0060C738 /* FInputJoystick.h */; };
+		D21FAB511C58FC1D0060C738 /* FInputKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB481C58FC1D0060C738 /* FInputKeyboard.h */; };
+		D21FAB521C58FC1D0060C738 /* FInputMouse.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB491C58FC1D0060C738 /* FInputMouse.h */; };
+		D21FAB531C58FC1D0060C738 /* FInputSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB4A1C58FC1D0060C738 /* FInputSensor.h */; };
+		D21FAB541C58FC1D0060C738 /* FInputTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB4B1C58FC1D0060C738 /* FInputTouch.h */; };
+		D21FAB551C58FC1D0060C738 /* FInputTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB4C1C58FC1D0060C738 /* FInputTypes.h */; };
+		D21FAB591C58FC3F0060C738 /* FInputEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FAB581C58FC3F0060C738 /* FInputEngine.cpp */; };
+		D21FAB5C1C58FC4D0060C738 /* FInputEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FAB581C58FC3F0060C738 /* FInputEngine.cpp */; };
+		D21FAB5F1C58FC4D0060C738 /* FInputJoystick.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB471C58FC1D0060C738 /* FInputJoystick.h */; };
+		D21FAB601C58FC4D0060C738 /* FInputTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB4C1C58FC1D0060C738 /* FInputTypes.h */; };
+		D21FAB611C58FC4D0060C738 /* FInputEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB451C58FC1D0060C738 /* FInputEngine.h */; };
+		D21FAB621C58FC4D0060C738 /* FInputEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB461C58FC1D0060C738 /* FInputEvent.h */; };
+		D21FAB631C58FC4D0060C738 /* FInputSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB4A1C58FC1D0060C738 /* FInputSensor.h */; };
+		D21FAB641C58FC4D0060C738 /* FInputTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB4B1C58FC1D0060C738 /* FInputTouch.h */; };
+		D21FAB651C58FC4D0060C738 /* FInputKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB481C58FC1D0060C738 /* FInputKeyboard.h */; };
+		D21FAB661C58FC4D0060C738 /* FInputMouse.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB491C58FC1D0060C738 /* FInputMouse.h */; };
+		D21FAB671C58FC4D0060C738 /* FInputDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB441C58FC1D0060C738 /* FInputDevice.h */; };
+		D222E40C1C89C8EB006EE1A9 /* FInputDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D222E40B1C89C8EB006EE1A9 /* FInputDevice.cpp */; };
+		D222E40D1C89C8EB006EE1A9 /* FInputDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D222E40B1C89C8EB006EE1A9 /* FInputDevice.cpp */; };
+		D224567B1C873093005CC64A /* FInputTouchIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = D224567A1C873093005CC64A /* FInputTouchIOS.mm */; };
+		D23B13CC1D3FA51800B10B95 /* FInputSensorIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = D23B13CB1D3FA51800B10B95 /* FInputSensorIOS.mm */; };
+		D25D86531C85EF5700E07089 /* FInputJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D864E1C85EF5700E07089 /* FInputJoystick.cpp */; };
+		D25D86541C85EF5700E07089 /* FInputJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D864E1C85EF5700E07089 /* FInputJoystick.cpp */; };
+		D25D86551C85EF5700E07089 /* FInputKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D864F1C85EF5700E07089 /* FInputKeyboard.cpp */; };
+		D25D86561C85EF5700E07089 /* FInputKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D864F1C85EF5700E07089 /* FInputKeyboard.cpp */; };
+		D25D86571C85EF5700E07089 /* FInputMouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D86501C85EF5700E07089 /* FInputMouse.cpp */; };
+		D25D86581C85EF5700E07089 /* FInputMouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D86501C85EF5700E07089 /* FInputMouse.cpp */; };
+		D25D86591C85EF5700E07089 /* FInputSensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D86511C85EF5700E07089 /* FInputSensor.cpp */; };
+		D25D865A1C85EF5700E07089 /* FInputSensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D86511C85EF5700E07089 /* FInputSensor.cpp */; };
+		D25D865B1C85EF5700E07089 /* FInputTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D86521C85EF5700E07089 /* FInputTouch.cpp */; };
+		D25D865C1C85EF5700E07089 /* FInputTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D25D86521C85EF5700E07089 /* FInputTouch.cpp */; };
+		D270F3361C888CAF007881D2 /* FInput.h in Headers */ = {isa = PBXBuildFile; fileRef = D270F3351C888CAF007881D2 /* FInput.h */; };
+		D2A0F31D1C94FF1100CF3B74 /* FInputTouchGuesture.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A0F31C1C94FF1100CF3B74 /* FInputTouchGuesture.h */; };
+		D2A0F31F1C94FF2100CF3B74 /* FInputTouchGuesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2A0F31E1C94FF2100CF3B74 /* FInputTouchGuesture.cpp */; };
+		D2A0F3201C94FF2100CF3B74 /* FInputTouchGuesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2A0F31E1C94FF2100CF3B74 /* FInputTouchGuesture.cpp */; };
+		D2A0F3211C94FF5700CF3B74 /* FInputTouchGuesture.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A0F31C1C94FF1100CF3B74 /* FInputTouchGuesture.h */; };
+		D2F230491C708A5E00D92A1C /* FInputEventTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F230481C708A5E00D92A1C /* FInputEventTypes.h */; };
+		D2F2304B1C708A6C00D92A1C /* FInputEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F2304A1C708A6C00D92A1C /* FInputEvent.cpp */; };
+		D2F2304C1C708A6C00D92A1C /* FInputEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F2304A1C708A6C00D92A1C /* FInputEvent.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D21FAB291C58FB700060C738 /* libInputLib_mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInputLib_mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21FAB441C58FC1D0060C738 /* FInputDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputDevice.h; path = ../../../Source/InputLib/FInputDevice.h; sourceTree = "<group>"; };
+		D21FAB451C58FC1D0060C738 /* FInputEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputEngine.h; path = ../../../Source/InputLib/FInputEngine.h; sourceTree = "<group>"; };
+		D21FAB461C58FC1D0060C738 /* FInputEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputEvent.h; path = ../../../Source/InputLib/FInputEvent.h; sourceTree = "<group>"; };
+		D21FAB471C58FC1D0060C738 /* FInputJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputJoystick.h; path = ../../../Source/InputLib/FInputJoystick.h; sourceTree = "<group>"; };
+		D21FAB481C58FC1D0060C738 /* FInputKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputKeyboard.h; path = ../../../Source/InputLib/FInputKeyboard.h; sourceTree = "<group>"; };
+		D21FAB491C58FC1D0060C738 /* FInputMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputMouse.h; path = ../../../Source/InputLib/FInputMouse.h; sourceTree = "<group>"; };
+		D21FAB4A1C58FC1D0060C738 /* FInputSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputSensor.h; path = ../../../Source/InputLib/FInputSensor.h; sourceTree = "<group>"; };
+		D21FAB4B1C58FC1D0060C738 /* FInputTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputTouch.h; path = ../../../Source/InputLib/FInputTouch.h; sourceTree = "<group>"; };
+		D21FAB4C1C58FC1D0060C738 /* FInputTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputTypes.h; path = ../../../Source/InputLib/FInputTypes.h; sourceTree = "<group>"; };
+		D21FAB581C58FC3F0060C738 /* FInputEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputEngine.cpp; path = ../../../Source/InputLib/FInputEngine.cpp; sourceTree = "<group>"; };
+		D21FAB6B1C58FC4D0060C738 /* libInputLib_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInputLib_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D222E40B1C89C8EB006EE1A9 /* FInputDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputDevice.cpp; path = ../../../Source/InputLib/FInputDevice.cpp; sourceTree = "<group>"; };
+		D224567A1C873093005CC64A /* FInputTouchIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FInputTouchIOS.mm; path = ../../../Source/InputLib/Platform/IOS/FInputTouchIOS.mm; sourceTree = "<group>"; };
+		D23B13CB1D3FA51800B10B95 /* FInputSensorIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FInputSensorIOS.mm; path = ../../../Source/InputLib/Platform/IOS/FInputSensorIOS.mm; sourceTree = "<group>"; };
+		D25D864E1C85EF5700E07089 /* FInputJoystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputJoystick.cpp; path = ../../../Source/InputLib/FInputJoystick.cpp; sourceTree = "<group>"; };
+		D25D864F1C85EF5700E07089 /* FInputKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputKeyboard.cpp; path = ../../../Source/InputLib/FInputKeyboard.cpp; sourceTree = "<group>"; };
+		D25D86501C85EF5700E07089 /* FInputMouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputMouse.cpp; path = ../../../Source/InputLib/FInputMouse.cpp; sourceTree = "<group>"; };
+		D25D86511C85EF5700E07089 /* FInputSensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputSensor.cpp; path = ../../../Source/InputLib/FInputSensor.cpp; sourceTree = "<group>"; };
+		D25D86521C85EF5700E07089 /* FInputTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputTouch.cpp; path = ../../../Source/InputLib/FInputTouch.cpp; sourceTree = "<group>"; };
+		D270F3351C888CAF007881D2 /* FInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInput.h; path = ../../../Source/InputLib/FInput.h; sourceTree = "<group>"; };
+		D2A0F31C1C94FF1100CF3B74 /* FInputTouchGuesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputTouchGuesture.h; path = ../../../Source/InputLib/FInputTouchGuesture.h; sourceTree = "<group>"; };
+		D2A0F31E1C94FF2100CF3B74 /* FInputTouchGuesture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputTouchGuesture.cpp; path = ../../../Source/InputLib/FInputTouchGuesture.cpp; sourceTree = "<group>"; };
+		D2F230481C708A5E00D92A1C /* FInputEventTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FInputEventTypes.h; path = ../../../Source/InputLib/FInputEventTypes.h; sourceTree = "<group>"; };
+		D2F2304A1C708A6C00D92A1C /* FInputEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FInputEvent.cpp; path = ../../../Source/InputLib/FInputEvent.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D21FAB261C58FB700060C738 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21FAB5D1C58FC4D0060C738 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D21FAB201C58FB700060C738 = {
+			isa = PBXGroup;
+			children = (
+				D21FAB431C58FC050060C738 /* Classes */,
+				D2A0F31B1C94EB0200CF3B74 /* mac */,
+				D2F591451C5BC3BB00A95A01 /* ios */,
+				D21FAB2A1C58FB700060C738 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D21FAB2A1C58FB700060C738 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D21FAB291C58FB700060C738 /* libInputLib_mac.a */,
+				D21FAB6B1C58FC4D0060C738 /* libInputLib_ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D21FAB431C58FC050060C738 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D21FAB571C58FC320060C738 /* Src */,
+				D21FAB561C58FC250060C738 /* Include */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D21FAB561C58FC250060C738 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				D270F3351C888CAF007881D2 /* FInput.h */,
+				D21FAB441C58FC1D0060C738 /* FInputDevice.h */,
+				D21FAB451C58FC1D0060C738 /* FInputEngine.h */,
+				D21FAB461C58FC1D0060C738 /* FInputEvent.h */,
+				D2F230481C708A5E00D92A1C /* FInputEventTypes.h */,
+				D21FAB471C58FC1D0060C738 /* FInputJoystick.h */,
+				D21FAB481C58FC1D0060C738 /* FInputKeyboard.h */,
+				D21FAB491C58FC1D0060C738 /* FInputMouse.h */,
+				D21FAB4A1C58FC1D0060C738 /* FInputSensor.h */,
+				D21FAB4B1C58FC1D0060C738 /* FInputTouch.h */,
+				D2A0F31C1C94FF1100CF3B74 /* FInputTouchGuesture.h */,
+				D21FAB4C1C58FC1D0060C738 /* FInputTypes.h */,
+			);
+			name = Include;
+			sourceTree = "<group>";
+		};
+		D21FAB571C58FC320060C738 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				D222E40B1C89C8EB006EE1A9 /* FInputDevice.cpp */,
+				D25D864E1C85EF5700E07089 /* FInputJoystick.cpp */,
+				D25D864F1C85EF5700E07089 /* FInputKeyboard.cpp */,
+				D25D86501C85EF5700E07089 /* FInputMouse.cpp */,
+				D25D86511C85EF5700E07089 /* FInputSensor.cpp */,
+				D25D86521C85EF5700E07089 /* FInputTouch.cpp */,
+				D2A0F31E1C94FF2100CF3B74 /* FInputTouchGuesture.cpp */,
+				D2F2304A1C708A6C00D92A1C /* FInputEvent.cpp */,
+				D21FAB581C58FC3F0060C738 /* FInputEngine.cpp */,
+			);
+			name = Src;
+			sourceTree = "<group>";
+		};
+		D2A0F31B1C94EB0200CF3B74 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = mac;
+			sourceTree = "<group>";
+		};
+		D2F591451C5BC3BB00A95A01 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				D224567A1C873093005CC64A /* FInputTouchIOS.mm */,
+				D23B13CB1D3FA51800B10B95 /* FInputSensorIOS.mm */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D21FAB271C58FB700060C738 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21FAB501C58FC1D0060C738 /* FInputJoystick.h in Headers */,
+				D21FAB551C58FC1D0060C738 /* FInputTypes.h in Headers */,
+				D21FAB4E1C58FC1D0060C738 /* FInputEngine.h in Headers */,
+				D2F230491C708A5E00D92A1C /* FInputEventTypes.h in Headers */,
+				D21FAB4F1C58FC1D0060C738 /* FInputEvent.h in Headers */,
+				D270F3361C888CAF007881D2 /* FInput.h in Headers */,
+				D21FAB531C58FC1D0060C738 /* FInputSensor.h in Headers */,
+				D21FAB541C58FC1D0060C738 /* FInputTouch.h in Headers */,
+				D21FAB511C58FC1D0060C738 /* FInputKeyboard.h in Headers */,
+				D21FAB521C58FC1D0060C738 /* FInputMouse.h in Headers */,
+				D2A0F31D1C94FF1100CF3B74 /* FInputTouchGuesture.h in Headers */,
+				D21FAB4D1C58FC1D0060C738 /* FInputDevice.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21FAB5E1C58FC4D0060C738 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21FAB5F1C58FC4D0060C738 /* FInputJoystick.h in Headers */,
+				D21FAB601C58FC4D0060C738 /* FInputTypes.h in Headers */,
+				D21FAB611C58FC4D0060C738 /* FInputEngine.h in Headers */,
+				D21FAB621C58FC4D0060C738 /* FInputEvent.h in Headers */,
+				D2A0F3211C94FF5700CF3B74 /* FInputTouchGuesture.h in Headers */,
+				D21FAB631C58FC4D0060C738 /* FInputSensor.h in Headers */,
+				D21FAB641C58FC4D0060C738 /* FInputTouch.h in Headers */,
+				D21FAB651C58FC4D0060C738 /* FInputKeyboard.h in Headers */,
+				D21FAB661C58FC4D0060C738 /* FInputMouse.h in Headers */,
+				D21FAB671C58FC4D0060C738 /* FInputDevice.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D21FAB281C58FB700060C738 /* InputLib_mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D21FAB341C58FB700060C738 /* Build configuration list for PBXNativeTarget "InputLib_mac" */;
+			buildPhases = (
+				D21FAB251C58FB700060C738 /* Sources */,
+				D21FAB261C58FB700060C738 /* Frameworks */,
+				D21FAB271C58FB700060C738 /* Headers */,
+				D21FAB6D1C58FDC60060C738 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InputLib_mac;
+			productName = InputLib;
+			productReference = D21FAB291C58FB700060C738 /* libInputLib_mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D21FAB5A1C58FC4D0060C738 /* InputLib_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D21FAB681C58FC4D0060C738 /* Build configuration list for PBXNativeTarget "InputLib_ios" */;
+			buildPhases = (
+				D21FAB5B1C58FC4D0060C738 /* Sources */,
+				D21FAB5D1C58FC4D0060C738 /* Frameworks */,
+				D21FAB5E1C58FC4D0060C738 /* Headers */,
+				D21FAB6C1C58FD680060C738 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InputLib_ios;
+			productName = InputLib;
+			productReference = D21FAB6B1C58FC4D0060C738 /* libInputLib_ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D21FAB211C58FB700060C738 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = YishSoft;
+				TargetAttributes = {
+					D21FAB281C58FB700060C738 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = D21FAB241C58FB700060C738 /* Build configuration list for PBXProject "InputLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D21FAB201C58FB700060C738;
+			productRefGroup = D21FAB2A1C58FB700060C738 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D21FAB281C58FB700060C738 /* InputLib_mac */,
+				D21FAB5A1C58FC4D0060C738 /* InputLib_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D21FAB6C1C58FD680060C738 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/InputLib\nENGINESDK_LIB=../../../EngineSDK/lib/ios\nINCLUDE_SRC_FOLDER=../../../Source/InputLib\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${PLATFORM_NAME} == \"iphoneos\" ]\nthen\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\nelse\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim.a\"\nfi\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+		D21FAB6D1C58FDC60060C738 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/InputLib\nENGINESDK_LIB=../../../EngineSDK/lib/mac\nINCLUDE_SRC_FOLDER=../../../Source/InputLib\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D21FAB251C58FB700060C738 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2F2304B1C708A6C00D92A1C /* FInputEvent.cpp in Sources */,
+				D25D865B1C85EF5700E07089 /* FInputTouch.cpp in Sources */,
+				D25D86591C85EF5700E07089 /* FInputSensor.cpp in Sources */,
+				D25D86571C85EF5700E07089 /* FInputMouse.cpp in Sources */,
+				D25D86531C85EF5700E07089 /* FInputJoystick.cpp in Sources */,
+				D2A0F31F1C94FF2100CF3B74 /* FInputTouchGuesture.cpp in Sources */,
+				D25D86551C85EF5700E07089 /* FInputKeyboard.cpp in Sources */,
+				D21FAB591C58FC3F0060C738 /* FInputEngine.cpp in Sources */,
+				D222E40C1C89C8EB006EE1A9 /* FInputDevice.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21FAB5B1C58FC4D0060C738 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D23B13CC1D3FA51800B10B95 /* FInputSensorIOS.mm in Sources */,
+				D2F2304C1C708A6C00D92A1C /* FInputEvent.cpp in Sources */,
+				D2A0F3201C94FF2100CF3B74 /* FInputTouchGuesture.cpp in Sources */,
+				D25D865C1C85EF5700E07089 /* FInputTouch.cpp in Sources */,
+				D25D865A1C85EF5700E07089 /* FInputSensor.cpp in Sources */,
+				D25D86581C85EF5700E07089 /* FInputMouse.cpp in Sources */,
+				D25D86541C85EF5700E07089 /* FInputJoystick.cpp in Sources */,
+				D25D86561C85EF5700E07089 /* FInputKeyboard.cpp in Sources */,
+				D222E40D1C89C8EB006EE1A9 /* FInputDevice.cpp in Sources */,
+				D21FAB5C1C58FC4D0060C738 /* FInputEngine.cpp in Sources */,
+				D224567B1C873093005CC64A /* FInputTouchIOS.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D21FAB321C58FB700060C738 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/InputLib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D21FAB331C58FB700060C738 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/InputLib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D21FAB351C58FB700060C738 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D21FAB361C58FB700060C738 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D21FAB691C58FC4D0060C738 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D21FAB6A1C58FC4D0060C738 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D21FAB241C58FB700060C738 /* Build configuration list for PBXProject "InputLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21FAB321C58FB700060C738 /* Debug */,
+				D21FAB331C58FB700060C738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D21FAB341C58FB700060C738 /* Build configuration list for PBXNativeTarget "InputLib_mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21FAB351C58FB700060C738 /* Debug */,
+				D21FAB361C58FB700060C738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D21FAB681C58FC4D0060C738 /* Build configuration list for PBXNativeTarget "InputLib_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21FAB691C58FC4D0060C738 /* Debug */,
+				D21FAB6A1C58FC4D0060C738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D21FAB211C58FB700060C738 /* Project object */;
+}

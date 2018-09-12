@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{31A32169-96C7-46C9-9A4D-2C2C07A35802}</ProjectGuid>
+    <RootNamespace>UI</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Source\Common;..\..\..\Source\F3DEngine;..\..\..\Source\InputLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Common_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)_d.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\Lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\EngineSDK\include\UI mkdir ..\..\..\EngineSDK\include\UI
+xcopy ..\..\..\Source\UI\*.h ..\..\..\EngineSDK\include\UI\ /Y /D /R /S
+copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName)_d.lib
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Source\Common;..\..\..\Source\F3DEngine;..\..\..\Source\InputLib;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\EngineSDK\include\UI mkdir ..\..\..\EngineSDK\include\UI
+xcopy ..\..\..\Source\UI\*.h ..\..\..\EngineSDK\include\UI\ /Y /D /R /S
+copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\UI\FUIBrowser.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIButton.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUICheckBox.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIChildWindow.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIComboBox.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIEditBox.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIInputListener.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUILabel.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUILayer.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIListBox.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIListView.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIPictureBox.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIProgress.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIRadioButton.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUISlider.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUITextArea.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUITreeView.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUICommon.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIImageset.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIObject.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIRenderer.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIScriptSystem.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUISystem.cpp" />
+    <ClCompile Include="..\..\..\Source\UI\FUIWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\UI\FUIBrowser.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIInputListener.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUILayer.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIButton.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUICheckBox.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIChildWindow.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIComboBox.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIEditBox.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUILabel.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIListBox.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIListView.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIPictureBox.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIProgress.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIRadioButton.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUISlider.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUITextArea.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUITreeView.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIBase.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUICommon.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIImageset.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIObject.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIRenderer.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIScriptSystem.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUISystem.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUIWindow.h" />
+    <ClInclude Include="..\..\..\Source\UI\FUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\F3DEngine\F3DEngine.vcxproj">
+      <Project>{10a16b99-4437-4647-a608-f6e3c587957d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\InputLib\InputLib.vcxproj">
+      <Project>{a5ae67ae-18ca-440b-b9eb-f080a3b78d4e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,15 @@
+; Name: SMDExporter.def
+; Desc: Export the following functions
+; CopyRight (C) FlySoft Corp. All right Observed.
+
+LIBRARY SmdExporter
+EXPORTS
+    LibDescription      @1
+    LibNumberClasses    @2
+    LibClassDesc        @3
+    LibVersion          @4
+    CanAutoDefer        @5
+SECTIONS
+    .data READ WRITE
+
+; End of the file

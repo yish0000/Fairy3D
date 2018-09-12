@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+This file define a GPU program to render the multi-texture terrain. 
+//-->
+
+<effect version="1.0">
+
+    <parameter type="sampler2D" name="MainSampler">
+        <annotation type="string" name="asdf" value="8866983" />
+        <state name="mag_filter" value="linear" />
+        <state name="min_filter" value="linear" />
+        <state name="mip_filter" value="linear" />
+        <state name="address_u" value="wrap" />
+        <state name="address_v" value="wrap" />
+        <state name="address_w" value="wrap" />
+    </parameter>
+
+    <parameter type="sampler2D" name="MaskSampler" />
+    <parameter type="sampler2D" name="DetailSampler1" />
+
+    <parameter type="int" name="g_NumDetails">
+        <annotation type="string" name="asdf" value="8866983" />
+    </parameter>
+
+    <parameter type="int" name="g_UseLight" value="0" />
+    <parameter type="float" name="g_MainScale" size="3" />
+    <parameter type="float" name="g_DetailScale1" />
+
+    <shader>
+        <function name="PixelFunc" />
+
+        <code><![CDATA[
+        struct PS_OUTPUT
+        {
+            float4 RGBColor : COLOR0;   // Pixel color.
+        };
+
+        // Pixel shader function.
+        PS_OUTPUT PixelFunc( float2 vTexCoord0 : TEXCOORD0,
+                             float2 vTexCoord1 : TEXCOORD1 )
+        {
+            PS_OUTPUT Output;
+            float4 diffuse;
+
+            float4 mainColor = tex2D( MainSampler,vTexCoord0*g_MainScale );
+            float4 maskColor = tex2D( MaskSampler,vTexCoord1 );
+
+            float4 detail1 = tex2D( DetailSampler1,vTexCoord0*g_DetailScale1 );
+            float4 detail2 = tex2D( DetailSampler2,vTexCoord0*g_DetailScale2 );
+            float4 detail3 = tex2D( DetailSampler3,vTexCoord0*g_DetailScale3 );
+            float4 detail4 = tex2D( DetailSampler4,vTexCoord0*g_DetailScale4 );
+
+            diffuse = mainColor;
+
+            if( g_NumDetails >= 1 ) diffuse = maskColor[2]*detail1+(1-maskColor[2])*diffuse;
+            if( g_NumDetails >= 2 ) diffuse = maskColor[1]*detail2+(1-maskColor[1])*diffuse;
+            if( g_NumDetails >= 3 ) diffuse = maskColor[0]*detail3+(1-maskColor[0])*diffuse;
+            if( g_NumDetails == 4 ) diffuse = maskColor[3]*detail4+(1-maskColor[3])*diffuse;
+
+            if( g_UseLight )
+            {
+                float4 light = tex2D( LightSampler,vTexCoord1 );
+                diffuse[0] *= light[0];
+                diffuse[1] *= light[1];
+                diffuse[2] *= light[2];
+            }
+
+            Output.RGBColor = diffuse;
+            return Output;
+        }
+        ]]></code>
+    </shader>
+
+    <technique name="MultiTexture">
+        <annotation type="string" name="AnotherName" value="ForTerrain" />
+
+        <pass name="p0">
+            <annotation type="string" name="Second" value="sb_pass" />
+
+            <state name="tex_colorblend" index="0">
+                <member name="arg1" value="texture" />
+                <member name="arg2" value="current" />
+                <member name="operation" value="modulate" />
+            </state>
+
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="PixelFunc" profile="ps_2_0" />
+        </pass>
+    </technique>
+
+</effect>

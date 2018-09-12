@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBBFB6F2-3650-4DB2-8D7C-BEBF5DEB3AE1}</ProjectGuid>
+    <RootNamespace>libpng</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../Source/3rdSDK/zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;PNG_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>../zlib/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\..\EngineSDK\include\3rdSDK\libpng mkdir ..\..\..\..\EngineSDK\include\3rdSDK\libpng
+xcopy /r /y ..\..\..\..\Source\3rdSDK\libpng\*.h ..\..\..\..\EngineSDK\include\3rdSDK\libpng
+xcopy /r /y ..\..\..\..\EngineSDK\include\3rdSDK\zlib\*.h ..\..\..\..\EngineSDK\include\3rdSDK\libpng
+if not exist ..\..\..\..\EngineSDK\lib\win32\3rdSDK mkdir ..\..\..\..\EngineSDK\lib\win32\3rdSDK
+copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK\$(ProjectName)_d.lib
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../../Source/3rdSDK/zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../zlib/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\..\EngineSDK\include\3rdSDK\libpng mkdir ..\..\..\..\EngineSDK\include\3rdSDK\libpng
+xcopy /r /y ..\..\..\..\Source\3rdSDK\libpng\*.h ..\..\..\..\EngineSDK\include\3rdSDK\libpng
+xcopy /r /y ..\..\..\..\EngineSDK\include\3rdSDK\zlib\*.h ..\..\..\..\EngineSDK\include\3rdSDK\libpng
+if not exist ..\..\..\..\EngineSDK\lib\win32\3rdSDK mkdir ..\..\..\..\EngineSDK\lib\win32\3rdSDK
+copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\png.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngerror.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngget.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngmem.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngpread.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngread.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngrio.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngrtran.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngrutil.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngset.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngtrans.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngvcrd.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngwio.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngwrite.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngwtran.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\libpng\pngwutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\libpng\png.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\libpng\pngconf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\Source\3rdSDK\libpng\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zlib\zlib.vcxproj">
+      <Project>{147c7a50-3349-4c35-96b4-928b4ddd997b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

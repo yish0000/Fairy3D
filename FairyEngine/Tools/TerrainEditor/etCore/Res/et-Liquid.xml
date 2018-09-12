@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<effect version="1.0">
+  <parameter type="bool" name="g_EnableReflect" />
+  <parameter type="float" name="g_TexScale" />
+  <parameter type="float" name="g_TexOffset" />
+  <parameter type="float" name="g_Distortion" />
+  <parameter type="sampler2D" name="g_Surface" />
+  <parameter type="sampler2D" name="g_ReflectMap">
+    <state name="address_u" value="mirror" />
+    <state name="address_v" value="mirror" />
+  </parameter>
+  <parameter type="sampler2D" name="g_DudvMap" />
+  <parameter type="float4" name="g_CameraPos" />
+  <parameter type="float4x4" name="g_WorldViewProj" auto="true" autotype="worldviewproj" />
+
+  <shader>
+    <function name="LiquidVS" />
+    <function name="LiquidPS" />
+
+    <code>
+      <![CDATA[
+        struct VS_OUTPUT
+        {
+            float4 Pos       : POSITION;
+            float3 ObjectPos : TEXCOORD0;
+            float4 ViewCoord : TEXCOORD1;
+            float2 DupCoord0 : TEXCOORD2;
+        };
+        VS_OUTPUT LiquidVS( float3 vPosition  : POSITION,
+                            float2 vTexCoord0 : TEXCOORD0 )
+        {
+            VS_OUTPUT Out;
+            Out.Pos = mul(float4(vPosition,1.0f),g_WorldViewProj);
+            Out.ViewCoord = Out.Pos;
+            Out.ObjectPos = vPosition;
+            Out.DupCoord0 = vTexCoord0*g_TexScale + g_TexOffset;
+            return Out;
+        }
+
+        float4 LiquidPS( float3 ObjectPos : TEXCOORD0,
+                         float4 ViewCoord : TEXCOORD1,
+                         float2 DupCoord0 : TEXCOORD2 ) : COLOR
+        {
+            float4 bump = tex2D(g_DudvMap,DupCoord0);
+            bump = (bump - 0.5f) / 2.0f;
+
+            float3 eyepos = g_CameraPos.xyz;
+            float dist = distance(ObjectPos,eyepos);
+            float factor = clamp(dist/300.0f,0.0f,1.0f);
+
+            float4 projCoord = ViewCoord / ViewCoord.w;
+            projCoord = (projCoord + 1.0f)*0.5f;
+            projCoord += bump*g_Distortion*(1-factor);
+            projCoord = clamp(projCoord,0.0f,1.0f);
+
+            float4 finalColor;
+            if( g_EnableReflect )
+                finalColor = tex2D(g_ReflectMap,projCoord.xy);
+            else
+                finalColor = tex2D(g_Surface,projCoord.xy);
+
+            // Calculate the alpha value.
+            finalColor.a = 0.7f;
+            return finalColor;
+        }
+        ]]>
+    </code>
+  </shader>
+
+  <technique name="Liquid">
+    <pass name="p0">
+      <state name="vertex_shader" value="LiquidVS" />
+      <state name="pixel_shader" value="LiquidPS" profile="ps_2_0" />
+
+      <state name="alphablend_enable" value="true" />
+      <state name="srcblend" value="srcalpha" />
+      <state name="destblend" value="invsrcalpha" />
+    </pass>
+  </technique>
+</effect>

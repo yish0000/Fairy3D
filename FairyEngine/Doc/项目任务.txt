@@ -1,0 +1,124 @@
+回去做UNICODE相关转换。
+随机数生成器。
+将FairyLogger进程通信方式改为命名管道。
+
+
+Instancing技术：
+1. Hardware Instancing
+VertexBuffer1: 网格数据
+VertexBuffer2: 每个实例的数据
+SetStreamSource(0,VertexBuffer1)
+SetStreamSourceFreq(0,INDEXDATA|numMeshes)
+SetStreamSource(1,VertexBuffer2)
+SetStreamSourceFreq(1,INDEXDATA|1)
+DrawIndexedPrimitive();
+本技术只支持VS3.0以上的显卡。
+
+2. Shader Instancing
+VertexBuffer: 网格数据，实例索引
+SetStreamSource(0,VertexBuffer)
+将所有实例按照每组n个分为m组
+foreach 组
+    SetConstant(位置数据 + 该组的偏移)
+    SetConstant(颜色数据 + 该组的偏移)
+    绘制该组的所有实例
+end
+
+
+3. Constant Instancing
+VertexBuffer: 网格数据
+foreach 实例
+    SetConstant(该实例的位置)
+    SetConstant(该实例的颜色)
+    绘制该实例
+end
+
+4. Stream Instancing
+VertexBuffer1: 网格数据
+VertexBuffer2: 每个实例的数据
+SetStreamSource(0,VertexBuffer1)
+foreach 实例 in 实例列表
+    SetStreamSource(1,VertexBuffer2,offset)
+    DrawIndexedPrimitive
+end
+
+ShadowMap技术
+
+1. 创建一个RenderTarget
+2. 创建一个深度/模板缓冲区
+3. 初始化阴影投影矩阵
+4. 渲染场景到阴影图（以光源的位置和方向作为观察点）
+    1). oPos = vPos * mWVP; Depth.xy = oPos.zw;
+    2). Color = Depth.x / Depth.y;
+5. 渲染场景
+    1). 计算从观察空间到光源投影空间的矩阵 m = inv(view) * light_view * light_proj
+    2). oPos = vPos * mWVP;
+    3). vPos: 观察空间的顶点, vNormal: 观察空间的法线, vPosLight: 转换到光源投影空间的顶点
+    4). 
+
+
+修正渲染系统...(重要)
+修正材质系统...(重要)
+
+修正模型和动画系统...
+{
+    1. 可换装
+    2. 可挂接武器和特效等
+    3. 变形顶点动画
+    4. 姿态顶点动画
+}
+
+1. 字体系统
+2. 后期处理(HDR Bloom 卡通渲染等等)
+3. 延迟着色
+4. 顶点动画
+5. 虚拟文件系统(完成)
+6. 特效系统
+7. UI系统
+8. ShadowMap技术
+9. 地形贴花和模型贴花
+
+10. 后台线程加载资源
+11. 高级纹理技术(法线贴图，凹凸贴图，环境贴图Cubemap等)
+12. 尝试让引擎支持RTTI
+
+///////////////////////////////////////////////////////////////
+
+++pNumMonsters;
+pMonsters[iIndex]  注意这两个地方。
+
+数据结构
+算法分析与设计(薄弱点)
+高等数学
+3D图形学
+汇编语言
+WINDOWS核心编程
+操作系统原理Linux内核
+D3D Asm Shader
+物理引擎
+图形引擎
+音频技术
+人工智能
+游戏逻辑
+
+
+内外网中转
+外网：10.12.0.10
+内网：172.16.4.60
+
+电影服务器
+10.12.0.111
+
+
+2011/8/15
+1. 实现多线程加载NPC模型。
+2. 实现怪的攻击，追赶等逻辑。
+
+2011/8/16
+1. 实现主角召唤属下。
+2. 实现群体魔法攻击。
+
+2011/8/17
+整理代码，解决一些BUG。
+
+跟随时，分散开

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9B0B972C-E1D4-4504-8570-1A5D7681F309}</ProjectGuid>
+    <RootNamespace>lua</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\..\EngineSDK\include\3rdSDK\lua mkdir ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\lua.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\luaconf.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\lauxlib.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\lualib.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+if not exist ..\..\..\..\EngineSDK\lib\win32\3rdSDK mkdir ..\..\..\..\EngineSDK\lib\win32\3rdSDK
+copy /b /y $(OutDir)$(TargetName)$(TargetExt) ..\..\..\..\EngineSDK\lib\win32\3rdSDK\$(TargetName)_d$(TargetExt)
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\..\EngineSDK\include\3rdSDK\lua mkdir ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\lua.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\luaconf.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\lauxlib.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+xcopy /r /y ..\..\..\..\Source\3rdSDK\lua\lualib.h ..\..\..\..\EngineSDK\include\3rdSDK\lua
+if not exist ..\..\..\..\EngineSDK\lib\win32\3rdSDK mkdir ..\..\..\..\EngineSDK\lib\win32\3rdSDK
+copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lapi.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lauxlib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lbaselib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lcode.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ldblib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ldebug.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ldo.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ldump.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lfunc.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lgc.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\linit.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\liolib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\llex.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lmathlib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lmem.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\loadlib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lobject.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lopcodes.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\loslib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lparser.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lstate.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lstring.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lstrlib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ltable.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ltablib.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\ltm.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\luac.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lundump.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lvm.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\lzio.c" />
+    <ClCompile Include="..\..\..\..\Source\3rdSDK\lua\print.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lapi.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lauxlib.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lcode.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\ldebug.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\ldo.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lfunc.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lgc.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\llex.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\llimits.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lmem.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lobject.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lopcodes.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lparser.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lstate.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lstring.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\ltable.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\ltm.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lua.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\luaconf.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lualib.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lundump.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lvm.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\lua\lzio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\Source\3rdSDK\lua\ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

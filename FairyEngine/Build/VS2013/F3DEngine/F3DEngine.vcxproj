@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{10A16B99-4437-4647-A608-F6E3C587957D}</ProjectGuid>
+    <RootNamespace>F3DEngine</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../EngineSDK/include/3rdSDK;../../../EngineSDK/include/Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>F3DPCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>zlib_d.lib;libpng_d.lib;jpeglib_d.lib;Common_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../EngineSDK/lib/win32;../../../EngineSDK/lib/win32/3rdSDK;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\EngineSDK\include\F3DEngine mkdir ..\..\..\EngineSDK\include\F3DEngine
+xcopy ..\..\..\Source\F3DEngine\*.h ..\..\..\EngineSDK\include\F3DEngine\ /Y /D /R /S
+xcopy ..\..\..\Source\F3DEngine\*.inl ..\..\..\EngineSDK\include\F3DEngine\ /Y /D /R /S
+copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName)_d.lib
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../EngineSDK/include/3rdSDK;../../../EngineSDK/include/Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>F3DPCH.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>zlib.lib;libpng.lib;jpeglib.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../../EngineSDK/lib/win32;../../../EngineSDK/lib/win32/3rdSDK;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\..\EngineSDK\include\F3DEngine mkdir ..\..\..\EngineSDK\include\F3DEngine
+xcopy ..\..\..\Source\F3DEngine\*.h ..\..\..\EngineSDK\include\F3DEngine\ /Y /D /R /S
+xcopy ..\..\..\Source\F3DEngine\*.inl ..\..\..\EngineSDK\include\F3DEngine\ /Y /D /R /S
+copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMathCommon.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneNode.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneObject.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTerrainWater.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRain.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSnow.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DEnvironment.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSky.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSunMoon.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DConfig.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DEngine.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPlugin.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFlatPainter.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPixelUtil.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DWirePainter.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTrack.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DBone.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSkeleton.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DImage.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DImageCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DImageLoader.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DBMPCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DDDSCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DJPGCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DKTXCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPNGCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPVRCodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTGACodec.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DGraphicBuffer.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DOccluderQuery.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPixelBuffer.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderable.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderData.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderDevice.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderer.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderStateSet.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderTarget.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderTexture.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderWindow.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DVertexDecl.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DViewport.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DCamera.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DCameraManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFrustum.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFont.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFontManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPostEffect.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPostManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMaterial.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMaterialLoader.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMaterialManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPass.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTechnique.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DAutoParameter.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderInstance.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderObject.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderParameter.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTexture.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTextureManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DLightObject.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F2DSprite.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F2DSpriteTexture.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DResource.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DResourceManager.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DColor.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DAABB.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMatrix.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DOBB.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPlane.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPolygon.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DQuat.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRay.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSphere.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DVector.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DGFXElement.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DGFXObject.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMeshBase.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSkinMesh.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSkinModel.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DStaticModel.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F3DPCH.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneNode.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneObject.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTerrainWater.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRain.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSnow.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DEnvironment.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSky.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSunMoon.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DConfig.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DEngine.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPlugin.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFlatPainter.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPixelUtil.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DWirePainter.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTrack.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DBone.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSkeleton.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DImage.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DImageCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DImageLoader.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DBMPCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DDDSCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DJPGCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DKTXCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPNGCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPVRCodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTGACodec.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DGraphicBuffer.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DOccluderQuery.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPixelBuffer.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderable.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderData.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderDevice.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderDeviceCaps.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderer.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderStateSet.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderTarget.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderTexture.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderWindow.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DVertexDecl.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DViewport.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DCamera.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DCameraManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFrustum.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFont.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFontManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPostEffect.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPostManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMaterial.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMaterialLoader.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMaterialManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPass.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTechnique.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DAutoParameter.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderInstance.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderObject.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderParameter.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTexture.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTextureManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DLightObject.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F2DSprite.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F2DSpriteTexture.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DResource.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DResourceManager.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DClassesDef.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DColor.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTypes.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DAABB.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMath.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMathCommon.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMatrix.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DOBB.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPlane.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPolygon.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DQuat.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRay.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSphere.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DVector.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DGFXElement.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DGFXObject.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMeshBase.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSkinMesh.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSkinModel.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DStaticModel.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3D.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPCH.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{080b8604-6a72-4fdf-b1e6-b93c1d182826}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

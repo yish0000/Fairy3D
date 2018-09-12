@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>E439935D-B2A2-46AE-856D-2AA408428F33</ProjectGuid>
+    <!--$guid1$-->
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="TestLua\" />
+    <Folder Include="TestLua\Debug\" />
+    <Folder Include="TestLua\Debug\TestLua.tlog\" />
+    <Folder Include="TestLua\Release\" />
+    <Folder Include="TestLua\Release\TestLua.tlog\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestLua\Debug\stdafx.obj" />
+    <Content Include="TestLua\Debug\TestLua.Build.CppClean.log" />
+    <Content Include="TestLua\Debug\TestLua.log" />
+    <Content Include="TestLua\Debug\TestLua.obj" />
+    <Content Include="TestLua\Debug\TestLua.pch" />
+    <Content Include="TestLua\Debug\TestLua.tlog\cl.command.1.tlog" />
+    <Content Include="TestLua\Debug\TestLua.tlog\CL.read.1.tlog" />
+    <Content Include="TestLua\Debug\TestLua.tlog\CL.write.1.tlog" />
+    <Content Include="TestLua\Debug\TestLua.tlog\link.command.1.tlog" />
+    <Content Include="TestLua\Debug\TestLua.tlog\link.read.1.tlog" />
+    <Content Include="TestLua\Debug\TestLua.tlog\link.write.1.tlog" />
+    <Content Include="TestLua\Debug\TestLua.tlog\TestLua.lastbuildstate" />
+    <Content Include="TestLua\Debug\vc120.idb" />
+    <Content Include="TestLua\Debug\vc120.pdb" />
+    <Content Include="TestLua\ReadMe.txt" />
+    <Content Include="TestLua\Release\stdafx.obj" />
+    <Content Include="TestLua\Release\TestLua.log" />
+    <Content Include="TestLua\Release\TestLua.obj" />
+    <Content Include="TestLua\Release\TestLua.pch" />
+    <Content Include="TestLua\Release\TestLua.tlog\cl.command.1.tlog" />
+    <Content Include="TestLua\Release\TestLua.tlog\CL.read.1.tlog" />
+    <Content Include="TestLua\Release\TestLua.tlog\CL.write.1.tlog" />
+    <Content Include="TestLua\Release\TestLua.tlog\link.command.1.tlog" />
+    <Content Include="TestLua\Release\TestLua.tlog\link.read.1.tlog" />
+    <Content Include="TestLua\Release\TestLua.tlog\link.write.1.tlog" />
+    <Content Include="TestLua\Release\TestLua.tlog\TestLua.lastbuildstate" />
+    <Content Include="TestLua\Release\vc120.pdb" />
+    <Content Include="TestLua\stdafx.cpp" />
+    <Content Include="TestLua\stdafx.h" />
+    <Content Include="TestLua\targetver.h" />
+    <Content Include="TestLua\TestLua.cpp" />
+    <Content Include="TestLua\TestLua.vcxproj" />
+    <Content Include="TestLua\TestLua.vcxproj.filters" />
+    <Content Include="TestLua\TestLua.vcxproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestLua\test.lua" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>

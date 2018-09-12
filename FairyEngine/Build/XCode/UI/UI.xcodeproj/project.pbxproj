@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2103B5F1C775B99003268D1 /* FUILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2103B5D1C775B99003268D1 /* FUILayer.cpp */; };
+		D2103B601C775B99003268D1 /* FUILayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D2103B5E1C775B99003268D1 /* FUILayer.h */; };
+		D21FABB61C58FF880060C738 /* FUI.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FAB9F1C58FF880060C738 /* FUI.h */; };
+		D21FABB71C58FF880060C738 /* FUIBase.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA01C58FF880060C738 /* FUIBase.h */; };
+		D21FABB81C58FF880060C738 /* FUIBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA11C58FF880060C738 /* FUIBrowser.h */; };
+		D21FABB91C58FF880060C738 /* FUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA21C58FF880060C738 /* FUIButton.h */; };
+		D21FABBA1C58FF880060C738 /* FUICheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA31C58FF880060C738 /* FUICheckBox.h */; };
+		D21FABBB1C58FF880060C738 /* FUIChildWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA41C58FF880060C738 /* FUIChildWindow.h */; };
+		D21FABBC1C58FF880060C738 /* FUIComboBox.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA51C58FF880060C738 /* FUIComboBox.h */; };
+		D21FABBD1C58FF880060C738 /* FUICommon.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA61C58FF880060C738 /* FUICommon.h */; };
+		D21FABBE1C58FF880060C738 /* FUIEditBox.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA71C58FF880060C738 /* FUIEditBox.h */; };
+		D21FABBF1C58FF880060C738 /* FUIImageset.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA81C58FF880060C738 /* FUIImageset.h */; };
+		D21FABC01C58FF880060C738 /* FUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABA91C58FF880060C738 /* FUILabel.h */; };
+		D21FABC11C58FF880060C738 /* FUIListBox.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABAA1C58FF880060C738 /* FUIListBox.h */; };
+		D21FABC21C58FF880060C738 /* FUIObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABAB1C58FF880060C738 /* FUIObject.h */; };
+		D21FABC31C58FF880060C738 /* FUIPictureBox.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABAC1C58FF880060C738 /* FUIPictureBox.h */; };
+		D21FABC41C58FF880060C738 /* FUIProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABAD1C58FF880060C738 /* FUIProgress.h */; };
+		D21FABC51C58FF880060C738 /* FUIRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABAE1C58FF880060C738 /* FUIRadioButton.h */; };
+		D21FABC61C58FF880060C738 /* FUIRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABAF1C58FF880060C738 /* FUIRenderer.h */; };
+		D21FABC71C58FF880060C738 /* FUIScriptSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABB01C58FF880060C738 /* FUIScriptSystem.h */; };
+		D21FABC81C58FF880060C738 /* FUISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABB11C58FF880060C738 /* FUISlider.h */; };
+		D21FABC91C58FF880060C738 /* FUISystem.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABB21C58FF880060C738 /* FUISystem.h */; };
+		D21FABCA1C58FF880060C738 /* FUITextArea.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABB31C58FF880060C738 /* FUITextArea.h */; };
+		D21FABCB1C58FF880060C738 /* FUITreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABB41C58FF880060C738 /* FUITreeView.h */; };
+		D21FABCC1C58FF880060C738 /* FUIWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D21FABB51C58FF880060C738 /* FUIWindow.h */; };
+		D21FABE21C58FFA10060C738 /* FUIBrowser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABCD1C58FFA10060C738 /* FUIBrowser.cpp */; };
+		D21FABE31C58FFA10060C738 /* FUIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABCE1C58FFA10060C738 /* FUIButton.cpp */; };
+		D21FABE41C58FFA10060C738 /* FUICheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABCF1C58FFA10060C738 /* FUICheckBox.cpp */; };
+		D21FABE51C58FFA10060C738 /* FUIChildWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD01C58FFA10060C738 /* FUIChildWindow.cpp */; };
+		D21FABE61C58FFA10060C738 /* FUIComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD11C58FFA10060C738 /* FUIComboBox.cpp */; };
+		D21FABE71C58FFA10060C738 /* FUICommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD21C58FFA10060C738 /* FUICommon.cpp */; };
+		D21FABE81C58FFA10060C738 /* FUIEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD31C58FFA10060C738 /* FUIEditBox.cpp */; };
+		D21FABE91C58FFA10060C738 /* FUIImageset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD41C58FFA10060C738 /* FUIImageset.cpp */; };
+		D21FABEA1C58FFA10060C738 /* FUILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD51C58FFA10060C738 /* FUILabel.cpp */; };
+		D21FABEB1C58FFA10060C738 /* FUIListBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD61C58FFA10060C738 /* FUIListBox.cpp */; };
+		D21FABEC1C58FFA10060C738 /* FUIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD71C58FFA10060C738 /* FUIObject.cpp */; };
+		D21FABED1C58FFA10060C738 /* FUIPictureBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD81C58FFA10060C738 /* FUIPictureBox.cpp */; };
+		D21FABEE1C58FFA10060C738 /* FUIProgress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD91C58FFA10060C738 /* FUIProgress.cpp */; };
+		D21FABEF1C58FFA10060C738 /* FUIRadioButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDA1C58FFA10060C738 /* FUIRadioButton.cpp */; };
+		D21FABF01C58FFA10060C738 /* FUIRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDB1C58FFA10060C738 /* FUIRenderer.cpp */; };
+		D21FABF11C58FFA10060C738 /* FUIScriptSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDC1C58FFA10060C738 /* FUIScriptSystem.cpp */; };
+		D21FABF21C58FFA10060C738 /* FUISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDD1C58FFA10060C738 /* FUISlider.cpp */; };
+		D21FABF31C58FFA10060C738 /* FUISystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDE1C58FFA10060C738 /* FUISystem.cpp */; };
+		D21FABF41C58FFA10060C738 /* FUITextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDF1C58FFA10060C738 /* FUITextArea.cpp */; };
+		D21FABF51C58FFA10060C738 /* FUITreeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABE01C58FFA10060C738 /* FUITreeView.cpp */; };
+		D21FABF61C58FFA10060C738 /* FUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABE11C58FFA10060C738 /* FUIWindow.cpp */; };
+		D222E4371C89E851006EE1A9 /* FUIInputListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2EB4F041C847C480010EA2E /* FUIInputListener.cpp */; };
+		D222E4381C89E851006EE1A9 /* FUILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2103B5D1C775B99003268D1 /* FUILayer.cpp */; };
+		D222E4391C89E851006EE1A9 /* FUIBrowser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABCD1C58FFA10060C738 /* FUIBrowser.cpp */; };
+		D222E43A1C89E851006EE1A9 /* FUIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABCE1C58FFA10060C738 /* FUIButton.cpp */; };
+		D222E43B1C89E851006EE1A9 /* FUICheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABCF1C58FFA10060C738 /* FUICheckBox.cpp */; };
+		D222E43C1C89E851006EE1A9 /* FUIChildWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD01C58FFA10060C738 /* FUIChildWindow.cpp */; };
+		D222E43D1C89E851006EE1A9 /* FUIComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD11C58FFA10060C738 /* FUIComboBox.cpp */; };
+		D222E43E1C89E851006EE1A9 /* FUICommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD21C58FFA10060C738 /* FUICommon.cpp */; };
+		D222E43F1C89E851006EE1A9 /* FUIEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD31C58FFA10060C738 /* FUIEditBox.cpp */; };
+		D222E4401C89E851006EE1A9 /* FUIImageset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD41C58FFA10060C738 /* FUIImageset.cpp */; };
+		D222E4411C89E851006EE1A9 /* FUILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD51C58FFA10060C738 /* FUILabel.cpp */; };
+		D222E4421C89E851006EE1A9 /* FUIListBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD61C58FFA10060C738 /* FUIListBox.cpp */; };
+		D222E4431C89E851006EE1A9 /* FUIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD71C58FFA10060C738 /* FUIObject.cpp */; };
+		D222E4441C89E851006EE1A9 /* FUIPictureBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD81C58FFA10060C738 /* FUIPictureBox.cpp */; };
+		D222E4451C89E851006EE1A9 /* FUIProgress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABD91C58FFA10060C738 /* FUIProgress.cpp */; };
+		D222E4461C89E851006EE1A9 /* FUIRadioButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDA1C58FFA10060C738 /* FUIRadioButton.cpp */; };
+		D222E4471C89E851006EE1A9 /* FUIRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDB1C58FFA10060C738 /* FUIRenderer.cpp */; };
+		D222E4481C89E851006EE1A9 /* FUIScriptSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDC1C58FFA10060C738 /* FUIScriptSystem.cpp */; };
+		D222E4491C89E851006EE1A9 /* FUISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDD1C58FFA10060C738 /* FUISlider.cpp */; };
+		D222E44A1C89E851006EE1A9 /* FUISystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDE1C58FFA10060C738 /* FUISystem.cpp */; };
+		D222E44B1C89E851006EE1A9 /* FUITextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABDF1C58FFA10060C738 /* FUITextArea.cpp */; };
+		D222E44C1C89E851006EE1A9 /* FUITreeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABE01C58FFA10060C738 /* FUITreeView.cpp */; };
+		D222E44D1C89E851006EE1A9 /* FUIWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21FABE11C58FFA10060C738 /* FUIWindow.cpp */; };
+		D2EB4F031C847C3A0010EA2E /* FUIInputListener.h in Headers */ = {isa = PBXBuildFile; fileRef = D2EB4F021C847C3A0010EA2E /* FUIInputListener.h */; };
+		D2EB4F051C847C480010EA2E /* FUIInputListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2EB4F041C847C480010EA2E /* FUIInputListener.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D2103B5D1C775B99003268D1 /* FUILayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUILayer.cpp; path = ../../../Source/UI/FUILayer.cpp; sourceTree = "<group>"; };
+		D2103B5E1C775B99003268D1 /* FUILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUILayer.h; path = ../../../Source/UI/FUILayer.h; sourceTree = "<group>"; };
+		D21FAB771C58FE8A0060C738 /* libUI_mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI_mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21FAB981C58FECA0060C738 /* libUI_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21FAB9F1C58FF880060C738 /* FUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUI.h; path = ../../../Source/UI/FUI.h; sourceTree = "<group>"; };
+		D21FABA01C58FF880060C738 /* FUIBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIBase.h; path = ../../../Source/UI/FUIBase.h; sourceTree = "<group>"; };
+		D21FABA11C58FF880060C738 /* FUIBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIBrowser.h; path = ../../../Source/UI/FUIBrowser.h; sourceTree = "<group>"; };
+		D21FABA21C58FF880060C738 /* FUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIButton.h; path = ../../../Source/UI/FUIButton.h; sourceTree = "<group>"; };
+		D21FABA31C58FF880060C738 /* FUICheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUICheckBox.h; path = ../../../Source/UI/FUICheckBox.h; sourceTree = "<group>"; };
+		D21FABA41C58FF880060C738 /* FUIChildWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIChildWindow.h; path = ../../../Source/UI/FUIChildWindow.h; sourceTree = "<group>"; };
+		D21FABA51C58FF880060C738 /* FUIComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIComboBox.h; path = ../../../Source/UI/FUIComboBox.h; sourceTree = "<group>"; };
+		D21FABA61C58FF880060C738 /* FUICommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUICommon.h; path = ../../../Source/UI/FUICommon.h; sourceTree = "<group>"; };
+		D21FABA71C58FF880060C738 /* FUIEditBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIEditBox.h; path = ../../../Source/UI/FUIEditBox.h; sourceTree = "<group>"; };
+		D21FABA81C58FF880060C738 /* FUIImageset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIImageset.h; path = ../../../Source/UI/FUIImageset.h; sourceTree = "<group>"; };
+		D21FABA91C58FF880060C738 /* FUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUILabel.h; path = ../../../Source/UI/FUILabel.h; sourceTree = "<group>"; };
+		D21FABAA1C58FF880060C738 /* FUIListBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIListBox.h; path = ../../../Source/UI/FUIListBox.h; sourceTree = "<group>"; };
+		D21FABAB1C58FF880060C738 /* FUIObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIObject.h; path = ../../../Source/UI/FUIObject.h; sourceTree = "<group>"; };
+		D21FABAC1C58FF880060C738 /* FUIPictureBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIPictureBox.h; path = ../../../Source/UI/FUIPictureBox.h; sourceTree = "<group>"; };
+		D21FABAD1C58FF880060C738 /* FUIProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIProgress.h; path = ../../../Source/UI/FUIProgress.h; sourceTree = "<group>"; };
+		D21FABAE1C58FF880060C738 /* FUIRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIRadioButton.h; path = ../../../Source/UI/FUIRadioButton.h; sourceTree = "<group>"; };
+		D21FABAF1C58FF880060C738 /* FUIRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIRenderer.h; path = ../../../Source/UI/FUIRenderer.h; sourceTree = "<group>"; };
+		D21FABB01C58FF880060C738 /* FUIScriptSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIScriptSystem.h; path = ../../../Source/UI/FUIScriptSystem.h; sourceTree = "<group>"; };
+		D21FABB11C58FF880060C738 /* FUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUISlider.h; path = ../../../Source/UI/FUISlider.h; sourceTree = "<group>"; };
+		D21FABB21C58FF880060C738 /* FUISystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUISystem.h; path = ../../../Source/UI/FUISystem.h; sourceTree = "<group>"; };
+		D21FABB31C58FF880060C738 /* FUITextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUITextArea.h; path = ../../../Source/UI/FUITextArea.h; sourceTree = "<group>"; };
+		D21FABB41C58FF880060C738 /* FUITreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUITreeView.h; path = ../../../Source/UI/FUITreeView.h; sourceTree = "<group>"; };
+		D21FABB51C58FF880060C738 /* FUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIWindow.h; path = ../../../Source/UI/FUIWindow.h; sourceTree = "<group>"; };
+		D21FABCD1C58FFA10060C738 /* FUIBrowser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIBrowser.cpp; path = ../../../Source/UI/FUIBrowser.cpp; sourceTree = "<group>"; };
+		D21FABCE1C58FFA10060C738 /* FUIButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIButton.cpp; path = ../../../Source/UI/FUIButton.cpp; sourceTree = "<group>"; };
+		D21FABCF1C58FFA10060C738 /* FUICheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUICheckBox.cpp; path = ../../../Source/UI/FUICheckBox.cpp; sourceTree = "<group>"; };
+		D21FABD01C58FFA10060C738 /* FUIChildWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIChildWindow.cpp; path = ../../../Source/UI/FUIChildWindow.cpp; sourceTree = "<group>"; };
+		D21FABD11C58FFA10060C738 /* FUIComboBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIComboBox.cpp; path = ../../../Source/UI/FUIComboBox.cpp; sourceTree = "<group>"; };
+		D21FABD21C58FFA10060C738 /* FUICommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUICommon.cpp; path = ../../../Source/UI/FUICommon.cpp; sourceTree = "<group>"; };
+		D21FABD31C58FFA10060C738 /* FUIEditBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIEditBox.cpp; path = ../../../Source/UI/FUIEditBox.cpp; sourceTree = "<group>"; };
+		D21FABD41C58FFA10060C738 /* FUIImageset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIImageset.cpp; path = ../../../Source/UI/FUIImageset.cpp; sourceTree = "<group>"; };
+		D21FABD51C58FFA10060C738 /* FUILabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUILabel.cpp; path = ../../../Source/UI/FUILabel.cpp; sourceTree = "<group>"; };
+		D21FABD61C58FFA10060C738 /* FUIListBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIListBox.cpp; path = ../../../Source/UI/FUIListBox.cpp; sourceTree = "<group>"; };
+		D21FABD71C58FFA10060C738 /* FUIObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIObject.cpp; path = ../../../Source/UI/FUIObject.cpp; sourceTree = "<group>"; };
+		D21FABD81C58FFA10060C738 /* FUIPictureBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIPictureBox.cpp; path = ../../../Source/UI/FUIPictureBox.cpp; sourceTree = "<group>"; };
+		D21FABD91C58FFA10060C738 /* FUIProgress.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIProgress.cpp; path = ../../../Source/UI/FUIProgress.cpp; sourceTree = "<group>"; };
+		D21FABDA1C58FFA10060C738 /* FUIRadioButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIRadioButton.cpp; path = ../../../Source/UI/FUIRadioButton.cpp; sourceTree = "<group>"; };
+		D21FABDB1C58FFA10060C738 /* FUIRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIRenderer.cpp; path = ../../../Source/UI/FUIRenderer.cpp; sourceTree = "<group>"; };
+		D21FABDC1C58FFA10060C738 /* FUIScriptSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIScriptSystem.cpp; path = ../../../Source/UI/FUIScriptSystem.cpp; sourceTree = "<group>"; };
+		D21FABDD1C58FFA10060C738 /* FUISlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUISlider.cpp; path = ../../../Source/UI/FUISlider.cpp; sourceTree = "<group>"; };
+		D21FABDE1C58FFA10060C738 /* FUISystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUISystem.cpp; path = ../../../Source/UI/FUISystem.cpp; sourceTree = "<group>"; };
+		D21FABDF1C58FFA10060C738 /* FUITextArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUITextArea.cpp; path = ../../../Source/UI/FUITextArea.cpp; sourceTree = "<group>"; };
+		D21FABE01C58FFA10060C738 /* FUITreeView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUITreeView.cpp; path = ../../../Source/UI/FUITreeView.cpp; sourceTree = "<group>"; };
+		D21FABE11C58FFA10060C738 /* FUIWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIWindow.cpp; path = ../../../Source/UI/FUIWindow.cpp; sourceTree = "<group>"; };
+		D2EB4F021C847C3A0010EA2E /* FUIInputListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIInputListener.h; path = ../../../Source/UI/FUIInputListener.h; sourceTree = "<group>"; };
+		D2EB4F041C847C480010EA2E /* FUIInputListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FUIInputListener.cpp; path = ../../../Source/UI/FUIInputListener.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D21FAB741C58FE8A0060C738 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21FAB911C58FECA0060C738 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D21FAB6E1C58FE8A0060C738 = {
+			isa = PBXGroup;
+			children = (
+				D21FAB9C1C58FF650060C738 /* Classes */,
+				D21FAB781C58FE8A0060C738 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D21FAB781C58FE8A0060C738 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D21FAB771C58FE8A0060C738 /* libUI_mac.a */,
+				D21FAB981C58FECA0060C738 /* libUI_ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D21FAB9C1C58FF650060C738 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D21FAB9E1C58FF740060C738 /* Src */,
+				D21FAB9D1C58FF6B0060C738 /* Include */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D21FAB9D1C58FF6B0060C738 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				D2EB4F021C847C3A0010EA2E /* FUIInputListener.h */,
+				D2103B5E1C775B99003268D1 /* FUILayer.h */,
+				D21FAB9F1C58FF880060C738 /* FUI.h */,
+				D21FABA01C58FF880060C738 /* FUIBase.h */,
+				D21FABA11C58FF880060C738 /* FUIBrowser.h */,
+				D21FABA21C58FF880060C738 /* FUIButton.h */,
+				D21FABA31C58FF880060C738 /* FUICheckBox.h */,
+				D21FABA41C58FF880060C738 /* FUIChildWindow.h */,
+				D21FABA51C58FF880060C738 /* FUIComboBox.h */,
+				D21FABA61C58FF880060C738 /* FUICommon.h */,
+				D21FABA71C58FF880060C738 /* FUIEditBox.h */,
+				D21FABA81C58FF880060C738 /* FUIImageset.h */,
+				D21FABA91C58FF880060C738 /* FUILabel.h */,
+				D21FABAA1C58FF880060C738 /* FUIListBox.h */,
+				D21FABAB1C58FF880060C738 /* FUIObject.h */,
+				D21FABAC1C58FF880060C738 /* FUIPictureBox.h */,
+				D21FABAD1C58FF880060C738 /* FUIProgress.h */,
+				D21FABAE1C58FF880060C738 /* FUIRadioButton.h */,
+				D21FABAF1C58FF880060C738 /* FUIRenderer.h */,
+				D21FABB01C58FF880060C738 /* FUIScriptSystem.h */,
+				D21FABB11C58FF880060C738 /* FUISlider.h */,
+				D21FABB21C58FF880060C738 /* FUISystem.h */,
+				D21FABB31C58FF880060C738 /* FUITextArea.h */,
+				D21FABB41C58FF880060C738 /* FUITreeView.h */,
+				D21FABB51C58FF880060C738 /* FUIWindow.h */,
+			);
+			name = Include;
+			sourceTree = "<group>";
+		};
+		D21FAB9E1C58FF740060C738 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				D2EB4F041C847C480010EA2E /* FUIInputListener.cpp */,
+				D2103B5D1C775B99003268D1 /* FUILayer.cpp */,
+				D21FABCD1C58FFA10060C738 /* FUIBrowser.cpp */,
+				D21FABCE1C58FFA10060C738 /* FUIButton.cpp */,
+				D21FABCF1C58FFA10060C738 /* FUICheckBox.cpp */,
+				D21FABD01C58FFA10060C738 /* FUIChildWindow.cpp */,
+				D21FABD11C58FFA10060C738 /* FUIComboBox.cpp */,
+				D21FABD21C58FFA10060C738 /* FUICommon.cpp */,
+				D21FABD31C58FFA10060C738 /* FUIEditBox.cpp */,
+				D21FABD41C58FFA10060C738 /* FUIImageset.cpp */,
+				D21FABD51C58FFA10060C738 /* FUILabel.cpp */,
+				D21FABD61C58FFA10060C738 /* FUIListBox.cpp */,
+				D21FABD71C58FFA10060C738 /* FUIObject.cpp */,
+				D21FABD81C58FFA10060C738 /* FUIPictureBox.cpp */,
+				D21FABD91C58FFA10060C738 /* FUIProgress.cpp */,
+				D21FABDA1C58FFA10060C738 /* FUIRadioButton.cpp */,
+				D21FABDB1C58FFA10060C738 /* FUIRenderer.cpp */,
+				D21FABDC1C58FFA10060C738 /* FUIScriptSystem.cpp */,
+				D21FABDD1C58FFA10060C738 /* FUISlider.cpp */,
+				D21FABDE1C58FFA10060C738 /* FUISystem.cpp */,
+				D21FABDF1C58FFA10060C738 /* FUITextArea.cpp */,
+				D21FABE01C58FFA10060C738 /* FUITreeView.cpp */,
+				D21FABE11C58FFA10060C738 /* FUIWindow.cpp */,
+			);
+			name = Src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D21FAB751C58FE8A0060C738 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21FABBB1C58FF880060C738 /* FUIChildWindow.h in Headers */,
+				D21FABC01C58FF880060C738 /* FUILabel.h in Headers */,
+				D21FABB81C58FF880060C738 /* FUIBrowser.h in Headers */,
+				D21FABC11C58FF880060C738 /* FUIListBox.h in Headers */,
+				D21FABC41C58FF880060C738 /* FUIProgress.h in Headers */,
+				D21FABC51C58FF880060C738 /* FUIRadioButton.h in Headers */,
+				D21FABCA1C58FF880060C738 /* FUITextArea.h in Headers */,
+				D21FABC91C58FF880060C738 /* FUISystem.h in Headers */,
+				D21FABC31C58FF880060C738 /* FUIPictureBox.h in Headers */,
+				D2EB4F031C847C3A0010EA2E /* FUIInputListener.h in Headers */,
+				D21FABB91C58FF880060C738 /* FUIButton.h in Headers */,
+				D21FABBC1C58FF880060C738 /* FUIComboBox.h in Headers */,
+				D21FABBF1C58FF880060C738 /* FUIImageset.h in Headers */,
+				D21FABBA1C58FF880060C738 /* FUICheckBox.h in Headers */,
+				D21FABBE1C58FF880060C738 /* FUIEditBox.h in Headers */,
+				D21FABB71C58FF880060C738 /* FUIBase.h in Headers */,
+				D21FABC81C58FF880060C738 /* FUISlider.h in Headers */,
+				D21FABCB1C58FF880060C738 /* FUITreeView.h in Headers */,
+				D2103B601C775B99003268D1 /* FUILayer.h in Headers */,
+				D21FABCC1C58FF880060C738 /* FUIWindow.h in Headers */,
+				D21FABC71C58FF880060C738 /* FUIScriptSystem.h in Headers */,
+				D21FABC61C58FF880060C738 /* FUIRenderer.h in Headers */,
+				D21FABBD1C58FF880060C738 /* FUICommon.h in Headers */,
+				D21FABB61C58FF880060C738 /* FUI.h in Headers */,
+				D21FABC21C58FF880060C738 /* FUIObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21FAB921C58FECA0060C738 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D21FAB761C58FE8A0060C738 /* UI_mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D21FAB821C58FE8A0060C738 /* Build configuration list for PBXNativeTarget "UI_mac" */;
+			buildPhases = (
+				D21FAB731C58FE8A0060C738 /* Sources */,
+				D21FAB741C58FE8A0060C738 /* Frameworks */,
+				D21FAB751C58FE8A0060C738 /* Headers */,
+				D21FAB9A1C58FF000060C738 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UI_mac;
+			productName = UI;
+			productReference = D21FAB771C58FE8A0060C738 /* libUI_mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D21FAB8E1C58FECA0060C738 /* UI_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D21FAB951C58FECA0060C738 /* Build configuration list for PBXNativeTarget "UI_ios" */;
+			buildPhases = (
+				D21FAB8F1C58FECA0060C738 /* Sources */,
+				D21FAB911C58FECA0060C738 /* Frameworks */,
+				D21FAB921C58FECA0060C738 /* Headers */,
+				D21FAB9B1C58FF140060C738 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UI_ios;
+			productName = UI;
+			productReference = D21FAB981C58FECA0060C738 /* libUI_ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D21FAB6F1C58FE8A0060C738 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = YishSoft;
+				TargetAttributes = {
+					D21FAB761C58FE8A0060C738 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = D21FAB721C58FE8A0060C738 /* Build configuration list for PBXProject "UI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D21FAB6E1C58FE8A0060C738;
+			productRefGroup = D21FAB781C58FE8A0060C738 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D21FAB761C58FE8A0060C738 /* UI_mac */,
+				D21FAB8E1C58FECA0060C738 /* UI_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D21FAB9A1C58FF000060C738 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/UI\nENGINESDK_LIB=../../../EngineSDK/lib/mac\nINCLUDE_SRC_FOLDER=../../../Source/UI\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+		D21FAB9B1C58FF140060C738 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/UI\nENGINESDK_LIB=../../../EngineSDK/lib/ios\nINCLUDE_SRC_FOLDER=../../../Source/UI\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${PLATFORM_NAME} == \"iphoneos\" ]\nthen\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\nelse\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim.a\"\nfi\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D21FAB731C58FE8A0060C738 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21FABF61C58FFA10060C738 /* FUIWindow.cpp in Sources */,
+				D21FABF41C58FFA10060C738 /* FUITextArea.cpp in Sources */,
+				D21FABEC1C58FFA10060C738 /* FUIObject.cpp in Sources */,
+				D21FABE41C58FFA10060C738 /* FUICheckBox.cpp in Sources */,
+				D21FABF51C58FFA10060C738 /* FUITreeView.cpp in Sources */,
+				D21FABF11C58FFA10060C738 /* FUIScriptSystem.cpp in Sources */,
+				D2EB4F051C847C480010EA2E /* FUIInputListener.cpp in Sources */,
+				D21FABE71C58FFA10060C738 /* FUICommon.cpp in Sources */,
+				D21FABE31C58FFA10060C738 /* FUIButton.cpp in Sources */,
+				D21FABE91C58FFA10060C738 /* FUIImageset.cpp in Sources */,
+				D21FABEB1C58FFA10060C738 /* FUIListBox.cpp in Sources */,
+				D21FABF31C58FFA10060C738 /* FUISystem.cpp in Sources */,
+				D21FABEF1C58FFA10060C738 /* FUIRadioButton.cpp in Sources */,
+				D21FABEE1C58FFA10060C738 /* FUIProgress.cpp in Sources */,
+				D21FABE61C58FFA10060C738 /* FUIComboBox.cpp in Sources */,
+				D2103B5F1C775B99003268D1 /* FUILayer.cpp in Sources */,
+				D21FABE21C58FFA10060C738 /* FUIBrowser.cpp in Sources */,
+				D21FABF21C58FFA10060C738 /* FUISlider.cpp in Sources */,
+				D21FABF01C58FFA10060C738 /* FUIRenderer.cpp in Sources */,
+				D21FABE51C58FFA10060C738 /* FUIChildWindow.cpp in Sources */,
+				D21FABEA1C58FFA10060C738 /* FUILabel.cpp in Sources */,
+				D21FABE81C58FFA10060C738 /* FUIEditBox.cpp in Sources */,
+				D21FABED1C58FFA10060C738 /* FUIPictureBox.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21FAB8F1C58FECA0060C738 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D222E44D1C89E851006EE1A9 /* FUIWindow.cpp in Sources */,
+				D222E4381C89E851006EE1A9 /* FUILayer.cpp in Sources */,
+				D222E4491C89E851006EE1A9 /* FUISlider.cpp in Sources */,
+				D222E4371C89E851006EE1A9 /* FUIInputListener.cpp in Sources */,
+				D222E4461C89E851006EE1A9 /* FUIRadioButton.cpp in Sources */,
+				D222E43A1C89E851006EE1A9 /* FUIButton.cpp in Sources */,
+				D222E4481C89E851006EE1A9 /* FUIScriptSystem.cpp in Sources */,
+				D222E4411C89E851006EE1A9 /* FUILabel.cpp in Sources */,
+				D222E44A1C89E851006EE1A9 /* FUISystem.cpp in Sources */,
+				D222E4421C89E851006EE1A9 /* FUIListBox.cpp in Sources */,
+				D222E4451C89E851006EE1A9 /* FUIProgress.cpp in Sources */,
+				D222E4471C89E851006EE1A9 /* FUIRenderer.cpp in Sources */,
+				D222E4441C89E851006EE1A9 /* FUIPictureBox.cpp in Sources */,
+				D222E44B1C89E851006EE1A9 /* FUITextArea.cpp in Sources */,
+				D222E4431C89E851006EE1A9 /* FUIObject.cpp in Sources */,
+				D222E43E1C89E851006EE1A9 /* FUICommon.cpp in Sources */,
+				D222E44C1C89E851006EE1A9 /* FUITreeView.cpp in Sources */,
+				D222E43D1C89E851006EE1A9 /* FUIComboBox.cpp in Sources */,
+				D222E4401C89E851006EE1A9 /* FUIImageset.cpp in Sources */,
+				D222E4391C89E851006EE1A9 /* FUIBrowser.cpp in Sources */,
+				D222E43B1C89E851006EE1A9 /* FUICheckBox.cpp in Sources */,
+				D222E43C1C89E851006EE1A9 /* FUIChildWindow.cpp in Sources */,
+				D222E43F1C89E851006EE1A9 /* FUIEditBox.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D21FAB801C58FE8A0060C738 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D21FAB811C58FE8A0060C738 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D21FAB831C58FE8A0060C738 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D21FAB841C58FE8A0060C738 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D21FAB961C58FECA0060C738 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D21FAB971C58FECA0060C738 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D21FAB721C58FE8A0060C738 /* Build configuration list for PBXProject "UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21FAB801C58FE8A0060C738 /* Debug */,
+				D21FAB811C58FE8A0060C738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D21FAB821C58FE8A0060C738 /* Build configuration list for PBXNativeTarget "UI_mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21FAB831C58FE8A0060C738 /* Debug */,
+				D21FAB841C58FE8A0060C738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D21FAB951C58FECA0060C738 /* Build configuration list for PBXNativeTarget "UI_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21FAB961C58FECA0060C738 /* Debug */,
+				D21FAB971C58FECA0060C738 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D21FAB6F1C58FE8A0060C738 /* Project object */;
+}

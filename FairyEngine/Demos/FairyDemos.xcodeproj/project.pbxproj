@@ -1,0 +1,136 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D2F4E2EE1C547B4300BCBD7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2F4E2E81C547B4300BCBD7E /* HelloWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2F4E2891C54781E00BCBD7E;
+			remoteInfo = HelloWorld;
+		};
+		D2F4E2F01C547B4300BCBD7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2F4E2E81C547B4300BCBD7E /* HelloWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2F4E2A61C54781E00BCBD7E;
+			remoteInfo = HelloWorldTests;
+		};
+		D2F4E2F21C547B4300BCBD7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2F4E2E81C547B4300BCBD7E /* HelloWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2F4E2B11C54781E00BCBD7E;
+			remoteInfo = HelloWorldUITests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2F4E2E81C547B4300BCBD7E /* HelloWorld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HelloWorld.xcodeproj; path = HelloWorld/ios/HelloWorld.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		D2F4E2C31C547AF600BCBD7E = {
+			isa = PBXGroup;
+			children = (
+				D2F4E2E81C547B4300BCBD7E /* HelloWorld.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		D2F4E2E91C547B4300BCBD7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4E2EF1C547B4300BCBD7E /* HelloWorld.app */,
+				D2F4E2F11C547B4300BCBD7E /* HelloWorldTests.xctest */,
+				D2F4E2F31C547B4300BCBD7E /* HelloWorldUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		D2F4E2C41C547AF600BCBD7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+			};
+			buildConfigurationList = D2F4E2C71C547AF600BCBD7E /* Build configuration list for PBXProject "FairyDemos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D2F4E2C31C547AF600BCBD7E;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D2F4E2E91C547B4300BCBD7E /* Products */;
+					ProjectRef = D2F4E2E81C547B4300BCBD7E /* HelloWorld.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D2F4E2EF1C547B4300BCBD7E /* HelloWorld.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HelloWorld.app;
+			remoteRef = D2F4E2EE1C547B4300BCBD7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2F4E2F11C547B4300BCBD7E /* HelloWorldTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HelloWorldTests.xctest;
+			remoteRef = D2F4E2F01C547B4300BCBD7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2F4E2F31C547B4300BCBD7E /* HelloWorldUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HelloWorldUITests.xctest;
+			remoteRef = D2F4E2F21C547B4300BCBD7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		D2F4E2C81C547AF600BCBD7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D2F4E2C91C547AF600BCBD7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2F4E2C71C547AF600BCBD7E /* Build configuration list for PBXProject "FairyDemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2F4E2C81C547AF600BCBD7E /* Debug */,
+				D2F4E2C91C547AF600BCBD7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2F4E2C41C547AF600BCBD7E /* Project object */;
+}

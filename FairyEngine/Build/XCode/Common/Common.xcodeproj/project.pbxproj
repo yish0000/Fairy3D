@@ -1,0 +1,1080 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4901CF49195901B00075E578 /* Fairy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEEC195901B00075E578 /* Fairy.h */; };
+		4901CF4A195901B00075E578 /* FAllocBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEED195901B00075E578 /* FAllocBase.h */; };
+		4901CF4B195901B00075E578 /* FBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEEE195901B00075E578 /* FBase.h */; };
+		4901CF4C195901B00075E578 /* FBase64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEEF195901B00075E578 /* FBase64.cpp */; };
+		4901CF4D195901B00075E578 /* FBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF0195901B00075E578 /* FBase64.h */; };
+		4901CF4E195901B00075E578 /* FBaseType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF1195901B00075E578 /* FBaseType.h */; };
+		4901CF4F195901B00075E578 /* FBitset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEF2195901B00075E578 /* FBitset.cpp */; };
+		4901CF50195901B00075E578 /* FBitset.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF3195901B00075E578 /* FBitset.h */; };
+		4901CF51195901B00075E578 /* FCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF4195901B00075E578 /* FCommon.h */; };
+		4901CF52195901B00075E578 /* FCompress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEF5195901B00075E578 /* FCompress.cpp */; };
+		4901CF53195901B00075E578 /* FCompress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF6195901B00075E578 /* FCompress.h */; };
+		4901CF54195901B00075E578 /* FContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF7195901B00075E578 /* FContainer.h */; };
+		4901CF55195901B00075E578 /* FCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF8195901B00075E578 /* FCounter.h */; };
+		4901CF56195901B00075E578 /* FCRC32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEF9195901B00075E578 /* FCRC32.cpp */; };
+		4901CF57195901B00075E578 /* FCRC32.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFA195901B00075E578 /* FCRC32.h */; };
+		4901CF58195901B00075E578 /* FDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFB195901B00075E578 /* FDelegate.h */; };
+		4901CF59195901B00075E578 /* FDModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFC195901B00075E578 /* FDModule.h */; };
+		4901CF5C195901B00075E578 /* FFixArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFF195901B00075E578 /* FFixArray.h */; };
+		4901CF5D195901B00075E578 /* FFpkFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF00195901B00075E578 /* FFpkFilePack.cpp */; };
+		4901CF5E195901B00075E578 /* FFpkFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF01195901B00075E578 /* FFpkFilePack.h */; };
+		4901CF5F195901B00075E578 /* FFpkFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF02195901B00075E578 /* FFpkFileStream.cpp */; };
+		4901CF60195901B00075E578 /* FFpkFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF03195901B00075E578 /* FFpkFileStream.h */; };
+		4901CF61195901B00075E578 /* FIniFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF04195901B00075E578 /* FIniFile.cpp */; };
+		4901CF62195901B00075E578 /* FIniFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF05195901B00075E578 /* FIniFile.h */; };
+		4901CF63195901B00075E578 /* FLogManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF06195901B00075E578 /* FLogManager.cpp */; };
+		4901CF64195901B00075E578 /* FLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF07195901B00075E578 /* FLogManager.h */; };
+		4901CF65195901B00075E578 /* FLogTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF08195901B00075E578 /* FLogTarget.cpp */; };
+		4901CF66195901B00075E578 /* FLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF09195901B00075E578 /* FLogTarget.h */; };
+		4901CF67195901B00075E578 /* FMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF0A195901B00075E578 /* FMD5.cpp */; };
+		4901CF68195901B00075E578 /* FMD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF0B195901B00075E578 /* FMD5.h */; };
+		4901CF69195901B00075E578 /* FMemConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF0C195901B00075E578 /* FMemConfig.h */; };
+		4901CF6A195901B00075E578 /* FMemFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF0D195901B00075E578 /* FMemFileStream.cpp */; };
+		4901CF6B195901B00075E578 /* FMemFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF0E195901B00075E578 /* FMemFileStream.h */; };
+		4901CF6C195901B00075E578 /* FMemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF0F195901B00075E578 /* FMemManager.cpp */; };
+		4901CF6D195901B00075E578 /* FMemManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF10195901B00075E578 /* FMemManager.h */; };
+		4901CF6E195901B00075E578 /* FMemTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF11195901B00075E578 /* FMemTracker.cpp */; };
+		4901CF6F195901B00075E578 /* FMemTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF12195901B00075E578 /* FMemTracker.h */; };
+		4901CF70195901B00075E578 /* FPerformance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF13195901B00075E578 /* FPerformance.cpp */; };
+		4901CF71195901B00075E578 /* FPerformance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF14195901B00075E578 /* FPerformance.h */; };
+		4901CF72195901B00075E578 /* FPerlinNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF15195901B00075E578 /* FPerlinNoise.cpp */; };
+		4901CF73195901B00075E578 /* FPerlinNoise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF16195901B00075E578 /* FPerlinNoise.h */; };
+		4901CF74195901B00075E578 /* FProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF17195901B00075E578 /* FProperty.cpp */; };
+		4901CF75195901B00075E578 /* FProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF18195901B00075E578 /* FProperty.h */; };
+		4901CF76195901B00075E578 /* FRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF19195901B00075E578 /* FRandom.cpp */; };
+		4901CF77195901B00075E578 /* FRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF1A195901B00075E578 /* FRandom.h */; };
+		4901CF78195901B00075E578 /* FSingletonInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF1B195901B00075E578 /* FSingletonInit.cpp */; };
+		4901CF7B195901B00075E578 /* FSmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF1E195901B00075E578 /* FSmartPtr.h */; };
+		4901CF7F195901B00075E578 /* FStrUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF22195901B00075E578 /* FStrUtil.cpp */; };
+		4901CF80195901B00075E578 /* FStrUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF23195901B00075E578 /* FStrUtil.h */; };
+		4901CF81195901B00075E578 /* FSysAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF24195901B00075E578 /* FSysAPI.h */; };
+		4901CF82195901B00075E578 /* FSysFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF25195901B00075E578 /* FSysFilePack.cpp */; };
+		4901CF83195901B00075E578 /* FSysFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF26195901B00075E578 /* FSysFilePack.h */; };
+		4901CF84195901B00075E578 /* FSysFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF27195901B00075E578 /* FSysFileStream.cpp */; };
+		4901CF85195901B00075E578 /* FSysFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF28195901B00075E578 /* FSysFileStream.h */; };
+		4901CF86195901B00075E578 /* FTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF29195901B00075E578 /* FTemplate.h */; };
+		4901CF89195901B00075E578 /* FTempMemBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF2C195901B00075E578 /* FTempMemBuffer.h */; };
+		4901CF8A195901B00075E578 /* FTempMemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF2D195901B00075E578 /* FTempMemManager.cpp */; };
+		4901CF8B195901B00075E578 /* FTempMemManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF2E195901B00075E578 /* FTempMemManager.h */; };
+		4901CF8C195901B00075E578 /* FTempMemPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF2F195901B00075E578 /* FTempMemPool.cpp */; };
+		4901CF8D195901B00075E578 /* FTempMemPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF30195901B00075E578 /* FTempMemPool.h */; };
+		4901CF8E195901B00075E578 /* FTextTabFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF31195901B00075E578 /* FTextTabFile.cpp */; };
+		4901CF8F195901B00075E578 /* FTextTabFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF32195901B00075E578 /* FTextTabFile.h */; };
+		4901CF90195901B00075E578 /* FThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF33195901B00075E578 /* FThread.cpp */; };
+		4901CF91195901B00075E578 /* FThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF34195901B00075E578 /* FThread.h */; };
+		4901CF92195901B00075E578 /* FThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF35195901B00075E578 /* FThreadPool.cpp */; };
+		4901CF93195901B00075E578 /* FThreadPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF36195901B00075E578 /* FThreadPool.h */; };
+		4901CF94195901B00075E578 /* FTokenFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF37195901B00075E578 /* FTokenFile.cpp */; };
+		4901CF95195901B00075E578 /* FTokenFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF38195901B00075E578 /* FTokenFile.h */; };
+		4901CF96195901B00075E578 /* FVFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF39195901B00075E578 /* FVFile.cpp */; };
+		4901CF97195901B00075E578 /* FVFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF3A195901B00075E578 /* FVFile.h */; };
+		4901CF98195901B00075E578 /* FVFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF3B195901B00075E578 /* FVFilePack.cpp */; };
+		4901CF99195901B00075E578 /* FVFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF3C195901B00075E578 /* FVFilePack.h */; };
+		4901CF9A195901B00075E578 /* FVFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF3D195901B00075E578 /* FVFileStream.cpp */; };
+		4901CF9B195901B00075E578 /* FVFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF3E195901B00075E578 /* FVFileStream.h */; };
+		4901CF9C195901B00075E578 /* FVFileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF3F195901B00075E578 /* FVFileSystem.cpp */; };
+		4901CF9D195901B00075E578 /* FVFileSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF40195901B00075E578 /* FVFileSystem.h */; };
+		4901CF9E195901B00075E578 /* FXMLReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF41195901B00075E578 /* FXMLReader.cpp */; };
+		4901CF9F195901B00075E578 /* FXMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF42195901B00075E578 /* FXMLReader.h */; };
+		4901CFA0195901B00075E578 /* FXMLWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF43195901B00075E578 /* FXMLWriter.cpp */; };
+		4901CFA1195901B00075E578 /* FXMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF44195901B00075E578 /* FXMLWriter.h */; };
+		4901CFA2195901B00075E578 /* FZipFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF45195901B00075E578 /* FZipFilePack.cpp */; };
+		4901CFA3195901B00075E578 /* FZipFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF46195901B00075E578 /* FZipFilePack.h */; };
+		4901CFA4195901B00075E578 /* FZipFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF47195901B00075E578 /* FZipFileStream.cpp */; };
+		4901CFA5195901B00075E578 /* FZipFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF48195901B00075E578 /* FZipFileStream.h */; };
+		4914A267198A4D6400B088B7 /* FMacAPI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4914A265198A4D6400B088B7 /* FMacAPI.mm */; };
+		4914A268198A4D6400B088B7 /* FMacAPI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4914A265198A4D6400B088B7 /* FMacAPI.mm */; };
+		4914A269198A4D6400B088B7 /* FMacDModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4914A266198A4D6400B088B7 /* FMacDModule.cpp */; };
+		4914A26A198A4D6400B088B7 /* FMacDModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4914A266198A4D6400B088B7 /* FMacDModule.cpp */; };
+		496A24C0195BAE7800B034F4 /* FXMLReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF41195901B00075E578 /* FXMLReader.cpp */; };
+		496A24C1195BAE7800B034F4 /* FSysFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF25195901B00075E578 /* FSysFilePack.cpp */; };
+		496A24C2195BAE7800B034F4 /* FTempMemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF2D195901B00075E578 /* FTempMemManager.cpp */; };
+		496A24C4195BAE7800B034F4 /* FBase64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEEF195901B00075E578 /* FBase64.cpp */; };
+		496A24C5195BAE7800B034F4 /* FVFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF3D195901B00075E578 /* FVFileStream.cpp */; };
+		496A24C6195BAE7800B034F4 /* FSysFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF27195901B00075E578 /* FSysFileStream.cpp */; };
+		496A24C7195BAE7800B034F4 /* FZipFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF47195901B00075E578 /* FZipFileStream.cpp */; };
+		496A24C8195BAE7800B034F4 /* FSingletonInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF1B195901B00075E578 /* FSingletonInit.cpp */; };
+		496A24C9195BAE7800B034F4 /* FStrUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF22195901B00075E578 /* FStrUtil.cpp */; };
+		496A24CA195BAE7800B034F4 /* FCompress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEF5195901B00075E578 /* FCompress.cpp */; };
+		496A24CB195BAE7800B034F4 /* FThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF33195901B00075E578 /* FThread.cpp */; };
+		496A24CC195BAE7800B034F4 /* FIniFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF04195901B00075E578 /* FIniFile.cpp */; };
+		496A24CD195BAE7800B034F4 /* FMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF0A195901B00075E578 /* FMD5.cpp */; };
+		496A24CE195BAE7800B034F4 /* FMemTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF11195901B00075E578 /* FMemTracker.cpp */; };
+		496A24CF195BAE7800B034F4 /* FXMLWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF43195901B00075E578 /* FXMLWriter.cpp */; };
+		496A24D0195BAE7800B034F4 /* FProperty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF17195901B00075E578 /* FProperty.cpp */; };
+		496A24D1195BAE7800B034F4 /* FThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF35195901B00075E578 /* FThreadPool.cpp */; };
+		496A24D2195BAE7800B034F4 /* FLogTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF08195901B00075E578 /* FLogTarget.cpp */; };
+		496A24D3195BAE7800B034F4 /* FFpkFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF00195901B00075E578 /* FFpkFilePack.cpp */; };
+		496A24D4195BAE7800B034F4 /* FTokenFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF37195901B00075E578 /* FTokenFile.cpp */; };
+		496A24D5195BAE7800B034F4 /* FTempMemPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF2F195901B00075E578 /* FTempMemPool.cpp */; };
+		496A24D6195BAE7800B034F4 /* FMemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF0F195901B00075E578 /* FMemManager.cpp */; };
+		496A24D7195BAE7800B034F4 /* FFpkFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF02195901B00075E578 /* FFpkFileStream.cpp */; };
+		496A24D8195BAE7800B034F4 /* FRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF19195901B00075E578 /* FRandom.cpp */; };
+		496A24DA195BAE7800B034F4 /* FVFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF39195901B00075E578 /* FVFile.cpp */; };
+		496A24DB195BAE7800B034F4 /* FMemFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF0D195901B00075E578 /* FMemFileStream.cpp */; };
+		496A24DC195BAE7800B034F4 /* FPerformance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF13195901B00075E578 /* FPerformance.cpp */; };
+		496A24DD195BAE7800B034F4 /* FCRC32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEF9195901B00075E578 /* FCRC32.cpp */; };
+		496A24DE195BAE7800B034F4 /* FBitset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CEF2195901B00075E578 /* FBitset.cpp */; };
+		496A24DF195BAE7800B034F4 /* FVFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF3B195901B00075E578 /* FVFilePack.cpp */; };
+		496A24E0195BAE7800B034F4 /* FLogManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF06195901B00075E578 /* FLogManager.cpp */; };
+		496A24E2195BAE7800B034F4 /* FPerlinNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF15195901B00075E578 /* FPerlinNoise.cpp */; };
+		496A24E3195BAE7800B034F4 /* FZipFilePack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF45195901B00075E578 /* FZipFilePack.cpp */; };
+		496A24E4195BAE7800B034F4 /* FVFileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF3F195901B00075E578 /* FVFileSystem.cpp */; };
+		496A24E5195BAE7800B034F4 /* FTextTabFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4901CF31195901B00075E578 /* FTextTabFile.cpp */; };
+		496A24E8195BAE7800B034F4 /* FFixArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFF195901B00075E578 /* FFixArray.h */; };
+		496A24E9195BAE7800B034F4 /* FLogTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF09195901B00075E578 /* FLogTarget.h */; };
+		496A24EA195BAE7800B034F4 /* FPerlinNoise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF16195901B00075E578 /* FPerlinNoise.h */; };
+		496A24EB195BAE7800B034F4 /* FVFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF3E195901B00075E578 /* FVFileStream.h */; };
+		496A24EC195BAE7800B034F4 /* FDModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFC195901B00075E578 /* FDModule.h */; };
+		496A24ED195BAE7800B034F4 /* FProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF18195901B00075E578 /* FProperty.h */; };
+		496A24EF195BAE7800B034F4 /* FMemTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF12195901B00075E578 /* FMemTracker.h */; };
+		496A24F0195BAE7800B034F4 /* FTempMemPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF30195901B00075E578 /* FTempMemPool.h */; };
+		496A24F1195BAE7800B034F4 /* FXMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF42195901B00075E578 /* FXMLReader.h */; };
+		496A24F2195BAE7800B034F4 /* FBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEEE195901B00075E578 /* FBase.h */; };
+		496A24F3195BAE7800B034F4 /* FLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF07195901B00075E578 /* FLogManager.h */; };
+		496A24F4195BAE7800B034F4 /* FTextTabFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF32195901B00075E578 /* FTextTabFile.h */; };
+		496A24F5195BAE7800B034F4 /* FStrUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF23195901B00075E578 /* FStrUtil.h */; };
+		496A24F6195BAE7800B034F4 /* FSysFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF28195901B00075E578 /* FSysFileStream.h */; };
+		496A24F7195BAE7800B034F4 /* FBaseType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF1195901B00075E578 /* FBaseType.h */; };
+		496A24F8195BAE7800B034F4 /* FMemFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF0E195901B00075E578 /* FMemFileStream.h */; };
+		496A24F9195BAE7800B034F4 /* FVFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF3A195901B00075E578 /* FVFile.h */; };
+		496A24FA195BAE7800B034F4 /* FCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF8195901B00075E578 /* FCounter.h */; };
+		496A24FB195BAE7800B034F4 /* FCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF4195901B00075E578 /* FCommon.h */; };
+		496A24FC195BAE7800B034F4 /* FVFileSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF40195901B00075E578 /* FVFileSystem.h */; };
+		496A24FD195BAE7800B034F4 /* FTokenFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF38195901B00075E578 /* FTokenFile.h */; };
+		496A24FF195BAE7800B034F4 /* FMemConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF0C195901B00075E578 /* FMemConfig.h */; };
+		496A2500195BAE7800B034F4 /* FTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF29195901B00075E578 /* FTemplate.h */; };
+		496A2501195BAE7800B034F4 /* FCompress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF6195901B00075E578 /* FCompress.h */; };
+		496A2502195BAE7800B034F4 /* FThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF34195901B00075E578 /* FThread.h */; };
+		496A2503195BAE7800B034F4 /* FCRC32.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFA195901B00075E578 /* FCRC32.h */; };
+		496A2504195BAE7800B034F4 /* FThreadPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF36195901B00075E578 /* FThreadPool.h */; };
+		496A2505195BAE7800B034F4 /* FSmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF1E195901B00075E578 /* FSmartPtr.h */; };
+		496A2506195BAE7800B034F4 /* FXMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF44195901B00075E578 /* FXMLWriter.h */; };
+		496A2507195BAE7800B034F4 /* FDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEFB195901B00075E578 /* FDelegate.h */; };
+		496A2508195BAE7800B034F4 /* FFpkFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF01195901B00075E578 /* FFpkFilePack.h */; };
+		496A2509195BAE7800B034F4 /* FMD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF0B195901B00075E578 /* FMD5.h */; };
+		496A250A195BAE7800B034F4 /* FContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF7195901B00075E578 /* FContainer.h */; };
+		496A250C195BAE7800B034F4 /* FSysFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF26195901B00075E578 /* FSysFilePack.h */; };
+		496A250D195BAE7800B034F4 /* FPerformance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF14195901B00075E578 /* FPerformance.h */; };
+		496A250E195BAE7800B034F4 /* FSysAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF24195901B00075E578 /* FSysAPI.h */; };
+		496A250F195BAE7800B034F4 /* FBitset.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF3195901B00075E578 /* FBitset.h */; };
+		496A2510195BAE7800B034F4 /* FAllocBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEED195901B00075E578 /* FAllocBase.h */; };
+		496A2511195BAE7800B034F4 /* FRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF1A195901B00075E578 /* FRandom.h */; };
+		496A2512195BAE7800B034F4 /* FMemManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF10195901B00075E578 /* FMemManager.h */; };
+		496A2514195BAE7800B034F4 /* FTempMemManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF2E195901B00075E578 /* FTempMemManager.h */; };
+		496A2515195BAE7800B034F4 /* FZipFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF46195901B00075E578 /* FZipFilePack.h */; };
+		496A2516195BAE7800B034F4 /* FBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEF0195901B00075E578 /* FBase64.h */; };
+		496A2517195BAE7800B034F4 /* FTempMemBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF2C195901B00075E578 /* FTempMemBuffer.h */; };
+		496A2518195BAE7800B034F4 /* Fairy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CEEC195901B00075E578 /* Fairy.h */; };
+		496A251A195BAE7800B034F4 /* FVFilePack.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF3C195901B00075E578 /* FVFilePack.h */; };
+		496A251B195BAE7800B034F4 /* FIniFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF05195901B00075E578 /* FIniFile.h */; };
+		496A251C195BAE7800B034F4 /* FFpkFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF03195901B00075E578 /* FFpkFileStream.h */; };
+		496A251D195BAE7800B034F4 /* FZipFileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4901CF48195901B00075E578 /* FZipFileStream.h */; };
+		D222E42F1C89E789006EE1A9 /* FMacThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F230431C70774000D92A1C /* FMacThread.cpp */; };
+		D222E4321C89E812006EE1A9 /* FTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D222E4301C89E812006EE1A9 /* FTimer.cpp */; };
+		D222E4331C89E812006EE1A9 /* FTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D222E4301C89E812006EE1A9 /* FTimer.cpp */; };
+		D222E4341C89E812006EE1A9 /* FTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = D222E4311C89E812006EE1A9 /* FTimer.h */; };
+		D222E4351C89E812006EE1A9 /* FTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = D222E4311C89E812006EE1A9 /* FTimer.h */; };
+		D2F230461C70774000D92A1C /* FMacThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F230431C70774000D92A1C /* FMacThread.cpp */; };
+		D2F230471C70774000D92A1C /* FMacThread.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F230441C70774000D92A1C /* FMacThread.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4901CEE2195901490075E578 /* libCommon_mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommon_mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4901CEEC195901B00075E578 /* Fairy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fairy.h; path = ../../../Source/Common/Fairy.h; sourceTree = "<group>"; };
+		4901CEED195901B00075E578 /* FAllocBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAllocBase.h; path = ../../../Source/Common/FAllocBase.h; sourceTree = "<group>"; };
+		4901CEEE195901B00075E578 /* FBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBase.h; path = ../../../Source/Common/FBase.h; sourceTree = "<group>"; };
+		4901CEEF195901B00075E578 /* FBase64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBase64.cpp; path = ../../../Source/Common/FBase64.cpp; sourceTree = "<group>"; };
+		4901CEF0195901B00075E578 /* FBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBase64.h; path = ../../../Source/Common/FBase64.h; sourceTree = "<group>"; };
+		4901CEF1195901B00075E578 /* FBaseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBaseType.h; path = ../../../Source/Common/FBaseType.h; sourceTree = "<group>"; };
+		4901CEF2195901B00075E578 /* FBitset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBitset.cpp; path = ../../../Source/Common/FBitset.cpp; sourceTree = "<group>"; };
+		4901CEF3195901B00075E578 /* FBitset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBitset.h; path = ../../../Source/Common/FBitset.h; sourceTree = "<group>"; };
+		4901CEF4195901B00075E578 /* FCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCommon.h; path = ../../../Source/Common/FCommon.h; sourceTree = "<group>"; };
+		4901CEF5195901B00075E578 /* FCompress.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FCompress.cpp; path = ../../../Source/Common/FCompress.cpp; sourceTree = "<group>"; };
+		4901CEF6195901B00075E578 /* FCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCompress.h; path = ../../../Source/Common/FCompress.h; sourceTree = "<group>"; };
+		4901CEF7195901B00075E578 /* FContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FContainer.h; path = ../../../Source/Common/FContainer.h; sourceTree = "<group>"; };
+		4901CEF8195901B00075E578 /* FCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCounter.h; path = ../../../Source/Common/FCounter.h; sourceTree = "<group>"; };
+		4901CEF9195901B00075E578 /* FCRC32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FCRC32.cpp; path = ../../../Source/Common/FCRC32.cpp; sourceTree = "<group>"; };
+		4901CEFA195901B00075E578 /* FCRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FCRC32.h; path = ../../../Source/Common/FCRC32.h; sourceTree = "<group>"; };
+		4901CEFB195901B00075E578 /* FDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDelegate.h; path = ../../../Source/Common/FDelegate.h; sourceTree = "<group>"; };
+		4901CEFC195901B00075E578 /* FDModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDModule.h; path = ../../../Source/Common/FDModule.h; sourceTree = "<group>"; };
+		4901CEFF195901B00075E578 /* FFixArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFixArray.h; path = ../../../Source/Common/FFixArray.h; sourceTree = "<group>"; };
+		4901CF00195901B00075E578 /* FFpkFilePack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FFpkFilePack.cpp; path = ../../../Source/Common/FFpkFilePack.cpp; sourceTree = "<group>"; };
+		4901CF01195901B00075E578 /* FFpkFilePack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFpkFilePack.h; path = ../../../Source/Common/FFpkFilePack.h; sourceTree = "<group>"; };
+		4901CF02195901B00075E578 /* FFpkFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FFpkFileStream.cpp; path = ../../../Source/Common/FFpkFileStream.cpp; sourceTree = "<group>"; };
+		4901CF03195901B00075E578 /* FFpkFileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFpkFileStream.h; path = ../../../Source/Common/FFpkFileStream.h; sourceTree = "<group>"; };
+		4901CF04195901B00075E578 /* FIniFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FIniFile.cpp; path = ../../../Source/Common/FIniFile.cpp; sourceTree = "<group>"; };
+		4901CF05195901B00075E578 /* FIniFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FIniFile.h; path = ../../../Source/Common/FIniFile.h; sourceTree = "<group>"; };
+		4901CF06195901B00075E578 /* FLogManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FLogManager.cpp; path = ../../../Source/Common/FLogManager.cpp; sourceTree = "<group>"; };
+		4901CF07195901B00075E578 /* FLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLogManager.h; path = ../../../Source/Common/FLogManager.h; sourceTree = "<group>"; };
+		4901CF08195901B00075E578 /* FLogTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FLogTarget.cpp; path = ../../../Source/Common/FLogTarget.cpp; sourceTree = "<group>"; };
+		4901CF09195901B00075E578 /* FLogTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLogTarget.h; path = ../../../Source/Common/FLogTarget.h; sourceTree = "<group>"; };
+		4901CF0A195901B00075E578 /* FMD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMD5.cpp; path = ../../../Source/Common/FMD5.cpp; sourceTree = "<group>"; };
+		4901CF0B195901B00075E578 /* FMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMD5.h; path = ../../../Source/Common/FMD5.h; sourceTree = "<group>"; };
+		4901CF0C195901B00075E578 /* FMemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMemConfig.h; path = ../../../Source/Common/FMemConfig.h; sourceTree = "<group>"; };
+		4901CF0D195901B00075E578 /* FMemFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMemFileStream.cpp; path = ../../../Source/Common/FMemFileStream.cpp; sourceTree = "<group>"; };
+		4901CF0E195901B00075E578 /* FMemFileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMemFileStream.h; path = ../../../Source/Common/FMemFileStream.h; sourceTree = "<group>"; };
+		4901CF0F195901B00075E578 /* FMemManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMemManager.cpp; path = ../../../Source/Common/FMemManager.cpp; sourceTree = "<group>"; };
+		4901CF10195901B00075E578 /* FMemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMemManager.h; path = ../../../Source/Common/FMemManager.h; sourceTree = "<group>"; };
+		4901CF11195901B00075E578 /* FMemTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMemTracker.cpp; path = ../../../Source/Common/FMemTracker.cpp; sourceTree = "<group>"; };
+		4901CF12195901B00075E578 /* FMemTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMemTracker.h; path = ../../../Source/Common/FMemTracker.h; sourceTree = "<group>"; };
+		4901CF13195901B00075E578 /* FPerformance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FPerformance.cpp; path = ../../../Source/Common/FPerformance.cpp; sourceTree = "<group>"; };
+		4901CF14195901B00075E578 /* FPerformance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPerformance.h; path = ../../../Source/Common/FPerformance.h; sourceTree = "<group>"; };
+		4901CF15195901B00075E578 /* FPerlinNoise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FPerlinNoise.cpp; path = ../../../Source/Common/FPerlinNoise.cpp; sourceTree = "<group>"; };
+		4901CF16195901B00075E578 /* FPerlinNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPerlinNoise.h; path = ../../../Source/Common/FPerlinNoise.h; sourceTree = "<group>"; };
+		4901CF17195901B00075E578 /* FProperty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FProperty.cpp; path = ../../../Source/Common/FProperty.cpp; sourceTree = "<group>"; };
+		4901CF18195901B00075E578 /* FProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FProperty.h; path = ../../../Source/Common/FProperty.h; sourceTree = "<group>"; };
+		4901CF19195901B00075E578 /* FRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FRandom.cpp; path = ../../../Source/Common/FRandom.cpp; sourceTree = "<group>"; };
+		4901CF1A195901B00075E578 /* FRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRandom.h; path = ../../../Source/Common/FRandom.h; sourceTree = "<group>"; };
+		4901CF1B195901B00075E578 /* FSingletonInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FSingletonInit.cpp; path = ../../../Source/Common/FSingletonInit.cpp; sourceTree = "<group>"; };
+		4901CF1E195901B00075E578 /* FSmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSmartPtr.h; path = ../../../Source/Common/FSmartPtr.h; sourceTree = "<group>"; };
+		4901CF22195901B00075E578 /* FStrUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FStrUtil.cpp; path = ../../../Source/Common/FStrUtil.cpp; sourceTree = "<group>"; };
+		4901CF23195901B00075E578 /* FStrUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FStrUtil.h; path = ../../../Source/Common/FStrUtil.h; sourceTree = "<group>"; };
+		4901CF24195901B00075E578 /* FSysAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSysAPI.h; path = ../../../Source/Common/FSysAPI.h; sourceTree = "<group>"; };
+		4901CF25195901B00075E578 /* FSysFilePack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FSysFilePack.cpp; path = ../../../Source/Common/FSysFilePack.cpp; sourceTree = "<group>"; };
+		4901CF26195901B00075E578 /* FSysFilePack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSysFilePack.h; path = ../../../Source/Common/FSysFilePack.h; sourceTree = "<group>"; };
+		4901CF27195901B00075E578 /* FSysFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FSysFileStream.cpp; path = ../../../Source/Common/FSysFileStream.cpp; sourceTree = "<group>"; };
+		4901CF28195901B00075E578 /* FSysFileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSysFileStream.h; path = ../../../Source/Common/FSysFileStream.h; sourceTree = "<group>"; };
+		4901CF29195901B00075E578 /* FTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTemplate.h; path = ../../../Source/Common/FTemplate.h; sourceTree = "<group>"; };
+		4901CF2C195901B00075E578 /* FTempMemBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTempMemBuffer.h; path = ../../../Source/Common/FTempMemBuffer.h; sourceTree = "<group>"; };
+		4901CF2D195901B00075E578 /* FTempMemManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FTempMemManager.cpp; path = ../../../Source/Common/FTempMemManager.cpp; sourceTree = "<group>"; };
+		4901CF2E195901B00075E578 /* FTempMemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTempMemManager.h; path = ../../../Source/Common/FTempMemManager.h; sourceTree = "<group>"; };
+		4901CF2F195901B00075E578 /* FTempMemPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FTempMemPool.cpp; path = ../../../Source/Common/FTempMemPool.cpp; sourceTree = "<group>"; };
+		4901CF30195901B00075E578 /* FTempMemPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTempMemPool.h; path = ../../../Source/Common/FTempMemPool.h; sourceTree = "<group>"; };
+		4901CF31195901B00075E578 /* FTextTabFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FTextTabFile.cpp; path = ../../../Source/Common/FTextTabFile.cpp; sourceTree = "<group>"; };
+		4901CF32195901B00075E578 /* FTextTabFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTextTabFile.h; path = ../../../Source/Common/FTextTabFile.h; sourceTree = "<group>"; };
+		4901CF33195901B00075E578 /* FThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FThread.cpp; path = ../../../Source/Common/FThread.cpp; sourceTree = "<group>"; };
+		4901CF34195901B00075E578 /* FThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FThread.h; path = ../../../Source/Common/FThread.h; sourceTree = "<group>"; };
+		4901CF35195901B00075E578 /* FThreadPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FThreadPool.cpp; path = ../../../Source/Common/FThreadPool.cpp; sourceTree = "<group>"; };
+		4901CF36195901B00075E578 /* FThreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FThreadPool.h; path = ../../../Source/Common/FThreadPool.h; sourceTree = "<group>"; };
+		4901CF37195901B00075E578 /* FTokenFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FTokenFile.cpp; path = ../../../Source/Common/FTokenFile.cpp; sourceTree = "<group>"; };
+		4901CF38195901B00075E578 /* FTokenFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTokenFile.h; path = ../../../Source/Common/FTokenFile.h; sourceTree = "<group>"; };
+		4901CF39195901B00075E578 /* FVFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FVFile.cpp; path = ../../../Source/Common/FVFile.cpp; sourceTree = "<group>"; };
+		4901CF3A195901B00075E578 /* FVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVFile.h; path = ../../../Source/Common/FVFile.h; sourceTree = "<group>"; };
+		4901CF3B195901B00075E578 /* FVFilePack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FVFilePack.cpp; path = ../../../Source/Common/FVFilePack.cpp; sourceTree = "<group>"; };
+		4901CF3C195901B00075E578 /* FVFilePack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVFilePack.h; path = ../../../Source/Common/FVFilePack.h; sourceTree = "<group>"; };
+		4901CF3D195901B00075E578 /* FVFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FVFileStream.cpp; path = ../../../Source/Common/FVFileStream.cpp; sourceTree = "<group>"; };
+		4901CF3E195901B00075E578 /* FVFileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVFileStream.h; path = ../../../Source/Common/FVFileStream.h; sourceTree = "<group>"; };
+		4901CF3F195901B00075E578 /* FVFileSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FVFileSystem.cpp; path = ../../../Source/Common/FVFileSystem.cpp; sourceTree = "<group>"; };
+		4901CF40195901B00075E578 /* FVFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FVFileSystem.h; path = ../../../Source/Common/FVFileSystem.h; sourceTree = "<group>"; };
+		4901CF41195901B00075E578 /* FXMLReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FXMLReader.cpp; path = ../../../Source/Common/FXMLReader.cpp; sourceTree = "<group>"; };
+		4901CF42195901B00075E578 /* FXMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXMLReader.h; path = ../../../Source/Common/FXMLReader.h; sourceTree = "<group>"; };
+		4901CF43195901B00075E578 /* FXMLWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = FXMLWriter.cpp; path = ../../../Source/Common/FXMLWriter.cpp; sourceTree = "<group>"; };
+		4901CF44195901B00075E578 /* FXMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXMLWriter.h; path = ../../../Source/Common/FXMLWriter.h; sourceTree = "<group>"; };
+		4901CF45195901B00075E578 /* FZipFilePack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FZipFilePack.cpp; path = ../../../Source/Common/FZipFilePack.cpp; sourceTree = "<group>"; };
+		4901CF46195901B00075E578 /* FZipFilePack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZipFilePack.h; path = ../../../Source/Common/FZipFilePack.h; sourceTree = "<group>"; };
+		4901CF47195901B00075E578 /* FZipFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FZipFileStream.cpp; path = ../../../Source/Common/FZipFileStream.cpp; sourceTree = "<group>"; };
+		4901CF48195901B00075E578 /* FZipFileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZipFileStream.h; path = ../../../Source/Common/FZipFileStream.h; sourceTree = "<group>"; };
+		4914A265198A4D6400B088B7 /* FMacAPI.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = FMacAPI.mm; path = ../../../Source/Common/Platform/Mac/FMacAPI.mm; sourceTree = "<group>"; };
+		4914A266198A4D6400B088B7 /* FMacDModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMacDModule.cpp; path = ../../../Source/Common/Platform/Mac/FMacDModule.cpp; sourceTree = "<group>"; };
+		496A2521195BAE7800B034F4 /* libCommon_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommon_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20C8BFD1C566CD4000BBB6A /* libjson_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjson_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/libjson_mac.a"; sourceTree = "<group>"; };
+		D20C8BFE1C566CD4000BBB6A /* liblua_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/liblua_mac.a"; sourceTree = "<group>"; };
+		D20C8C011C566CF5000BBB6A /* libjson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjson_ios.a; path = "../3rdSDK/json/build/Debug-iphoneos/libjson_ios.a"; sourceTree = "<group>"; };
+		D20C8C021C566CF5000BBB6A /* liblua_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua_ios.a; path = "../3rdSDK/lua/build/Debug-iphoneos/liblua_ios.a"; sourceTree = "<group>"; };
+		D20C8C031C566CF5000BBB6A /* libminilzo_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminilzo_ios.a; path = "../3rdSDK/minilzo/build/Debug-iphoneos/libminilzo_ios.a"; sourceTree = "<group>"; };
+		D20C8C041C566CF5000BBB6A /* libtinyxml_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtinyxml_ios.a; path = "../3rdSDK/tinyxml/build/Debug-iphoneos/libtinyxml_ios.a"; sourceTree = "<group>"; };
+		D20C8C051C566CF5000BBB6A /* libzlib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlib_ios.a; path = "../3rdSDK/zlib/build/Debug-iphoneos/libzlib_ios.a"; sourceTree = "<group>"; };
+		D20C8C061C566CF5000BBB6A /* libzziplib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzziplib_ios.a; path = "../3rdSDK/zziplib/build/Debug-iphoneos/libzziplib_ios.a"; sourceTree = "<group>"; };
+		D20C8C071C566CF5000BBB6A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		D20C8C081C566CF5000BBB6A /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/usr/lib/libc.tbd; sourceTree = DEVELOPER_DIR; };
+		D222E4301C89E812006EE1A9 /* FTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FTimer.cpp; path = ../../../Source/Common/FTimer.cpp; sourceTree = "<group>"; };
+		D222E4311C89E812006EE1A9 /* FTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTimer.h; path = ../../../Source/Common/FTimer.h; sourceTree = "<group>"; };
+		D22E37DF1C205F8D0087E3A1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D22E37E01C205F8D0087E3A1 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		D24B30FF1AD0E1920025058C /* libtinyxml_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtinyxml_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/libtinyxml_mac.a"; sourceTree = "<group>"; };
+		D26283881AB87E8A00FC776B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		D26283891AB87E8A00FC776B /* libc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libc.dylib; path = usr/lib/libc.dylib; sourceTree = SDKROOT; };
+		D264BF961AE011CD0069E51F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		D274CD581AC078F300572881 /* libminilzo_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminilzo_ios.a; path = "../3rdSDK/minilzo/build/Debug-iphoneos/libminilzo_ios.a"; sourceTree = "<group>"; };
+		D274CD591AC078F300572881 /* libzlib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlib_ios.a; path = "../3rdSDK/zlib/build/Debug-iphoneos/libzlib_ios.a"; sourceTree = "<group>"; };
+		D274CD5C1AC0793000572881 /* libminilzo_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminilzo_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/libminilzo_mac.a"; sourceTree = "<group>"; };
+		D274CD5D1AC0793000572881 /* libzlib_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlib_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/libzlib_mac.a"; sourceTree = "<group>"; };
+		D274CD5E1AC0793000572881 /* libzziplib_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzziplib_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/libzziplib_mac.a"; sourceTree = "<group>"; };
+		D27C195B1AD57D480004E4F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D27C195D1AD57D5F0004E4F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D28D8B191AC5A34A0059949D /* libzziplib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzziplib_ios.a; path = "../3rdSDK/zziplib/build/Debug-iphoneos/libzziplib_ios.a"; sourceTree = "<group>"; };
+		D2AD6BB51ABAFCDE0021A6F2 /* libtinyxml_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtinyxml_mac.a; path = ../3rdSDK/tinyxml/build/Debug/libtinyxml_mac.a; sourceTree = "<group>"; };
+		D2AD6BB91ABAFCFD0021A6F2 /* libtinyxml_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtinyxml_ios.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug-iphoneos/libtinyxml_ios.a"; sourceTree = "<group>"; };
+		D2F230431C70774000D92A1C /* FMacThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FMacThread.cpp; path = ../../../Source/Common/Platform/Mac/FMacThread.cpp; sourceTree = "<group>"; };
+		D2F230441C70774000D92A1C /* FMacThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMacThread.h; path = ../../../Source/Common/Platform/Mac/FMacThread.h; sourceTree = "<group>"; };
+		D2F230451C70774000D92A1C /* FMacTypes.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FMacTypes.inl; path = ../../../Source/Common/Platform/Mac/FMacTypes.inl; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4901CEDF195901490075E578 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496A24E6195BAE7800B034F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4901CED9195901490075E578 = {
+			isa = PBXGroup;
+			children = (
+				4901CEE91959017F0075E578 /* Classes */,
+				D26283B61AB884B600FC776B /* Frameworks */,
+				4901CEE3195901490075E578 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4901CEE3195901490075E578 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4901CEE2195901490075E578 /* libCommon_mac.a */,
+				496A2521195BAE7800B034F4 /* libCommon_ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4901CEE91959017F0075E578 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4901CFAE1959036B0075E578 /* Platform */,
+				4901CFAD195903530075E578 /* Thread */,
+				4901CFAC195902B10075E578 /* Random */,
+				4901CFAA195902040075E578 /* Encrypt */,
+				4901CFA9195901E00075E578 /* Utilities */,
+				4901CFA8195901D10075E578 /* FileSystem */,
+				4901CFA7195901C90075E578 /* Memory */,
+				4901CFA6195901BF0075E578 /* BaseTypes */,
+				4901CEF4195901B00075E578 /* FCommon.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4901CFA6195901BF0075E578 /* BaseTypes */ = {
+			isa = PBXGroup;
+			children = (
+				D2F230451C70774000D92A1C /* FMacTypes.inl */,
+				4901CEF1195901B00075E578 /* FBaseType.h */,
+				4901CEF7195901B00075E578 /* FContainer.h */,
+				4901CEEE195901B00075E578 /* FBase.h */,
+				4901CF29195901B00075E578 /* FTemplate.h */,
+				4901CEEC195901B00075E578 /* Fairy.h */,
+			);
+			name = BaseTypes;
+			sourceTree = "<group>";
+		};
+		4901CFA7195901C90075E578 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				4901CEED195901B00075E578 /* FAllocBase.h */,
+				4901CF1E195901B00075E578 /* FSmartPtr.h */,
+				4901CF2C195901B00075E578 /* FTempMemBuffer.h */,
+				4901CF2D195901B00075E578 /* FTempMemManager.cpp */,
+				4901CF2E195901B00075E578 /* FTempMemManager.h */,
+				4901CF2F195901B00075E578 /* FTempMemPool.cpp */,
+				4901CF30195901B00075E578 /* FTempMemPool.h */,
+				4901CF0C195901B00075E578 /* FMemConfig.h */,
+				4901CF0D195901B00075E578 /* FMemFileStream.cpp */,
+				4901CF0E195901B00075E578 /* FMemFileStream.h */,
+				4901CF0F195901B00075E578 /* FMemManager.cpp */,
+				4901CF10195901B00075E578 /* FMemManager.h */,
+				4901CF11195901B00075E578 /* FMemTracker.cpp */,
+				4901CF12195901B00075E578 /* FMemTracker.h */,
+			);
+			name = Memory;
+			sourceTree = "<group>";
+		};
+		4901CFA8195901D10075E578 /* FileSystem */ = {
+			isa = PBXGroup;
+			children = (
+				D28D8B1D1AC5A4CD0059949D /* FPK */,
+				D28D8B1C1AC5A4BF0059949D /* ZIP */,
+				D28D8B1B1AC5A4A90059949D /* Folder */,
+				4901CF39195901B00075E578 /* FVFile.cpp */,
+				4901CF3A195901B00075E578 /* FVFile.h */,
+				4901CF3B195901B00075E578 /* FVFilePack.cpp */,
+				4901CF3C195901B00075E578 /* FVFilePack.h */,
+				4901CF3D195901B00075E578 /* FVFileStream.cpp */,
+				4901CF3E195901B00075E578 /* FVFileStream.h */,
+				4901CF3F195901B00075E578 /* FVFileSystem.cpp */,
+				4901CF40195901B00075E578 /* FVFileSystem.h */,
+			);
+			name = FileSystem;
+			sourceTree = "<group>";
+		};
+		4901CFA9195901E00075E578 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D28D8B201AC5A5820059949D /* TextFile */,
+				D28D8B1F1AC5A5360059949D /* XML */,
+				D222E4301C89E812006EE1A9 /* FTimer.cpp */,
+				D222E4311C89E812006EE1A9 /* FTimer.h */,
+				4901CF13195901B00075E578 /* FPerformance.cpp */,
+				4901CF14195901B00075E578 /* FPerformance.h */,
+				4901CF17195901B00075E578 /* FProperty.cpp */,
+				4901CF18195901B00075E578 /* FProperty.h */,
+				4901CF1B195901B00075E578 /* FSingletonInit.cpp */,
+				4901CF22195901B00075E578 /* FStrUtil.cpp */,
+				4901CF23195901B00075E578 /* FStrUtil.h */,
+				4901CEFF195901B00075E578 /* FFixArray.h */,
+				4901CEF6195901B00075E578 /* FCompress.h */,
+				4901CEF5195901B00075E578 /* FCompress.cpp */,
+				4901CEF8195901B00075E578 /* FCounter.h */,
+				4901CEFB195901B00075E578 /* FDelegate.h */,
+				4901CEF3195901B00075E578 /* FBitset.h */,
+				4901CEF2195901B00075E578 /* FBitset.cpp */,
+				4901CF06195901B00075E578 /* FLogManager.cpp */,
+				4901CF07195901B00075E578 /* FLogManager.h */,
+				4901CF08195901B00075E578 /* FLogTarget.cpp */,
+				4901CF09195901B00075E578 /* FLogTarget.h */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		4901CFAA195902040075E578 /* Encrypt */ = {
+			isa = PBXGroup;
+			children = (
+				4901CEEF195901B00075E578 /* FBase64.cpp */,
+				4901CEF0195901B00075E578 /* FBase64.h */,
+				4901CF0B195901B00075E578 /* FMD5.h */,
+				4901CF0A195901B00075E578 /* FMD5.cpp */,
+				4901CEFA195901B00075E578 /* FCRC32.h */,
+				4901CEF9195901B00075E578 /* FCRC32.cpp */,
+			);
+			name = Encrypt;
+			sourceTree = "<group>";
+		};
+		4901CFAC195902B10075E578 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF15195901B00075E578 /* FPerlinNoise.cpp */,
+				4901CF16195901B00075E578 /* FPerlinNoise.h */,
+				4901CF19195901B00075E578 /* FRandom.cpp */,
+				4901CF1A195901B00075E578 /* FRandom.h */,
+			);
+			name = Random;
+			sourceTree = "<group>";
+		};
+		4901CFAD195903530075E578 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF33195901B00075E578 /* FThread.cpp */,
+				4901CF34195901B00075E578 /* FThread.h */,
+				4901CF35195901B00075E578 /* FThreadPool.cpp */,
+				4901CF36195901B00075E578 /* FThreadPool.h */,
+			);
+			name = Thread;
+			sourceTree = "<group>";
+		};
+		4901CFAE1959036B0075E578 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				D2F230431C70774000D92A1C /* FMacThread.cpp */,
+				D2F230441C70774000D92A1C /* FMacThread.h */,
+				4901CEFC195901B00075E578 /* FDModule.h */,
+				4914A265198A4D6400B088B7 /* FMacAPI.mm */,
+				4914A266198A4D6400B088B7 /* FMacDModule.cpp */,
+				4901CF24195901B00075E578 /* FSysAPI.h */,
+			);
+			name = Platform;
+			sourceTree = "<group>";
+		};
+		D26283B61AB884B600FC776B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D20C8C011C566CF5000BBB6A /* libjson_ios.a */,
+				D20C8C021C566CF5000BBB6A /* liblua_ios.a */,
+				D20C8C031C566CF5000BBB6A /* libminilzo_ios.a */,
+				D20C8C041C566CF5000BBB6A /* libtinyxml_ios.a */,
+				D20C8C051C566CF5000BBB6A /* libzlib_ios.a */,
+				D20C8C061C566CF5000BBB6A /* libzziplib_ios.a */,
+				D20C8C071C566CF5000BBB6A /* libc++.tbd */,
+				D20C8C081C566CF5000BBB6A /* libc.tbd */,
+				D20C8BFD1C566CD4000BBB6A /* libjson_mac.a */,
+				D20C8BFE1C566CD4000BBB6A /* liblua_mac.a */,
+				D22E37DF1C205F8D0087E3A1 /* libc++.tbd */,
+				D22E37E01C205F8D0087E3A1 /* libc.tbd */,
+				D264BF961AE011CD0069E51F /* libiconv.dylib */,
+				D27C195D1AD57D5F0004E4F6 /* Foundation.framework */,
+				D27C195B1AD57D480004E4F6 /* Foundation.framework */,
+				D24B30FF1AD0E1920025058C /* libtinyxml_mac.a */,
+				D28D8B191AC5A34A0059949D /* libzziplib_ios.a */,
+				D274CD5C1AC0793000572881 /* libminilzo_mac.a */,
+				D274CD5D1AC0793000572881 /* libzlib_mac.a */,
+				D274CD5E1AC0793000572881 /* libzziplib_mac.a */,
+				D274CD581AC078F300572881 /* libminilzo_ios.a */,
+				D274CD591AC078F300572881 /* libzlib_ios.a */,
+				D2AD6BB91ABAFCFD0021A6F2 /* libtinyxml_ios.a */,
+				D2AD6BB51ABAFCDE0021A6F2 /* libtinyxml_mac.a */,
+				D26283891AB87E8A00FC776B /* libc.dylib */,
+				D26283881AB87E8A00FC776B /* libc++.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D28D8B1B1AC5A4A90059949D /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF25195901B00075E578 /* FSysFilePack.cpp */,
+				4901CF26195901B00075E578 /* FSysFilePack.h */,
+				4901CF27195901B00075E578 /* FSysFileStream.cpp */,
+				4901CF28195901B00075E578 /* FSysFileStream.h */,
+			);
+			name = Folder;
+			sourceTree = "<group>";
+		};
+		D28D8B1C1AC5A4BF0059949D /* ZIP */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF45195901B00075E578 /* FZipFilePack.cpp */,
+				4901CF46195901B00075E578 /* FZipFilePack.h */,
+				4901CF47195901B00075E578 /* FZipFileStream.cpp */,
+				4901CF48195901B00075E578 /* FZipFileStream.h */,
+			);
+			name = ZIP;
+			sourceTree = "<group>";
+		};
+		D28D8B1D1AC5A4CD0059949D /* FPK */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF01195901B00075E578 /* FFpkFilePack.h */,
+				4901CF00195901B00075E578 /* FFpkFilePack.cpp */,
+				4901CF02195901B00075E578 /* FFpkFileStream.cpp */,
+				4901CF03195901B00075E578 /* FFpkFileStream.h */,
+			);
+			name = FPK;
+			sourceTree = "<group>";
+		};
+		D28D8B1F1AC5A5360059949D /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF41195901B00075E578 /* FXMLReader.cpp */,
+				4901CF42195901B00075E578 /* FXMLReader.h */,
+				4901CF43195901B00075E578 /* FXMLWriter.cpp */,
+				4901CF44195901B00075E578 /* FXMLWriter.h */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
+		D28D8B201AC5A5820059949D /* TextFile */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF37195901B00075E578 /* FTokenFile.cpp */,
+				4901CF38195901B00075E578 /* FTokenFile.h */,
+				4901CF31195901B00075E578 /* FTextTabFile.cpp */,
+				4901CF32195901B00075E578 /* FTextTabFile.h */,
+				4901CF05195901B00075E578 /* FIniFile.h */,
+				4901CF04195901B00075E578 /* FIniFile.cpp */,
+			);
+			name = TextFile;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4901CEE0195901490075E578 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4901CF5C195901B00075E578 /* FFixArray.h in Headers */,
+				4901CF66195901B00075E578 /* FLogTarget.h in Headers */,
+				4901CF73195901B00075E578 /* FPerlinNoise.h in Headers */,
+				4901CF9B195901B00075E578 /* FVFileStream.h in Headers */,
+				4901CF59195901B00075E578 /* FDModule.h in Headers */,
+				4901CF75195901B00075E578 /* FProperty.h in Headers */,
+				4901CF6F195901B00075E578 /* FMemTracker.h in Headers */,
+				4901CF8D195901B00075E578 /* FTempMemPool.h in Headers */,
+				4901CF9F195901B00075E578 /* FXMLReader.h in Headers */,
+				4901CF4B195901B00075E578 /* FBase.h in Headers */,
+				4901CF64195901B00075E578 /* FLogManager.h in Headers */,
+				4901CF8F195901B00075E578 /* FTextTabFile.h in Headers */,
+				4901CF80195901B00075E578 /* FStrUtil.h in Headers */,
+				4901CF85195901B00075E578 /* FSysFileStream.h in Headers */,
+				4901CF4E195901B00075E578 /* FBaseType.h in Headers */,
+				4901CF6B195901B00075E578 /* FMemFileStream.h in Headers */,
+				4901CF97195901B00075E578 /* FVFile.h in Headers */,
+				4901CF55195901B00075E578 /* FCounter.h in Headers */,
+				4901CF51195901B00075E578 /* FCommon.h in Headers */,
+				4901CF9D195901B00075E578 /* FVFileSystem.h in Headers */,
+				4901CF95195901B00075E578 /* FTokenFile.h in Headers */,
+				4901CF69195901B00075E578 /* FMemConfig.h in Headers */,
+				4901CF86195901B00075E578 /* FTemplate.h in Headers */,
+				4901CF53195901B00075E578 /* FCompress.h in Headers */,
+				4901CF91195901B00075E578 /* FThread.h in Headers */,
+				4901CF57195901B00075E578 /* FCRC32.h in Headers */,
+				4901CF93195901B00075E578 /* FThreadPool.h in Headers */,
+				D222E4341C89E812006EE1A9 /* FTimer.h in Headers */,
+				4901CF7B195901B00075E578 /* FSmartPtr.h in Headers */,
+				4901CFA1195901B00075E578 /* FXMLWriter.h in Headers */,
+				4901CF58195901B00075E578 /* FDelegate.h in Headers */,
+				4901CF5E195901B00075E578 /* FFpkFilePack.h in Headers */,
+				4901CF68195901B00075E578 /* FMD5.h in Headers */,
+				4901CF54195901B00075E578 /* FContainer.h in Headers */,
+				4901CF83195901B00075E578 /* FSysFilePack.h in Headers */,
+				4901CF71195901B00075E578 /* FPerformance.h in Headers */,
+				D2F230471C70774000D92A1C /* FMacThread.h in Headers */,
+				4901CF81195901B00075E578 /* FSysAPI.h in Headers */,
+				4901CF50195901B00075E578 /* FBitset.h in Headers */,
+				4901CF4A195901B00075E578 /* FAllocBase.h in Headers */,
+				4901CF77195901B00075E578 /* FRandom.h in Headers */,
+				4901CF6D195901B00075E578 /* FMemManager.h in Headers */,
+				4901CF8B195901B00075E578 /* FTempMemManager.h in Headers */,
+				4901CFA3195901B00075E578 /* FZipFilePack.h in Headers */,
+				4901CF4D195901B00075E578 /* FBase64.h in Headers */,
+				4901CF89195901B00075E578 /* FTempMemBuffer.h in Headers */,
+				4901CF49195901B00075E578 /* Fairy.h in Headers */,
+				4901CF99195901B00075E578 /* FVFilePack.h in Headers */,
+				4901CF62195901B00075E578 /* FIniFile.h in Headers */,
+				4901CF60195901B00075E578 /* FFpkFileStream.h in Headers */,
+				4901CFA5195901B00075E578 /* FZipFileStream.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496A24E7195BAE7800B034F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496A24E8195BAE7800B034F4 /* FFixArray.h in Headers */,
+				496A24E9195BAE7800B034F4 /* FLogTarget.h in Headers */,
+				496A24EA195BAE7800B034F4 /* FPerlinNoise.h in Headers */,
+				496A24EB195BAE7800B034F4 /* FVFileStream.h in Headers */,
+				496A24EC195BAE7800B034F4 /* FDModule.h in Headers */,
+				496A24ED195BAE7800B034F4 /* FProperty.h in Headers */,
+				496A24EF195BAE7800B034F4 /* FMemTracker.h in Headers */,
+				496A24F0195BAE7800B034F4 /* FTempMemPool.h in Headers */,
+				496A24F1195BAE7800B034F4 /* FXMLReader.h in Headers */,
+				496A24F2195BAE7800B034F4 /* FBase.h in Headers */,
+				496A24F3195BAE7800B034F4 /* FLogManager.h in Headers */,
+				496A24F4195BAE7800B034F4 /* FTextTabFile.h in Headers */,
+				496A24F5195BAE7800B034F4 /* FStrUtil.h in Headers */,
+				496A24F6195BAE7800B034F4 /* FSysFileStream.h in Headers */,
+				496A24F7195BAE7800B034F4 /* FBaseType.h in Headers */,
+				496A24F8195BAE7800B034F4 /* FMemFileStream.h in Headers */,
+				496A24F9195BAE7800B034F4 /* FVFile.h in Headers */,
+				496A24FA195BAE7800B034F4 /* FCounter.h in Headers */,
+				496A24FB195BAE7800B034F4 /* FCommon.h in Headers */,
+				D222E4351C89E812006EE1A9 /* FTimer.h in Headers */,
+				496A24FC195BAE7800B034F4 /* FVFileSystem.h in Headers */,
+				496A24FD195BAE7800B034F4 /* FTokenFile.h in Headers */,
+				496A24FF195BAE7800B034F4 /* FMemConfig.h in Headers */,
+				496A2500195BAE7800B034F4 /* FTemplate.h in Headers */,
+				496A2501195BAE7800B034F4 /* FCompress.h in Headers */,
+				496A2502195BAE7800B034F4 /* FThread.h in Headers */,
+				496A2503195BAE7800B034F4 /* FCRC32.h in Headers */,
+				496A2504195BAE7800B034F4 /* FThreadPool.h in Headers */,
+				496A2505195BAE7800B034F4 /* FSmartPtr.h in Headers */,
+				496A2506195BAE7800B034F4 /* FXMLWriter.h in Headers */,
+				496A2507195BAE7800B034F4 /* FDelegate.h in Headers */,
+				496A2508195BAE7800B034F4 /* FFpkFilePack.h in Headers */,
+				496A2509195BAE7800B034F4 /* FMD5.h in Headers */,
+				496A250A195BAE7800B034F4 /* FContainer.h in Headers */,
+				496A250C195BAE7800B034F4 /* FSysFilePack.h in Headers */,
+				496A250D195BAE7800B034F4 /* FPerformance.h in Headers */,
+				496A250E195BAE7800B034F4 /* FSysAPI.h in Headers */,
+				496A250F195BAE7800B034F4 /* FBitset.h in Headers */,
+				496A2510195BAE7800B034F4 /* FAllocBase.h in Headers */,
+				496A2511195BAE7800B034F4 /* FRandom.h in Headers */,
+				496A2512195BAE7800B034F4 /* FMemManager.h in Headers */,
+				496A2514195BAE7800B034F4 /* FTempMemManager.h in Headers */,
+				496A2515195BAE7800B034F4 /* FZipFilePack.h in Headers */,
+				496A2516195BAE7800B034F4 /* FBase64.h in Headers */,
+				496A2517195BAE7800B034F4 /* FTempMemBuffer.h in Headers */,
+				496A2518195BAE7800B034F4 /* Fairy.h in Headers */,
+				496A251A195BAE7800B034F4 /* FVFilePack.h in Headers */,
+				496A251B195BAE7800B034F4 /* FIniFile.h in Headers */,
+				496A251C195BAE7800B034F4 /* FFpkFileStream.h in Headers */,
+				496A251D195BAE7800B034F4 /* FZipFileStream.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4901CEE1195901490075E578 /* Common_mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4901CEE6195901490075E578 /* Build configuration list for PBXNativeTarget "Common_mac" */;
+			buildPhases = (
+				4901CEDE195901490075E578 /* Sources */,
+				4901CEDF195901490075E578 /* Frameworks */,
+				4901CEE0195901490075E578 /* Headers */,
+				D251E2E71ACFB76C008E56E8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Common_mac;
+			productName = Common;
+			productReference = 4901CEE2195901490075E578 /* libCommon_mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		496A24BD195BAE7800B034F4 /* Common_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496A251E195BAE7800B034F4 /* Build configuration list for PBXNativeTarget "Common_ios" */;
+			buildPhases = (
+				496A24BE195BAE7800B034F4 /* Sources */,
+				496A24E6195BAE7800B034F4 /* Frameworks */,
+				496A24E7195BAE7800B034F4 /* Headers */,
+				D251E2E81ACFB7B8008E56E8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Common_ios;
+			productName = Common;
+			productReference = 496A2521195BAE7800B034F4 /* libCommon_ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4901CEDA195901490075E578 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = YishSoft;
+			};
+			buildConfigurationList = 4901CEDD195901490075E578 /* Build configuration list for PBXProject "Common" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4901CED9195901490075E578;
+			productRefGroup = 4901CEE3195901490075E578 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4901CEE1195901490075E578 /* Common_mac */,
+				496A24BD195BAE7800B034F4 /* Common_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D251E2E71ACFB76C008E56E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/Common\nENGINESDK_LIB=../../../EngineSDK/lib/mac\nINCLUDE_SRC_FOLDER=../../../Source/Common\nINCLUDE_SRC_FOLDER_MAC=${INCLUDE_SRC_FOLDER}/Platform/Mac\nINCLUDE_SRC_FOLDER_IOS=${INCLUDE_SRC_FOLDER}/Platform/IOS\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\nmkdir -p \"${ENGINESDK_INCLUDE}/Platform/Mac\"\nmkdir -p \"${ENGINESDK_INCLUDE}/Platform/IOS\"\n\nif [ ${CONFIGURATION} == \"Debug\" ]\n    then\n    cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\n    cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/\n#cp -p ${INCLUDE_SRC_FOLDER_MAC}/*.h ${ENGINESDK_INCLUDE}/Platform/Mac/\n#cp -p ${INCLUDE_SRC_FOLDER_IOS}/*.h ${ENGINESDK_INCLUDE}/Platform/IOS/\ncp -p ${INCLUDE_SRC_FOLDER_MAC}/*.inl ${ENGINESDK_INCLUDE}/Platform/Mac/\n#cp -p ${INCLUDE_SRC_FOLDER_IOS}/*.inl ${ENGINESDK_INCLUDE}/Platform/IOS/";
+		};
+		D251E2E81ACFB7B8008E56E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/Common\nENGINESDK_LIB=../../../EngineSDK/lib/ios\nINCLUDE_SRC_FOLDER=../../../Source/Common\nINCLUDE_SRC_FOLDER_MAC=${INCLUDE_SRC_FOLDER}/Platform/Mac\nINCLUDE_SRC_FOLDER_IOS=${INCLUDE_SRC_FOLDER}/Platform/IOS\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\nmkdir -p \"${ENGINESDK_INCLUDE}/Platform/Mac\"\nmkdir -p \"${ENGINESDK_INCLUDE}/Platform/IOS\"\n\nif [ ${PLATFORM_NAME} == \"iphoneos\" ]\n    then\n    if [ ${CONFIGURATION} == \"Debug\" ]\n        then\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\n    else\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\n    fi\nelse\n    if [ ${CONFIGURATION} == \"Debug\" ]\n        then\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim_d.a\"\n    else\n        cp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim.a\"\n    fi\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/\n#cp -p ${INCLUDE_SRC_FOLDER_MAC}/*.h ${ENGINESDK_INCLUDE}/Platform/Mac/\n#cp -p ${INCLUDE_SRC_FOLDER_IOS}/*.h ${ENGINESDK_INCLUDE}/Platform/IOS/\ncp -p ${INCLUDE_SRC_FOLDER_MAC}/*.inl ${ENGINESDK_INCLUDE}/Platform/Mac/\n#cp -p ${INCLUDE_SRC_FOLDER_IOS}/*.inl ${ENGINESDK_INCLUDE}/Platform/IOS/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4901CEDE195901490075E578 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4901CF9E195901B00075E578 /* FXMLReader.cpp in Sources */,
+				4901CF82195901B00075E578 /* FSysFilePack.cpp in Sources */,
+				4901CF8A195901B00075E578 /* FTempMemManager.cpp in Sources */,
+				4901CF4C195901B00075E578 /* FBase64.cpp in Sources */,
+				4914A269198A4D6400B088B7 /* FMacDModule.cpp in Sources */,
+				4901CF9A195901B00075E578 /* FVFileStream.cpp in Sources */,
+				4901CF84195901B00075E578 /* FSysFileStream.cpp in Sources */,
+				4901CFA4195901B00075E578 /* FZipFileStream.cpp in Sources */,
+				4901CF78195901B00075E578 /* FSingletonInit.cpp in Sources */,
+				4901CF7F195901B00075E578 /* FStrUtil.cpp in Sources */,
+				4901CF52195901B00075E578 /* FCompress.cpp in Sources */,
+				4901CF90195901B00075E578 /* FThread.cpp in Sources */,
+				4901CF61195901B00075E578 /* FIniFile.cpp in Sources */,
+				4901CF67195901B00075E578 /* FMD5.cpp in Sources */,
+				4901CF6E195901B00075E578 /* FMemTracker.cpp in Sources */,
+				D222E4321C89E812006EE1A9 /* FTimer.cpp in Sources */,
+				4901CFA0195901B00075E578 /* FXMLWriter.cpp in Sources */,
+				4901CF74195901B00075E578 /* FProperty.cpp in Sources */,
+				4901CF92195901B00075E578 /* FThreadPool.cpp in Sources */,
+				4914A267198A4D6400B088B7 /* FMacAPI.mm in Sources */,
+				4901CF65195901B00075E578 /* FLogTarget.cpp in Sources */,
+				4901CF5D195901B00075E578 /* FFpkFilePack.cpp in Sources */,
+				4901CF94195901B00075E578 /* FTokenFile.cpp in Sources */,
+				4901CF8C195901B00075E578 /* FTempMemPool.cpp in Sources */,
+				4901CF6C195901B00075E578 /* FMemManager.cpp in Sources */,
+				4901CF5F195901B00075E578 /* FFpkFileStream.cpp in Sources */,
+				4901CF76195901B00075E578 /* FRandom.cpp in Sources */,
+				4901CF96195901B00075E578 /* FVFile.cpp in Sources */,
+				4901CF6A195901B00075E578 /* FMemFileStream.cpp in Sources */,
+				4901CF70195901B00075E578 /* FPerformance.cpp in Sources */,
+				4901CF56195901B00075E578 /* FCRC32.cpp in Sources */,
+				4901CF4F195901B00075E578 /* FBitset.cpp in Sources */,
+				4901CF98195901B00075E578 /* FVFilePack.cpp in Sources */,
+				D2F230461C70774000D92A1C /* FMacThread.cpp in Sources */,
+				4901CF63195901B00075E578 /* FLogManager.cpp in Sources */,
+				4901CF72195901B00075E578 /* FPerlinNoise.cpp in Sources */,
+				4901CFA2195901B00075E578 /* FZipFilePack.cpp in Sources */,
+				4901CF9C195901B00075E578 /* FVFileSystem.cpp in Sources */,
+				4901CF8E195901B00075E578 /* FTextTabFile.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		496A24BE195BAE7800B034F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496A24C0195BAE7800B034F4 /* FXMLReader.cpp in Sources */,
+				496A24C1195BAE7800B034F4 /* FSysFilePack.cpp in Sources */,
+				496A24C2195BAE7800B034F4 /* FTempMemManager.cpp in Sources */,
+				496A24C4195BAE7800B034F4 /* FBase64.cpp in Sources */,
+				4914A26A198A4D6400B088B7 /* FMacDModule.cpp in Sources */,
+				496A24C5195BAE7800B034F4 /* FVFileStream.cpp in Sources */,
+				496A24C6195BAE7800B034F4 /* FSysFileStream.cpp in Sources */,
+				496A24C7195BAE7800B034F4 /* FZipFileStream.cpp in Sources */,
+				496A24C8195BAE7800B034F4 /* FSingletonInit.cpp in Sources */,
+				496A24C9195BAE7800B034F4 /* FStrUtil.cpp in Sources */,
+				496A24CA195BAE7800B034F4 /* FCompress.cpp in Sources */,
+				496A24CB195BAE7800B034F4 /* FThread.cpp in Sources */,
+				496A24CC195BAE7800B034F4 /* FIniFile.cpp in Sources */,
+				496A24CD195BAE7800B034F4 /* FMD5.cpp in Sources */,
+				496A24CE195BAE7800B034F4 /* FMemTracker.cpp in Sources */,
+				D222E4331C89E812006EE1A9 /* FTimer.cpp in Sources */,
+				496A24CF195BAE7800B034F4 /* FXMLWriter.cpp in Sources */,
+				496A24D0195BAE7800B034F4 /* FProperty.cpp in Sources */,
+				496A24D1195BAE7800B034F4 /* FThreadPool.cpp in Sources */,
+				4914A268198A4D6400B088B7 /* FMacAPI.mm in Sources */,
+				496A24D2195BAE7800B034F4 /* FLogTarget.cpp in Sources */,
+				496A24D3195BAE7800B034F4 /* FFpkFilePack.cpp in Sources */,
+				496A24D4195BAE7800B034F4 /* FTokenFile.cpp in Sources */,
+				496A24D5195BAE7800B034F4 /* FTempMemPool.cpp in Sources */,
+				496A24D6195BAE7800B034F4 /* FMemManager.cpp in Sources */,
+				496A24D7195BAE7800B034F4 /* FFpkFileStream.cpp in Sources */,
+				496A24D8195BAE7800B034F4 /* FRandom.cpp in Sources */,
+				496A24DA195BAE7800B034F4 /* FVFile.cpp in Sources */,
+				496A24DB195BAE7800B034F4 /* FMemFileStream.cpp in Sources */,
+				496A24DC195BAE7800B034F4 /* FPerformance.cpp in Sources */,
+				496A24DD195BAE7800B034F4 /* FCRC32.cpp in Sources */,
+				496A24DE195BAE7800B034F4 /* FBitset.cpp in Sources */,
+				496A24DF195BAE7800B034F4 /* FVFilePack.cpp in Sources */,
+				D222E42F1C89E789006EE1A9 /* FMacThread.cpp in Sources */,
+				496A24E0195BAE7800B034F4 /* FLogManager.cpp in Sources */,
+				496A24E2195BAE7800B034F4 /* FPerlinNoise.cpp in Sources */,
+				496A24E3195BAE7800B034F4 /* FZipFilePack.cpp in Sources */,
+				496A24E4195BAE7800B034F4 /* FVFileSystem.cpp in Sources */,
+				496A24E5195BAE7800B034F4 /* FTextTabFile.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4901CEE4195901490075E578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../../Source/3rdSDK/zziplib,
+					../../../Source/3rdSDK/tinyxml,
+					../../../Source/3rdSDK/minilzo,
+					../../../Source/3rdSDK/zlib,
+					../../../Source/3rdSDK,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4901CEE5195901490075E578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../../Source/3rdSDK/zziplib,
+					../../../Source/3rdSDK/tinyxml,
+					../../../Source/3rdSDK/minilzo,
+					../../../Source/3rdSDK/zlib,
+					../../../Source/3rdSDK,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4901CEE7195901490075E578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/tinyxml/build/Debug,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4901CEE8195901490075E578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/tinyxml/build/Debug,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		496A251F195BAE7800B034F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug-iphoneos",
+					"/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/minilzo/build/Debug-iphoneos",
+					"/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/zlib/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug",
+					"/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/zziplib/build/Debug-iphoneos",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = Common_ios;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		496A2520195BAE7800B034F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug-iphoneos",
+					"/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/minilzo/build/Debug-iphoneos",
+					"/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/zlib/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug",
+					"/Users/yish/Projects/Fairy3D/trunk/FairyEngine/Build/XCode/3rdSDK/zziplib/build/Debug-iphoneos",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = Common_ios;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4901CEDD195901490075E578 /* Build configuration list for PBXProject "Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4901CEE4195901490075E578 /* Debug */,
+				4901CEE5195901490075E578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4901CEE6195901490075E578 /* Build configuration list for PBXNativeTarget "Common_mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4901CEE7195901490075E578 /* Debug */,
+				4901CEE8195901490075E578 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496A251E195BAE7800B034F4 /* Build configuration list for PBXNativeTarget "Common_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496A251F195BAE7800B034F4 /* Debug */,
+				496A2520195BAE7800B034F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4901CEDA195901490075E578 /* Project object */;
+}

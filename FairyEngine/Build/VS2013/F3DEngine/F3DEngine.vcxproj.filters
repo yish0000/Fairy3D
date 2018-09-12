@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{c77ac4d6-2e56-4ec2-8290-7d61db9e7313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Octree">
+      <UniqueIdentifier>{a58e4312-1bf9-42a7-9627-e09d2c9e729a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Terrain">
+      <UniqueIdentifier>{6f245c3c-d984-48f5-8ecf-81772d045cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Terrain\Water">
+      <UniqueIdentifier>{43b212ad-7864-44d5-a7ad-4824ac1c2aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Terrain\Decal">
+      <UniqueIdentifier>{121b19b3-94f9-451f-8316-853a3c7fbce9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Vegetation">
+      <UniqueIdentifier>{afffb661-ea4e-4ed6-a03f-93e2389349c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Vegetation\Grass">
+      <UniqueIdentifier>{1e0d435f-1080-42bd-9623-be08bf419377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Vegetation\Tree">
+      <UniqueIdentifier>{820a36d8-4eec-4615-8d7d-f6c55f92cd9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Weather">
+      <UniqueIdentifier>{be116d5a-4015-4358-b53f-ac22cc578f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\BSP">
+      <UniqueIdentifier>{0fdab44e-2c88-4bb5-ae61-d9279fc5cb38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Environment">
+      <UniqueIdentifier>{1f160235-e07b-47b6-87cb-6559ca4ffbfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Main">
+      <UniqueIdentifier>{96ed391b-c288-4ba7-9bd3-5315610f3c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{36b0c04b-7170-441c-882b-5e65345dae8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{697936fd-7403-4cf2-8b20-e2de0580eb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation\Skeleton">
+      <UniqueIdentifier>{a309abfc-a96c-44da-bcd2-c790ffe63198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{77b94958-9668-4b47-9b50-b5fc5a126a3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\Codecs">
+      <UniqueIdentifier>{aec6dd8c-ac0b-400c-8e3b-a5a5586c491f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{abd0741f-3623-484d-898b-0afcb5b45b78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Camera">
+      <UniqueIdentifier>{2b6782f8-510f-4bee-9625-a42856e430a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Font">
+      <UniqueIdentifier>{8fcc7e37-c4f4-4772-a8e7-3f4870c30a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Post Process">
+      <UniqueIdentifier>{bafdbfb0-f99a-460f-a37d-43b444c7877e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Material">
+      <UniqueIdentifier>{bcd2679e-c9bc-4496-b2f2-61c1c6b46b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Material\Shader">
+      <UniqueIdentifier>{f679129c-e96f-47e4-801d-13578c0e9a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Material\Texture">
+      <UniqueIdentifier>{b1f67fe7-81df-4cd5-8084-89751321c28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Light">
+      <UniqueIdentifier>{666ca4ce-6c52-4716-abc2-1c71753383c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Light\LPP">
+      <UniqueIdentifier>{8bb09745-8e46-45f1-b244-20f6c5951a66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\2D">
+      <UniqueIdentifier>{e5772779-356b-4bd6-95a1-6199b35270fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Shadow">
+      <UniqueIdentifier>{2e372e29-3ec8-4a21-8130-f37a4fe3a8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Shadow\ShadowMap">
+      <UniqueIdentifier>{c0b198ac-81e3-46c5-9230-20fbca8b616e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render\Shadow\ShadowVolume">
+      <UniqueIdentifier>{831f07a4-e4db-4851-83b1-8b013ac5f374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{6e7deaa7-fd31-450c-af00-f9f173ec85ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{8d9e599e-c58b-438f-b8c2-2a84092bf568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Base Type">
+      <UniqueIdentifier>{e767c06c-4d43-4ea0-acc2-8009f8f005eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Math Lib">
+      <UniqueIdentifier>{69164fc2-537f-466e-8891-233fcc7e075d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GFX">
+      <UniqueIdentifier>{6a1fcc73-853c-4921-a142-7ff60ea69cb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GFX\Billboard">
+      <UniqueIdentifier>{e1cb8f47-2958-4b00-8c90-aa731789f7e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GFX\Ribbon Tail">
+      <UniqueIdentifier>{d9f23931-0e47-449d-ae98-ff5a524ec4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GFX\Particle System">
+      <UniqueIdentifier>{9cc88299-1e2f-4cce-9ef0-6329a6e75328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{eb8e1174-6f30-4ef8-a4e1-69f57f4dc869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\StaticModel">
+      <UniqueIdentifier>{c8038c84-a2d6-448c-b712-baff39e716dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\SkinModel">
+      <UniqueIdentifier>{1c023abc-63f5-4295-8af5-b3504fa21dfd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneNode.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneObject.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTerrainWater.cpp">
+      <Filter>Scene\Terrain\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRain.cpp">
+      <Filter>Scene\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSnow.cpp">
+      <Filter>Scene\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DEnvironment.cpp">
+      <Filter>Scene\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSky.cpp">
+      <Filter>Scene\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSunMoon.cpp">
+      <Filter>Scene\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DConfig.cpp">
+      <Filter>Engine Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DEngine.cpp">
+      <Filter>Engine Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPlugin.cpp">
+      <Filter>Engine Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFlatPainter.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPixelUtil.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DWirePainter.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTrack.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DBone.cpp">
+      <Filter>Animation\Skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSkeleton.cpp">
+      <Filter>Animation\Skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DImage.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DImageCodec.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DImageLoader.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DBMPCodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DDDSCodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DJPGCodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DKTXCodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPNGCodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPVRCodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTGACodec.cpp">
+      <Filter>Image\Codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DGraphicBuffer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DOccluderQuery.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPixelBuffer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderable.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderData.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderDevice.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderer.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderStateSet.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderTarget.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderTexture.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRenderWindow.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DVertexDecl.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DViewport.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DCamera.cpp">
+      <Filter>Render\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DCameraManager.cpp">
+      <Filter>Render\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFrustum.cpp">
+      <Filter>Render\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFont.cpp">
+      <Filter>Render\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DFontManager.cpp">
+      <Filter>Render\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPostEffect.cpp">
+      <Filter>Render\Post Process</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPostManager.cpp">
+      <Filter>Render\Post Process</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMaterial.cpp">
+      <Filter>Render\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMaterialLoader.cpp">
+      <Filter>Render\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMaterialManager.cpp">
+      <Filter>Render\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPass.cpp">
+      <Filter>Render\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTechnique.cpp">
+      <Filter>Render\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DAutoParameter.cpp">
+      <Filter>Render\Material\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderInstance.cpp">
+      <Filter>Render\Material\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderManager.cpp">
+      <Filter>Render\Material\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderObject.cpp">
+      <Filter>Render\Material\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DShaderParameter.cpp">
+      <Filter>Render\Material\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTexture.cpp">
+      <Filter>Render\Material\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DTextureManager.cpp">
+      <Filter>Render\Material\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DLightObject.cpp">
+      <Filter>Render\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F2DSprite.cpp">
+      <Filter>Render\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F2DSpriteTexture.cpp">
+      <Filter>Render\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DResourceManager.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DColor.cpp">
+      <Filter>Base\Base Type</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DAABB.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMatrix.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DOBB.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPlane.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPolygon.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DQuat.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DRay.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSphere.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DVector.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DGFXElement.cpp">
+      <Filter>GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DGFXObject.cpp">
+      <Filter>GFX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMeshBase.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSkinMesh.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DSkinModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DStaticModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DPCH.cpp" />
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DMathCommon.cpp">
+      <Filter>Base\Math Lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneNode.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneObject.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTerrainWater.h">
+      <Filter>Scene\Terrain\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRain.h">
+      <Filter>Scene\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSnow.h">
+      <Filter>Scene\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DEnvironment.h">
+      <Filter>Scene\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSky.h">
+      <Filter>Scene\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSunMoon.h">
+      <Filter>Scene\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DConfig.h">
+      <Filter>Engine Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DEngine.h">
+      <Filter>Engine Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPlugin.h">
+      <Filter>Engine Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFlatPainter.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPixelUtil.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DWirePainter.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTrack.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DBone.h">
+      <Filter>Animation\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSkeleton.h">
+      <Filter>Animation\Skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DImage.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DImageCodec.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DImageLoader.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DBMPCodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DDDSCodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DJPGCodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DKTXCodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPNGCodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPVRCodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTGACodec.h">
+      <Filter>Image\Codecs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DGraphicBuffer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DOccluderQuery.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPixelBuffer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderable.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderData.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderDevice.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderDeviceCaps.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderStateSet.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderTarget.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderTexture.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRenderWindow.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DVertexDecl.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DViewport.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DCamera.h">
+      <Filter>Render\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DCameraManager.h">
+      <Filter>Render\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFrustum.h">
+      <Filter>Render\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFont.h">
+      <Filter>Render\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DFontManager.h">
+      <Filter>Render\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPostEffect.h">
+      <Filter>Render\Post Process</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPostManager.h">
+      <Filter>Render\Post Process</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMaterial.h">
+      <Filter>Render\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMaterialLoader.h">
+      <Filter>Render\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMaterialManager.h">
+      <Filter>Render\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPass.h">
+      <Filter>Render\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTechnique.h">
+      <Filter>Render\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DAutoParameter.h">
+      <Filter>Render\Material\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderInstance.h">
+      <Filter>Render\Material\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderManager.h">
+      <Filter>Render\Material\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderObject.h">
+      <Filter>Render\Material\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DShaderParameter.h">
+      <Filter>Render\Material\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTexture.h">
+      <Filter>Render\Material\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTextureManager.h">
+      <Filter>Render\Material\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DLightObject.h">
+      <Filter>Render\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F2DSprite.h">
+      <Filter>Render\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F2DSpriteTexture.h">
+      <Filter>Render\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DResourceManager.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DClassesDef.h">
+      <Filter>Base\Base Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DColor.h">
+      <Filter>Base\Base Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DTypes.h">
+      <Filter>Base\Base Type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DAABB.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMath.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMathCommon.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMatrix.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DOBB.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPlane.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPolygon.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DQuat.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DRay.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSphere.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DVector.h">
+      <Filter>Base\Math Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DGFXElement.h">
+      <Filter>GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DGFXObject.h">
+      <Filter>GFX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DMeshBase.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSkinMesh.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DSkinModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DStaticModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3D.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DPCH.h" />
+  </ItemGroup>
+</Project>

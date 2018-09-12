@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D20C8BC91C56667C000BBB6A /* FApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E30C1C54BA4500BCBD7E /* FApplication.cpp */; };
+		D27569271B04F8E9008876B4 /* Launcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D27569261B04F8E9008876B4 /* Launcher.h */; };
+		D27569291B04F8E9008876B4 /* Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D27569281B04F8E9008876B4 /* Launcher.m */; };
+		D27569481B04F8FE008876B4 /* Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D27569281B04F8E9008876B4 /* Launcher.m */; };
+		D275694B1B04F8FE008876B4 /* Launcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D27569261B04F8E9008876B4 /* Launcher.h */; };
+		D2F4E30F1C54BA4500BCBD7E /* FApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E30C1C54BA4500BCBD7E /* FApplication.cpp */; };
+		D2F4E3101C54BA4500BCBD7E /* FApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F4E30D1C54BA4500BCBD7E /* FApplication.h */; };
+		D2F4E3131C551D3C00BCBD7E /* FGame.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F4E3121C551D3C00BCBD7E /* FGame.h */; };
+		D2F4E3141C551D3C00BCBD7E /* FGame.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F4E3121C551D3C00BCBD7E /* FGame.h */; };
+		D2F4E3161C551D5400BCBD7E /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E3151C551D5400BCBD7E /* FGame.cpp */; };
+		D2F4E3171C551D5400BCBD7E /* FGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E3151C551D5400BCBD7E /* FGame.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D27569231B04F8E9008876B4 /* libLauncher_Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLauncher_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27569261B04F8E9008876B4 /* Launcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Launcher.h; sourceTree = "<group>"; };
+		D27569281B04F8E9008876B4 /* Launcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launcher.m; sourceTree = "<group>"; };
+		D27569341B04F8E9008876B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D275694F1B04F8FE008876B4 /* libLauncher_IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLauncher_IOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F4E30C1C54BA4500BCBD7E /* FApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FApplication.cpp; path = ../../../Source/Launcher/FApplication.cpp; sourceTree = "<group>"; };
+		D2F4E30D1C54BA4500BCBD7E /* FApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FApplication.h; path = ../../../Source/Launcher/FApplication.h; sourceTree = "<group>"; };
+		D2F4E3121C551D3C00BCBD7E /* FGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FGame.h; path = ../../../Source/Launcher/FGame.h; sourceTree = "<group>"; };
+		D2F4E3151C551D5400BCBD7E /* FGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FGame.cpp; path = ../../../Source/Launcher/FGame.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D27569201B04F8E9008876B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27569491B04F8FE008876B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D275691A1B04F8E9008876B4 = {
+			isa = PBXGroup;
+			children = (
+				D2F4E30B1C54BA2F00BCBD7E /* Classes */,
+				D27569251B04F8E9008876B4 /* Launcher */,
+				D27569321B04F8E9008876B4 /* LauncherTests */,
+				D27569241B04F8E9008876B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D27569241B04F8E9008876B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D27569231B04F8E9008876B4 /* libLauncher_Mac.a */,
+				D275694F1B04F8FE008876B4 /* libLauncher_IOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D27569251B04F8E9008876B4 /* Launcher */ = {
+			isa = PBXGroup;
+			children = (
+				D27569261B04F8E9008876B4 /* Launcher.h */,
+				D27569281B04F8E9008876B4 /* Launcher.m */,
+			);
+			path = Launcher;
+			sourceTree = "<group>";
+		};
+		D27569321B04F8E9008876B4 /* LauncherTests */ = {
+			isa = PBXGroup;
+			children = (
+				D27569331B04F8E9008876B4 /* Supporting Files */,
+			);
+			path = LauncherTests;
+			sourceTree = "<group>";
+		};
+		D27569331B04F8E9008876B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D27569341B04F8E9008876B4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2F4E30B1C54BA2F00BCBD7E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4E30C1C54BA4500BCBD7E /* FApplication.cpp */,
+				D2F4E30D1C54BA4500BCBD7E /* FApplication.h */,
+				D2F4E3121C551D3C00BCBD7E /* FGame.h */,
+				D2F4E3151C551D5400BCBD7E /* FGame.cpp */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D27569211B04F8E9008876B4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2F4E3101C54BA4500BCBD7E /* FApplication.h in Headers */,
+				D2F4E3131C551D3C00BCBD7E /* FGame.h in Headers */,
+				D27569271B04F8E9008876B4 /* Launcher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D275694A1B04F8FE008876B4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D275694B1B04F8FE008876B4 /* Launcher.h in Headers */,
+				D2F4E3141C551D3C00BCBD7E /* FGame.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D27569221B04F8E9008876B4 /* Launcher_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27569371B04F8E9008876B4 /* Build configuration list for PBXNativeTarget "Launcher_Mac" */;
+			buildPhases = (
+				D275691F1B04F8E9008876B4 /* Sources */,
+				D27569201B04F8E9008876B4 /* Frameworks */,
+				D27569211B04F8E9008876B4 /* Headers */,
+				D20C8BCC1C5666A6000BBB6A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Launcher_Mac;
+			productName = Launcher;
+			productReference = D27569231B04F8E9008876B4 /* libLauncher_Mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D27569461B04F8FE008876B4 /* Launcher_IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D275694C1B04F8FE008876B4 /* Build configuration list for PBXNativeTarget "Launcher_IOS" */;
+			buildPhases = (
+				D27569471B04F8FE008876B4 /* Sources */,
+				D27569491B04F8FE008876B4 /* Frameworks */,
+				D275694A1B04F8FE008876B4 /* Headers */,
+				D20C8BCB1C5666A2000BBB6A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Launcher_IOS;
+			productName = Launcher;
+			productReference = D275694F1B04F8FE008876B4 /* libLauncher_IOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D275691B1B04F8E9008876B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = YishSoft;
+				TargetAttributes = {
+					D27569221B04F8E9008876B4 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D275691E1B04F8E9008876B4 /* Build configuration list for PBXProject "Launcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D275691A1B04F8E9008876B4;
+			productRefGroup = D27569241B04F8E9008876B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D27569221B04F8E9008876B4 /* Launcher_Mac */,
+				D27569461B04F8FE008876B4 /* Launcher_IOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D20C8BCB1C5666A2000BBB6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/Launcher\nENGINESDK_LIB=../../../EngineSDK/lib/ios\nINCLUDE_SRC_FOLDER=../../../Source/Launcher\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${PLATFORM_NAME} == \"iphoneos\" ]\nthen\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\nelse\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_sim.a\"\nfi\nfi\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+		D20C8BCC1C5666A6000BBB6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ENGINESDK_INCLUDE=../../../EngineSDK/include/Launcher\nENGINESDK_LIB=../../../EngineSDK/lib/mac\nINCLUDE_SRC_FOLDER=../../../Source/Launcher\nINCLUDE_SRC_FILES=\"${INCLUDE_SRC_FOLDER}/*.h\"\n\nmkdir -p \"${ENGINESDK_INCLUDE}\"\nmkdir -p \"${ENGINESDK_LIB}\"\n\nif [ ${CONFIGURATION} == \"Debug\" ]\nthen\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}_d.a\"\nelse\ncp \"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}\" \"${ENGINESDK_LIB}/lib${TARGET_NAME}.a\"\nfi\n\necho ${SRC_ROOT}\n\ncp -p ${INCLUDE_SRC_FILES} ${ENGINESDK_INCLUDE}/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D275691F1B04F8E9008876B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27569291B04F8E9008876B4 /* Launcher.m in Sources */,
+				D2F4E30F1C54BA4500BCBD7E /* FApplication.cpp in Sources */,
+				D2F4E3161C551D5400BCBD7E /* FGame.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27569471B04F8FE008876B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20C8BC91C56667C000BBB6A /* FApplication.cpp in Sources */,
+				D2F4E3171C551D5400BCBD7E /* FGame.cpp in Sources */,
+				D27569481B04F8FE008876B4 /* Launcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D27569351B04F8E9008876B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+					../../../Source/UI,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D27569361B04F8E9008876B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+					../../../Source/UI,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D27569381B04F8E9008876B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+					../../../Source/UI,
+					../../../Source/Audio,
+				);
+				PRODUCT_NAME = Launcher_Mac;
+			};
+			name = Debug;
+		};
+		D27569391B04F8E9008876B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+					../../../Source/UI,
+					../../../Source/Audio,
+				);
+				PRODUCT_NAME = Launcher_Mac;
+			};
+			name = Release;
+		};
+		D275694D1B04F8FE008876B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+					../../../Source/UI,
+					../../../Source/Audio,
+				);
+				PRODUCT_NAME = Launcher_IOS;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D275694E1B04F8FE008876B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../../../Source/Common,
+					../../../Source/F3DEngine,
+					../../../Source/InputLib,
+					../../../Source/UI,
+					../../../Source/Audio,
+				);
+				PRODUCT_NAME = Launcher_IOS;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D275691E1B04F8E9008876B4 /* Build configuration list for PBXProject "Launcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27569351B04F8E9008876B4 /* Debug */,
+				D27569361B04F8E9008876B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27569371B04F8E9008876B4 /* Build configuration list for PBXNativeTarget "Launcher_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27569381B04F8E9008876B4 /* Debug */,
+				D27569391B04F8E9008876B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D275694C1B04F8FE008876B4 /* Build configuration list for PBXNativeTarget "Launcher_IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D275694D1B04F8FE008876B4 /* Debug */,
+				D275694E1B04F8FE008876B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D275691B1B04F8E9008876B4 /* Project object */;
+}

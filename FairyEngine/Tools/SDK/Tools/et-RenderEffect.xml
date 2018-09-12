@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<effect version="1.0">
+    <parameter type="sampler2D" name="g_Main" />
+    <parameter type="sampler2D" name="g_Mask" />
+    <parameter type="sampler2D" name="g_Detail0" />
+    <parameter type="sampler2D" name="g_Detail1" />
+    <parameter type="sampler2D" name="g_Detail2" />
+    <parameter type="sampler2D" name="g_Detail3" />
+    <parameter type="float" name="g_MainScale" />
+    <parameter type="float" name="g_DetailScale0" />
+    <parameter type="float" name="g_DetailScale1" />
+    <parameter type="float" name="g_DetailScale2" />
+    <parameter type="float" name="g_DetailScale3" />
+    <parameter type="bool" name="g_bLighting" />
+    <parameter type="float4" name="g_LightDir" />
+    <parameter type="float4" name="g_Ambient" />
+    <parameter type="float4" name="g_Diffuse" />
+    <parameter type="float4x4" name="g_WorldViewProj"  />
+
+    <shader>
+        <function name="LightVS" />
+        <function name="TextureBlend" />
+        <function name="Solid" />
+        <function name="SolidNoLight" />
+
+        <code><![CDATA[
+        struct VS_OUTPUT
+        {
+            float4 Pos  : POSITION;
+            float4 Diff : COLOR0;
+            float2 Tex0 : TEXCOORD0;
+            float2 Tex1 : TEXCOORD1;
+        };
+        // Handle the light data.
+        VS_OUTPUT LightVS( float3 vPosition  : POSITION,
+                           float3 vNormal    : NORMAL,
+                           float2 vTexCoord0 : TEXCOORD0,
+                           float2 vTexCoord1 : TEXCOORD1 )
+        {
+            VS_OUTPUT Out;
+            Out.Pos = mul(float4(vPosition,1.0f),g_WorldViewProj);
+            Out.Diff = g_Ambient+g_Diffuse*max(0,dot(vNormal,-g_LightDir));
+            Out.Tex0 = vTexCoord0;
+            Out.Tex1 = vTexCoord1;
+            return Out;
+        }
+        // Blend the main texture with four detail layers.
+        float4 TextureBlend( float4 Diff : COLOR0,
+                             float2 vTexCoord0 : TEXCOORD0,
+                             float2 vTexCoord1 : TEXCOORD1 ) : COLOR
+        {
+            float4 finalColor;
+            float4 mainColor = tex2D( g_Main,vTexCoord0*g_MainScale );
+            float4 maskColor = tex2D( g_Mask,vTexCoord1 );
+            float4 detail0 = tex2D( g_Detail0,vTexCoord0*g_DetailScale0 );
+            float4 detail1 = tex2D( g_Detail1,vTexCoord0*g_DetailScale1 );
+            float4 detail2 = tex2D( g_Detail2,vTexCoord0*g_DetailScale2 );
+            float4 detail3 = tex2D( g_Detail3,vTexCoord0*g_DetailScale3 );
+            finalColor = mainColor;
+            finalColor = detail0 * maskColor[2] + (1 - maskColor[2]) * finalColor;
+            finalColor = detail1 * maskColor[1] + (1 - maskColor[1]) * finalColor;
+            finalColor = detail2 * maskColor[0] + (1 - maskColor[0]) * finalColor;
+            finalColor = detail3 * maskColor[3] + (1 - maskColor[3]) * finalColor;
+            if( g_bLighting ) finalColor = finalColor * Diff;
+            return finalColor;
+        }
+        // Output the solid color with light.
+        float4 Solid( float4 Diff : COLOR0 ) : COLOR
+        {
+            float4 finalColor = float4( 1,1,1,1 );
+            if( g_bLighting ) finalColor = finalColor * Diff;
+            return finalColor;
+        }
+        // Output the solid color without light.
+        float4 SolidNoLight(void) : COLOR { return float4(1,1,1,1); }
+        ]]></code>
+    </shader>
+
+    <technique name="Texture">
+        <pass name="p0">
+            <state name="vertex_shader" value="LightVS" />
+            <state name="pixel_shader" value="TextureBlend" profile="ps_2_0" />
+        </pass>
+    </technique>
+    <technique name="Solid">
+        <pass name="p0">
+            <state name="vertex_shader" value="LightVS" />
+            <state name="pixel_shader" value="Solid" />
+        </pass>
+    </technique>
+    <technique name="Wireframe">
+        <pass name="p0">
+            <state name="polygonmode" value="wireframe" />
+            <state name="vertex_shader" value="LightVS" />
+            <state name="pixel_shader" value="Solid" />
+        </pass>
+    </technique>
+    <technique name="TextureWire">
+        <pass name="p0">
+            <state name="vertex_shader" value="LightVS" />
+            <state name="pixel_shader" value="TextureBlend" profile="ps_2_0" />
+        </pass>
+        <pass name="p1">
+            <state name="polygonmode" value="wireframe" />
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="SolidNoLight" />
+        </pass>
+    </technique>
+
+</effect>

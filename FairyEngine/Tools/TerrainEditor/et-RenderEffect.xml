@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<effect version="1.0">
+    <parameter type="sampler2D" name="g_MainTexture" />
+    <parameter type="sampler2D" name="g_MaskTexture" />
+    <parameter type="sampler2D" name="g_Detail0" />
+    <parameter type="sampler2D" name="g_Detail1" />
+    <parameter type="sampler2D" name="g_Detail2" />
+    <parameter type="sampler2D" name="g_Detail3" />
+    <parameter type="sampler2D" name="g_LightMap" />
+    <parameter type="bool" name="g_UseLight" />
+    <parameter type="float" name="g_MainScale" />
+    <parameter type="float" name="g_DetailScale0" />
+    <parameter type="float" name="g_DetailScale1" />
+    <parameter type="float" name="g_DetailScale2" />
+    <parameter type="float" name="g_DetailScale3" />
+
+    <shader>
+        <function name="TextureBlend" />
+        <function name="Solid" />
+
+        <code><![CDATA[
+        // Blend the main texture with four detail layers.
+        float4 TextureBlend( float2 vTexCoord0 : TEXCOORD0,
+                             float2 vTexCoord1 : TEXCOORD1 ) : COLOR
+        {
+            float4 finalColor;
+            float4 mainColor = tex2D( g_MainTexture,vTexCoord0*g_MainScale );
+            float4 maskColor = tex2D( g_MaskTexture,vTexCoord1 );
+            float4 detail0 = tex2D( g_Detail0,vTexCoord0*g_DetailScale0 );
+            float4 detail1 = tex2D( g_Detail1,vTexCoord0*g_DetailScale1 );
+            float4 detail2 = tex2D( g_Detail2,vTexCoord0*g_DetailScale2 );
+            float4 detail3 = tex2D( g_Detail3,vTexCoord0*g_DetailScale3 );
+            finalColor = mainColor;
+            finalColor = detail0 * maskColor[2] + (1 - maskColor[2]) * finalColor;
+            finalColor = detail1 * maskColor[1] + (1 - maskColor[1]) * finalColor;
+            finalColor = detail2 * maskColor[0] + (1 - maskColor[0]) * finalColor;
+            finalColor = detail3 * maskColor[3] + (1 - maskColor[3]) * finalColor;
+            if( g_UseLight ) finalColor = finalColor * tex2D( g_LightMap,vTexCoord1 );
+            return finalColor;
+        }
+        // Output the solid color.
+        float4 Solid() : COLOR { return float4(1.0f,1.0f,1.0f,1.0f); }
+        ]]></code>
+    </shader>
+
+    <technique name="Texture">
+        <pass name="p0">
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="TextureBlend" profile="ps_2_0" />
+        </pass>
+    </technique>
+    <technique name="Solid">
+        <pass name="p0">
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="Solid" />
+        </pass>
+    </technique>
+    <technique name="Wireframe">
+        <pass name="p0">
+            <state name="fillmode" value="wireframe" />
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="Solid" />
+        </pass>
+    </technique>
+    <technique name="TextureWire">
+        <pass name="p0">
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="TextureBlend" profile="ps_2_0" />
+        </pass>
+        <pass name="p1">
+            <state name="fillmode" value="wireframe" />
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="Solid" />
+        </pass>
+    </technique>
+
+</effect>

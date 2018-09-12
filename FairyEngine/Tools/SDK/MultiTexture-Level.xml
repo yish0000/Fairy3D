@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<effect version="1.0">
+    <parameter type="sampler2D" name="g_MainTexture" />
+    <parameter type="sampler2D" name="g_Mask" />
+    <parameter type="sampler2D" name="g_Detail1" />
+    <parameter type="sampler2D" name="g_Detail2" />
+    <parameter type="sampler2D" name="g_Detail3" />
+    <parameter type="sampler2D" name="g_Detail4" />
+    <parameter type="sampler2D" name="g_LightMap" />
+
+    <parameter type="int" name="g_NumDetails" />
+    <parameter type="int" name="g_UseLight" />
+
+    <parameter type="float" name="g_MainScale" />
+    <parameter type="float" name="g_DetailScale1" />
+    <parameter type="float" name="g_DetailScale2" />
+    <parameter type="float" name="g_DetailScale3" />
+    <parameter type="float" name="g_DetailScale4" />
+
+    <shader>
+        <function name="TextureBlend" />
+
+        <code><![CDATA[
+        struct PS_OUTPUT
+        {
+            float4 RGBColor : COLOR0;   // Pixel color.
+        };
+
+        // Pixel shader function.
+        PS_OUTPUT PixelFunc( float2 vTexCoord0 : TEXCOORD0,
+                             float2 vTexCoord1 : TEXCOORD1 )
+        {
+            PS_OUTPUT Output;
+            float4 diffuse;
+
+            float4 mainColor = tex2D( MainSampler,vTexCoord0*g_MainScale );
+            float4 maskColor = tex2D( MaskSampler,vTexCoord1 );
+
+            float4 detail1 = tex2D( DetailSampler1,vTexCoord0*g_DetailScale1 );
+            float4 detail2 = tex2D( DetailSampler2,vTexCoord0*g_DetailScale2 );
+            float4 detail3 = tex2D( DetailSampler3,vTexCoord0*g_DetailScale3 );
+            float4 detail4 = tex2D( DetailSampler4,vTexCoord0*g_DetailScale4 );
+
+            diffuse = mainColor;
+
+            if( g_NumDetails >= 1 ) diffuse = maskColor[2]*detail1+(1-maskColor[2])*diffuse;
+            if( g_NumDetails >= 2 ) diffuse = maskColor[1]*detail2+(1-maskColor[1])*diffuse;
+            if( g_NumDetails >= 3 ) diffuse = maskColor[0]*detail3+(1-maskColor[0])*diffuse;
+            if( g_NumDetails == 4 ) diffuse = maskColor[3]*detail4+(1-maskColor[3])*diffuse;
+
+            if( g_UseLight )
+            {
+                float4 light = tex2D( LightSampler,vTexCoord1 );
+                diffuse[0] *= light[0];
+                diffuse[1] *= light[1];
+                diffuse[2] *= light[2];
+            }
+
+            Output.RGBColor = diffuse;
+            return Output;
+        }
+        ]]></code>
+    </shader>
+
+    <technique name="MultiTexture">
+        <pass name="p0">
+            <state name="vertex_shader" value="null" />
+            <state name="pixel_shader" value="TextureBlend" profile="ps_2_0" />
+        </pass>
+    </technique>
+</effect>
