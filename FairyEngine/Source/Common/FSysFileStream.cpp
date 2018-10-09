@@ -108,3 +108,11 @@ size_t FSysFileStream::Read( void* pBuf, size_t nSize )
     FASSERT( m_pStream );
     return fread( pBuf, 1, nSize, m_pStream );
 }
+
+size_t FSysFileStream::Write(void* pBuf, size_t nSize)
+{
+	if (m_pStream)
+		return fwrite(pBuf, nSize, 1, m_pStream);
+	else
+		return 0;
+}

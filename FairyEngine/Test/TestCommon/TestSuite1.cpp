@@ -17,55 +17,20 @@
 #include <FSysAPI.h>
 #include <time.h>
 
-int __cdecl TestCall1(int a, int b)
+F_TESTCASE_NOACTIVE(Bitset)
 {
-	return a + b;
-}
-
-int __stdcall TestCall2(int a, int b)
-{
-	return a + b;
-}
-
-// int __thiscall TestCall3(int a, int b)
-// {
-// 	return a + b;
-// }
-
-// int TestCall4(int a, int b)
-// {
-// 	return a + b;
-// }
-
-void Test()
-{
-	int a = 5;
-	int b = 6;
-	int c = 0;
-
-	c = TestCall1(a, b);
-	c = TestCall2(a, b);
-//	c = TestCall3(a, b);
-//	c = TestCall4(a, b);
-}
-
-
-F_TESTCASE(Bitset)
-{
-	Test();
-
 	int* pp = new int[5];
 
 	F_Randomize(time(0));
-	ftl::vector<int> arr;
-	ftl::list<AString> lst;
-	ftl::deque<bool> bd;
-	ftl::set<float, std::greater<float> > sss;
-	ftl::multiset<float, std::greater<float> > mss;
-	ftl::hash_set<float, stdext::hash_compare<float, std::greater<float> > > hss;
-	ftl::map<int, AString, std::greater<int> > mp;
-	ftl::multimap<int, AString, std::less<int> > mmp;
-	ftl::hash_map<int, AString, stdext::hash_compare<int, std::less<int> > > hmp;
+	std::vector<int> arr;
+	std::list<AString> lst;
+	std::deque<bool> bd;
+	std::set<float, std::greater<float> > sss;
+	std::multiset<float, std::greater<float> > mss;
+	std::unordered_set<float> hss;
+	std::map<int, AString, std::greater<int> > mp;
+	std::multimap<int, AString, std::less<int> > mmp;
+	std::unordered_map<int, AString> hmp;
 	for(int i=0; i<10; i++)
 	{
 		arr.push_back(F_Rand(1, 100));

@@ -64,7 +64,7 @@ struct SFPKHeader
 struct SFPKFileEntry
 {
     uint32 nHash0;              // Hash code.
-    uint32 nHash1;              // The second hash code. (Avoid hash collision)
+    uint32 nHash1;              // The second hash code. (To avoid hash collision)
     uint32 nOffset;             // The offset of this file's data.
     uint32 nCompressedSize;     // Size of the compressed file.
     uint32 nOriginalSize;       // Size of the original file.

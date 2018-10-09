@@ -35,6 +35,7 @@ public:
 
     // 读取数据
     size_t Read( void* pBuf, size_t nSize );
+	size_t Write(void* pBuf, size_t nSize);
 
 protected:
 	FILE* m_pStream;	// 标准文件流指针

@@ -221,10 +221,6 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
       <Project>{147c7a50-3349-4c35-96b4-928b4ddd997b}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\3rdSDK\zziplib\zziplib.vcxproj">
-      <Project>{cb440073-2ed3-48ce-a1a1-b6eacb3a44bd}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

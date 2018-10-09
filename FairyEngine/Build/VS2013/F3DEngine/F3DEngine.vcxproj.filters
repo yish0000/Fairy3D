@@ -40,12 +40,6 @@
     <Filter Include="Utilities">
       <UniqueIdentifier>{36b0c04b-7170-441c-882b-5e65345dae8d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Animation">
-      <UniqueIdentifier>{697936fd-7403-4cf2-8b20-e2de0580eb07}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Animation\Skeleton">
-      <UniqueIdentifier>{a309abfc-a96c-44da-bcd2-c790ffe63198}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Image">
       <UniqueIdentifier>{77b94958-9668-4b47-9b50-b5fc5a126a3f}</UniqueIdentifier>
     </Filter>
@@ -123,6 +117,12 @@
     </Filter>
     <Filter Include="Model\SkinModel">
       <UniqueIdentifier>{1c023abc-63f5-4295-8af5-b3504fa21dfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{697936fd-7403-4cf2-8b20-e2de0580eb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation\Skeleton">
+      <UniqueIdentifier>{a309abfc-a96c-44da-bcd2-c790ffe63198}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

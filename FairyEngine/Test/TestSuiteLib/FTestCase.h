@@ -9,10 +9,8 @@
  * ------------------------------------------------------------------------
  */
 
-
 #ifndef __FAIRY_TESTCASE_H__
 #define __FAIRY_TESTCASE_H__
-
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include <string>
@@ -20,13 +18,11 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-
 #if defined(_USRDLL)
-#define UNITTEST_API extern "C" __declspec(dllexport)
+	#define UNITTEST_API extern "C" __declspec(dllexport)
 #else
-#define UNITTEST_API extern "C" __declspec(dllimport)
+	#define UNITTEST_API extern "C" __declspec(dllimport)
 #endif
-
 
 /** 模块测试用例基类
 */
@@ -55,6 +51,16 @@ public:
         void RunTest(void); \
     }; \
     FTC ## _case s_TC ## _case; \
+    void FTC ## _case::RunTest(void)
+
+// 定义一个单元测试用例，但不生效
+#define F_TESTCASE_NOACTIVE( _case ) \
+    class FTC ## _case : public FTestCase \
+    { \
+    public: \
+        FTC ## _case() : FTestCase(#_case) {} \
+        void RunTest(void); \
+    }; \
     void FTC ## _case::RunTest(void)
 
 // 导出的函数，供测试器使用

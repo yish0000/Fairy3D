@@ -11,67 +11,52 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CB440073-2ED3-48CE-A1A1-B6EACB3A44BD}</ProjectGuid>
-    <RootNamespace>zziplib</RootNamespace>
+    <ProjectGuid>{433A743B-FF57-4973-8127-1A834C8A88EF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <RootNamespace>zziplib</RootNamespace>
+    <ProjectName>zziplib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(Configuration)\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(Configuration)\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <PreBuildEvent>
-      <Message>del $(Configuration)\vc80.idb</Message>
-      <Command>del $(Configuration)\vc80.idb</Command>
-    </PreBuildEvent>
     <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../../../Source/3rdSDK/zziplib;../../../../Source/3rdSDK/zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_ZZIP_USE_DEREF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PrecompiledHeader />
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_ZZIP_USE_DEREF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../Source/3rdSDK/zziplib;../../../../Source/3rdSDK/zlib;</AdditionalIncludeDirectories>
     </ClCompile>
-    <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\lib\zziplib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
     <Lib>
-      <AdditionalDependencies>zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
-      <AdditionalLibraryDirectories>../zlib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../zlib/Debug;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlib.lib;</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
       <Command>if not exist ..\..\..\..\EngineSDK\include\3rdSDK\zzip mkdir ..\..\..\..\EngineSDK\include\3rdSDK\zzip
@@ -85,28 +70,22 @@ copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK\$(P
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <PreBuildEvent>
-      <Message>del $(Configuration)\vc80.idb</Message>
-      <Command>del $(Configuration)\vc80.idb</Command>
-    </PreBuildEvent>
     <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>../../../../Source/3rdSDK/zziplib;../../../../Source/3rdSDK/zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_ZZIP_USE_DEREF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_ZZIP_USE_DEREF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../../Source/3rdSDK/zziplib;../../../../Source/3rdSDK/zlib;</AdditionalIncludeDirectories>
     </ClCompile>
-    <Lib>
-      <AdditionalDependencies>zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
-      <AdditionalLibraryDirectories>../zlib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
     <PostBuildEvent>
       <Command>if not exist ..\..\..\..\EngineSDK\include\3rdSDK\zzip mkdir ..\..\..\..\EngineSDK\include\3rdSDK\zzip
 xcopy /r /y ..\..\..\..\Source\3rdSDK\zziplib\zzip\_config.h ..\..\..\..\EngineSDK\include\3rdSDK\zzip
@@ -115,10 +94,27 @@ xcopy /r /y ..\..\..\..\Source\3rdSDK\zziplib\zzip\conf.h ..\..\..\..\EngineSDK\
 xcopy /r /y ..\..\..\..\Source\3rdSDK\zziplib\zzip\types.h ..\..\..\..\EngineSDK\include\3rdSDK\zzip
 xcopy /r /y ..\..\..\..\Source\3rdSDK\zziplib\zzip\zzip.h ..\..\..\..\EngineSDK\include\3rdSDK\zzip
 if not exist ..\..\..\..\EngineSDK\lib\win32\3rdSDK mkdir ..\..\..\..\EngineSDK\lib\win32\3rdSDK
-copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK
-</Command>
+copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK</Command>
     </PostBuildEvent>
+    <Lib>
+      <AdditionalLibraryDirectories>../zlib/Release;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlib.lib;</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\conf.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\file.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\format.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\lib.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\plugin.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\zzip.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\_config.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\_msvc.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__debug.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__dirent.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__hints.h" />
+    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__mmap.h" />
+  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Source\3rdSDK\zziplib\dir.c" />
     <ClCompile Include="..\..\..\..\Source\3rdSDK\zziplib\err.c" />
@@ -127,30 +123,6 @@ copy /b /y $(OutDir)$(TargetFileName) ..\..\..\..\EngineSDK\lib\win32\3rdSDK
     <ClCompile Include="..\..\..\..\Source\3rdSDK\zziplib\plugin.c" />
     <ClCompile Include="..\..\..\..\Source\3rdSDK\zziplib\stat.c" />
     <ClCompile Include="..\..\..\..\Source\3rdSDK\zziplib\zip.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__debug.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__dirent.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__hints.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\__mmap.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\_config.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\_msvc.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\conf.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\file.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\format.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\lib.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\plugin.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\stdint.h" />
-    <ClInclude Include="..\..\..\..\Source\3rdSDK\zziplib\zzip\zzip.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\zlib\zlib.vcxproj">
-      <Project>{147c7a50-3349-4c35-96b4-928b4ddd997b}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

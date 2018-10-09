@@ -64,16 +64,14 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>TestSuiteLib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../TestSuiteLib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist ..\..\..\..\Bin\Debug\pdb mkdir ..\..\..\..\Bin\Debug\pdb
-copy $(OutDir)$(TargetFileName) ..\..\..\..\Bin\Debug\$(TargetFileName)
-copy $(TargetDir)$(TargetName).pdb ..\..\..\..\Bin\Debug\pdb\$(TargetName).pdb</Command>
+      <Command>copy $(OutDir)$(TargetFileName) ..\..\..\..\Bin\Debug\$(TargetFileName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -63,17 +63,16 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>TestSuiteLib_d.lib;Common_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)_d.dll</OutputFile>
-      <AdditionalLibraryDirectories>../TestSuiteLib/Debug;../../../../Lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>TestSuiteLib.lib;Common_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>../TestSuiteLib/Debug;../../../../EngineSDK/lib/win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist ..\..\..\..\Bin\Debug\pdb mkdir ..\..\..\..\Bin\Debug\pdb
-copy $(OutDir)$(TargetFileName) ..\..\..\..\Bin\Debug\$(TargetFileName)
-copy $(TargetDir)$(TargetName).pdb ..\..\..\..\Bin\Debug\pdb\$(TargetName).pdb</Command>
+      <Command>copy $(OutDir)$(TargetFileName) ..\..\..\..\Bin\Debug\$(TargetFileName)
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,6 +99,7 @@ copy $(TargetDir)$(TargetName).pdb ..\..\..\..\Bin\Debug\pdb\$(TargetName).pdb</
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\TestCommon\TestSuite1.cpp" />
+    <ClCompile Include="TestPerlinNoise.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestSuiteLib\TestSuiteLib.vcxproj">

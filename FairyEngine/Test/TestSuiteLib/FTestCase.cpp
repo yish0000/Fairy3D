@@ -9,11 +9,9 @@
  * ------------------------------------------------------------------------
  */
 
-
 #include "FTestCase.h"
 
 #pragma warning(disable:4273)
-
 
 // 全局变量
 size_t g_nTestCount = 0;            // 测试用例的个数

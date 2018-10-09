@@ -40,6 +40,7 @@ public:
     void Close(void);
 
     size_t Read( void* pBuf, size_t nSize );
+	size_t Write(void* pBuf, size_t nSize) { return 0; }
 };
 
 ///////////////////////////////////////////////////////////////////////////
