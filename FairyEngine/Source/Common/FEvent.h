@@ -172,6 +172,24 @@ public:
     virtual void HandleEvent(FEvent* pEvent) {}
 };
 
+/** Event queue.
+*/
+class FEventProcessQueue
+{
+public:
+	FEventProcessQueue(FEventDispatcher* pDispatcher);
+	virtual ~FEventProcessQueue();
+
+	void AddEvent(FEvent* pEvent);
+	void Update();
+
+protected:
+	FEventDispatcher* m_pDispatcher;
+	std::queue<FEvent*> m_dispatchQueue;
+	FThreadMutex* m_mutexQueue;
+};
+
+
 typedef void (FEventListener::*FEventCallback) (FEvent* pEvent);
 #define FCALLBACK_MAKE(func) (FEventCallback)(&func)
 
@@ -186,9 +204,11 @@ class FEventDispatcher
     friend class FEventProcessQueue;
     
 public:
-    FEventDispatcher() {}
+    FEventDispatcher() : m_eventQueue(this) {}
     virtual ~FEventDispatcher() {}
-    
+
+	void Update();
+
     void AddEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority=0);
     void RemoveEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority=0);
     void RemoveAllForListener(FEventListener* listener);
@@ -198,33 +218,10 @@ public:
     
 protected:
     EventMap m_eventMap;
+	FEventProcessQueue m_eventQueue;
     
     // Handle the specified event.
     void OnEvent(FEvent* pEvent);
-};
-
-/** Event queue.
- */
-class FEventProcessQueue
-{
-    struct Event
-    {
-        FEventDispatcher* pDispatcher;
-        FEvent* pEvent;
-    };
-    
-public:
-    FEventProcessQueue();
-    virtual ~FEventProcessQueue();
-    
-    void AddEvent(FEventDispatcher* dispatcher, FEvent* pEvent);
-    void Update();
-    
-    static FEventProcessQueue& GetInstance();
-    
-protected:
-    std::queue<Event> m_dispatchQueue;
-    FThreadMutex* m_mutexQueue;
 };
 
 ///////////////////////////////////////////////////////////////////////////

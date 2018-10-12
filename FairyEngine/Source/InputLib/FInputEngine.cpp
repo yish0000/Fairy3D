@@ -99,7 +99,7 @@ void FInputEngine::Update()
 	}
     
     // Handle the input event in the queue.
-    FEventProcessQueue::GetInstance().Update();
+    m_pDispatcher->Update();
 }
 
 /** Register a callback function for the specified event.

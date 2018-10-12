@@ -20,7 +20,7 @@
 
 void FEventDispatcher::DispatchEvent(FEvent* pEvent)
 {
-    FEventProcessQueue::GetInstance().AddEvent(this, pEvent);
+    m_eventQueue.AddEvent(pEvent);
 }
 
 void FEventDispatcher::AddEventListener(int iEventType, FEventListener* pListener, FEventCallback callback, int priority)
@@ -140,20 +140,20 @@ void FEventDispatcher::OnEvent(FEvent* pEvent)
 	pEvent->Free();
 }
 
+void FEventDispatcher::Update()
+{
+	m_eventQueue.Update();
+}
+
 ///////////////////////////////////////////////////////////////////////////
 //
 //  class FEventProcessQueue
 //
 ///////////////////////////////////////////////////////////////////////////
 
-FEventProcessQueue& FEventProcessQueue::GetInstance()
+FEventProcessQueue::FEventProcessQueue(FEventDispatcher* pDispatcher)
 {
-    static FEventProcessQueue obj;
-    return obj;
-}
-
-FEventProcessQueue::FEventProcessQueue()
-{
+	m_pDispatcher = pDispatcher;
     m_mutexQueue = FThreadMutex::Create();
 }
 
@@ -162,14 +162,10 @@ FEventProcessQueue::~FEventProcessQueue()
     F_SAFE_DELETE(m_mutexQueue);
 }
 
-void FEventProcessQueue::AddEvent(FEventDispatcher* dispatcher, FEvent* pEvent)
+void FEventProcessQueue::AddEvent(FEvent* pEvent)
 {
-    FScopedLock keeper(m_mutexQueue);
-    
-    Event ev;
-    ev.pDispatcher = dispatcher;
-    ev.pEvent = pEvent;
-    m_dispatchQueue.push(ev);
+    FScopedLock keeper(m_mutexQueue);    
+    m_dispatchQueue.push(pEvent);
 }
 
 void FEventProcessQueue::Update()
@@ -178,8 +174,8 @@ void FEventProcessQueue::Update()
     
     while( !m_dispatchQueue.empty() )
     {
-        Event entry = m_dispatchQueue.front();
+        FEvent* pEvent = m_dispatchQueue.front();
         m_dispatchQueue.pop();
-        entry.pDispatcher->OnEvent(entry.pEvent);
+        m_pDispatcher->OnEvent(pEvent);
     }
 }
