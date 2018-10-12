@@ -17,7 +17,7 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-class FInputEventDispatcher;
+class FEventDispatcher;
 
 /** Base class of input device.
 */
@@ -38,7 +38,7 @@ public:
     bool IsValid() const { return m_bValid; }
 
 	// Get the event dispatcher.
-	FInputEventDispatcher* GetDispatcher();
+	FEventDispatcher* GetDispatcher();
     
 protected:
     EInputDeviceType m_Type;

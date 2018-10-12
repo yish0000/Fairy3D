@@ -97,6 +97,7 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Source\Common\FAllocBase.h" />
+    <ClInclude Include="..\..\..\Source\Common\FEvent.h" />
     <ClInclude Include="..\..\..\Source\Common\FMemConfig.h" />
     <ClInclude Include="..\..\..\Source\Common\FTempMemBuffer.h" />
     <ClInclude Include="..\..\..\Source\Common\FMemManager.h" />
@@ -149,6 +150,7 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
     <ClInclude Include="..\..\..\Source\Common\FCommon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Common\FEvent.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FMemManager.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FMemTracker.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FTempMemManager.cpp" />

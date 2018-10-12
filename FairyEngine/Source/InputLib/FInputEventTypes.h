@@ -1,6 +1,6 @@
 ﻿/*
  * ------------------------------------------------------------------------
- *  Name:   FInputEventTypes.h
+ *  Name:   FEventTypes.h
  *  Desc:   This file define all the type of input events.
  *  Author: Yish
  *  Date:   2015/2/8
@@ -13,7 +13,7 @@
 #define __FAIRY_INPUT_EVENTTYPES_H__
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
-#include "FInputEvent.h"
+#include "FEvent.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -59,64 +59,58 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-#define IMPLEMENT_FEVENT_FREE_FUNC(cls) \
-	public: \
-	void Free() { \
-			FInputEventPool<cls>::GetInstance().FreeEvent(this); \
-		}
-
 ///////////////////////////////////////////////////////////////////////////
 
-class FInputKeydownEvent : public FInputEvent
+class FInputKeydownEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputKeydownEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputKeydownEvent)
 
 public:
-    FInputKeydownEvent() : FInputEvent(FINPUT_KEYDOWN_EVENT) {}
+    FInputKeydownEvent() : FEvent(FINPUT_KEYDOWN_EVENT) {}
     
 public:
     int vk;
 };
 
-class FInputKeyupEvent : public FInputEvent
+class FInputKeyupEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputKeyupEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputKeyupEvent)
 
 public:
-	FInputKeyupEvent() : FInputEvent(FINPUT_KEYUP_EVENT) {}
+	FInputKeyupEvent() : FEvent(FINPUT_KEYUP_EVENT) {}
 
 public:
     int vk;
 };
 
-class FInputLogicKeydownEvent : public FInputEvent
+class FInputLogicKeydownEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputLogicKeydownEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputLogicKeydownEvent)
 
 public:
-	FInputLogicKeydownEvent() : FInputEvent(FINPUT_LOGICKEYDOWN_EVENT) {}
+	FInputLogicKeydownEvent() : FEvent(FINPUT_LOGICKEYDOWN_EVENT) {}
 
 public:
 	int logic_key;
 };
 
-class FInputLogicKeyupEvent : public FInputEvent
+class FInputLogicKeyupEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputLogicKeyupEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputLogicKeyupEvent)
 
 public:
-	FInputLogicKeyupEvent() : FInputEvent(FINPUT_LOGICKEYUP_EVENT) {}
+	FInputLogicKeyupEvent() : FEvent(FINPUT_LOGICKEYUP_EVENT) {}
 
 public:
 	int logic_key;
 };
 
-class FInputMouseLButtonDownEvent : public FInputEvent
+class FInputMouseLButtonDownEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseLButtonDownEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseLButtonDownEvent)
 
 public:
-    FInputMouseLButtonDownEvent() : FInputEvent(FINPUT_MOUSE_LBUTTON_DOWN) {}
+    FInputMouseLButtonDownEvent() : FEvent(FINPUT_MOUSE_LBUTTON_DOWN) {}
     
 public:
     FPointI cursor_pos;
@@ -124,12 +118,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseLButtonUpEvent : public FInputEvent
+class FInputMouseLButtonUpEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseLButtonUpEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseLButtonUpEvent)
 
 public:
-    FInputMouseLButtonUpEvent() : FInputEvent(FINPUT_MOUSE_LBUTTON_UP) {}
+    FInputMouseLButtonUpEvent() : FEvent(FINPUT_MOUSE_LBUTTON_UP) {}
     
 public:
     FPointI cursor_pos;
@@ -137,12 +131,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseLButtonClickEvent : public FInputEvent
+class FInputMouseLButtonClickEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseLButtonClickEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseLButtonClickEvent)
 
 public:
-    FInputMouseLButtonClickEvent() : FInputEvent(FINPUT_MOUSE_LBUTTON_CLICK) {}
+    FInputMouseLButtonClickEvent() : FEvent(FINPUT_MOUSE_LBUTTON_CLICK) {}
     
 public:
     FPointI cursor_pos;
@@ -150,12 +144,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseLButtonDblClkEvent : public FInputEvent
+class FInputMouseLButtonDblClkEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseLButtonDblClkEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseLButtonDblClkEvent)
 
 public:
-    FInputMouseLButtonDblClkEvent() : FInputEvent(FINPUT_MOUSE_LBUTTON_DBLCLK) {}
+    FInputMouseLButtonDblClkEvent() : FEvent(FINPUT_MOUSE_LBUTTON_DBLCLK) {}
     
 public:
     FPointI cursor_pos;
@@ -163,12 +157,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseRButtonDownEvent : public FInputEvent
+class FInputMouseRButtonDownEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseRButtonDownEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseRButtonDownEvent)
 
 public:
-    FInputMouseRButtonDownEvent() : FInputEvent(FINPUT_MOUSE_RBUTTON_DOWN) {}
+    FInputMouseRButtonDownEvent() : FEvent(FINPUT_MOUSE_RBUTTON_DOWN) {}
     
 public:
     FPointI cursor_pos;
@@ -176,12 +170,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseRButtonUpEvent : public FInputEvent
+class FInputMouseRButtonUpEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseRButtonUpEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseRButtonUpEvent)
 
 public:
-    FInputMouseRButtonUpEvent() : FInputEvent(FINPUT_MOUSE_RBUTTON_UP) {}
+    FInputMouseRButtonUpEvent() : FEvent(FINPUT_MOUSE_RBUTTON_UP) {}
     
 public:
     FPointI cursor_pos;
@@ -189,12 +183,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseRButtonClickEvent : public FInputEvent
+class FInputMouseRButtonClickEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseRButtonClickEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseRButtonClickEvent)
 
 public:
-    FInputMouseRButtonClickEvent() : FInputEvent(FINPUT_MOUSE_RBUTTON_CLICK) {}
+    FInputMouseRButtonClickEvent() : FEvent(FINPUT_MOUSE_RBUTTON_CLICK) {}
     
 public:
     FPointI cursor_pos;
@@ -202,12 +196,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseRButtonDblClkEvent : public FInputEvent
+class FInputMouseRButtonDblClkEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseRButtonDblClkEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseRButtonDblClkEvent)
 
 public:
-    FInputMouseRButtonDblClkEvent() : FInputEvent(FINPUT_MOUSE_RBUTTON_DBLCLK) {}
+    FInputMouseRButtonDblClkEvent() : FEvent(FINPUT_MOUSE_RBUTTON_DBLCLK) {}
     
 public:
     FPointI cursor_pos;
@@ -215,12 +209,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseMButtonDownEvent : public FInputEvent
+class FInputMouseMButtonDownEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseMButtonDownEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseMButtonDownEvent)
 
 public:
-    FInputMouseMButtonDownEvent() : FInputEvent(FINPUT_MOUSE_MBUTTON_DOWN) {}
+    FInputMouseMButtonDownEvent() : FEvent(FINPUT_MOUSE_MBUTTON_DOWN) {}
     
 public:
     FPointI cursor_pos;
@@ -228,12 +222,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseMButtonUpEvent : public FInputEvent
+class FInputMouseMButtonUpEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseMButtonUpEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseMButtonUpEvent)
 
 public:
-    FInputMouseMButtonUpEvent() : FInputEvent(FINPUT_MOUSE_MBUTTON_UP) {}
+    FInputMouseMButtonUpEvent() : FEvent(FINPUT_MOUSE_MBUTTON_UP) {}
     
 public:
     FPointI cursor_pos;
@@ -241,12 +235,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseMButtonClickEvent : public FInputEvent
+class FInputMouseMButtonClickEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseMButtonClickEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseMButtonClickEvent)
 
 public:
-    FInputMouseMButtonClickEvent() : FInputEvent(FINPUT_MOUSE_MBUTTON_CLICK) {}
+    FInputMouseMButtonClickEvent() : FEvent(FINPUT_MOUSE_MBUTTON_CLICK) {}
     
 public:
     FPointI cursor_pos;
@@ -254,12 +248,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseMButtonDblClkEvent : public FInputEvent
+class FInputMouseMButtonDblClkEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseMButtonDblClkEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseMButtonDblClkEvent)
 
 public:
-    FInputMouseMButtonDblClkEvent() : FInputEvent(FINPUT_MOUSE_MBUTTON_DBLCLK) {}
+    FInputMouseMButtonDblClkEvent() : FEvent(FINPUT_MOUSE_MBUTTON_DBLCLK) {}
     
 public:
     FPointI cursor_pos;
@@ -267,27 +261,12 @@ public:
     bool shift_key_down;
 };
 
-class FInputMouseXButtonDownEvent : public FInputEvent
+class FInputMouseXButtonDownEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseXButtonDownEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseXButtonDownEvent)
 
 public:
-    FInputMouseXButtonDownEvent() : FInputEvent(FINPUT_MOUSE_XBUTTON_DOWN) {}
-    
-public:
-    FPointI cursor_pos;
-    bool ctrl_key_down;
-    bool shift_key_down;
-    bool x1_down;
-    bool x2_down;
-};
-
-class FInputMouseXButtonUpEvent : public FInputEvent
-{
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseXButtonUpEvent)
-
-public:
-    FInputMouseXButtonUpEvent() : FInputEvent(FINPUT_MOUSE_XBUTTON_UP) {}
+    FInputMouseXButtonDownEvent() : FEvent(FINPUT_MOUSE_XBUTTON_DOWN) {}
     
 public:
     FPointI cursor_pos;
@@ -297,12 +276,12 @@ public:
     bool x2_down;
 };
 
-class FInputMouseXButtonClickEvent : public FInputEvent
+class FInputMouseXButtonUpEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseXButtonClickEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseXButtonUpEvent)
 
 public:
-    FInputMouseXButtonClickEvent() : FInputEvent(FINPUT_MOUSE_XBUTTON_CLICK) {}
+    FInputMouseXButtonUpEvent() : FEvent(FINPUT_MOUSE_XBUTTON_UP) {}
     
 public:
     FPointI cursor_pos;
@@ -312,12 +291,12 @@ public:
     bool x2_down;
 };
 
-class FInputMouseXButtonDblClkEvent : public FInputEvent
+class FInputMouseXButtonClickEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseXButtonDblClkEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseXButtonClickEvent)
 
 public:
-    FInputMouseXButtonDblClkEvent() : FInputEvent(FINPUT_MOUSE_XBUTTON_DBLCLK) {}
+    FInputMouseXButtonClickEvent() : FEvent(FINPUT_MOUSE_XBUTTON_CLICK) {}
     
 public:
     FPointI cursor_pos;
@@ -327,12 +306,27 @@ public:
     bool x2_down;
 };
 
-class FInputMouseMoveEvent : public FInputEvent
+class FInputMouseXButtonDblClkEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseMoveEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseXButtonDblClkEvent)
 
 public:
-    FInputMouseMoveEvent() : FInputEvent(FINPUT_MOUSE_MOVE) {}
+    FInputMouseXButtonDblClkEvent() : FEvent(FINPUT_MOUSE_XBUTTON_DBLCLK) {}
+    
+public:
+    FPointI cursor_pos;
+    bool ctrl_key_down;
+    bool shift_key_down;
+    bool x1_down;
+    bool x2_down;
+};
+
+class FInputMouseMoveEvent : public FEvent
+{
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseMoveEvent)
+
+public:
+    FInputMouseMoveEvent() : FEvent(FINPUT_MOUSE_MOVE) {}
     
 public:
     FPointI cursor_pos;
@@ -345,12 +339,12 @@ public:
     bool x2_down;
 };
 
-class FInputMouseWheelEvent : public FInputEvent
+class FInputMouseWheelEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputMouseWheelEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputMouseWheelEvent)
 
 public:
-    FInputMouseWheelEvent() : FInputEvent(FINPUT_MOUSE_WHEEL) {}
+    FInputMouseWheelEvent() : FEvent(FINPUT_MOUSE_WHEEL) {}
     
 public:
     FPointI cursor_pos;
@@ -364,12 +358,12 @@ public:
     int delta;
 };
 
-class FInputTouchTapEvent : public FInputEvent
+class FInputTouchTapEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchTapEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchTapEvent)
 
 public:
-    FInputTouchTapEvent() : FInputEvent(FINPUT_TOUCH_TAP) {}
+    FInputTouchTapEvent() : FEvent(FINPUT_TOUCH_TAP) {}
     
 public:
     ETouchState state;
@@ -377,24 +371,24 @@ public:
     int tap_count;
 };
 
-class FInputTouchTap2Event : public FInputEvent
+class FInputTouchTap2Event : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchTap2Event)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchTap2Event)
 
 public:
-    FInputTouchTap2Event() : FInputEvent(FINPUT_TOUCH_TAP_2) {}
+    FInputTouchTap2Event() : FEvent(FINPUT_TOUCH_TAP_2) {}
     
 public:
     ETouchState state;
     FPointI tap_pos;
 };
 
-class FInputTouchPanEvent : public FInputEvent
+class FInputTouchPanEvent : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchPanEvent)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchPanEvent)
 
 public:
-	FInputTouchPanEvent() : FInputEvent(FINPUT_TOUCH_PAN) {}
+	FInputTouchPanEvent() : FEvent(FINPUT_TOUCH_PAN) {}
 
 public:
 	ETouchState state;
@@ -402,23 +396,23 @@ public:
 
 };
 
-class FInputTouchPan2Event : public FInputEvent
+class FInputTouchPan2Event : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchPan2Event)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchPan2Event)
 
 public:
-	FInputTouchPan2Event() : FInputEvent(FINPUT_TOUCH_PAN_2) {}
+	FInputTouchPan2Event() : FEvent(FINPUT_TOUCH_PAN_2) {}
 
 public:
 	ETouchState state;
 };
 
-class FInputTouchPinch : public FInputEvent
+class FInputTouchPinch : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchPinch)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchPinch)
 
 public:
-	FInputTouchPinch() : FInputEvent(FINPUT_TOUCH_PINCH) {}
+	FInputTouchPinch() : FEvent(FINPUT_TOUCH_PINCH) {}
 
 public:
 	ETouchState state;
@@ -426,12 +420,12 @@ public:
 	float velocity;
 };
 
-class FInputTouchPress : public FInputEvent
+class FInputTouchPress : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchPress)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchPress)
 
 public:
-	FInputTouchPress() : FInputEvent(FINPUT_TOUCH_PRESS) {}
+	FInputTouchPress() : FEvent(FINPUT_TOUCH_PRESS) {}
 
 public:
 	ETouchState state;
@@ -439,81 +433,81 @@ public:
 	uint32 press_time;
 };
 
-class FInputTouchLongPress : public FInputEvent
+class FInputTouchLongPress : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchLongPress)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchLongPress)
 
 public:
-	FInputTouchLongPress() : FInputEvent(FINPUT_TOUCH_LONG_PRESS) {}
+	FInputTouchLongPress() : FEvent(FINPUT_TOUCH_LONG_PRESS) {}
 
 public:
 	ETouchState state;
 	FPointI touch_pos;
 };
 
-class FInputTouchSwipe : public FInputEvent
+class FInputTouchSwipe : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchSwipe)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchSwipe)
 
 public:
-	FInputTouchSwipe() : FInputEvent(FINPUT_TOUCH_SWIPE) {}
+	FInputTouchSwipe() : FEvent(FINPUT_TOUCH_SWIPE) {}
 
 public:
 	ETouchState state;
 	ESwipeDirection swipe_dir;
 };
 
-class FInputTouchCircle : public FInputEvent
+class FInputTouchCircle : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputTouchCircle)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputTouchCircle)
 
 public:
-	FInputTouchCircle() : FInputEvent(FINPUT_TOUCH_CIRCLE) {}
+	FInputTouchCircle() : FEvent(FINPUT_TOUCH_CIRCLE) {}
 
 public:
 	ETouchState state;
 	ETouchCircle circle;
 };
 
-class FInputJoystickStick : public FInputEvent
+class FInputJoystickStick : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputJoystickStick)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputJoystickStick)
 
 public:
-	FInputJoystickStick() : FInputEvent(FINPUT_JOYSTICK_STICK) {}
+	FInputJoystickStick() : FEvent(FINPUT_JOYSTICK_STICK) {}
 
 public:
 	float x, y;
 };
 
-class FInputJoystickKeydown : public FInputEvent
+class FInputJoystickKeydown : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputJoystickKeydown)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputJoystickKeydown)
 
 public:
-	FInputJoystickKeydown() : FInputEvent(FINPUT_JOYSTICK_KEY_DOWN) {}
+	FInputJoystickKeydown() : FEvent(FINPUT_JOYSTICK_KEY_DOWN) {}
 
 public:
 	int vk;
 };
 
-class FInputJoystickKeyup : public FInputEvent
+class FInputJoystickKeyup : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputJoystickKeyup)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputJoystickKeyup)
 
 public:
-	FInputJoystickKeyup() : FInputEvent(FINPUT_JOYSTICK_KEY_UP) {}
+	FInputJoystickKeyup() : FEvent(FINPUT_JOYSTICK_KEY_UP) {}
 
 public:
 	int vk;
 };
 
-class FInputSensorDeviceShake : public FInputEvent
+class FInputSensorDeviceShake : public FEvent
 {
-	IMPLEMENT_FEVENT_FREE_FUNC(FInputSensorDeviceShake)
+	F_IMPLEMENT_EVENT_CLASS_USEPOOL(FInputSensorDeviceShake)
 
 public:
-	FInputSensorDeviceShake() : FInputEvent(FINPUT_SENSOR_DEVICESHAKE) {}
+	FInputSensorDeviceShake() : FEvent(FINPUT_SENSOR_DEVICESHAKE) {}
 
 public:
 	uint32 keep_time;

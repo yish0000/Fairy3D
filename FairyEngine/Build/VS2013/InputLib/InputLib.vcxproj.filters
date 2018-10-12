@@ -26,9 +26,6 @@
     <ClCompile Include="..\..\..\Source\InputLib\FInputEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Source\InputLib\FInputEvent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Source\InputLib\FInputKeyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\InputLib\FInputEngine.h">
-      <Filter>Include Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Source\InputLib\FInputEvent.h">
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\InputLib\FInputJoystick.h">

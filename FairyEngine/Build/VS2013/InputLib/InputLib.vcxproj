@@ -105,7 +105,6 @@ copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\InputLib\FInputDevice.cpp" />
     <ClCompile Include="..\..\..\Source\InputLib\FInputEngine.cpp" />
-    <ClCompile Include="..\..\..\Source\InputLib\FInputEvent.cpp" />
     <ClCompile Include="..\..\..\Source\InputLib\FInputJoystick.cpp" />
     <ClCompile Include="..\..\..\Source\InputLib\FInputKeyboard.cpp" />
     <ClCompile Include="..\..\..\Source\InputLib\FInputMouse.cpp" />
@@ -118,7 +117,6 @@ copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
     <ClInclude Include="..\..\..\Source\InputLib\FInput.h" />
     <ClInclude Include="..\..\..\Source\InputLib\FInputDevice.h" />
     <ClInclude Include="..\..\..\Source\InputLib\FInputEngine.h" />
-    <ClInclude Include="..\..\..\Source\InputLib\FInputEvent.h" />
     <ClInclude Include="..\..\..\Source\InputLib\FInputEventTypes.h" />
     <ClInclude Include="..\..\..\Source\InputLib\FInputJoystick.h" />
     <ClInclude Include="..\..\..\Source\InputLib\FInputKeyboard.h" />

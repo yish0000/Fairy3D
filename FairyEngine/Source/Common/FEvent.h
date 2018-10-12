@@ -1,7 +1,7 @@
 /*
  * ------------------------------------------------------------------------
- *  Name:   FInputEvent.h
- *  Desc:   This file define the base class for input event.
+ *  Name:   FEvent.h
+ *  Desc:   This file define the base class for event system.
  *  Author: Yish
  *  Date:   2015/2/8
  *  ----------------------------------------------------------------------
@@ -9,61 +9,70 @@
  * ------------------------------------------------------------------------
  */
 
-#ifndef __FAIRY_INPUT_EVENT_H__
-#define __FAIRY_INPUT_EVENT_H__
+#ifndef __FAIRY_EVENT_H__
+#define __FAIRY_EVENT_H__
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
-#include "FInputTypes.h"
 #include "FThread.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
-class FInputEventDispatcher;
+class FEventDispatcher;
 
-/** Base class of Input event.
+#define F_IMPLEMENT_EVENT_CLASS(cls) \
+	public: \
+		static cls* Create() { return new cls(); }
+
+#define F_IMPLEMENT_EVENT_CLASS_USEPOOL(cls) \
+	public: \
+		static cls* Create() { return FEventPool<cls>::GetInstance().GetEvent(); } \
+		void Free() { FEventPool<cls>::GetInstance().FreeEvent(this); }
+
+/** Base class of event.
  */
-class FInputEvent : public FGeneralAlloc
+class FEvent
 {
 public:
-    FInputEvent(int type) : m_iType(type), m_pSource(NULL) {}
-    virtual ~FInputEvent() {}
+    FEvent(int type) : m_iType(type), m_pSource(NULL) {}
+    virtual ~FEvent() {}
 
-	virtual void Free() = 0;
+	virtual void Free() { delete this; }
     
     int GetType() const { return m_iType; }
-    FInputEventDispatcher* GetSource() { return m_pSource; }
+    FEventDispatcher* GetSource() { return m_pSource; }
     
-    void SetSource(FInputEventDispatcher* pSource) { m_pSource = pSource; }
+    void SetSource(FEventDispatcher* pSource) { m_pSource = pSource; }
 
 protected:
     int m_iType;
-    FInputEventDispatcher* m_pSource;
+    FEventDispatcher* m_pSource;
 };
 
-/** Event pool.
+/** Event pool for some frequent events.
  */
 template <class T>
-class FInputEventPool
+class FEventPool
 {
     typedef std::set<T*> ActiveEventList;
     typedef std::vector<T*> FreeEventList;
     
 public:
-    FInputEventPool()
+    FEventPool()
     {
         m_pMutex = FThreadMutex::Create();
     }
     
-    ~FInputEventPool()
+    ~FEventPool()
     {
         Clear();
+
         F_SAFE_DELETE(m_pMutex);
     }
     
     // Get the singleton instance.
-    static FInputEventPool& GetInstance()
+    static FEventPool& GetInstance()
     {
-        static FInputEventPool obj;
+        static FEventPool obj;
         return obj;
     }
     
@@ -155,66 +164,63 @@ protected:
     FreeEventList m_FreeEvents;
 };
 
-// Macro which to create an event.
-#define FINPUT_CREATE_EVENT(cls) FInputEventPool<cls>::GetInstance().GetEvent()
-
-/** Base class of all the input event listener.
+/** Base class of all the  event listener.
  */
-class FInputEventListener : public FGeneralAlloc
+class FEventListener
 {
 public:
-    virtual void HandleEvent(FInputEvent* pEvent) {}
+    virtual void HandleEvent(FEvent* pEvent) {}
 };
 
-typedef void (FInputEventListener::*FInputEventCallback) (FInputEvent* pEvent);
-#define FINPUTCALLBACK_MAKE(func) (FInputEventCallback)(&func)
+typedef void (FEventListener::*FEventCallback) (FEvent* pEvent);
+#define FCALLBACK_MAKE(func) (FEventCallback)(&func)
 
-/** This class can dispatch an input event.
+/** This class can dispatch an  event.
  */
-class FInputEventDispatcher : public FGeneralAlloc
+class FEventDispatcher
 {
-    typedef std::multimap<FInputEventListener*, FInputEventCallback> ListenerMap;
+    typedef std::multimap<FEventListener*, FEventCallback> ListenerMap;
     typedef std::map<int, ListenerMap, std::greater<int> > PriorityMap;
     typedef std::map<int, PriorityMap> EventMap;
     
-    friend class FInputEventProcessQueue;
+    friend class FEventProcessQueue;
     
 public:
-    FInputEventDispatcher() {}
-    virtual ~FInputEventDispatcher() {}
+    FEventDispatcher() {}
+    virtual ~FEventDispatcher() {}
     
-    void AddEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority=0);
-    void RemoveEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority=0);
-    void RemoveAllForListener(FInputEventListener* listener);
+    void AddEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority=0);
+    void RemoveEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority=0);
+    void RemoveAllForListener(FEventListener* listener);
     void RemoveAllListeners();
     
-    void DispatchEvent(FInputEvent* pEvent);
+    void DispatchEvent(FEvent* pEvent);
     
 protected:
     EventMap m_eventMap;
     
     // Handle the specified event.
-    void OnEvent(FInputEvent* pEvent);
+    void OnEvent(FEvent* pEvent);
 };
 
 /** Event queue.
  */
-class FInputEventProcessQueue
+class FEventProcessQueue
 {
     struct Event
     {
-        FInputEventDispatcher* pDispatcher;
-        FInputEvent* pEvent;
+        FEventDispatcher* pDispatcher;
+        FEvent* pEvent;
     };
     
 public:
-    FInputEventProcessQueue();
-    virtual ~FInputEventProcessQueue();
+    FEventProcessQueue();
+    virtual ~FEventProcessQueue();
     
-    void AddEvent(FInputEventDispatcher* dispatcher, FInputEvent* pEvent);
+    void AddEvent(FEventDispatcher* dispatcher, FEvent* pEvent);
     void Update();
     
-    static FInputEventProcessQueue& GetInstance();
+    static FEventProcessQueue& GetInstance();
     
 protected:
     std::queue<Event> m_dispatchQueue;
@@ -223,4 +229,4 @@ protected:
 
 ///////////////////////////////////////////////////////////////////////////
 
-#endif	//#ifndef __FAIRY_INPUT_EVENT_H__
+#endif	//#ifndef __FAIRY__EVENT_H__

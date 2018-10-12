@@ -75,7 +75,7 @@ protected:
 	inline float Clamp(float v)
 	{
 		v += 0.5f;
-		return v;// F_Clamp2(v, 0.0f, 1.0f);
+		return F_Clamp2(v, 0.0f, 1.0f);
 	}
 
 	inline void Normalize2(float v[2])

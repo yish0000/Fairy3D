@@ -10,7 +10,6 @@
  */
 
 #include "FInputMouse.h"
-#include "FInputEvent.h"
 #include "FInputEventTypes.h"
 #include "FThread.h"
 #include "FSysAPI.h"
@@ -22,7 +21,7 @@
 
 #define FILL_BUTTON_EVENT(cls) \
 	{ \
-		cls* pNewEvent = FINPUT_CREATE_EVENT(cls); \
+		cls* pNewEvent = cls::Create(); \
 		if (pNewEvent) { \
 			pNewEvent->cursor_pos = pos; \
 			pNewEvent->ctrl_key_down = (nMask & MOUSE_KEYMASK_CONTROL) ? true : false; \
@@ -40,7 +39,7 @@
 
 #define FILL_XBUTTON_EVENT(cls) \
 	{ \
-		cls* pNewEvent = FINPUT_CREATE_EVENT(cls); \
+		cls* pNewEvent = cls::Create(); \
 		if (pNewEvent) { \
 			pNewEvent->cursor_pos = pos; \
 			pNewEvent->ctrl_key_down = (nMask & MOUSE_KEYMASK_CONTROL) ? true : false; \
@@ -68,11 +67,11 @@ static float CalcDist(const FPointI& pt1, const FPointI& pt2)
 }
 
 // Generate the input event by button event info.
-static FInputEvent* GenButtonInputEvent(const FInputMouse::ButtonEvent& ev)
+static FEvent* GenButtonInputEvent(const FInputMouse::ButtonEvent& ev)
 {
 #define FILL_EVENT(cls) \
 	{ \
-		cls* pNewEvent = FINPUT_CREATE_EVENT(cls); \
+		cls* pNewEvent = cls::Create(); \
 		if (pNewEvent) { \
 			pNewEvent->cursor_pos = ev.cursor_pos; \
 			pNewEvent->ctrl_key_down = ev.ctrl_key_down; \
@@ -83,7 +82,7 @@ static FInputEvent* GenButtonInputEvent(const FInputMouse::ButtonEvent& ev)
 
 #define FILL_XEVENT(cls) \
 	{ \
-		cls* pNewEvent = FINPUT_CREATE_EVENT(cls); \
+		cls* pNewEvent = cls::Create(); \
 		if (pNewEvent) { \
 			pNewEvent->cursor_pos = ev.cursor_pos; \
 			pNewEvent->ctrl_key_down = ev.ctrl_key_down; \
@@ -94,7 +93,7 @@ static FInputEvent* GenButtonInputEvent(const FInputMouse::ButtonEvent& ev)
 		} \
 	}
 
-	FInputEvent* pEvent = NULL;
+	FEvent* pEvent = NULL;
 
 	switch (ev.btn)
 	{
@@ -240,7 +239,7 @@ bool FInputMouse::IsShowCursor() const
 void FInputMouse::DispatchButtonEvent(EMouseButton btn, EButtonEvent evt, const FPointI& pos, uint32 nMask)
 {
 	ButtonEvent ev;
-	FInputEvent* pEvent = NULL;
+	FEvent* pEvent = NULL;
 
 	FASSERT(btn >= MOUSE_LBUTTON && btn < NUM_MOUSEBUTTON);
 	FASSERT(evt == EVENT_DOWN || evt == EVENT_UP );
@@ -292,7 +291,7 @@ void FInputMouse::DispatchButtonEvent(EMouseButton btn, EButtonEvent evt, const 
 */
 void FInputMouse::DispatchMoveEvent(const FPointI& pos, uint32 nMask)
 {
-	FInputMouseMoveEvent* pEvent = FINPUT_CREATE_EVENT(FInputMouseMoveEvent);
+	FInputMouseMoveEvent* pEvent = FInputMouseMoveEvent::Create();
 	if (pEvent)
 	{
 		pEvent->cursor_pos = pos;
@@ -311,7 +310,7 @@ void FInputMouse::DispatchMoveEvent(const FPointI& pos, uint32 nMask)
 */
 void FInputMouse::DispatchWheelEvent(const FPointI& pos, uint32 nMask, int iDelta)
 {
-	FInputMouseWheelEvent* pEvent = FINPUT_CREATE_EVENT(FInputMouseWheelEvent);
+	FInputMouseWheelEvent* pEvent = FInputMouseWheelEvent::Create();
 	if (pEvent)
 	{
 		pEvent->cursor_pos = pos;
@@ -351,7 +350,7 @@ void FInputMouse::HandleEventQueue(const ButtonEvent& ev)
 		lastEvent.evt = EVENT_CLICK;
 
 		// Dispatch the click event.
-		FInputEvent* pClickEvent = GenButtonInputEvent(lastEvent);
+		FEvent* pClickEvent = GenButtonInputEvent(lastEvent);
 		if (pClickEvent)
 			GetDispatcher()->DispatchEvent(pClickEvent);
 
@@ -369,7 +368,7 @@ void FInputMouse::HandleEventQueue(const ButtonEvent& ev)
 				m_EventQueue.pop_back();
 
 				// Dispatch the double click event.
-				FInputEvent* pDblClkEvent = GenButtonInputEvent(lastLastEvent);
+				FEvent* pDblClkEvent = GenButtonInputEvent(lastLastEvent);
 				if (pDblClkEvent)
 					GetDispatcher()->DispatchEvent(pDblClkEvent);
 			}

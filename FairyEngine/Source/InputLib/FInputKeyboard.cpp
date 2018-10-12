@@ -320,7 +320,7 @@ void FInputKeyboard::SetKeyState(int vk, bool bPress)
 void FInputKeyboard::DispatchKeyEvent(int vk, bool bPress)
 {
 	FASSERT(vk >= 0 && vk < NUM_VIRTUALKEY);
-	FInputEventDispatcher* pDispatcher = FInputEngine::GetInstance().GetEventDispatcher();
+	FEventDispatcher* pDispatcher = FInputEngine::GetInstance().GetEventDispatcher();
 
 	// Change the key state.
 	SetKeyState(vk, bPress);
@@ -340,13 +340,13 @@ void FInputKeyboard::DispatchKeyEvent(int vk, bool bPress)
 	{
 		if (bPress)
 		{
-			FInputLogicKeydownEvent* pEvent = FINPUT_CREATE_EVENT(FInputLogicKeydownEvent);
+			FInputLogicKeydownEvent* pEvent = FInputLogicKeydownEvent::Create();
 			pEvent->logic_key = lk;
 			pDispatcher->DispatchEvent(pEvent);
 		}
 		else
 		{
-			FInputLogicKeyupEvent* pEvent = FINPUT_CREATE_EVENT(FInputLogicKeyupEvent);
+			FInputLogicKeyupEvent* pEvent = FInputLogicKeyupEvent::Create();
 			pEvent->logic_key = lk;
 			pDispatcher->DispatchEvent(pEvent);
 		}
@@ -355,13 +355,13 @@ void FInputKeyboard::DispatchKeyEvent(int vk, bool bPress)
 	// Dispatch the normal key event.
 	if (bPress)
 	{
-		FInputKeydownEvent* pEvent = FINPUT_CREATE_EVENT(FInputKeydownEvent);
+		FInputKeydownEvent* pEvent = FInputKeydownEvent::Create();
 		pEvent->vk = vk;
 		pDispatcher->DispatchEvent(pEvent);
 	}
 	else
 	{
-		FInputKeyupEvent* pEvent = FINPUT_CREATE_EVENT(FInputKeyupEvent);
+		FInputKeyupEvent* pEvent = FInputKeyupEvent::Create();
 		pEvent->vk = vk;
 		pDispatcher->DispatchEvent(pEvent);
 	}
@@ -394,7 +394,7 @@ void FInputKeyboard::HandleDeferredKey()
 {
 	FScopedLock lock(m_pMutexKeyState);
 	uint32 nCurTime = FSysAPI::GetMilliSecond();
-	FInputEventDispatcher* pDispatcher = FInputEngine::GetInstance().GetEventDispatcher();
+	FEventDispatcher* pDispatcher = FInputEngine::GetInstance().GetEventDispatcher();
 
 	FASSERT(m_BufferedKeysDown.size() <= MAX_COMBO_KEY_COUNT);
 	FASSERT(m_BufferedKeysUp.size() <= MAX_COMBO_KEY_COUNT);
@@ -413,7 +413,7 @@ void FInputKeyboard::HandleDeferredKey()
 		int logic_key = GetLogicKeyByComboKey(vks[0], vks[1], vks[2], vks[3]);
 		if (logic_key)
 		{
-			FInputLogicKeydownEvent* pEvent = FINPUT_CREATE_EVENT(FInputLogicKeydownEvent);
+			FInputLogicKeydownEvent* pEvent = FInputLogicKeydownEvent::Create();
 			pEvent->logic_key = logic_key;
 			pDispatcher->DispatchEvent(pEvent);
 		}
@@ -435,7 +435,7 @@ void FInputKeyboard::HandleDeferredKey()
 		int logic_key = GetLogicKeyByComboKey(vks[0], vks[1], vks[2], vks[3]);
 		if (logic_key)
 		{
-			FInputLogicKeyupEvent* pEvent = FINPUT_CREATE_EVENT(FInputLogicKeyupEvent);
+			FInputLogicKeyupEvent* pEvent = FInputLogicKeyupEvent::Create();
 			pEvent->logic_key = logic_key;
 			pDispatcher->DispatchEvent(pEvent);
 		}

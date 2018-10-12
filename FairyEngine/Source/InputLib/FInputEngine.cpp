@@ -10,7 +10,6 @@
  */
 
 #include "FInputEngine.h"
-#include "FInputEvent.h"
 #include "FInputDevice.h"
 #include "FLogManager.h"
 
@@ -26,7 +25,7 @@
 FInputEngine::FInputEngine() : m_bInited(false)
 {
     memset(m_pDevices, 0, sizeof(m_pDevices));
-    m_pDispatcher = new FInputEventDispatcher();
+    m_pDispatcher = new FEventDispatcher();
 }
 
 /** Destructor.
@@ -100,26 +99,26 @@ void FInputEngine::Update()
 	}
     
     // Handle the input event in the queue.
-    FInputEventProcessQueue::GetInstance().Update();
+    FEventProcessQueue::GetInstance().Update();
 }
 
 /** Register a callback function for the specified event.
  */
-void FInputEngine::AddEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority)
+void FInputEngine::AddEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority)
 {
     m_pDispatcher->AddEventListener(eventType, listener, callback, priority);
 }
 
 /** Remove the specified event listener.
  */
-void FInputEngine::RemoveEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority)
+void FInputEngine::RemoveEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority)
 {
     m_pDispatcher->RemoveEventListener(eventType, listener, callback, priority);
 }
 
 /** Remove the specified event listener.
  */
-void FInputEngine::RemoveAllForListener(FInputEventListener* listener)
+void FInputEngine::RemoveAllForListener(FEventListener* listener)
 {
     m_pDispatcher->RemoveAllForListener(listener);
 }

@@ -13,8 +13,8 @@
 #define __FAIRY_INPUT_ENGINE_H__
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
+#include "FEvent.h"
 #include "FInputTypes.h"
-#include "FInputEvent.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -35,11 +35,11 @@ public:
     virtual void Update();
 
     // Register a callback function for the specified event.
-    void AddEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority=0);
+    void AddEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority=0);
     // Remove the specified event listener.
-    void RemoveEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority=0);
+    void RemoveEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority=0);
     // Remove the specified event listener.
-    void RemoveAllForListener(FInputEventListener* listener);
+    void RemoveAllForListener(FEventListener* listener);
     // Remove all the event listeners.
     void RemoveAllListeners();
     
@@ -48,13 +48,13 @@ public:
     // Is the device valid ?
     bool IsDeviceValid(EInputDeviceType type) const;
     // Get the pointer to the event dispatcher.
-    FInputEventDispatcher* GetEventDispatcher() { return m_pDispatcher; }
+    FEventDispatcher* GetEventDispatcher() { return m_pDispatcher; }
 
 	static FInputEngine& GetInstance();
 
 protected:
 	bool m_bInited;
-    FInputEventDispatcher* m_pDispatcher;
+    FEventDispatcher* m_pDispatcher;
     FInputDevice* m_pDevices[IDT_COUNT];
     
 protected:

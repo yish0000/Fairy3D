@@ -13,9 +13,6 @@
     <Filter Include="BaseType">
       <UniqueIdentifier>{f332361d-ef7e-416a-bf62-a5de22e40535}</UniqueIdentifier>
     </Filter>
-    <Filter Include="BaseType\Template">
-      <UniqueIdentifier>{378215c3-80f4-4dd8-8827-e03937408e09}</UniqueIdentifier>
-    </Filter>
     <Filter Include="XML">
       <UniqueIdentifier>{eb1c5c60-9387-4322-9938-f2ba8617a498}</UniqueIdentifier>
     </Filter>
@@ -51,15 +48,6 @@
     </Filter>
     <Filter Include="Script">
       <UniqueIdentifier>{f0d31f32-2315-49c9-ac12-53248e9e3cc8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Lua">
-      <UniqueIdentifier>{210ce258-e632-4284-8de6-41d2c98b0fd8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\JavaScript">
-      <UniqueIdentifier>{a57288f8-9a1e-420c-8c84-80d2bf4169ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\C#">
-      <UniqueIdentifier>{cf9b6104-6ac0-46b3-ac84-de36616a2213}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utilities\Json">
       <UniqueIdentifier>{ad61e230-2945-4082-9323-fd8cc3ddce36}</UniqueIdentifier>
@@ -107,15 +95,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FSmartPtr.h">
       <Filter>BaseType</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Source\Common\FDelegate.h">
-      <Filter>BaseType\Template</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Source\Common\FFixArray.h">
-      <Filter>BaseType\Template</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Source\Common\FTemplate.h">
-      <Filter>BaseType\Template</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FXMLReader.h">
       <Filter>XML</Filter>
@@ -219,6 +198,18 @@
     <ClInclude Include="..\..\..\Source\Common\FCommon.h" />
     <ClInclude Include="..\..\..\Source\Common\FTimer.h">
       <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FTemplate.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FDelegate.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FFixArray.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FEvent.h">
+      <Filter>Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +329,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FTimer.cpp">
       <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FEvent.cpp">
+      <Filter>Event</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

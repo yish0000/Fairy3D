@@ -1,7 +1,7 @@
 ﻿/*
  * ------------------------------------------------------------------------
- *  Name:   FInputEvent.cpp
- *  Desc:   This file define the base class for input event.
+ *  Name:   FEvent.cpp
+ *  Desc:   This file define the base class for event.
  *  Author: Yish
  *  Date:   2015/2/3
  *  ----------------------------------------------------------------------
@@ -9,26 +9,26 @@
  * ------------------------------------------------------------------------
  */
 
-#include "FInputEvent.h"
+#include "FEvent.h"
 #include "FLogManager.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //
-//  class FInputEventDispatcher
+//  class FEventDispatcher
 //
 ///////////////////////////////////////////////////////////////////////////
 
-void FInputEventDispatcher::DispatchEvent(FInputEvent* pEvent)
+void FEventDispatcher::DispatchEvent(FEvent* pEvent)
 {
-    FInputEventProcessQueue::GetInstance().AddEvent(this, pEvent);
+    FEventProcessQueue::GetInstance().AddEvent(this, pEvent);
 }
 
-void FInputEventDispatcher::AddEventListener(int iEventType, FInputEventListener* pListener, FInputEventCallback callback, int priority)
+void FEventDispatcher::AddEventListener(int iEventType, FEventListener* pListener, FEventCallback callback, int priority)
 {
 	if (!pListener || !callback)
 	{
 		FASSERT(0);
-		FLOG_ERROR("FInputEventDispatcher::AddEventListener, pointer of listener and callback function mustn't be null!");
+		FLOG_ERROR("FEventDispatcher::AddEventListener, pointer of listener and callback function mustn't be null!");
 		return;
 	}
     
@@ -47,7 +47,7 @@ void FInputEventDispatcher::AddEventListener(int iEventType, FInputEventListener
     listenerMap.insert(std::make_pair(pListener, callback));
 }
 
-void FInputEventDispatcher::RemoveEventListener(int eventType, FInputEventListener* listener, FInputEventCallback callback, int priority)
+void FEventDispatcher::RemoveEventListener(int eventType, FEventListener* listener, FEventCallback callback, int priority)
 {
     EventMap::iterator eit = m_eventMap.find(eventType);
     if( eit == m_eventMap.end() )
@@ -83,7 +83,7 @@ void FInputEventDispatcher::RemoveEventListener(int eventType, FInputEventListen
     }
 }
 
-void FInputEventDispatcher::RemoveAllForListener(FInputEventListener* listener)
+void FEventDispatcher::RemoveAllForListener(FEventListener* listener)
 {
     EventMap::iterator eit = m_eventMap.begin(), eie = m_eventMap.end();
     while( eit != eie )
@@ -108,12 +108,12 @@ void FInputEventDispatcher::RemoveAllForListener(FInputEventListener* listener)
     }
 }
 
-void FInputEventDispatcher::RemoveAllListeners()
+void FEventDispatcher::RemoveAllListeners()
 {
     m_eventMap.clear();
 }
 
-void FInputEventDispatcher::OnEvent(FInputEvent* pEvent)
+void FEventDispatcher::OnEvent(FEvent* pEvent)
 {
     FASSERT_(pEvent, "pEvent is null!");
     EventMap::iterator eit = m_eventMap.find(pEvent->GetType());
@@ -142,27 +142,27 @@ void FInputEventDispatcher::OnEvent(FInputEvent* pEvent)
 
 ///////////////////////////////////////////////////////////////////////////
 //
-//  class FInputEventProcessQueue
+//  class FEventProcessQueue
 //
 ///////////////////////////////////////////////////////////////////////////
 
-FInputEventProcessQueue& FInputEventProcessQueue::GetInstance()
+FEventProcessQueue& FEventProcessQueue::GetInstance()
 {
-    static FInputEventProcessQueue obj;
+    static FEventProcessQueue obj;
     return obj;
 }
 
-FInputEventProcessQueue::FInputEventProcessQueue()
+FEventProcessQueue::FEventProcessQueue()
 {
     m_mutexQueue = FThreadMutex::Create();
 }
 
-FInputEventProcessQueue::~FInputEventProcessQueue()
+FEventProcessQueue::~FEventProcessQueue()
 {
     F_SAFE_DELETE(m_mutexQueue);
 }
 
-void FInputEventProcessQueue::AddEvent(FInputEventDispatcher* dispatcher, FInputEvent* pEvent)
+void FEventProcessQueue::AddEvent(FEventDispatcher* dispatcher, FEvent* pEvent)
 {
     FScopedLock keeper(m_mutexQueue);
     
@@ -172,7 +172,7 @@ void FInputEventProcessQueue::AddEvent(FInputEventDispatcher* dispatcher, FInput
     m_dispatchQueue.push(ev);
 }
 
-void FInputEventProcessQueue::Update()
+void FEventProcessQueue::Update()
 {
     FScopedLock keeper(m_mutexQueue);
     

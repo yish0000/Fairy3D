@@ -30,7 +30,7 @@
 #endif
 
 // Get the pointer of event dispatcher.
-FInputEventDispatcher* FInputDevice::GetDispatcher()
+FEventDispatcher* FInputDevice::GetDispatcher()
 {
 	return FInputEngine::GetInstance().GetEventDispatcher();
 }
