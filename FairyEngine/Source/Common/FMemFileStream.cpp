@@ -127,3 +127,15 @@ size_t FMemFileStream::Read( void* pBuf, size_t nSize )
 	m_pOffset += nSize;
 	return nSize;
 }
+
+/** 写入指定大小的数据
+*/
+size_t FMemFileStream::Write(void* pBuf, size_t nSize)
+{
+	if (m_pOffset + nSize > m_pEnd)
+		nSize = (size_t)(m_pEnd - m_pOffset);
+	if (nSize)
+		memcpy(m_pOffset, pBuf, nSize);
+	m_pOffset += nSize;
+	return nSize;
+}

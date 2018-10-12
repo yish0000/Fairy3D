@@ -19,7 +19,7 @@
 
 /** UTF-8 Version.
 */
-class FTextTabFile : public FGeneralAlloc
+class FTextTabFile
 {
 	typedef std::vector<AStringList> TextTable;
 

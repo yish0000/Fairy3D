@@ -19,7 +19,7 @@
 
 /** Atomic number.
 */
-class FThreadAtomic : public FGeneralAlloc
+class FThreadAtomic
 {
 public:
     virtual ~FThreadAtomic() {}
@@ -40,7 +40,7 @@ public:
 
 /** Mutex object.
 */
-class FThreadMutex : public FGeneralAlloc
+class FThreadMutex
 {
 public:
     virtual ~FThreadMutex() {}
@@ -53,7 +53,7 @@ public:
 
 /** Spin lock object.
 */
-class FThreadSpin : public FGeneralAlloc
+class FThreadSpin
 {
 public:
 	FThreadSpin();
@@ -110,7 +110,7 @@ protected:
 
 /** Condition object.
 */
-class FThreadCond : public FGeneralAlloc
+class FThreadCond
 {
 public:
     virtual ~FThreadCond() {}
@@ -124,7 +124,7 @@ public:
 
 /** Semaphore object.
  */
-class FThreadSemaphore : public FGeneralAlloc
+class FThreadSemaphore
 {
 public:
     virtual ~FThreadSemaphore() {}
@@ -141,7 +141,7 @@ typedef int (*LPFNFTHREADWORKFUNC) (void* pParam);
 
 /** Thread object.
 */
-class FThread : public FGeneralAlloc
+class FThread
 {
 public:
     

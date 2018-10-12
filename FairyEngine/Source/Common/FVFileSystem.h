@@ -25,7 +25,7 @@
     本类用于管理引擎的文件系统，加载资源时优先从包内寻找文件，找不到
     时再尝试从工作目录下的相对路径中寻找。
 */
-class FVFileSystem : public FGeneralAlloc
+class FVFileSystem
 {
     typedef std::map<AString, FVFilePackFactory*> VFilePackFactoryMap;
     typedef std::map<AString, FVFilePack*> VFilePackMap;

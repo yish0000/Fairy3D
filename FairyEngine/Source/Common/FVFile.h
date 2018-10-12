@@ -26,7 +26,7 @@
 @note
 	Can't read and write at the same time, Can't write file to the package.
 */
-class FVFile : public FGeneralAlloc
+class FVFile
 {
 public:		// Types
 

@@ -1167,10 +1167,17 @@ void* FMemManager::Allocate(size_t sz, int category)
 
 	if( category == MCATE_GENERAL )
 	{
+#if FAIRY_FORCE_USE_STD_MEMORYALLOC == 1
+		pData = (void*)malloc(sz);
+
+	#ifdef MEM_DUMP_INFO
+		m_pSTDTracker->AddTrack(pData, sz);
+	#endif
+#else
 		pData = m_pSmall->Allocate(sz);
 		if( !pData ) return NULL;
 
-#ifdef MEM_DUMP_INFO
+	#ifdef MEM_DUMP_INFO
 		SMemSmallBlock* pBlk = _GetMemBlockInfo(pData);
 
 		const int iMaxDeep = 32;
@@ -1202,14 +1209,7 @@ void* FMemManager::Allocate(size_t sz, int category)
 		}
 
 		memcpy(pBlk->nCaller, callers, sizeof(uptrint)*MAX_CALLER_LEVEL);
-#endif
-	}
-	else if( category == MCATE_STD )
-	{
-		pData = (void*)malloc(sz);
-
-#ifdef MEM_DUMP_INFO
-		m_pSTDTracker->AddTrack(pData, sz);
+	#endif
 #endif
 	}
 	else if( category == MCATE_TEMP )
@@ -1229,14 +1229,14 @@ void FMemManager::Free(void* ptr, int category)
 {
 	if( category == MCATE_GENERAL )
 	{
-		m_pSmall->Free(ptr);
-	}
-	else if( category == MCATE_STD )
-	{
+#if FAIRY_FORCE_USE_STD_MEMORYALLOC == 1
 		free(ptr);
 
-#ifdef MEM_DUMP_INFO
+	#ifdef MEM_DUMP_INFO
 		m_pSTDTracker->RemoveTrack(ptr);
+	#endif
+#else
+		m_pSmall->Free(ptr);
 #endif
 	}
 	else if( category == MCATE_TEMP )
@@ -1263,10 +1263,20 @@ void* FMemManager::Realloc(void* ptr, size_t sz, int category)
 
 	if( category == MCATE_GENERAL )
 	{
+#if FAIRY_FORCE_USE_STD_MEMORYALLOC == 1
+		void* newptr = realloc(ptr, sz);
+		FASSERT(newptr && "Reallocate memory from heap failed!");
+
+	#ifdef MEM_DUMP_INFO
+		m_pSTDTracker->ChangeTrack(ptr, newptr, sz);
+	#endif
+
+		return newptr;
+#else
 		uint32 nMaxSize = GetUsableSize(ptr);
 		if( sz < nMaxSize )
 		{
-#ifdef FAIRY_DEBUG
+	#ifdef FAIRY_DEBUG
 			SMemSmallBlock* pBlock = _GetMemBlockInfo(ptr);
 			int iDelta = (int)sz - pBlock->nRawSize;
 
@@ -1282,12 +1292,12 @@ void* FMemManager::Realloc(void* ptr, size_t sz, int category)
 
 			pBlock->nRawSize = (uint32)sz;
 
-#ifdef MEM_CHECK_SLOPOVER
+		#ifdef MEM_CHECK_SLOPOVER
 			uchar* pData = (uchar*)ptr;
 			_FillSlopOverFlags(pData + sz);
-#endif
+		#endif
 
-#endif
+	#endif
 			return ptr;
 		}
 
@@ -1301,17 +1311,7 @@ void* FMemManager::Realloc(void* ptr, size_t sz, int category)
 		}
 
 		return pNewMem;
-	}
-	else if( category == MCATE_STD )
-	{
-		void* newptr = realloc(ptr, sz);
-		FASSERT(newptr && "Reallocate memory from heap failed!");
-
-#ifdef MEM_DUMP_INFO
-		m_pSTDTracker->ChangeTrack(ptr, newptr, sz);
 #endif
-
-		return newptr;
 	}
 	else if( category == MCATE_TEMP )
 	{
@@ -1493,17 +1493,13 @@ bool FMemManagerWrapper::InitMemoryMan()
 // Get the memory usage information
 void F_GetMemInfo(SMemUsageInfo& info)
 {
-#if FAIRY_FORCE_USE_STD_CATEGORY == 0
 	FMemManager* pMemMan = l_MemManWrapper.GetMemManager();
 
-#ifdef MEM_DUMP_INFO
+#if FAIRY_FORCE_USE_STD_MEMORYALLOC == 1
+	info.nPeakSize = pMemMan->GetPeakSize();
 	info.nSTDAllocCount = (uint32)pMemMan->GetSTDMemTracker()->GetNumUnits();
 	info.nSTDMemoryUsed = pMemMan->GetSTDMemSize();
 #else
-	info.nSTDAllocCount = 0;
-	info.nSTDMemoryUsed = 0;
-#endif
-
 	info.nPeakSize = pMemMan->GetPeakSize();
 	info.nSmallRawSize = pMemMan->GetSmallRawSize();
 	info.nSmallSize = pMemMan->GetSmallSize();
@@ -1516,20 +1512,18 @@ void F_GetMemInfo(SMemUsageInfo& info)
 	{
 		info.nSmallPoolSize += pMemMan->GetSmallMem()->GetPoolSlotMemSize(n);
 	}
+#endif
 
-	info.nOversizeCnt = pMemMan->GetTempMemMan()->GetOversizeCnt();
-	info.nGeneralAllocCnt = pMemMan->GetTempMemMan()->GetGeneralAllocCnt();
+	info.nTempOversizeCnt = pMemMan->GetTempMemMan()->GetOversizeCnt();
+	info.nTempGeneralAllocCnt = pMemMan->GetTempMemMan()->GetGeneralAllocCnt();
 	info.nMaxTempPool = pMemMan->GetTempMemMan()->GetMaxActivePool();
 	info.nCurTempPool = pMemMan->GetTempMemMan()->GetCurActivePool();
-#else
-	memset(&info, 0, sizeof(SMemUsageInfo));
-#endif
 }
 
 // Collect the garbage
 void F_MemGarbageCollect()
 {
-#if FAIRY_FORCE_USE_STD_CATEGORY == 0
+#if FAIRY_FORCE_USE_STD_MEMORYALLOC == 0
 	l_MemManWrapper.GetMemManager()->GetSmallMem()->GarbageCollect();
 #endif
 }
@@ -1537,7 +1531,7 @@ void F_MemGarbageCollect()
 // Output the current memory usage states to file
 void F_OuputMemoryUsage(const char* filename)
 {
-#if FAIRY_FORCE_USE_STD_CATEGORY == 0 && defined(MEM_DUMP_INFO)
+#if defined(MEM_DUMP_INFO)
 	FILE* pFile = fopen(filename, "w");
 	if( !pFile )
 	{
@@ -1558,29 +1552,17 @@ void F_OuputMemoryUsage(const char* filename)
 
 void* BaseAllocCategory::Allocate(size_t sz, EMemoryCategory category)
 {
-#if FAIRY_FORCE_USE_STD_CATEGORY
-	return malloc(sz);
-#else
 	return l_MemManWrapper.GetMemManager()->Allocate(sz, category);
-#endif
 }
 
 void* BaseAllocCategory::Realloc(void* ptr, size_t sz, EMemoryCategory category)
 {
-#if FAIRY_FORCE_USE_STD_CATEGORY
-	return realloc(ptr, sz);
-#else
 	return l_MemManWrapper.GetMemManager()->Realloc(ptr, sz, category);
-#endif
 }
 
 void BaseAllocCategory::Free(void* ptr, EMemoryCategory category)
 {
-#if FAIRY_FORCE_USE_STD_CATEGORY
-	free(ptr);
-#else
 	l_MemManWrapper.GetMemManager()->Free(ptr, category);
-#endif
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -1589,11 +1571,7 @@ void BaseAllocCategory::Free(void* ptr, EMemoryCategory category)
 //  
 ///////////////////////////////////////////////////////////////////////////
 
-#if FAIRY_FORCE_USE_STD_NEWDELETE == 0
-
 void* operator new ( size_t sz ) { return GeneralAllocCategory::Allocate( sz ); }
 void* operator new[] ( size_t sz ) { return GeneralAllocCategory::Allocate( sz ); }
 void operator delete ( void* ptr ) { GeneralAllocCategory::Free( ptr ); }
 void operator delete[] ( void* ptr ) { GeneralAllocCategory::Free( ptr ); }
-
-#endif

@@ -27,7 +27,7 @@
 	quality	high
 @note
 */
-class FIniFile : public FGeneralAlloc
+class FIniFile
 {
     typedef std::map<AString, AString> SettingItem;
     typedef std::map<AString, SettingItem*> SettingSections;

@@ -19,7 +19,7 @@
 
 /** Base class of the compressor.
 */
-class FCompressor : public FGeneralAlloc
+class FCompressor
 {
 public:
 

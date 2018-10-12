@@ -19,7 +19,7 @@
 
 /** Base class of the file stream.
 */
-class FVFileStream : public FGeneralAlloc
+class FVFileStream
 {
 public:		// Types
     

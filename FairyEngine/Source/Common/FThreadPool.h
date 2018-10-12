@@ -26,7 +26,7 @@ enum
 
 /** Task running in the pool
 */
-class FThreadTask : public FGeneralAlloc
+class FThreadTask
 {
 public:
     FThreadTask(uint32 nMask, int iPriority = 0) : m_nMask(nMask), m_iPriority(iPriority), m_bAutoDelete(true) {}
@@ -55,7 +55,7 @@ protected:
 
 /** Thread pool
 */
-class FThreadPool : public FGeneralAlloc
+class FThreadPool
 {
     enum
     {

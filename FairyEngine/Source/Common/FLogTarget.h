@@ -51,7 +51,7 @@ enum ELogTarget
 
 /** Base class of log target.
 */
-class FLogTarget : public FGeneralAlloc
+class FLogTarget
 {
 protected:
     ELogLevel m_LogLevel;       // Current log level.

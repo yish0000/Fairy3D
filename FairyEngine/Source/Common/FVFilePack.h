@@ -36,7 +36,7 @@ typedef bool (*CB_PACKAGEOP) ( const AString& filename );
 
 /** File package.
 */
-class FVFilePack : public FGeneralAlloc
+class FVFilePack
 {
 public:
 

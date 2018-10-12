@@ -19,7 +19,7 @@
 
 /** Bit set.
 */
-class FBitset : public FGeneralAlloc
+class FBitset
 {
 protected:
     uchar* m_pData;     // Data buffer.

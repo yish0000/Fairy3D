@@ -38,6 +38,7 @@ public:
 
 	// Read some data from the memory stream.
 	size_t Read( void* pBuf, size_t nSize );
+	size_t Write(void* pBuf, size_t nSize);
 
 protected:
 	fbyte* m_pData;			// Pointer to the data

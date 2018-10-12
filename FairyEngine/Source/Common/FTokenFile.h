@@ -22,7 +22,7 @@
     以空格,逗号,\t,分号为分隔符
     (),"",'' 之内为一个单词, 支持//和/*的注释
 */
-class FTokenFile : public FGeneralAlloc
+class FTokenFile
 {
 public:		// Types
 

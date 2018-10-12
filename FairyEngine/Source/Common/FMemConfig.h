@@ -30,8 +30,7 @@ F_MALLOC宏是指使用通用策略分配内存，F_MALLOC_C宏是指指定一�
 */
 enum EMemoryCategory
 {
-	MCATE_GENERAL,			// 智能分配策略，减少内存碎片（适用于一般情况）
-    MCATE_STD,				// 通用分配策略，系统默认分配器
+	MCATE_GENERAL,			// 通用分配策略（适用于一般情况）
 	MCATE_TEMP,				// 临时内存，适用于临时内存（如函数内数组等短时间存在的数据）
 };
 
@@ -52,11 +51,9 @@ public:
 };
 
 typedef MemoryAllocCategory<MCATE_GENERAL> GeneralAllocCategory;
-typedef MemoryAllocCategory<MCATE_STD> STDAllocCategory;
 typedef MemoryAllocCategory<MCATE_TEMP> TempAllocCategory;
 
 typedef FAllocBase<GeneralAllocCategory> FGeneralAlloc;
-typedef FAllocBase<STDAllocCategory> FSTDAlloc;
 typedef FAllocBase<TempAllocCategory> FTempAlloc;
 
 ///////////////////////////////////////////////////////////////////////////
@@ -64,24 +61,27 @@ typedef FAllocBase<TempAllocCategory> FTempAlloc;
 
 struct SMemUsageInfo
 {
+#if FAIRY_FORCE_USE_STD_MEMORYALLOC == 1
 	// For standard category
-	uint32 nSTDAllocCount;		// 分配单元个数
-	uint32 nSTDMemoryUsed;		// 已使用的内存
-
+	uint32 nPeakSize;				// 内存使用峰值
+	uint32 nSTDAllocCount;			// 分配单元个数
+	uint32 nSTDMemoryUsed;			// 已使用的内存
+#else
 	// For smart category
-	uint32 nPeakSize;			// 内存使用峰值
-	uint32 nSmallRawSize;		// 小内存的使用大小
-	uint32 nSmallSize;			// 小内存的实际占用大小
-	uint32 nLargeRawSize;		// 大内存的使用大小
-	uint32 nLargeSize;			// 大内存的实际占用大小
-	uint32 nLargeBlockCnt;		// 大内存块的个数
-	uint32 nSmallPoolSize;		// 小内存池的大小
+	uint32 nPeakSize;				// 内存使用峰值
+	uint32 nSmallRawSize;			// 小内存的使用大小
+	uint32 nSmallSize;				// 小内存的实际占用大小
+	uint32 nSmallPoolSize;			// 小内存池的大小
+	uint32 nLargeRawSize;			// 大内存的使用大小
+	uint32 nLargeSize;				// 大内存的实际占用大小
+	uint32 nLargeBlockCnt;			// 大内存块的个数
+#endif
 
 	// For temp category
-	uint32 nOversizeCnt;		// 临时内存池超限的次数
-	uint32 nGeneralAllocCnt;	// 使用通用策略分配的次数
-	uint32 nMaxTempPool;		// 临时内存池的最大个数
-	uint32 nCurTempPool;		// 当前临时内存池的个数
+	uint32 nTempOversizeCnt;		// 临时内存池超限的次数
+	uint32 nTempGeneralAllocCnt;	// 使用通用策略分配的次数
+	uint32 nMaxTempPool;			// 临时内存池的最大个数
+	uint32 nCurTempPool;			// 当前临时内存池的个数
 };
 
 // Get the memory usage information.
@@ -94,19 +94,17 @@ void F_OuputMemoryUsage(const char* filename);
 ///////////////////////////////////////////////////////////////////////////
 // 对于那些非继承于FAllocBase的对象，使用通用策略分配内存
 
-#if FAIRY_FORCE_USE_STD_NEWDELETE == 0
-	void* operator new ( size_t sz );
-	void* operator new[] ( size_t sz );
-	void operator delete ( void* ptr );
-	void operator delete[] ( void* ptr );
+void* operator new ( size_t sz );
+void* operator new[] ( size_t sz );
+void operator delete ( void* ptr );
+void operator delete[] ( void* ptr );
 
-	// Placement new
-	#if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
-		#ifndef __PLACEMENT_NEW_INLINE
-			#define __PLACEMENT_NEW_INLINE
-			inline void* operator new ( size_t sz, void* ptr ) { return ptr; }
-			inline void operator delete ( void* ptr, void* ) {}
-		#endif
+// Placement new
+#if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
+	#ifndef __PLACEMENT_NEW_INLINE
+		#define __PLACEMENT_NEW_INLINE
+		inline void* operator new ( size_t sz, void* ptr ) { return ptr; }
+		inline void operator delete ( void* ptr, void* ) {}
 	#endif
 #endif
 
@@ -124,10 +122,6 @@ void F_OuputMemoryUsage(const char* filename);
 #define F_MALLOC_TEMP(sz) F_MALLOC_C(sz, MCATE_TEMP)
 #define F_FREE_TEMP(ptr) F_FREE_C(ptr, MCATE_TEMP)
 #define F_REALLOC_TEMP(ptr, sz) F_REALLOC_C(ptr, sz, MCATE_TEMP)
-
-#define F_MALLOC_STD(sz) F_MALLOC_C(sz, MCATE_STD)
-#define F_FREE_STD(ptr) F_FREE_C(ptr, MCATE_STD)
-#define F_REALLOC_STD(ptr, sz) F_REALLOC_C(ptr, sz, MCATE_STD)
 
 #define F_SAFE_DELETE(p) if(p) { delete (p); (p) = NULL; }
 #define F_SAFE_DELETE_ARRAY(p) if(p) { delete[] (p); (p) = NULL; }
