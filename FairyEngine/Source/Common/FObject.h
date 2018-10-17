@@ -29,6 +29,9 @@ public:
 	// Is this object kind of specified type ?
 	bool IsKindOf(const FRTTI* pRTTI) const;
 
+	// Get the name of this type.
+	const char* TypeName() const;
+
 	template <class T>
 	bool Is() const { return IsKindOf(F_RTTI_OF(T)); }
 

@@ -11,7 +11,7 @@
 
 #include "FObject.h"
 
-//static FRTTI classFObject("FObject", NULL, NULL, NULL);
+static FRTTI classFObject("FObject", NULL, NULL, NULL);
 
 /** Constructor of the class.
 */
@@ -23,14 +23,14 @@ FObject::FObject()
 */
 FRTTI* FObject::GetRTTI() const
 {
-	return NULL;//&classFObject;
+	return &classFObject;
 }
 
 /** Get the RTTI of this class.
 */
 FRTTI* FObject::GetClassRTTI()
 {
-	return NULL;// &classFObject;
+	return &classFObject;
 }
 
 /** Is this object kind of specified type ?
@@ -39,4 +39,12 @@ bool FObject::IsKindOf(const FRTTI* pRTTI) const
 {
 	FRTTI* pRTTIThis = GetRTTI();
 	return pRTTIThis ? pRTTIThis->IsDerivedFrom(pRTTI) : false;
+}
+
+/** Get the name of this type.
+*/
+const char* FObject::TypeName() const
+{
+	FRTTI* pRTTIThis = GetRTTI();
+	return pRTTIThis ? pRTTIThis->GetName() : NULL;
 }
