@@ -11,6 +11,37 @@
 
 #include "FRandom.h"
 
+// 获取一个0 ~ 1的随机浮点数
+float F_RandUniform()
+{
+	return rand() / float(RAND_MAX);
+}
+
+/** 获取一个指定范围的随机整数
+@Param 指定范围的最小整数
+@Param 指定范围的最大整数
+*/
+int F_Rand(int nMin, int nMax)
+{
+	if (nMin == nMax)
+		return nMin;
+	else
+		return rand() % (abs(nMax - nMin) + 1) + nMin;
+}
+
+/** 获取一个指定范围的浮点数
+@Param 指定范围的最小浮点数
+@Param 指定范围的最大浮点数
+*/
+float F_Rand(float fMin, float fMax)
+{
+	if (fMin == fMax) return fMin;
+
+	float fRandom = (float)rand() / (float)RAND_MAX;
+	return fRandom * (float)fabs(fMax - fMin) + fMin;
+}
+
+
 ///////////////////////////////////////////////////////////////////////////
 //  
 //  Implement class FRandom

@@ -14,6 +14,7 @@
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include "FTempMemPool.h"
+#include "FMemThreadLock.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +22,7 @@ class FTempMemPool;
 
 /** Temp memory manager.
 */
-class FTempMemManager
+class FTempMemManager : public FRawAlloc
 {
 public:
 	FTempMemManager(uint32 nPoolSize, uint32 nPoolNum);
@@ -49,13 +50,14 @@ protected:
 	uint32 m_nPoolNum;				// Max count of pools
 	FTempMemPool** m_ppPools;		// Pool array
 	uint32 m_nGCCount;				// Garbage collect count
-	uint32 m_nGCTime;				// Garbage collect time
+	float m_fGCTime;				// Garbage collect time
 	uint32 m_nCurActivePool;		// Current count of active pools
 	uint32 m_nMaxActivePool;		// Max count of active pools
 	uint32 m_nOversizeCnt;			// Count of oversize allocation
 	uint32 m_nGeneralAllocCnt;		// Count of general allocation
 	uint32 m_nAllocCount;			// Allocate count
 	uint32 m_nFreeCount;			// Free count
+	FMemThreadMutex m_Mutex;		// Locker for pools.
 
 	// Initialize the manager
 	bool Init();

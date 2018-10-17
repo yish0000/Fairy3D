@@ -14,7 +14,7 @@
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include "FBaseType.h"
-#include "FThread.h"
+#include "FMemThreadLock.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -29,7 +29,7 @@ class FMemTracker;
 //  
 ///////////////////////////////////////////////////////////////////////////
 
-class FMemManager
+class FMemManager : public FRawAlloc
 {
 public:
 	FMemManager();
@@ -77,6 +77,8 @@ public:
 
 	// Dump the memory leak information
 	void DumpMemoryLeaks();
+	// Destroy the temp memory manager.
+	void DestroyTempMemMan();
 
 	// Dump the current memory usage
 	void DumpCurMemoryUsage(FILE* pFile);
@@ -87,7 +89,7 @@ protected:
 	FTempMemManager* m_pTempMem;	// Temp memory manager
 	FMemTracker* m_pSTDTracker;		// Standard memory tracker
 
-	FThreadSpin m_SpinLock;			// For thread-safe.
+	FMemThreadSpin m_SpinLock;		// For thread-safe.
 	uint32 m_nPeakSize;				// Peak memory usage
 	uint32 m_nSmallSize;			// Small memory usage
 	uint32 m_nSmallRawSize;			// Raw size of small memory

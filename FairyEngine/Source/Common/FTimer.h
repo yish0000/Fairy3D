@@ -26,6 +26,7 @@ class FTimer
 protected:
     int64 m_nCurTime;		// Current time.
     int64 m_nLastTime;		// Time of last frame.
+	int64 m_nStartTime;		// Time when we start the game.
 	int64 m_nFrameCount;	// The total number of frames that have passed.
     float m_fTimeFreq;		// 1 / Timer's frequency
 	float m_fElapsed;		// Time consumed by this frame(unit: sec)
@@ -63,6 +64,10 @@ public:
 
 	// Get the number of frames that have passed.
 	int64 GetFrameCount() const { return m_nFrameCount; }
+	// Get the time at the beginning of this frame. (Second)
+	float GetCurTime() const;
+	// Get the real time since the game started. (Second)
+	float GetRealTime() const;
 
     // Get the singleton.
     static FTimer& GetInstance(void);
@@ -70,6 +75,9 @@ public:
 private:
     // Constructor.
     FTimer(void);
+
+	// Get the current real time.
+	int64 GetCurrentRealTime() const;
 };
 
 ///////////////////////////////////////////////////////////////////////////

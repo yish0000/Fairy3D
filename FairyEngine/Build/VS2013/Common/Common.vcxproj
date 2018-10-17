@@ -99,6 +99,10 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
     <ClInclude Include="..\..\..\Source\Common\FAllocBase.h" />
     <ClInclude Include="..\..\..\Source\Common\FEvent.h" />
     <ClInclude Include="..\..\..\Source\Common\FMemConfig.h" />
+    <ClInclude Include="..\..\..\Source\Common\FMemThreadLock.h" />
+    <ClInclude Include="..\..\..\Source\Common\FObject.h" />
+    <ClInclude Include="..\..\..\Source\Common\FProperty.h" />
+    <ClInclude Include="..\..\..\Source\Common\FRTTI.h" />
     <ClInclude Include="..\..\..\Source\Common\FTempMemBuffer.h" />
     <ClInclude Include="..\..\..\Source\Common\FMemManager.h" />
     <ClInclude Include="..\..\..\Source\Common\FMemTracker.h" />
@@ -120,7 +124,6 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
     <ClInclude Include="..\..\..\Source\Common\FCounter.h" />
     <ClInclude Include="..\..\..\Source\Common\FIniFile.h" />
     <ClInclude Include="..\..\..\Source\Common\FPerformance.h" />
-    <ClInclude Include="..\..\..\Source\Common\FProperty.h" />
     <ClInclude Include="..\..\..\Source\Common\FStrUtil.h" />
     <ClInclude Include="..\..\..\Source\Common\FTextTabFile.h" />
     <ClInclude Include="..\..\..\Source\Common\FTokenFile.h" />
@@ -153,6 +156,9 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
     <ClCompile Include="..\..\..\Source\Common\FEvent.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FMemManager.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FMemTracker.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FObject.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FProperty.cpp" />
+    <ClCompile Include="..\..\..\Source\Common\FRTTI.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FTempMemManager.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FTempMemPool.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FBitset.cpp" />
@@ -162,7 +168,6 @@ copy $(OutDir)$(TargetFileName) ..\..\..\EngineSDK\lib\win32\$(TargetFileName)
     <ClCompile Include="..\..\..\Source\Common\FCompress.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FIniFile.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FPerformance.cpp" />
-    <ClCompile Include="..\..\..\Source\Common\FProperty.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FSingletonInit.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FStrUtil.cpp" />
     <ClCompile Include="..\..\..\Source\Common\FTextTabFile.cpp" />

@@ -16,7 +16,6 @@
 #include "FBase.h"
 #include "FTemplate.h"
 
-#include "F3DClassesDef.h"
 #include "F3DColor.h"
 #include "F3DMath.h"
 

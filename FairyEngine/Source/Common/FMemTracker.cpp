@@ -174,8 +174,6 @@ void FMemTracker::ReallocTracks()
 */
 void FMemTracker::AddTrack( void* pAddress, size_t nSize )
 {
-    ReallocTracks();
-
 	// 记录调用栈信息
 	const int iMaxDeep = 32;
 
@@ -211,6 +209,10 @@ void FMemTracker::AddTrack( void* pAddress, size_t nSize )
 
 #endif
 
+	m_Mutex.Lock();
+
+	ReallocTracks();
+
 	// 记录新的内存分配记录
     m_pMemUnits[m_nNumMemUnits].ptr = pAddress;
     m_pMemUnits[m_nNumMemUnits].nSize = (uint32)nSize;
@@ -218,6 +220,8 @@ void FMemTracker::AddTrack( void* pAddress, size_t nSize )
     m_pMemUnits[m_nNumMemUnits].next = NULL;
     m_HashTab.Add( &m_pMemUnits[m_nNumMemUnits] );
     m_nNumMemUnits++;
+
+	m_Mutex.Unlock();
 
 	FMemManager::GetInstance()->AddAllocSTDSize((int)nSize);
 }
@@ -227,6 +231,8 @@ void FMemTracker::AddTrack( void* pAddress, size_t nSize )
 */
 void FMemTracker::RemoveTrack( void* pAddress )
 {
+	m_Mutex.Lock();
+
     AllocUnit* pUnit = m_HashTab.GetItem( pAddress );
     if( pUnit )
     {
@@ -237,6 +243,8 @@ void FMemTracker::RemoveTrack( void* pAddress )
         m_HashTab.SetBucket( m_pMemUnits[m_nNumMemUnits-1].ptr, pUnit );
         m_nNumMemUnits--;
     }
+
+	m_Mutex.Unlock();
 }
 
 /** 更改已经存在的分配记录
@@ -280,6 +288,8 @@ void FMemTracker::ChangeTrack(void* pAddr, void* pNewAddr, size_t nSize)
 	}
 
 #endif
+
+	m_Mutex.Lock();
 
 	int iDelta = 0;
 
@@ -329,6 +339,8 @@ void FMemTracker::ChangeTrack(void* pAddr, void* pNewAddr, size_t nSize)
 		}
 	}
 
+	m_Mutex.Unlock();
+
 	FMemManager::GetInstance()->AddAllocSTDSize(iDelta);
 }
 
@@ -336,6 +348,8 @@ void FMemTracker::ChangeTrack(void* pAddr, void* pNewAddr, size_t nSize)
 */
 void FMemTracker::ResetTracks(void)
 {
+	m_Mutex.Lock();
+
     if( m_pMemUnits )
     {
         free( m_pMemUnits );
@@ -345,6 +359,8 @@ void FMemTracker::ResetTracks(void)
     m_nNumMemUnits = 0;
     m_nNumMaxMemUnits = 0;
     m_HashTab.Clear();
+
+	m_Mutex.Unlock();
 }
 
 /** 输出指定分配单元的信息
@@ -394,17 +410,23 @@ void FMemTracker::DumpAllocUnit(AllocUnit* pUnit)
 */
 void FMemTracker::DumpMemReport(void)
 {
+	m_Mutex.Lock();
+
     for( size_t i=0; i<m_nNumMemUnits; i++ )
     {
 		AllocUnit* pUnit = &m_pMemUnits[i];
 		DumpAllocUnit(pUnit);
     }
+
+	m_Mutex.Unlock();
 }
 
 /** 将当前内存使用状况保存到文件
 */
 void FMemTracker::DumpCurMemoryUsage(FILE* pFile)
 {
+	m_Mutex.Lock();
+
 	fprintf(pFile, "-------------------------------------------------------------\n");
 	fprintf(pFile, "Standard memory usage:\n");
 
@@ -425,4 +447,6 @@ void FMemTracker::DumpCurMemoryUsage(FILE* pFile)
 	}
 
 	fprintf(pFile, "-------------------------------------------------------------\n");
+
+	m_Mutex.Unlock();
 }

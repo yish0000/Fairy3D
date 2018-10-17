@@ -150,7 +150,7 @@ static void* _RawMemAlloc(size_t sz) { return malloc(sz); }
 static void _RawMemFree(void* ptr) { free(ptr); }
 
 // Lock the thread
-static void _MemThreadLock(FThreadSpin* pLock)
+static void _MemThreadLock(FMemThreadSpin* pLock)
 {
 	if (!pLock)
 		return;
@@ -159,7 +159,7 @@ static void _MemThreadLock(FThreadSpin* pLock)
 }
 
 // Unlock the thread
-static void _MemThreadUnlock(FThreadSpin* pLock)
+static void _MemThreadUnlock(FMemThreadSpin* pLock)
 {
 	if( !pLock )
 		return;
@@ -418,7 +418,7 @@ void FSmallMemPool::ReleasePool(uint32 nSlot)
 //  
 ///////////////////////////////////////////////////////////////////////////
 
-class FSmallMem
+class FSmallMem : public FRawAlloc
 {
 	struct PoolInfo
 	{
@@ -467,7 +467,7 @@ protected:
 	uint32 m_nGCCounter;	// Garbage collect counter
 	FSmallMemPool m_MemPool[MEM_BLOCK_LEVEL];
 	PoolInfo m_PoolInfo[MEM_BLOCK_LEVEL];
-	FThreadSpin m_SpinLocks[MEM_BLOCK_LEVEL];
+	FMemThreadSpin m_SpinLocks[MEM_BLOCK_LEVEL];
 
 	// Get the aligned size
 	uint32 GetAlignedSize(uint32 nSize);
@@ -487,7 +487,7 @@ protected:
 //  
 ///////////////////////////////////////////////////////////////////////////
 
-class FLargeMem
+class FLargeMem : public FRawAlloc
 {
 	friend class FMemManager;
 
@@ -511,7 +511,7 @@ protected:
 	FMemManager* m_pMemMgr;			// Memory manager
 	SMemLargeBlock* m_pBlockList;	// Large block list
 	uint32 m_nBlockCount;			// Block count
-	FThreadSpin m_SpinLock;			// For Thread-safe.
+	FMemThreadSpin m_SpinLock;		// For Thread-safe.
 
 #ifdef MEM_DUMP_INFO
 
@@ -631,9 +631,9 @@ void FSmallMem::Free(void* ptr)
 	}
 
 	int iSlot = pBlk->nPoolSlot;
-	if( iSlot < 0 || iSlot >= MEM_MAX_BLOCK_COUNT )
+	if (iSlot < 0 || iSlot >= MEM_BLOCK_LEVEL)
 	{
-		FASSERT(iSlot >= 0 && iSlot < MEM_MAX_BLOCK_COUNT);
+		FASSERT(iSlot >= 0 && iSlot < MEM_BLOCK_LEVEL);
 		return;
 	}
 
@@ -678,7 +678,7 @@ void FSmallMem::Free(void* ptr)
 // Garbage collect
 void FSmallMem::GarbageCollect()
 {
-	int iSlot = m_nGCCounter % MEM_MAX_BLOCK_COUNT;
+	int iSlot = m_nGCCounter % MEM_BLOCK_LEVEL;
 	m_nGCCounter++;
 
 	FSmallMemPool& Pool = m_MemPool[iSlot];
@@ -828,7 +828,7 @@ void FSmallMem::DumpMemoryBlocks(FILE* pFile)
 	fprintf(pFile, "Small memory usage:\n");
 
 	DumpBlockToFile dumpFunc(pFile);
-	for(int j=0; j<MEM_MAX_BLOCK_COUNT; j++)
+	for (int j = 0; j<MEM_BLOCK_LEVEL; j++)
 	{
 		FSmallMemPool& Pool = m_MemPool[j];
 
@@ -875,7 +875,7 @@ void FSmallMem::Dump()
 	};
 
 	DumpBlockToOutput dumpFunc;
-	for(uint32 i=0; i<MEM_MAX_BLOCK_COUNT; i++)
+	for (uint32 i = 0; i<MEM_BLOCK_LEVEL; i++)
 	{
 		FSmallMemPool& Pool = m_MemPool[i];
 
@@ -1126,16 +1126,12 @@ FMemManager::FMemManager()
 	, m_nLargeSize(0), m_nLargeRawSize(0)
 	, m_nSTDSize(0)
 {
-	m_pSmall = (FSmallMem*)_RawMemAlloc(sizeof(FSmallMem));
-	new (m_pSmall) FSmallMem(this);
-	m_pLarge = (FLargeMem*)_RawMemAlloc(sizeof(FLargeMem));
-	new (m_pLarge) FLargeMem(this);
-	m_pTempMem = (FTempMemManager*)_RawMemAlloc(sizeof(FTempMemManager));
-	new (m_pTempMem) FTempMemManager(2 * 1024 * 1024, 4);
+	m_pSmall = new FSmallMem(this);
+	m_pLarge = new FLargeMem(this);
+	m_pTempMem = new FTempMemManager(2 * 1024 * 1024, 4);
 
 #ifdef MEM_DUMP_INFO
-	m_pSTDTracker = (FMemTracker*)_RawMemAlloc(sizeof(FMemTracker));
-	new (m_pSTDTracker) FMemTracker();
+	m_pSTDTracker = new FMemTracker();
 #else
 	m_pSTDTracker = NULL;
 #endif
@@ -1143,16 +1139,12 @@ FMemManager::FMemManager()
 
 FMemManager::~FMemManager()
 {
-	m_pSmall->~FSmallMem();
-	_RawMemFree(m_pSmall);
-	m_pLarge->~FLargeMem();
-	_RawMemFree(m_pLarge);
-	m_pTempMem->~FTempMemManager();
-	_RawMemFree(m_pTempMem);
+	F_SAFE_DELETE(m_pSmall);
+	F_SAFE_DELETE(m_pLarge);
+	F_SAFE_DELETE(m_pTempMem);
 
 #ifdef MEM_DUMP_INFO
-	m_pSTDTracker->~FMemTracker();
-	_RawMemFree(m_pSTDTracker);
+	F_SAFE_DELETE(m_pSTDTracker);
 #endif
 
 #ifdef FAIRY_DEBUG
@@ -1444,6 +1436,12 @@ void FMemManager::DumpCurMemoryUsage(FILE* pFile)
 #endif
 }
 
+// Destroy the temp memory manager.
+void FMemManager::DestroyTempMemMan()
+{
+	F_SAFE_DELETE(m_pTempMem);
+}
+
 ///////////////////////////////////////////////////////////////////////////
 //  
 //  Implement class FMemManagerWrapper
@@ -1452,22 +1450,22 @@ void FMemManager::DumpCurMemoryUsage(FILE* pFile)
 
 FMemManagerWrapper::~FMemManagerWrapper()
 {
-	if( m_pMemMan )
+	if (m_pMemMan)
 	{
+		m_pMemMan->DestroyTempMemMan();
 		m_pMemMan->DumpMemoryLeaks();
 
 		// 在WINDOWS系统中，我们可以通过init_seg(lib)来确保本实例在所有全局变量中最后析构，
 		// 但其他系统中我们不能保证，所以只在WINDOWS系统中析构内存管理器
 #if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
-		m_pMemMan->~FMemManager();
-		_RawMemFree(m_pMemMan);
+		delete m_pMemMan;
 #endif
 	}
 }
 
 FMemManager* FMemManagerWrapper::GetMemManager()
 {
-	if( !m_pMemMan )
+	if (!m_pMemMan)
 		InitMemoryMan();
 
 	return m_pMemMan;
@@ -1475,12 +1473,14 @@ FMemManager* FMemManagerWrapper::GetMemManager()
 
 bool FMemManagerWrapper::InitMemoryMan()
 {
-	if( !m_pMemMan )
-	{
-		m_pMemMan = (FMemManager*)_RawMemAlloc(sizeof(FMemManager));
-		new (m_pMemMan) FMemManager();
-	}
+	static FMemThreadMutex mutex;
 
+	mutex.Lock();
+
+	if (!m_pMemMan)
+		m_pMemMan = new FMemManager();
+
+	mutex.Unlock();
 	return true;
 }
 
@@ -1552,17 +1552,26 @@ void F_OuputMemoryUsage(const char* filename)
 
 void* BaseAllocCategory::Allocate(size_t sz, EMemoryCategory category)
 {
-	return l_MemManWrapper.GetMemManager()->Allocate(sz, category);
+	if (category == MCATE_RAW)
+		return malloc(sz);
+	else
+		return l_MemManWrapper.GetMemManager()->Allocate(sz, category);
 }
 
 void* BaseAllocCategory::Realloc(void* ptr, size_t sz, EMemoryCategory category)
 {
-	return l_MemManWrapper.GetMemManager()->Realloc(ptr, sz, category);
+	if (category == MCATE_RAW)
+		return realloc(ptr, sz);
+	else
+		return l_MemManWrapper.GetMemManager()->Realloc(ptr, sz, category);
 }
 
 void BaseAllocCategory::Free(void* ptr, EMemoryCategory category)
 {
-	l_MemManWrapper.GetMemManager()->Free(ptr, category);
+	if (category == MCATE_RAW)
+		free(ptr);
+	else
+		l_MemManWrapper.GetMemManager()->Free(ptr, category);
 }
 
 ///////////////////////////////////////////////////////////////////////////

@@ -21,7 +21,7 @@ F_TESTCASE_NOACTIVE(Bitset)
 {
 	int* pp = new int[5];
 
-	F_Randomize(time(0));
+	srand(time(0));
 	std::vector<int> arr;
 	std::list<AString> lst;
 	std::deque<bool> bd;

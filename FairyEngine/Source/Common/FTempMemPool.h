@@ -13,11 +13,11 @@
 #define __FAIRY_TEMPMEMPOOL_H__
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
-#include "FBaseType.h"
+#include "FMemConfig.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
-class FTempMemPool
+class FTempMemPool : public FRawAlloc
 {
 public:
 

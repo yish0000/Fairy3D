@@ -17,6 +17,10 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
+int F_Rand(int nMin, int nMax);
+float F_Rand(float fMin, float fMax);
+float F_RandUniform();
+
 /** 随机数生成器
 */
 class FRandom

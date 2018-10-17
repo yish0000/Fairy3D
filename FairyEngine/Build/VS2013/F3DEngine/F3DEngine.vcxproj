@@ -109,6 +109,7 @@ copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DComponent.cpp" />
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DMathCommon.cpp" />
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneManager.cpp" />
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneNode.cpp" />
@@ -203,6 +204,7 @@ copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DComponent.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneManager.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneNode.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DSceneObject.h" />
@@ -269,7 +271,6 @@ copy $(OutDir)$(ProjectName).lib ..\..\..\EngineSDK\lib\win32\$(ProjectName).lib
     <ClInclude Include="..\..\..\Source\F3DEngine\F2DSpriteTexture.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DResource.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DResourceManager.h" />
-    <ClInclude Include="..\..\..\Source\F3DEngine\F3DClassesDef.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DColor.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DTypes.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DAABB.h" />

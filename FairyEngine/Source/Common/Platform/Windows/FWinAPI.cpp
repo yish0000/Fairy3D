@@ -284,7 +284,7 @@ void FSysAPI::OutputDebugInfo(const char* szMsg, ...)
 	va_end(argList);
 
 	strcat(szBuf, "\n");
-	::OutputDebugStringW(F_UTF8ToUnicode(szBuf).c_str());
+	::OutputDebugStringA(szBuf);
 }
 
 // Get the current tick count.

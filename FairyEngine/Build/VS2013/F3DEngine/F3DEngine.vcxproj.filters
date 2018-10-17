@@ -88,15 +88,6 @@
     <Filter Include="Resource">
       <UniqueIdentifier>{6e7deaa7-fd31-450c-af00-f9f173ec85ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Base">
-      <UniqueIdentifier>{8d9e599e-c58b-438f-b8c2-2a84092bf568}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Base\Base Type">
-      <UniqueIdentifier>{e767c06c-4d43-4ea0-acc2-8009f8f005eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Base\Math Lib">
-      <UniqueIdentifier>{69164fc2-537f-466e-8891-233fcc7e075d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GFX">
       <UniqueIdentifier>{6a1fcc73-853c-4921-a142-7ff60ea69cb5}</UniqueIdentifier>
     </Filter>
@@ -123,6 +114,12 @@
     </Filter>
     <Filter Include="Animation\Skeleton">
       <UniqueIdentifier>{a309abfc-a96c-44da-bcd2-c790ffe63198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{69164fc2-537f-466e-8891-233fcc7e075d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseType">
+      <UniqueIdentifier>{e767c06c-4d43-4ea0-acc2-8009f8f005eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -322,34 +319,34 @@
       <Filter>Resource</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DColor.cpp">
-      <Filter>Base\Base Type</Filter>
+      <Filter>BaseType</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DAABB.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DMatrix.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DOBB.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DPlane.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DPolygon.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DQuat.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DRay.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DSphere.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DVector.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DGFXElement.cpp">
       <Filter>GFX</Filter>
@@ -371,7 +368,10 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DPCH.cpp" />
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DMathCommon.cpp">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\F3DEngine\F3DComponent.cpp">
+      <Filter>BaseType</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -573,47 +573,44 @@
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DResourceManager.h">
       <Filter>Resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Source\F3DEngine\F3DClassesDef.h">
-      <Filter>Base\Base Type</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DColor.h">
-      <Filter>Base\Base Type</Filter>
+      <Filter>BaseType</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DTypes.h">
-      <Filter>Base\Base Type</Filter>
+      <Filter>BaseType</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DAABB.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DMath.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DMathCommon.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DMatrix.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DOBB.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DPlane.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DPolygon.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DQuat.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DRay.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DSphere.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DVector.h">
-      <Filter>Base\Math Lib</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DGFXElement.h">
       <Filter>GFX</Filter>
@@ -635,5 +632,8 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3D.h" />
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DPCH.h" />
+    <ClInclude Include="..\..\..\Source\F3DEngine\F3DComponent.h">
+      <Filter>BaseType</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

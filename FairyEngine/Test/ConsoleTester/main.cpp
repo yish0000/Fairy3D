@@ -50,6 +50,8 @@ int main( int argc,char* argv[] )
     {
         HMODULE hDll = LoadLibrary( data.cFileName );
 
+		int err = GetLastError();
+
         UnitTestCountFunc pTestCountFunc = (UnitTestCountFunc)GetProcAddress( hDll,"UnitTestCount" );
         if( pTestCountFunc )
         {

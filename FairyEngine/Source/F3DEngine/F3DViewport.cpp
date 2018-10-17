@@ -164,7 +164,6 @@ void F3DViewport::OnRTResize()
 		{
 			F3DCameraOrtho* pCamera = dynamic_cast<F3DCameraOrtho*>(m_pCamera);
 			pCamera->SetOrthoParam(m_fRelLeft, m_fRelTop, m_fRelLeft+m_fRelWidth, m_fRelTop+m_fRelHeight);
-#pragma F_COMPILE_WARN("Not implemented! update projection matrix for orthogonal camera.")
 		}
 	}
 

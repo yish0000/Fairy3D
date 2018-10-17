@@ -98,14 +98,18 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\TestCommon\TestPerlinNoise.cpp" />
+    <ClCompile Include="..\..\..\TestCommon\TestRTTI.cpp" />
     <ClCompile Include="..\..\..\TestCommon\TestSuite1.cpp" />
-    <ClCompile Include="TestPerlinNoise.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestSuiteLib\TestSuiteLib.vcxproj">
       <Project>{5603917d-0322-4b0a-a4e4-a619258f7417}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\TestCommon\TestRTTI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

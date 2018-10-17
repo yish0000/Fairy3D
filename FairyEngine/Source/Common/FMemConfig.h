@@ -30,8 +30,9 @@ F_MALLOC宏是指使用通用策略分配内存，F_MALLOC_C宏是指指定一�
 */
 enum EMemoryCategory
 {
-	MCATE_GENERAL,			// 通用分配策略（适用于一般情况）
+	MCATE_GENERAL,			// 通用分配策略（会启用小内存池机制，适用于一般情况）
 	MCATE_TEMP,				// 临时内存，适用于临时内存（如函数内数组等短时间存在的数据）
+	MCATE_RAW,				// 原始分配策略（直接调用系统分配函数）
 };
 
 class BaseAllocCategory
@@ -52,9 +53,11 @@ public:
 
 typedef MemoryAllocCategory<MCATE_GENERAL> GeneralAllocCategory;
 typedef MemoryAllocCategory<MCATE_TEMP> TempAllocCategory;
+typedef MemoryAllocCategory<MCATE_RAW> RawAllocCategory;
 
 typedef FAllocBase<GeneralAllocCategory> FGeneralAlloc;
 typedef FAllocBase<TempAllocCategory> FTempAlloc;
+typedef FAllocBase<RawAllocCategory> FRawAlloc;
 
 ///////////////////////////////////////////////////////////////////////////
 // 内存相关的全局函数

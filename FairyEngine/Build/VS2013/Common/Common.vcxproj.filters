@@ -46,14 +46,14 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{6cecea81-cd0f-4fe0-8bb2-0577e7db00c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script">
-      <UniqueIdentifier>{f0d31f32-2315-49c9-ac12-53248e9e3cc8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utilities\Json">
       <UniqueIdentifier>{ad61e230-2945-4082-9323-fd8cc3ddce36}</UniqueIdentifier>
     </Filter>
     <Filter Include="Event">
       <UniqueIdentifier>{6ef83480-13f8-43b9-bc74-e5252b88c551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RTTI">
+      <UniqueIdentifier>{f0d31f32-2315-49c9-ac12-53248e9e3cc8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +112,6 @@
       <Filter>Utilities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FPerformance.h">
-      <Filter>Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Source\Common\FProperty.h">
       <Filter>Utilities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FStrUtil.h">
@@ -211,6 +208,18 @@
     <ClInclude Include="..\..\..\Source\Common\FEvent.h">
       <Filter>Event</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FObject.h">
+      <Filter>RTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FProperty.h">
+      <Filter>RTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FRTTI.h">
+      <Filter>RTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\FMemThreadLock.h">
+      <Filter>Memory\InternalManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\Common\FMemManager.cpp">
@@ -241,9 +250,6 @@
       <Filter>Utilities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FPerformance.cpp">
-      <Filter>Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Source\Common\FProperty.cpp">
       <Filter>Utilities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FSingletonInit.cpp">
@@ -332,6 +338,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FEvent.cpp">
       <Filter>Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FObject.cpp">
+      <Filter>RTTI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FProperty.cpp">
+      <Filter>RTTI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\FRTTI.cpp">
+      <Filter>RTTI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿/*
  * ------------------------------------------------------------------------
  *  Name:   FProperty.h
- *  Desc:   本文件定义了一个通用的属性接口。
+ *  Desc:   This file define the property system for engine.
  *  Author: Yish
  *  Date:   2013/1/24
  *  ----------------------------------------------------------------------
@@ -17,135 +17,113 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-#if 0
-/** 属性类型
+class FObject;
+
+/** Data type of property.
 */
 enum EPropertyType
 {
-    FPROP_UNKNOWN,
-
     FPROP_INT,
+	FPROP_DWORD,
     FPROP_FLOAT,
-    FPROP_STRINGA,
-    FPROP_STRINGW,
+    FPROP_STRING,
     FPROP_BOOL,
-    FPROP_USERDATA,
+    FPROP_PTR,
 };
 
-/** 关联属性类型到枚举值
+/** Type to type id.
 */
 template <class T> struct FPropertyType
 {
-    static EPropertyType ms_Type;
+    static EPropertyType TypeID;
 };
 
-template <class T> FPropertyType<T>::ms_Type = FPROP_UNKNOWN;
-template <> FPropertyType<int>::ms_Type = FPROP_INT;
-template <> FPropertyType<float>::ms_Type = FPROP_FLOAT;
-template <> FPropertyType<AString>::ms_Type = FPROP_STRINGA;
-template <> FPropertyType<WString>::ms_Type = FPROP_STRINGW;
-template <> FPropertyType<bool>::ms_Type = FPROP_BOOL;
+template <class T> EPropertyType FPropertyType<T>::TypeID = FPROP_PTR;
+template <> EPropertyType FPropertyType<int>::TypeID = FPROP_INT;
+template <> EPropertyType FPropertyType<uint32>::TypeID = FPROP_DWORD;
+template <> EPropertyType FPropertyType<float>::TypeID = FPROP_FLOAT;
+template <> EPropertyType FPropertyType<AString>::TypeID = FPROP_STRING;
+template <> EPropertyType FPropertyType<bool>::TypeID = FPROP_BOOL;
 
 ///////////////////////////////////////////////////////////////////////////
 
-class FPropertySet;
-
-/** 属性对象
+/** Base property
 */
-class FProperty
+class FBaseProperty
 {
-    typedef void (*FPropertySet::GetterFunc) ( AString& value );
-    typedef void (*FPropertySet::SetterFunc) ( const AString& value );
-
-//     union Data
-//     {
-//         int* m_int;
-//         float* m_float;
-//         AString* m_stringa;
-//         WString* m_stringw;
-//         bool* m_bool;
-//     };
-
 public:
-    FProperty();
+	FBaseProperty(const char* name)
+		: m_szName(name)
+	{
+	}
 
-    // 传入变量指针作为属性
-    template <class T>
-    FProperty( T* value );
+	// Get the name of property.
+	const char* GetName() const { return m_szName; }
 
-    // 传入存取函数作为属性
-    FProperty( GetterFunc getter, SetterFunc setter );
-
-    // 析构函数
-    virtual ~FProperty();
-
-    // 拷贝一个属性对象
-    FProperty& Clone( const FProperty& rhs );
-    FProperty& operator = ( const FProperty& rhs ) { return Clone(rhs); }
-
-    // 获取指定对象的属性
-    template <class T>
-    void GetValue( FPropertySet* pObject, T& value )
-    {
-        FASSERT(FPropertyType<T>::ms_Type == m_type);
-        value = *m_data;
-    }
-
-    // 为指定对象设置属性
-    template <class T>
-    void SetValue( FPropertySet* pObject, const T& value )
-    {
-        FASSERT(FPropertyType<T>::ms_Type == m_type);
-        *m_data = value;
-    }
-
-    // 
+	// Get the data type of the property.
+	virtual EPropertyType GetType() const = 0;
 
 protected:
-    EPropertyType m_type;
-    T* m_data;
+	const char* m_szName;
+};
+
+/** Property
+*/
+template <class OwnerType, class T>
+class FProperty : public FBaseProperty
+{
+public:
+	typedef T(OwnerType::*GetterFunc) ();
+	typedef void(OwnerType::*SetterFunc) (const T& value);
+
+public:
+	FProperty(const char* name, GetterFunc getter, SetterFunc setter)
+		: FBaseProperty(name), m_getter(getter), m_setter(setter)
+	{
+	}
+
+	// Get the value of this property.
+	virtual T GetValue(FObject* pObject)
+	{
+		return (((OwnerType*)pObject)->*m_getter)();
+	}
+
+	// Set the value of this property.
+	virtual void SetValue(FObject* pObject, const T& val)
+	{
+		if (!m_setter)
+		{
+			FASSERT(false); // Cannot write to a read-only property
+			return;
+		}
+
+		(((OwnerType*)pObject)->*m_setter)(val);
+	}
+
+	// Get the data type of the property.
+	virtual EPropertyType GetType() const { return FPropertyType<T>::TypeID; }
+
+protected:
     GetterFunc m_getter;
     SetterFunc m_setter;
 };
 
-/** 属性集合
-*/
-class FPropertySet
-{
-    typedef std::map<AString, FProperty*> PropertyMap;
-
-public:
-    FPropertySet();
-    virtual ~FPropertySet();
-
-    bool RegisterProperty( const char* name, FProperty* prop );
-
-    template <class T>
-    void GetProperty( const char* name, T& value );
-    template <class T>
-    void SetProperty( const char* name, const T& value );
-
-    // 
-    void GetUnknownTypeProperty(  );
-
-private:
-    static PropertyMap ms_Props;
-};
-
-/** 属性列表
+/** Global manager of all the properties.
 */
 class FPropertyList
 {
 public:
     virtual ~FPropertyList();
 
-    // 添加属性
-    bool AddProperty( FProperty* pProperty );
+	// Get the instance.
+	static FPropertyList& GetInstance();
+
+    // Add a property.
+	void AddProperty(FBaseProperty* pProperty);
 
 protected:
-    std::list<FProperty*> m_Properties;
+    std::list<FBaseProperty*> m_Properties;
 };
-#endif
 
 ///////////////////////////////////////////////////////////////////////////
 

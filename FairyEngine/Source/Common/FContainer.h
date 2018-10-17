@@ -19,7 +19,6 @@
 
 namespace falloc {
 
-#define STL_ALLOC_CATEGOTY_DEFAULT 0
 #define STL_ALLOC_CATEGOTY_GENERAL 1
 #define STL_ALLOC_CATEGOTY_TEMP 2
 
@@ -69,9 +68,7 @@ namespace falloc {
 			size_type sz = size * sizeof(T);
 
 			pointer ptr = NULL;
-			if (CAT == STL_ALLOC_CATEGOTY_DEFAULT)
-				ptr = (pointer)malloc(sz);
-			else if (CAT == STL_ALLOC_CATEGOTY_GENERAL)
+			if (CAT == STL_ALLOC_CATEGOTY_GENERAL)
 				ptr = (pointer)F_MALLOC(sz);
 			else if (CAT == STL_ALLOC_CATEGOTY_TEMP)
 				ptr = (pointer)F_MALLOC_TEMP(sz);
@@ -88,9 +85,7 @@ namespace falloc {
 		// memory deallocation
 		void deallocate(pointer ptr, size_type)
 		{
-			if (CAT == STL_ALLOC_CATEGOTY_DEFAULT)
-				free(ptr);
-			else if (CAT == STL_ALLOC_CATEGOTY_GENERAL)
+			if (CAT == STL_ALLOC_CATEGOTY_GENERAL)
 				F_FREE(ptr);
 			else if (CAT == STL_ALLOC_CATEGOTY_TEMP)
 				F_FREE_TEMP(ptr);
@@ -144,7 +139,6 @@ namespace falloc {
 	}
 
 	// Allocator for stl containers.
-	template <class T> class default_stl_alloc : public base_allocator<T, STL_ALLOC_CATEGOTY_DEFAULT> {};
 	template <class T> class general_stl_alloc : public base_allocator<T, STL_ALLOC_CATEGOTY_GENERAL> {};
 	template <class T> class temp_stl_alloc : public base_allocator<T, STL_ALLOC_CATEGOTY_TEMP> {};
 }

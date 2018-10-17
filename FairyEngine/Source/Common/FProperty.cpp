@@ -1,7 +1,7 @@
 ﻿/*
  * ------------------------------------------------------------------------
  *  Name:   FProperty.cpp
- *  Desc:   本文件实现了一个通用的属性接口。
+ *  Desc:   This file implements the property system for engine.
  *  Author: Yish
  *  Date:   2013/1/24
  *  ----------------------------------------------------------------------
@@ -11,5 +11,28 @@
 
 #include "FProperty.h"
 
-/** 析构函数
+/** Destructor of the class.
 */
+FPropertyList::~FPropertyList()
+{
+	std::list<FBaseProperty*>::iterator it = m_Properties.begin();
+	for (; it != m_Properties.end(); ++it)
+		delete *it;
+	m_Properties.clear();
+}
+
+/** Get the instance of property list.
+*/
+FPropertyList& FPropertyList::GetInstance()
+{
+	static FPropertyList obj;
+	return obj;
+}
+
+/** Add a property.
+*/
+void FPropertyList::AddProperty(FBaseProperty* pProperty)
+{
+	if (pProperty != NULL)
+		m_Properties.push_back(pProperty);
+}

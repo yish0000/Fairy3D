@@ -14,12 +14,13 @@
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include "FBaseType.h"
+#include "FMemThreadLock.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
 /** 内存泄露检测
 */
-class FMemTracker
+class FMemTracker : public FRawAlloc
 {
 public:
 
@@ -69,6 +70,7 @@ protected:
 	AllocUnitTable m_HashTab;	// 内存分配记录哈希表
     size_t m_nNumMemUnits;      // 内存分配记录的个数
     size_t m_nNumMaxMemUnits;   // 内存分配记录的空间大小
+	FMemThreadMutex m_Mutex;	// Locker
 
 public:
     FMemTracker(void);

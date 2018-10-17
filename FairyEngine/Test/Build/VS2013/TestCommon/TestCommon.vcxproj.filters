@@ -18,8 +18,16 @@
     <ClCompile Include="..\..\..\TestCommon\TestSuite1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestPerlinNoise.cpp">
+    <ClCompile Include="..\..\..\TestCommon\TestPerlinNoise.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\TestCommon\TestRTTI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\TestCommon\TestRTTI.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

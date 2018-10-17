@@ -42,7 +42,7 @@ FTimer::FTimer(void)
     else
     {
         m_fTimeFreq = 0.001f;
-        m_nLastTime = (int64)GetTickCount();
+        m_nLastTime = (int64)GetTickCount64();
         m_bCPUPerf = false;
     }
 #else
@@ -51,12 +51,34 @@ FTimer::FTimer(void)
     m_nLastTime = ((uint64)tv.tv_sec * 1000000 + tv.tv_usec) / 1000;
 	m_fTimeFreq = 0.001f;
 #endif
+
+	m_nStartTime = m_nLastTime;
 }
 
 /** Destructor.
 */
 FTimer::~FTimer(void)
 {
+}
+
+/** Get the current real time.
+*/
+int64 FTimer::GetCurrentRealTime() const
+{
+	int64 curTime = 0;
+
+#if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
+	if (m_bCPUPerf)
+		QueryPerformanceCounter((LARGE_INTEGER*)&curTime);
+	else
+		curTime = (int64)GetTickCount64();
+#else
+	timeval tv;
+	gettimeofday(&tv, NULL);
+	curTime = ((uint64)tv.tv_sec * 1000000 + tv.tv_usec) / 1000;
+#endif
+
+	return curTime;
 }
 
 /** Call me at the start of each frame.
@@ -66,25 +88,7 @@ bool FTimer::Update(void)
     static long s_nFrames = 0;
     static float s_fAccumulate = 0.0f;
 
-#if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
-    if( m_bCPUPerf )
-        QueryPerformanceCounter( (LARGE_INTEGER*)&m_nCurTime );
-    else
-        m_nCurTime = (int64)GetTickCount();
-
-	// !!Notice!!
-	// GetTickCount, Retrieves the number of milliseconds that have elapsed since the system was started, up to 49.7 days.
-	// Then the tick count will return 0.
-	if (m_nCurTime < m_nLastTime)
-	{
-		m_nLastTime = m_nLastTime - (int64)UINT_MAX;
-	}
-#else
-    timeval tv;
-    gettimeofday(&tv, NULL);
-    m_nCurTime = ((uint64)tv.tv_sec * 1000000 + tv.tv_usec) / 1000;
-#endif
-
+	m_nCurTime = GetCurrentRealTime();
     m_fElapsed = (m_nCurTime - m_nLastTime) * m_fTimeFreq;
     if( m_fElapsed < m_fMinElapsed )
         return false;
@@ -106,7 +110,6 @@ bool FTimer::Update(void)
     }
     
 	m_nFrameCount++;
-
     return true;
 }
 
@@ -115,6 +118,21 @@ void FTimer::SetMaxFPS(uint32 nMaxFPS)
 {
     if( nMaxFPS > 1000 )
         nMaxFPS = 1000;
+
     m_nMaxFPS = nMaxFPS;
     m_fMinElapsed = 1.0f / m_nMaxFPS;
+}
+
+// Get the time at the beginning of this frame. (Second)
+float FTimer::GetCurTime() const
+{
+	int64 delta = m_nCurTime - m_nStartTime;
+	return (float)(delta * m_fTimeFreq);
+}
+
+// Get the real time since the game started. (Second)
+float FTimer::GetRealTime() const
+{
+	int64 delta = GetCurrentRealTime() - m_nStartTime;
+	return (float)(delta * m_fTimeFreq);
 }
