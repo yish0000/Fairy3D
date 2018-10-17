@@ -67,10 +67,30 @@ protected:
 	const char* m_szName;
 };
 
+/** Typed property.
+*/
+template <class T>
+class FTypedProperty : public FBaseProperty
+{
+public:
+	FTypedProperty(const char* name)
+		: FBaseProperty(name)
+	{
+	}
+
+	// Get the value of this property.
+	virtual T GetValue(FObject* pObject) = 0;
+	// Set the value of this property.
+	virtual void SetValue(FObject* pObject, const T& val) = 0;
+
+	// Get the data type of the property.
+	virtual EPropertyType GetType() const { return FPropertyType<T>::TypeID; }
+};
+
 /** Property
 */
 template <class OwnerType, class T>
-class FProperty : public FBaseProperty
+class FProperty : public FTypedProperty<T>
 {
 public:
 	typedef T(OwnerType::*GetterFunc) ();
@@ -78,7 +98,7 @@ public:
 
 public:
 	FProperty(const char* name, GetterFunc getter, SetterFunc setter)
-		: FBaseProperty(name), m_getter(getter), m_setter(setter)
+		: FTypedProperty<T>(name), m_getter(getter), m_setter(setter)
 	{
 	}
 
@@ -99,9 +119,6 @@ public:
 
 		(((OwnerType*)pObject)->*m_setter)(val);
 	}
-
-	// Get the data type of the property.
-	virtual EPropertyType GetType() const { return FPropertyType<T>::TypeID; }
 
 protected:
     GetterFunc m_getter;

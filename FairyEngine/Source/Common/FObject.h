@@ -22,6 +22,9 @@ class FObject
 public:
 	virtual ~FObject() {}
 
+	// Enumerate all the properties.
+	void EnumProperties(std::vector<FBaseProperty*>& result);
+
 	// Get the RTTI.
 	virtual FRTTI* GetRTTI() const;
 	static FRTTI* GetClassRTTI();

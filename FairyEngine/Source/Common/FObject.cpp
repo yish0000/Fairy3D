@@ -48,3 +48,12 @@ const char* FObject::TypeName() const
 	FRTTI* pRTTIThis = GetRTTI();
 	return pRTTIThis ? pRTTIThis->GetName() : NULL;
 }
+
+/** Enumerate all the properties.
+*/
+void FObject::EnumProperties(std::vector<FBaseProperty*>& result)
+{
+	FRTTI* pRTTIThis = GetRTTI();
+	if (pRTTIThis)
+		pRTTIThis->EnumProperties(result);
+}
