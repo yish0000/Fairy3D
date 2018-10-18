@@ -17,7 +17,7 @@
 
 #if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
 	#include "Platform/Windows/FWinThread.h"
-#elif FAIRY_PLATFORM == FAIRY_PLATFORM_MACOS
+#elif FAIRY_PLATFORM == FAIRY_PLATFORM_MACOS || FAIRY_PLATFORM == FAIRY_PLATFORM_IOS
 	#include "Platform/Mac/FMacThread.h"
 #elif FAIRY_PLATFORM == FAIRY_PLATFORM_LINUX
 	#include "Platform/Linux/FLinuxThread.h"
@@ -46,7 +46,7 @@ public:
 private:
 #if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
 	FWinThreadAtomic m_atomic;
-#elif FAIRY_PLATFORM == FAIRY_PLATFORM_MACOS
+#elif FAIRY_PLATFORM == FAIRY_PLATFORM_MACOS || FAIRY_PLATFORM == FAIRY_PLATFORM_IOS
 	FMacThreadAtomic m_atomic;
 #else
 	FLinuxThreadAtomic m_atomic;
@@ -111,7 +111,7 @@ public:
 private:
 #if FAIRY_PLATFORM == FAIRY_PLATFORM_WINDOWS
 	FWinThreadMutex m_mutex;
-#elif FAIRY_PLATFORM == FAIRY_PLATFORM_MACOS
+#elif FAIRY_PLATFORM == FAIRY_PLATFORM_MACOS || FAIRY_PLATFORM == FAIRY_PLATFORM_IOS
 	FMacThreadMutex m_mutex;
 #else
 	FLinuxThreadMutex m_mutex;

@@ -184,6 +184,20 @@
 		D222E4331C89E812006EE1A9 /* FTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D222E4301C89E812006EE1A9 /* FTimer.cpp */; };
 		D222E4341C89E812006EE1A9 /* FTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = D222E4311C89E812006EE1A9 /* FTimer.h */; };
 		D222E4351C89E812006EE1A9 /* FTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = D222E4311C89E812006EE1A9 /* FTimer.h */; };
+		D26E67AF2178D86E00759642 /* FObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26E67AA2178D86E00759642 /* FObject.cpp */; };
+		D26E67B02178D86E00759642 /* FObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26E67AA2178D86E00759642 /* FObject.cpp */; };
+		D26E67B12178D86E00759642 /* FObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E67AB2178D86E00759642 /* FObject.h */; };
+		D26E67B22178D86E00759642 /* FObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E67AB2178D86E00759642 /* FObject.h */; };
+		D26E67B32178D86E00759642 /* FMemThreadLock.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E67AC2178D86E00759642 /* FMemThreadLock.h */; };
+		D26E67B42178D86E00759642 /* FMemThreadLock.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E67AC2178D86E00759642 /* FMemThreadLock.h */; };
+		D26E67B52178D86E00759642 /* FRTTI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26E67AD2178D86E00759642 /* FRTTI.cpp */; };
+		D26E67B62178D86E00759642 /* FRTTI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26E67AD2178D86E00759642 /* FRTTI.cpp */; };
+		D26E67B72178D86E00759642 /* FRTTI.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E67AE2178D86E00759642 /* FRTTI.h */; };
+		D26E67B82178D86E00759642 /* FRTTI.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E67AE2178D86E00759642 /* FRTTI.h */; };
+		D26E7D4E2178D90F00759642 /* FEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26E7D4C2178D90F00759642 /* FEvent.cpp */; };
+		D26E7D4F2178D90F00759642 /* FEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26E7D4C2178D90F00759642 /* FEvent.cpp */; };
+		D26E7D502178D90F00759642 /* FEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E7D4D2178D90F00759642 /* FEvent.h */; };
+		D26E7D512178D90F00759642 /* FEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = D26E7D4D2178D90F00759642 /* FEvent.h */; };
 		D2F230461C70774000D92A1C /* FMacThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F230431C70774000D92A1C /* FMacThread.cpp */; };
 		D2F230471C70774000D92A1C /* FMacThread.h in Headers */ = {isa = PBXBuildFile; fileRef = D2F230441C70774000D92A1C /* FMacThread.h */; };
 /* End PBXBuildFile section */
@@ -295,6 +309,13 @@
 		D26283881AB87E8A00FC776B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		D26283891AB87E8A00FC776B /* libc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libc.dylib; path = usr/lib/libc.dylib; sourceTree = SDKROOT; };
 		D264BF961AE011CD0069E51F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		D26E67AA2178D86E00759642 /* FObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FObject.cpp; path = ../../../Source/Common/FObject.cpp; sourceTree = "<group>"; };
+		D26E67AB2178D86E00759642 /* FObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FObject.h; path = ../../../Source/Common/FObject.h; sourceTree = "<group>"; };
+		D26E67AC2178D86E00759642 /* FMemThreadLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMemThreadLock.h; path = ../../../Source/Common/FMemThreadLock.h; sourceTree = "<group>"; };
+		D26E67AD2178D86E00759642 /* FRTTI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FRTTI.cpp; path = ../../../Source/Common/FRTTI.cpp; sourceTree = "<group>"; };
+		D26E67AE2178D86E00759642 /* FRTTI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRTTI.h; path = ../../../Source/Common/FRTTI.h; sourceTree = "<group>"; };
+		D26E7D4C2178D90F00759642 /* FEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FEvent.cpp; path = ../../../Source/Common/FEvent.cpp; sourceTree = "<group>"; };
+		D26E7D4D2178D90F00759642 /* FEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FEvent.h; path = ../../../Source/Common/FEvent.h; sourceTree = "<group>"; };
 		D274CD581AC078F300572881 /* libminilzo_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminilzo_ios.a; path = "../3rdSDK/minilzo/build/Debug-iphoneos/libminilzo_ios.a"; sourceTree = "<group>"; };
 		D274CD591AC078F300572881 /* libzlib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlib_ios.a; path = "../3rdSDK/zlib/build/Debug-iphoneos/libzlib_ios.a"; sourceTree = "<group>"; };
 		D274CD5C1AC0793000572881 /* libminilzo_mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminilzo_mac.a; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Fairy3D-ddhkcedamdzfkihgzcjkikxlodjq/Build/Products/Debug/libminilzo_mac.a"; sourceTree = "<group>"; };
@@ -349,6 +370,8 @@
 		4901CEE91959017F0075E578 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D26E67BA2178D8D700759642 /* Event */,
+				D26E67B92178D88000759642 /* RTTI */,
 				4901CFAE1959036B0075E578 /* Platform */,
 				4901CFAD195903530075E578 /* Thread */,
 				4901CFAC195902B10075E578 /* Random */,
@@ -378,6 +401,7 @@
 		4901CFA7195901C90075E578 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				D26E67AC2178D86E00759642 /* FMemThreadLock.h */,
 				4901CEED195901B00075E578 /* FAllocBase.h */,
 				4901CF1E195901B00075E578 /* FSmartPtr.h */,
 				4901CF2C195901B00075E578 /* FTempMemBuffer.h */,
@@ -423,8 +447,6 @@
 				D222E4311C89E812006EE1A9 /* FTimer.h */,
 				4901CF13195901B00075E578 /* FPerformance.cpp */,
 				4901CF14195901B00075E578 /* FPerformance.h */,
-				4901CF17195901B00075E578 /* FProperty.cpp */,
-				4901CF18195901B00075E578 /* FProperty.h */,
 				4901CF1B195901B00075E578 /* FSingletonInit.cpp */,
 				4901CF22195901B00075E578 /* FStrUtil.cpp */,
 				4901CF23195901B00075E578 /* FStrUtil.h */,
@@ -524,6 +546,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D26E67B92178D88000759642 /* RTTI */ = {
+			isa = PBXGroup;
+			children = (
+				4901CF17195901B00075E578 /* FProperty.cpp */,
+				4901CF18195901B00075E578 /* FProperty.h */,
+				D26E67AA2178D86E00759642 /* FObject.cpp */,
+				D26E67AB2178D86E00759642 /* FObject.h */,
+				D26E67AD2178D86E00759642 /* FRTTI.cpp */,
+				D26E67AE2178D86E00759642 /* FRTTI.h */,
+			);
+			name = RTTI;
+			sourceTree = "<group>";
+		};
+		D26E67BA2178D8D700759642 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				D26E7D4C2178D90F00759642 /* FEvent.cpp */,
+				D26E7D4D2178D90F00759642 /* FEvent.h */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
 		D28D8B1B1AC5A4A90059949D /* Folder */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,11 +632,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26E67B32178D86E00759642 /* FMemThreadLock.h in Headers */,
 				4901CF5C195901B00075E578 /* FFixArray.h in Headers */,
 				4901CF66195901B00075E578 /* FLogTarget.h in Headers */,
 				4901CF73195901B00075E578 /* FPerlinNoise.h in Headers */,
 				4901CF9B195901B00075E578 /* FVFileStream.h in Headers */,
 				4901CF59195901B00075E578 /* FDModule.h in Headers */,
+				D26E67B72178D86E00759642 /* FRTTI.h in Headers */,
 				4901CF75195901B00075E578 /* FProperty.h in Headers */,
 				4901CF6F195901B00075E578 /* FMemTracker.h in Headers */,
 				4901CF8D195901B00075E578 /* FTempMemPool.h in Headers */,
@@ -610,6 +656,7 @@
 				4901CF9D195901B00075E578 /* FVFileSystem.h in Headers */,
 				4901CF95195901B00075E578 /* FTokenFile.h in Headers */,
 				4901CF69195901B00075E578 /* FMemConfig.h in Headers */,
+				D26E7D502178D90F00759642 /* FEvent.h in Headers */,
 				4901CF86195901B00075E578 /* FTemplate.h in Headers */,
 				4901CF53195901B00075E578 /* FCompress.h in Headers */,
 				4901CF91195901B00075E578 /* FThread.h in Headers */,
@@ -624,6 +671,7 @@
 				4901CF54195901B00075E578 /* FContainer.h in Headers */,
 				4901CF83195901B00075E578 /* FSysFilePack.h in Headers */,
 				4901CF71195901B00075E578 /* FPerformance.h in Headers */,
+				D26E67B12178D86E00759642 /* FObject.h in Headers */,
 				D2F230471C70774000D92A1C /* FMacThread.h in Headers */,
 				4901CF81195901B00075E578 /* FSysAPI.h in Headers */,
 				4901CF50195901B00075E578 /* FBitset.h in Headers */,
@@ -662,6 +710,7 @@
 				496A24F6195BAE7800B034F4 /* FSysFileStream.h in Headers */,
 				496A24F7195BAE7800B034F4 /* FBaseType.h in Headers */,
 				496A24F8195BAE7800B034F4 /* FMemFileStream.h in Headers */,
+				D26E7D512178D90F00759642 /* FEvent.h in Headers */,
 				496A24F9195BAE7800B034F4 /* FVFile.h in Headers */,
 				496A24FA195BAE7800B034F4 /* FCounter.h in Headers */,
 				496A24FB195BAE7800B034F4 /* FCommon.h in Headers */,
@@ -672,11 +721,14 @@
 				496A2500195BAE7800B034F4 /* FTemplate.h in Headers */,
 				496A2501195BAE7800B034F4 /* FCompress.h in Headers */,
 				496A2502195BAE7800B034F4 /* FThread.h in Headers */,
+				D26E67B22178D86E00759642 /* FObject.h in Headers */,
 				496A2503195BAE7800B034F4 /* FCRC32.h in Headers */,
 				496A2504195BAE7800B034F4 /* FThreadPool.h in Headers */,
 				496A2505195BAE7800B034F4 /* FSmartPtr.h in Headers */,
 				496A2506195BAE7800B034F4 /* FXMLWriter.h in Headers */,
+				D26E67B82178D86E00759642 /* FRTTI.h in Headers */,
 				496A2507195BAE7800B034F4 /* FDelegate.h in Headers */,
+				D26E67B42178D86E00759642 /* FMemThreadLock.h in Headers */,
 				496A2508195BAE7800B034F4 /* FFpkFilePack.h in Headers */,
 				496A2509195BAE7800B034F4 /* FMD5.h in Headers */,
 				496A250A195BAE7800B034F4 /* FContainer.h in Headers */,
@@ -753,6 +805,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4901CED9195901490075E578;
 			productRefGroup = 4901CEE3195901490075E578 /* Products */;
@@ -816,6 +869,7 @@
 				4901CF6E195901B00075E578 /* FMemTracker.cpp in Sources */,
 				D222E4321C89E812006EE1A9 /* FTimer.cpp in Sources */,
 				4901CFA0195901B00075E578 /* FXMLWriter.cpp in Sources */,
+				D26E67AF2178D86E00759642 /* FObject.cpp in Sources */,
 				4901CF74195901B00075E578 /* FProperty.cpp in Sources */,
 				4901CF92195901B00075E578 /* FThreadPool.cpp in Sources */,
 				4914A267198A4D6400B088B7 /* FMacAPI.mm in Sources */,
@@ -831,6 +885,8 @@
 				4901CF70195901B00075E578 /* FPerformance.cpp in Sources */,
 				4901CF56195901B00075E578 /* FCRC32.cpp in Sources */,
 				4901CF4F195901B00075E578 /* FBitset.cpp in Sources */,
+				D26E7D4E2178D90F00759642 /* FEvent.cpp in Sources */,
+				D26E67B52178D86E00759642 /* FRTTI.cpp in Sources */,
 				4901CF98195901B00075E578 /* FVFilePack.cpp in Sources */,
 				D2F230461C70774000D92A1C /* FMacThread.cpp in Sources */,
 				4901CF63195901B00075E578 /* FLogManager.cpp in Sources */,
@@ -862,6 +918,7 @@
 				496A24CE195BAE7800B034F4 /* FMemTracker.cpp in Sources */,
 				D222E4331C89E812006EE1A9 /* FTimer.cpp in Sources */,
 				496A24CF195BAE7800B034F4 /* FXMLWriter.cpp in Sources */,
+				D26E67B02178D86E00759642 /* FObject.cpp in Sources */,
 				496A24D0195BAE7800B034F4 /* FProperty.cpp in Sources */,
 				496A24D1195BAE7800B034F4 /* FThreadPool.cpp in Sources */,
 				4914A268198A4D6400B088B7 /* FMacAPI.mm in Sources */,
@@ -877,6 +934,8 @@
 				496A24DC195BAE7800B034F4 /* FPerformance.cpp in Sources */,
 				496A24DD195BAE7800B034F4 /* FCRC32.cpp in Sources */,
 				496A24DE195BAE7800B034F4 /* FBitset.cpp in Sources */,
+				D26E7D4F2178D90F00759642 /* FEvent.cpp in Sources */,
+				D26E67B62178D86E00759642 /* FRTTI.cpp in Sources */,
 				496A24DF195BAE7800B034F4 /* FVFilePack.cpp in Sources */,
 				D222E42F1C89E789006EE1A9 /* FMacThread.cpp in Sources */,
 				496A24E0195BAE7800B034F4 /* FLogManager.cpp in Sources */,
