@@ -12,14 +12,18 @@
 #ifndef __FAIRY_INPUT_H__
 #define __FAIRY_INPUT_H__
 
+//// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include "FInputTypes.h"
-#include "FInputEventTypes.h"
-#include "FInputMouse.h"
-#include "FInputKeyboard.h"
-#include "FInputJoystick.h"
-#include "FInputTouch.h"
-#include "FInputSensor.h"
-#include "FInputEngine.h"
+
+///////////////////////////////////////////////////////////////////////////
+
+class FInput
+{
+public:
+	static bool IsAnyKeyDown();
+	static bool IsAnyKeyHeld();
+	static bool IsKeyDown(int keycode);
+};
 
 ///////////////////////////////////////////////////////////////////////////
 

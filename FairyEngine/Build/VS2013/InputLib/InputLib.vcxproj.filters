@@ -79,6 +79,8 @@
     <ClInclude Include="..\..\..\Source\InputLib\FInputEventTypes.h">
       <Filter>Include Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Source\InputLib\FInput.h" />
+    <ClInclude Include="..\..\..\Source\InputLib\FInput.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

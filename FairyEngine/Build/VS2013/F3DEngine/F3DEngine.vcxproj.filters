@@ -34,9 +34,6 @@
     <Filter Include="Scene\Environment">
       <UniqueIdentifier>{1f160235-e07b-47b6-87cb-6559ca4ffbfb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine Main">
-      <UniqueIdentifier>{96ed391b-c288-4ba7-9bd3-5315610f3c1d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utilities">
       <UniqueIdentifier>{36b0c04b-7170-441c-882b-5e65345dae8d}</UniqueIdentifier>
     </Filter>
@@ -121,6 +118,9 @@
     <Filter Include="BaseType">
       <UniqueIdentifier>{e767c06c-4d43-4ea0-acc2-8009f8f005eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{96ed391b-c288-4ba7-9bd3-5315610f3c1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DSceneManager.cpp">
@@ -151,13 +151,13 @@
       <Filter>Scene\Environment</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DConfig.cpp">
-      <Filter>Engine Main</Filter>
+      <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DEngine.cpp">
-      <Filter>Engine Main</Filter>
+      <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DPlugin.cpp">
-      <Filter>Engine Main</Filter>
+      <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\F3DEngine\F3DFlatPainter.cpp">
       <Filter>Utilities</Filter>
@@ -403,13 +403,13 @@
       <Filter>Scene\Environment</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DConfig.h">
-      <Filter>Engine Main</Filter>
+      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DEngine.h">
-      <Filter>Engine Main</Filter>
+      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DPlugin.h">
-      <Filter>Engine Main</Filter>
+      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\F3DEngine\F3DFlatPainter.h">
       <Filter>Utilities</Filter>

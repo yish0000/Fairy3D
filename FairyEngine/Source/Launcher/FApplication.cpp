@@ -17,6 +17,8 @@
 #include "FInputEngine.h"
 #include "FUISystem.h"
 
+extern FGame* g_pFairyGame;
+
 /** Get the singleton instance.
 */
 FApplication* FApplication::GetInstance()
@@ -45,21 +47,20 @@ bool FApplication::OnAppInit()
 	if (m_bInited)
 		return true;
 
+	if (!g_pFairyGame)
+	{
+		FLOG_ERROR("FApplication::OnAppInit, Application failed to initialize, because 'g_pFairyGame' must not be null!");
+		return false;
+	}
+
+	// Initialize the random seed.
+	srand((uint32)time(0));
+
 	// Create a log file for the application.
 	FLogManager::GetInstance().CreateLogFile("fairy.log", "FairyEngine Framework Log.");
-
-    if (!g_pFairyGame)
-    {
-        FLOG_ERROR("FApplication::OnAppInit, Application failed to initialize, because 'g_pFairyGame' must not be null!");
-        return false;
-    }
     
     // Record the main thread id.
     FThread::RecordMainThreadID();
-
-    // Initialize the random seed.
-	srand((uint32)time(0));
-	F_Randomize((uint32)time(0));
 
 	// Set the work directory for file system.
 	FVFileSystem::GetInstance().SetBaseDir(FSysAPI::GetCurrentDir());

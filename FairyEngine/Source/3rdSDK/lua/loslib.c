@@ -38,6 +38,8 @@ static int os_pushresult (lua_State *L, int i, const char *filename) {
 static int os_execute (lua_State *L) {
 #if !defined(__APPLE__) || __IPHONE_OS_VERSION_MAX_ALLOWED < 110000
     lua_pushinteger(L, system(luaL_optstring(L, 1, NULL)));
+#else
+	lua_pushinteger(L, 0);
 #endif
     return 1;
 }

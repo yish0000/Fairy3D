@@ -14,6 +14,7 @@
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include "FBase.h"
+#include "FTemplate.h"
 
 #include <math.h>
 #include <float.h>

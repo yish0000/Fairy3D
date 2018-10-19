@@ -16,7 +16,7 @@
 
 /** Logical game object.
 */
-class FGame : public FGeneralAlloc
+class FGame
 {
 public:
 	FGame();
@@ -35,9 +35,6 @@ public:
 	// Call me when the application resize the window.
 	virtual void OnResizeWindow() = 0;
 };
-
-// Global pointer of the game object.
-extern FGame* g_pFairyGame;
 
 ///////////////////////////////////////////////////////////////////////////
 
