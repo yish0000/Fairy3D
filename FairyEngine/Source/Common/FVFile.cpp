@@ -325,10 +325,10 @@ bool FVFile::HasUTF16BOM()
 	if( m_bWriteFile || !m_pIFile )
 		return false;
 
-	fbyte magic[2];
+	FBYTE magic[2];
 	size_t offset = Tell();
 	Seek( 0, FVFileStream::START );
-	Read( magic, sizeof(fbyte)*2 );
+	Read( magic, sizeof(FBYTE)*2 );
 	Seek( (long)offset, FVFileStream::START );
 	return magic[0] == 0xff && magic[1] == 0xfe;
 }
@@ -340,10 +340,10 @@ bool FVFile::HasUTF8BOM()
 	if( m_bWriteFile || !m_pIFile )
 		return false;
 
-	fbyte BOM[3];
+	FBYTE BOM[3];
 	size_t offset = Tell();
 	Seek(0, FVFileStream::START);
-	Read(BOM, sizeof(fbyte)*3);
+	Read(BOM, sizeof(FBYTE)*3);
 	Seek((long)offset, FVFileStream::START);
 	return BOM[0] == 0xef && BOM[1] == 0xbb && BOM[2] == 0xbf;
 }

@@ -79,7 +79,7 @@ protected:
 	void* m_pBuffer;
 };
 
-typedef FTempMemBuffer<fbyte> FTempDataBuffer;
+typedef FTempMemBuffer<FBYTE> FTempDataBuffer;
 typedef FTempMemBuffer<char> FTempStringBuffer;
 typedef FTempMemBuffer<wchar_t> FTempWStringBuffer;
 

@@ -25,7 +25,7 @@ FMemFileStream::FMemFileStream()
 
 /** Destructor.
 */
-FMemFileStream::FMemFileStream( fbyte* pBuf, uint32 nBufLen )
+FMemFileStream::FMemFileStream( FBYTE* pBuf, uint32 nBufLen )
 {
 	m_pData = m_pOffset = pBuf;
 	m_pEnd = pBuf + nBufLen;
@@ -38,7 +38,7 @@ FMemFileStream::FMemFileStream( fbyte* pBuf, uint32 nBufLen )
 FMemFileStream::FMemFileStream( uint32 nBufLen )
 {
 	m_nStreamSize = nBufLen;
-	m_pData = (fbyte*)F_MALLOC( nBufLen );
+	m_pData = (FBYTE*)F_MALLOC( nBufLen );
 	m_pOffset = m_pData;
 	m_pEnd = m_pData + nBufLen;
 	m_bFreeOnClose = true;
@@ -49,7 +49,7 @@ FMemFileStream::FMemFileStream( uint32 nBufLen )
 FMemFileStream::FMemFileStream( FVFileStream* pStream )
 {
 	m_nStreamSize = pStream->GetStreamSize();
-	m_pData = (fbyte*)F_MALLOC( m_nStreamSize );
+	m_pData = (FBYTE*)F_MALLOC( m_nStreamSize );
 	m_pOffset = m_pData;
 	m_pEnd = m_pData + m_nStreamSize;
 	size_t offset = pStream->Tell();

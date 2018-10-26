@@ -82,6 +82,8 @@ public:
 	virtual T GetValue(FObject* pObject) = 0;
 	// Set the value of this property.
 	virtual void SetValue(FObject* pObject, const T& val) = 0;
+	// Is this property readonly ?
+	virtual bool IsReadOnly() const = 0;
 
 	// Get the data type of the property.
 	virtual EPropertyType GetType() const { return FPropertyType<T>::TypeID; }
@@ -118,6 +120,12 @@ public:
 		}
 
 		(((OwnerType*)pObject)->*m_setter)(val);
+	}
+
+	// Is this property readonly ?
+	virtual bool IsReadOnly() const
+	{
+		return (m_setter == NULL);
 	}
 
 protected:

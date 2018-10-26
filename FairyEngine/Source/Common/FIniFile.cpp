@@ -173,7 +173,7 @@ void FIniFile::SaveFile( const char* filename )
 	}
 
 	// Write the BOM.
-	fbyte UTF8BOM[3] = { 0xEF, 0xBB, 0xBF };
+	FBYTE UTF8BOM[3] = { 0xEF, 0xBB, 0xBF };
 	file.Write( UTF8BOM, 3 );
 
 	SettingSections::iterator seci;

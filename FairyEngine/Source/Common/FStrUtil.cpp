@@ -28,6 +28,14 @@
 
 ///////////////////////////////////////////////////////////////////////////
 //  
+//  Local variables
+//  
+///////////////////////////////////////////////////////////////////////////
+
+static uint32 l_uniqueNameID = 0;
+
+///////////////////////////////////////////////////////////////////////////
+//  
 //  String encoding conversion
 //  
 ///////////////////////////////////////////////////////////////////////////
@@ -476,6 +484,15 @@ bool AStringUtil::InvTranslate( AString& str )
     return true;
 }
 
+/** Get the unique name.
+*/
+AString AStringUtil::UniqueName()
+{
+	char szBuf[100];
+	sprintf(szBuf, "object_%d", l_uniqueNameID++);
+	return szBuf;
+}
+
 ///////////////////////////////////////////////////////////////////////////
 //  
 //  处理WString的一些实用函数
@@ -725,4 +742,13 @@ bool WStringUtil::Translate( WString& str )
 bool WStringUtil::InvTranslate( WString& str )
 {
     return true;
+}
+
+/** Get the unique name.
+*/
+WString WStringUtil::UniqueName()
+{
+	wchar_t szBuf[100];
+	swprintf(szBuf, L"object_%d", l_uniqueNameID++);
+	return szBuf;
 }

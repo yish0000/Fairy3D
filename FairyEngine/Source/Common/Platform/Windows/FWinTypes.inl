@@ -68,10 +68,11 @@
 ///////////////////////////////////////////////////////////////////////////
 
 typedef unsigned char uchar;
-typedef unsigned char fbyte;
 typedef unsigned short ushort;
 typedef unsigned int uint32;
 typedef unsigned long ulong;
+
+typedef unsigned char FBYTE;
 
 // 64bit integer
 #if FAIRY_COMPILER == FAIRY_COMPILER_MSVC

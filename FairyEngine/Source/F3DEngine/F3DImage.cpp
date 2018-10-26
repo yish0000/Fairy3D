@@ -32,7 +32,7 @@ F3DImage::F3DImage( uint32 width, uint32 height, EPixelFormat format )
     : m_nWidth(width),m_nHeight(height),m_Format(format)
 {
     m_nBufferSize = F3D_PixelSize(format) * width * height;
-    m_pBuffer = new fbyte[m_nBufferSize];
+    m_pBuffer = new FBYTE[m_nBufferSize];
 }
 
 /** 赋值构造函数
@@ -42,7 +42,7 @@ F3DImage::F3DImage( const F3DImage& image ) : m_nWidth(image.m_nWidth),
     m_nHeight(image.m_nHeight),m_Format(image.m_Format),
     m_nBufferSize(image.m_nBufferSize)
 {
-    m_pBuffer = new fbyte[m_nBufferSize];
+    m_pBuffer = new FBYTE[m_nBufferSize];
     memcpy( m_pBuffer,image.m_pBuffer,m_nBufferSize );
 
     m_Mipmaps.resize( image.m_Mipmaps.size() );
@@ -51,7 +51,7 @@ F3DImage::F3DImage( const F3DImage& image ) : m_nWidth(image.m_nWidth),
         SMipmap* mipmap = &m_Mipmaps[i];
 
         mipmap->bufferSize = image.m_Mipmaps[i].bufferSize;
-        mipmap->data = new fbyte[mipmap->bufferSize];
+        mipmap->data = new FBYTE[mipmap->bufferSize];
         memcpy( mipmap->data,image.m_Mipmaps[i].data,mipmap->bufferSize );
     }
 }
@@ -81,7 +81,7 @@ F3DImage& F3DImage::operator = ( const F3DImage& image )
     m_Format = image.m_Format;
 
     m_nBufferSize = image.m_nBufferSize;
-    m_pBuffer = new fbyte[m_nBufferSize];
+    m_pBuffer = new FBYTE[m_nBufferSize];
     memcpy( m_pBuffer,image.m_pBuffer,m_nBufferSize );
 
     // 拷贝Mipmap链
@@ -91,7 +91,7 @@ F3DImage& F3DImage::operator = ( const F3DImage& image )
         SMipmap* mipmap = &m_Mipmaps[i];
 
         mipmap->bufferSize = image.m_Mipmaps[i].bufferSize;
-        mipmap->data = new fbyte[mipmap->bufferSize];
+        mipmap->data = new FBYTE[mipmap->bufferSize];
         memcpy( mipmap->data,image.m_Mipmaps[i].data,mipmap->bufferSize );
     }
 
@@ -134,7 +134,7 @@ bool F3DImage::CreateImage( uint32 width, uint32 height, EPixelFormat format,
 
     // 创建像素数据缓冲区
     m_nBufferSize = F3D_PixelSize(format) * width * height;
-    m_pBuffer = new fbyte[m_nBufferSize];
+    m_pBuffer = new FBYTE[m_nBufferSize];
 
 	uint32* pSrcData = new uint32[width * height];
 	for( size_t i=0; i<width*height; i++ )
@@ -143,7 +143,7 @@ bool F3DImage::CreateImage( uint32 width, uint32 height, EPixelFormat format,
 	}
 
     // 填充颜色
-    F3D_ConvertPixelFormat((fbyte*)pSrcData, PFT_A8R8G8B8, m_pBuffer, format, width, height);
+    F3D_ConvertPixelFormat((FBYTE*)pSrcData, PFT_A8R8G8B8, m_pBuffer, format, width, height);
 	delete[] pSrcData;
     return true;
 }
@@ -154,7 +154,7 @@ bool F3DImage::CreateImage( uint32 width, uint32 height, EPixelFormat format,
 @Param 要创建图像的宽度
 @Param 要创建图像的高度
 */
-bool F3DImage::CreateImageFromMemory( fbyte* pData, EPixelFormat format, uint32 width,
+bool F3DImage::CreateImageFromMemory( FBYTE* pData, EPixelFormat format, uint32 width,
                                       uint32 height )
 {
     size_t pixSize = F3D_PixelSize( format );
@@ -172,7 +172,7 @@ bool F3DImage::CreateImageFromMemory( fbyte* pData, EPixelFormat format, uint32 
     m_Format = format;
 
     m_nBufferSize = F3D_PixelSize(format)*width*height;
-    m_pBuffer = new fbyte[m_nBufferSize];
+    m_pBuffer = new FBYTE[m_nBufferSize];
 
     memcpy( m_pBuffer,pData,m_nBufferSize );
     return true;
@@ -182,18 +182,18 @@ bool F3DImage::CreateImageFromMemory( fbyte* pData, EPixelFormat format, uint32 
 */
 void F3DImage::FlipAroundX(void)
 {
-    fbyte* dest1;
+    FBYTE* dest1;
     ushort* dest2;
-    fbyte* dest3;
+    FBYTE* dest3;
     ulong* dest4;
 
-    fbyte* src1 = (fbyte*)m_pBuffer;
+    FBYTE* src1 = (FBYTE*)m_pBuffer;
     ushort* src2 = (ushort*)m_pBuffer;
-    fbyte* src3 = (fbyte*)m_pBuffer;
+    FBYTE* src3 = (FBYTE*)m_pBuffer;
     ulong* src4 = (ulong*)m_pBuffer;
 
     // 创建一个临时缓冲区
-    fbyte* pTempBuffer = new fbyte[m_nBufferSize];
+    FBYTE* pTempBuffer = new FBYTE[m_nBufferSize];
 
     size_t y;
     switch( F3D_PixelSize(m_Format) )
@@ -201,7 +201,7 @@ void F3DImage::FlipAroundX(void)
     case 1:
         for( y=0;y<m_nHeight;y++ )
         {
-            dest1 = (fbyte*)(pTempBuffer + m_nWidth * y + (m_nWidth - 1));
+            dest1 = (FBYTE*)(pTempBuffer + m_nWidth * y + (m_nWidth - 1));
             for( size_t x=0;x<m_nWidth;x++ )
                 *dest1-- = *src1++;
         }
@@ -221,7 +221,7 @@ void F3DImage::FlipAroundX(void)
     case 3:
         for( y=0;y<m_nHeight;y++ )
         {
-            dest3 = (fbyte*)(pTempBuffer + (m_nWidth * y + (m_nWidth - 1)) * 3);
+            dest3 = (FBYTE*)(pTempBuffer + (m_nWidth * y + (m_nWidth - 1)) * 3);
             for( size_t x=0;x<m_nWidth;x++ )
             {
                 dest3[0] = src3[0];
@@ -260,10 +260,10 @@ void F3DImage::FlipAroundY(void)
     size_t rowSpan = F3D_PixelSize(m_Format) * m_nWidth;
 
     // 创建一个临时缓冲区
-    fbyte* pTempBuffer = new fbyte[m_nBufferSize];
+    FBYTE* pTempBuffer = new FBYTE[m_nBufferSize];
 
-    fbyte* ptr1 = m_pBuffer;
-    fbyte* ptr2 = m_pBuffer + (m_nHeight - 1) * rowSpan;
+    FBYTE* ptr1 = m_pBuffer;
+    FBYTE* ptr2 = m_pBuffer + (m_nHeight - 1) * rowSpan;
     for( uint32 i=0;i<m_nHeight;i++ )
     {
         memcpy( ptr2,ptr1,rowSpan );
@@ -310,7 +310,7 @@ void F3DImage::Resize( uint32 width, uint32 height )
     size_t pxSize = F3D_PixelSize( m_Format );
 
     // 为新的图像分配内存
-    fbyte* tempBuf = new fbyte[pxSize*width*height];
+    FBYTE* tempBuf = new FBYTE[pxSize*width*height];
 
     // 缩小图像
     if( width < m_nWidth && height < m_nHeight )
@@ -327,18 +327,18 @@ void F3DImage::Resize( uint32 width, uint32 height )
     // 两个方向一个放大一个缩小
     else
     {
-        fbyte* tempBuf2;
+        FBYTE* tempBuf2;
 
         if( width < m_nWidth )
         {
-            tempBuf2 = new fbyte[pxSize*width*m_nHeight];
+            tempBuf2 = new FBYTE[pxSize*width*m_nHeight];
             F3D_GenerateMipmap( m_pBuffer,m_nWidth,m_nHeight,m_Format,tempBuf2,width,m_nHeight );
             F3D_StretchLinear( tempBuf2,width,m_nHeight,m_Format,tempBuf,width,height );
             delete[] tempBuf2;
         }
         else
         {
-            tempBuf2 = new fbyte[pxSize*m_nWidth*height];
+            tempBuf2 = new FBYTE[pxSize*m_nWidth*height];
             F3D_GenerateMipmap( m_pBuffer,m_nWidth,m_nHeight,m_Format,tempBuf2,m_nWidth,height );
             F3D_StretchLinear( tempBuf2,m_nWidth,height,m_Format,tempBuf,width,height );
             delete[] tempBuf2;
@@ -394,7 +394,7 @@ void F3DImage::ConvertFormat( EPixelFormat format )
     size_t pixelSize = F3D_PixelSize( format );
 
     // 创建一个缓冲区
-    fbyte* tempBuf = new fbyte[pixelSize*m_nWidth*m_nHeight];
+    FBYTE* tempBuf = new FBYTE[pixelSize*m_nWidth*m_nHeight];
 
     // 改变基本图像层的数据
     F3D_ConvertPixelFormat( m_pBuffer,m_Format,tempBuf,format,m_nWidth,m_nHeight );
@@ -409,7 +409,7 @@ void F3DImage::ConvertFormat( EPixelFormat format )
     MipmapList::iterator it = m_Mipmaps.begin();
     while( it != m_Mipmaps.end() )
     {
-        fbyte* mipBuf = new fbyte[pixelSize*w*h];
+        FBYTE* mipBuf = new FBYTE[pixelSize*w*h];
         F3D_ConvertPixelFormat( it->data,m_Format,mipBuf,format,w,h );
         delete[] it->data;
         it->data = mipBuf;
@@ -449,7 +449,7 @@ void F3DImage::GenerateMipmaps( uint32 level )
     {
         SMipmap mipmap;
         mipmap.bufferSize = F3D_PixelSize(m_Format)*w*h;
-        mipmap.data = new fbyte[mipmap.bufferSize];
+        mipmap.data = new FBYTE[mipmap.bufferSize];
         F3D_GenerateMipmap( m_pBuffer,m_nWidth,m_nHeight,m_Format,mipmap.data,w,h );
         m_Mipmaps.push_back( mipmap );
 
@@ -501,7 +501,7 @@ uint32 F3DImage::GetHeight( uint32 level ) const
 /** 获取指定层的图像数据
 @Param 指定的Mipmap层级
 */
-fbyte* F3DImage::GetImageData( uint32 level )
+FBYTE* F3DImage::GetImageData( uint32 level )
 {
     if( level == 0 )
         return m_pBuffer;
@@ -517,7 +517,7 @@ fbyte* F3DImage::GetImageData( uint32 level )
 /** 获取指定层的图像数据
 @Param 指定的Mipmap层级
 */
-const fbyte* F3DImage::GetImageData( uint32 level ) const
+const FBYTE* F3DImage::GetImageData( uint32 level ) const
 {
     if( level == 0 )
         return m_pBuffer;

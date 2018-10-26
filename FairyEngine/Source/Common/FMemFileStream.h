@@ -25,7 +25,7 @@ class FMemFileStream : public FVFileStream
 {
 public:
 	FMemFileStream();
-	FMemFileStream( fbyte* pBuf, uint32 nBufLen );
+	FMemFileStream( FBYTE* pBuf, uint32 nBufLen );
 	FMemFileStream( uint32 nBufLen );
 	FMemFileStream( FVFileStream* pStream );
 	virtual ~FMemFileStream();
@@ -41,9 +41,9 @@ public:
 	size_t Write(void* pBuf, size_t nSize);
 
 protected:
-	fbyte* m_pData;			// Pointer to the data
-	fbyte* m_pEnd;			// End the buffer
-	fbyte* m_pOffset;		// Current offset
+	FBYTE* m_pData;			// Pointer to the data
+	FBYTE* m_pEnd;			// End the buffer
+	FBYTE* m_pOffset;		// Current offset
 	bool m_bFreeOnClose;	// Free the memory when close the stream ?
 };
 

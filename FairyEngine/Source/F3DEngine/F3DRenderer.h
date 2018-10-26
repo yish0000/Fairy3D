@@ -49,6 +49,8 @@ enum
 	MAX_NUM_RENDERQUEUE,				// Count of the render queues.
 };
 
+class F3DSceneManager;
+
 /** Renderer
 @remarks
     本类用于完成整个引擎的渲染工作，对渲染对象进行必要的排序。

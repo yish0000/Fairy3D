@@ -102,7 +102,7 @@ bool F3DTexture2D::LoadTextureFromImage( F3DImage* image, uint32 numMipmaps/* =0
     }
 
     int pitch;
-    fbyte* pixelBuf;
+    FBYTE* pixelBuf;
 
     // 构建第0层纹理数据
     if( !Lock(0, TL_WRITEONLY, (void**)&pixelBuf, &pitch) )
@@ -117,8 +117,8 @@ bool F3DTexture2D::LoadTextureFromImage( F3DImage* image, uint32 numMipmaps/* =0
 
         for( size_t j=0;j<image->GetHeight();j++ )
         {
-            fbyte* src = image->GetImageData() + srcLineSize * j;
-            fbyte* dst = &pixelBuf[j*pitch];
+            FBYTE* src = image->GetImageData() + srcLineSize * j;
+            FBYTE* dst = &pixelBuf[j*pitch];
 
             for( size_t i=0;i<image->GetWidth();i++ )
             {
@@ -136,7 +136,7 @@ bool F3DTexture2D::LoadTextureFromImage( F3DImage* image, uint32 numMipmaps/* =0
 
         for( size_t j=0;j<image->GetHeight();j++ )
         {
-            fbyte* src = image->GetImageData() + srcLineSize * j;
+            FBYTE* src = image->GetImageData() + srcLineSize * j;
             memcpy( &pixelBuf[j*pitch],src,srcLineSize );
         }
     }
@@ -154,7 +154,7 @@ bool F3DTexture2D::LoadTextureFromImage( F3DImage* image, uint32 numMipmaps/* =0
 @Param 纹理的像素格式
 @Param 要创建多少个Mipmap,如果指定为0则创建所有Mipmap
 */
-bool F3DTexture2D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 height, EPixelFormat format,
+bool F3DTexture2D::LoadTextureFromMemory(FBYTE* data, uint32 width, uint32 height, EPixelFormat format,
                                          uint32 numMipmaps/* =0 */)
 {
     if( !data || width == 0 || height == 0 || format == PFT_UNKNOWN )
@@ -173,7 +173,7 @@ bool F3DTexture2D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 heigh
     }
 
     int pitch;
-    fbyte* pixelBuf;
+    FBYTE* pixelBuf;
 
     // 构建第0层纹理数据
     if( !Lock(0, TL_WRITEONLY, (void**)&pixelBuf, &pitch) )
@@ -188,8 +188,8 @@ bool F3DTexture2D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 heigh
 
         for( uint32 j=0;j<height;j++ )
         {
-            fbyte* src = data + srcLineSize * j;
-            fbyte* dst = &pixelBuf[j*pitch];
+            FBYTE* src = data + srcLineSize * j;
+            FBYTE* dst = &pixelBuf[j*pitch];
 
             for( uint32 i=0;i<width;i++ )
             {
@@ -207,7 +207,7 @@ bool F3DTexture2D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 heigh
 
         for( uint32 j=0;j<height;j++ )
         {
-            fbyte* src = data + srcLineSize * j;
+            FBYTE* src = data + srcLineSize * j;
             memcpy( &pixelBuf[j*pitch], src, srcLineSize );
         }
     }
@@ -227,7 +227,7 @@ void F3DTexture2D::SaveTexture( const char* filename )
 	F3DImage* image = new F3DImage( m_nWidth, m_nHeight, m_Format );
 
 	int pitch;
-	fbyte* pixelBuf;
+	FBYTE* pixelBuf;
 	size_t lineSize = F3D_PixelSize(m_Format) * m_nWidth;
 
 	if( !Lock(0, TL_READONLY, (void**)&pixelBuf, &pitch) )
@@ -239,7 +239,7 @@ void F3DTexture2D::SaveTexture( const char* filename )
 
 	for( uint32 y=0;y<m_nHeight;y++ )
 	{
-		fbyte* dest = image->GetImageData() + m_nHeight * lineSize;
+		FBYTE* dest = image->GetImageData() + m_nHeight * lineSize;
 		memcpy( dest, pixelBuf+m_nHeight*pitch, lineSize );
 	}
 
@@ -276,7 +276,7 @@ F3DTexture3D::~F3DTexture3D()
 @Param 纹理的像素格式
 @Param 要创建多少个Mipmap,如果指定为0则创建所有Mipmap
 */
-bool F3DTexture3D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 height, uint32 depth,
+bool F3DTexture3D::LoadTextureFromMemory(FBYTE* data, uint32 width, uint32 height, uint32 depth,
                                          EPixelFormat format, uint32 numMipmaps/* =0 */ )
 {
     if( !data || width == 0 || height == 0 || depth == 0 ||
@@ -296,7 +296,7 @@ bool F3DTexture3D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 heigh
     }
 
     int rowPitch,slicePitch;
-    fbyte* pixelBuf;
+    FBYTE* pixelBuf;
 
     // 构建第0层纹理数据
     if( !Lock(0, TL_WRITEONLY, (void**)&pixelBuf, &rowPitch, &slicePitch) )
@@ -314,8 +314,8 @@ bool F3DTexture3D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 heigh
         {
             for( uint32 i=0;i<height;i++ )
             {
-                fbyte* src = data + srcSliceSize*j + srcRowSize*i;
-                fbyte* dst = &pixelBuf[slicePitch*j+rowPitch*i];
+                FBYTE* src = data + srcSliceSize*j + srcRowSize*i;
+                FBYTE* dst = &pixelBuf[slicePitch*j+rowPitch*i];
 
                 for( uint32 k=0;k<width;k++ )
                 {
@@ -336,7 +336,7 @@ bool F3DTexture3D::LoadTextureFromMemory(fbyte* data, uint32 width, uint32 heigh
         {
             for( uint32 i=0;i<height;i++ )
             {
-                fbyte* src = data + sliceSize*j + rowSize*i;
+                FBYTE* src = data + sliceSize*j + rowSize*i;
 
                 memcpy( &pixelBuf[slicePitch*j+rowPitch*i], src, rowSize );
             }
@@ -493,8 +493,8 @@ bool F3DTextureCube::LoadTextureFromImage( F3DImage* image[6], uint32 numMipmaps
     for( uint32 face=0; face<6; face++ )
     {
         int pitch;
-        fbyte* pixelBuf;
-        fbyte* data = image[face]->GetImageData();
+        FBYTE* pixelBuf;
+        FBYTE* data = image[face]->GetImageData();
 
         // 构建第0层纹理数据
         if( !Lock((ECubeFace)face, 0, TL_WRITEONLY, (void**)&pixelBuf, &pitch) )
@@ -507,7 +507,7 @@ bool F3DTextureCube::LoadTextureFromImage( F3DImage* image[6], uint32 numMipmaps
 
         for( uint32 j=0;j<edgeLength;j++ )
         {
-            fbyte* src = data + lineSize * j;
+            FBYTE* src = data + lineSize * j;
             memcpy( &pixelBuf[j*pitch],src,lineSize );
         }
 
@@ -528,7 +528,7 @@ void F3DTextureCube::SaveTexture( ECubeFace face, const char* filename )
     F3DImage* image = new F3DImage( m_nWidth, m_nHeight, m_Format );
 
     int pitch;
-    fbyte* pixelBuf;
+    FBYTE* pixelBuf;
     size_t lineSize = F3D_PixelSize(m_Format) * m_nWidth;
 
     if( !Lock(face, 0, TL_READONLY, (void**)&pixelBuf, &pitch) )
@@ -540,7 +540,7 @@ void F3DTextureCube::SaveTexture( ECubeFace face, const char* filename )
 
     for( uint32 y=0;y<m_nHeight;y++ )
     {
-        fbyte* dest = image->GetImageData() + m_nHeight * lineSize;
+        FBYTE* dest = image->GetImageData() + m_nHeight * lineSize;
         memcpy( dest, pixelBuf+m_nHeight*pitch, lineSize );
     }
 

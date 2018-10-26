@@ -67,13 +67,13 @@ F3DImage* F3DTGACodec::LoadImageFromVFile( FVFile* pFile )
     }
 
     // 读取像素数据
-    fbyte* data = NULL;
+    FBYTE* data = NULL;
 
     if( header.ImageType == 2 )
     {
         const size_t imageSize = header.ImageWidth * header.ImageHeight *
             header.PixelDepth / 8;
-        data = new fbyte[imageSize];
+        data = new FBYTE[imageSize];
         pFile->Read( data,imageSize );
     }
     else
@@ -122,17 +122,17 @@ F3DImage* F3DTGACodec::LoadImageFromVFile( FVFile* pFile )
 @Param 虚拟文件流的指针
 @Param TGA图像的文件头
 */
-fbyte* F3DTGACodec::LoadCompressedImage( FVFile* pFile,const STGAHeader& header )
+FBYTE* F3DTGACodec::LoadCompressedImage( FVFile* pFile,const STGAHeader& header )
 {
     size_t pxSize = header.PixelDepth / 8;
     size_t imageSize = header.ImageWidth * header.ImageHeight * pxSize;
-    fbyte* data = new fbyte[imageSize];
+    FBYTE* data = new FBYTE[imageSize];
 
     size_t curBytes = 0;
     while( curBytes < imageSize )
     {
-        fbyte chunkHeader;
-        pFile->Read( &chunkHeader,sizeof(fbyte) );
+        FBYTE chunkHeader;
+        pFile->Read( &chunkHeader,sizeof(FBYTE) );
 
         if( chunkHeader < 128 )
         {
@@ -171,7 +171,7 @@ fbyte* F3DTGACodec::LoadCompressedImage( FVFile* pFile,const STGAHeader& header 
 */
 void F3DTGACodec::SaveMipmap( const char* filename,F3DImage* image,size_t level )
 {
-    fbyte* destBuf;
+    FBYTE* destBuf;
     EPixelFormat destFormat;
     size_t destSize,pxSize;
 
@@ -188,7 +188,7 @@ void F3DTGACodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
     // 将数据转换为指定像素格式
     pxSize = F3D_PixelSize( destFormat );
     destSize = width*height*pxSize;
-    destBuf = new fbyte[destSize];
+    destBuf = new FBYTE[destSize];
     F3D_ConvertPixelFormat( image->GetImageData(level),srcFormat,destBuf,destFormat,width,height );
 
 	FVFile file;
@@ -232,7 +232,7 @@ void F3DTGACodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
     // 写入像素数据
     for( size_t y=height-1;y>=0;y-- )
     {
-        fbyte* pData = &destBuf[y*width*pxSize];
+        FBYTE* pData = &destBuf[y*width*pxSize];
         file.Write( pData,width*pxSize );
     }
 

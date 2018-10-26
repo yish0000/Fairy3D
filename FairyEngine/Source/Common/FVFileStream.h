@@ -31,13 +31,13 @@ protected:
 
 public:
     FVFileStream();
-    FVFileStream( const AString& name );
+	FVFileStream(const AString& name);
     virtual ~FVFileStream(void);
 
-    virtual void Seek( long nPos, int flag = START ) = 0;
+	virtual void Seek(long nPos, int flag = START) = 0;
     virtual size_t Tell(void) const = 0;
     virtual bool Eof(void) const = 0;
-    virtual void Skip( long nCount ) = 0;
+	virtual void Skip(long nCount) = 0;
     virtual void Close(void) = 0;
 
     /** Read some data from the stream.
@@ -45,7 +45,7 @@ public:
     @Param Size to read.
     @Return The final size which is read.
     */
-    virtual size_t Read( void* pBuf, size_t nSize ) = 0;
+	virtual size_t Read(void* pBuf, size_t nSize) = 0;
 
 	/** Write some data to the stream.
 	@Param Pointer to the buffer.
@@ -57,7 +57,7 @@ public:
     /** Read some data.
     */
     template <class T>
-    FVFileStream& operator >> ( T& val )
+	FVFileStream& operator >> (T& val)
     {
         Read( &val, sizeof(T) );
         return *this;
@@ -75,11 +75,11 @@ public:
 	///////////////////////////////////////////////////////////////////////////
 	// Read strings. (UTF-8)
 
-	virtual size_t ReadLine( char* pBuf, size_t maxLen, const AString& delimiter="\n" );
-	virtual size_t SkipLine( const AString& delimiter="\n" );
+	virtual size_t ReadLine(char* pBuf, size_t maxLen, const AString& delimiter = "\n");
+	virtual size_t SkipLine(const AString& delimiter = "\n");
 
 	// Read a line. (UTF-8)
-	virtual size_t GetLine( AString& retStr, bool bTrimLine=true );
+	virtual size_t GetLine(AString& retStr, bool bTrimLine = true);
 
 	///////////////////////////////////////////////////////////////////////////
 

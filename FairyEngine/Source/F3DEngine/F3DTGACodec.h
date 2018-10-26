@@ -66,7 +66,7 @@ private:
     F3DImage* LoadImageFromVFile( FVFile* pFile );
 
     // º”‘ÿ—πÀı¡ÀµƒTGAÕºœÒ
-    fbyte* LoadCompressedImage( FVFile* pFile, const STGAHeader& header );
+    FBYTE* LoadCompressedImage( FVFile* pFile, const STGAHeader& header );
 };
 
 ///////////////////////////////////////////////////////////////////////////

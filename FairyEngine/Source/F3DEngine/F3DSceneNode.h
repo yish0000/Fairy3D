@@ -13,17 +13,22 @@
 #define __F3D_SCENENODE_H__
 
 //// HEADERS OF THIS FILE ////////////////////////////////////////////////
+#include "FObject.h"
 #include "F3DTypes.h"
 
 //////////////////////////////////////////////////////////////////////////
+
+class F3DSceneManager;
 
 /** Scene Node.
 @remarks
 	Base class of all type of scene objects.
 @note
 */
-class FAIRY_API F3DSceneNode : public FGeneralAlloc
+class FAIRY_API F3DSceneNode : public FObject
 {
+	F_DECLARE_RTTI(F3DSceneNode)
+
     typedef std::vector<F3DSceneNode*> ChildNodeList;
     
 protected:

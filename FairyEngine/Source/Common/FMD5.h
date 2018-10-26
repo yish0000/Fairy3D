@@ -25,17 +25,17 @@ public:		// Types
 	{
 		uint32 state[4];
 		uint32 count[2];
-		fbyte buffer[64];
+		FBYTE buffer[64];
 	};
 
 public:
 
 	void Init( Context* context );
-	void Update( Context* context, fbyte* input, int len );
-	void Final( fbyte* digest, Context* context );
-	void Transform( uint32* state, fbyte* block );
-	void Encode( fbyte* output, uint32* input, int len );
-	void Decode( uint32* output, fbyte* input, int len );
+	void Update( Context* context, FBYTE* input, int len );
+	void Final( FBYTE* digest, Context* context );
+	void Transform( uint32* state, FBYTE* block );
+	void Encode( FBYTE* output, uint32* input, int len );
+	void Decode( uint32* output, FBYTE* input, int len );
 
 	uint32 GetHash( const void* input, int len );
 };

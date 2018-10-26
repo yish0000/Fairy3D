@@ -59,8 +59,8 @@ protected:
     uint32 m_nCurBlock;     // 指针所在的数据块
     BlockList m_Blocks;     // 文件分块信息
 
-    fbyte* m_pTempMem;      // 临时内存用于解压数据
-    fbyte* m_pFileBuf;      // 用于暂存从文件中读出的数据块
+    FBYTE* m_pTempMem;      // 临时内存用于解压数据
+    FBYTE* m_pFileBuf;      // 用于暂存从文件中读出的数据块
 
 	FCompressor* m_pCompress;	// 压缩器
 

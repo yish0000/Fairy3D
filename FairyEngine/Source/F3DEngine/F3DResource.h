@@ -1,7 +1,7 @@
 /*
  * ------------------------------------------------------------------------
  *  Name:   F3DResource.h
- *  Desc:   本文件定义了引擎的资源对象基类。
+ *  Desc:   This file defines the base class of all the resources.
  *  Author: Yish
  *  Date:   2012/8/24
  *  ----------------------------------------------------------------------
@@ -37,7 +37,7 @@ public:
     F3DResource();
     virtual ~F3DResource();
 
-    // 重新加载资源
+    // Reload the 
     virtual bool Reload() = 0;
 
     // 销毁资源
@@ -49,25 +49,28 @@ public:
     // 资源是否被销毁
     virtual bool IsDisposed() const = 0;
 
-    // 资源优先级
+    // Get the priority of the resource.
     int GetPriority() const { return m_iPriority; }
+	// Set the priority of the resource.
     void SetPriority( int iPriority ) { m_iPriority = iPriority; }
 
-    // 引用计数相关
+    // Get the reference count.
     uint32 GetRefCount() const { return m_nRefCount; }
-    bool IsLocked() const { return (m_nRefCount > 0); }
+	// Is this resource dead ?
+    bool IsDead() const { return (m_nRefCount == 0); }
 
-    // 资源被访问的时间
+    // Get the last access time.
     time_t GetLastAccess() const { return m_LastAccess; }
-    void SetLastAccess( time_t acessTime ) { m_LastAccess = acessTime; }
+	// Modify the last access time.
+	void SetLastAccess(time_t acessTime) { m_LastAccess = acessTime; }
 
     // 用于优先级排序的操作符
     bool operator < ( const F3DResource& res );
 
 protected:
-    int m_iPriority;        // 资源的优先级
-    uint32 m_nRefCount;     // 资源的引用次数
-    time_t m_LastAccess;    // 资源上一次被访问的时间
+    int m_iPriority;        // Priority of the resource.
+    uint32 m_nRefCount;     // Reference count of the resource.
+    time_t m_LastAccess;    // Last access time.
 };
 
 ///////////////////////////////////////////////////////////////////////////

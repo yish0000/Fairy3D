@@ -20,6 +20,10 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
+class F3DRenderer;
+class F3DRenderData;
+class F3DShaderObject;
+
 /** Base class of render device.
 @remarks
 	This class is the base class of device in each platforms.

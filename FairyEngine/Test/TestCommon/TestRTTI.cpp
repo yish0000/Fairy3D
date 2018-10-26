@@ -12,7 +12,7 @@
 #include "FTestCase.h"
 #include "TestRTTI.h"
 
-F_REFLECTION_BEGIN(CWeapon, FObject)
+F_REFLECTION_CREATE_BEGIN(CWeapon, FObject)
  	F_REFLECTION(AString, Name)
 	F_REFLECTION(int, MinDmg)
 	F_REFLECTION(int, MaxDmg)
@@ -29,7 +29,7 @@ CWeapon::CWeapon()
 
 ///////////////////////////////////////////////////////////////////////////
 
-F_REFLECTION_BEGIN(CBaseMonsterStats, FObject)
+F_REFLECTION_CREATE_BEGIN(CBaseMonsterStats, FObject)
 	F_REFLECTION(AString, Name)
 F_REFLECTION_END()
 
@@ -40,7 +40,7 @@ CBaseMonsterStats::CBaseMonsterStats()
 
 ///////////////////////////////////////////////////////////////////////////
 
-F_REFLECTION_BEGIN(CMonsterStats, CBaseMonsterStats)
+F_REFLECTION_CREATE_BEGIN(CMonsterStats, CBaseMonsterStats)
 	F_REFLECTION(int, Level)
 	F_REFLECTION(int, HitPoints)
 	F_REFLECTION(bool, Flatulent)

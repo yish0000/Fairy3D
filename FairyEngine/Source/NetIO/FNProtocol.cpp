@@ -293,7 +293,7 @@ namespace FNET {
 
         temp.reserve( pComp->CompressBound((uint32)ss.size()) );
         uint32 dstLen = (uint32)temp.capcity();
-        if( pComp->Compress((fbyte*)ss.begin(),(uint32)ss.size(),(fbyte*)(temp.begin()),dstLen) )
+        if( pComp->Compress((FBYTE*)ss.begin(),(uint32)ss.size(),(FBYTE*)(temp.begin()),dstLen) )
         {
             temp.resize( dstLen );
             uint32 src_len = (uint32)ss.size();
@@ -323,7 +323,7 @@ namespace FNET {
             isc >> OctetsStream::BEGIN >> CompactUINT(sz_org) >> data_c >> OctetsStream::COMMIT;
             dst_len = sz_org;
             data_o.reserve( dst_len );
-            if( pComp->Decompress((fbyte*)data_c.begin(),(uint32)data_c.size(),(fbyte*)data_o.begin(),dst_len) )
+            if( pComp->Decompress((FBYTE*)data_c.begin(),(uint32)data_c.size(),(FBYTE*)data_o.begin(),dst_len) )
             {
                 data_o.resize( dst_len );
                 is.insert( is.end(),data_o.begin(),data_o.size() );
@@ -634,8 +634,8 @@ namespace FNET {
 		std::auto_ptr<FCompressor> pComp = FCompressor::Create(FCompressor::COMPRESS_ZLIB);
         os_c.reserve( pComp->CompressBound((uint32)os_src.size()) );
         uint32 len_c = (uint32)os_c.capcity();
-        if( pComp->Compress((fbyte*)os_src.begin(),(uint32)os_src.size(),
-            (fbyte*)os_c.begin(),len_c) && len_c < os_src.size() )
+        if( pComp->Compress((FBYTE*)os_src.begin(),(uint32)os_src.size(),
+            (FBYTE*)os_c.begin(),len_c) && len_c < os_src.size() )
         {
             os_c.resize( len_c );
             os << CompactUINT((uint32)os_src.size()) << CompactUINT((uint32)os_c.size());
@@ -667,8 +667,8 @@ namespace FNET {
             is_src.reserve( len_src );
 
 			FCompressor* pComp = FCompressor::Create(FCompressor::COMPRESS_ZLIB);
-            if( pComp->Decompress((fbyte*)os_c.begin(),(uint32)os_c.size(),
-                (fbyte*)is_src.begin(),len_src) )
+            if( pComp->Decompress((FBYTE*)os_c.begin(),(uint32)os_c.size(),
+                (FBYTE*)is_src.begin(),len_src) )
             {
                 is_src.resize( len_src );
 

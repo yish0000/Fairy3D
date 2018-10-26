@@ -43,16 +43,16 @@ public:
 	// 从另一个缓冲区中拷贝数据
 	virtual bool Blit( F3DPixelBuffer* pBuffer, const F2DRECT& rcSrc, const F2DRECT& rcDst );
 	// 从内存中拷贝数据
-	virtual bool BlitFromMemory( EPixelFormat Format, fbyte* pData, uint32 nSlice, const F2DRECT& rcSrc, const F2DRECT& rcDest ) = 0;
+	virtual bool BlitFromMemory( EPixelFormat Format, FBYTE* pData, uint32 nSlice, const F2DRECT& rcSrc, const F2DRECT& rcDest ) = 0;
 	// 拷贝缓冲区内的指定的数据到内存
-	virtual bool BlitToMemory( const F2DRECT& rcSrc, fbyte** pData, uint32* nSlice ) = 0;
+	virtual bool BlitToMemory( const F2DRECT& rcSrc, FBYTE** pData, uint32* nSlice ) = 0;
 
 	// 拷贝整个缓冲区到这里
 	bool Blit( F3DPixelBuffer* pBuffer );
 	// 从指定内存中拷贝数据到缓冲区的全部
-	bool BlitFromMemory( EPixelFormat Format, fbyte* pData, uint32 nSlice, const F2DRECT& rcSrc );
+	bool BlitFromMemory( EPixelFormat Format, FBYTE* pData, uint32 nSlice, const F2DRECT& rcSrc );
 	// 拷贝整个缓冲区到内存
-	bool BlitToMemory( fbyte** ppData, uint32* nSlice );
+	bool BlitToMemory( FBYTE** ppData, uint32* nSlice );
 
 	// 获取渲染纹理
 	virtual F3DRenderTexture* GetRenderTexture() = 0;

@@ -15,7 +15,7 @@
 
 class CWeapon : public FObject
 {
-	F_DECLARE_REFLECTION(CWeapon)
+	F_DECLARE_REFLECTION_CREATE(CWeapon)
 
 public:
 	CWeapon();
@@ -41,7 +41,7 @@ private:
 
 class CBaseMonsterStats : public FObject
 {
-	F_DECLARE_REFLECTION(CBaseMonsterStats)
+	F_DECLARE_REFLECTION_CREATE(CBaseMonsterStats)
 
 public:
 
@@ -60,7 +60,7 @@ private:
 
 class CMonsterStats : public CBaseMonsterStats
 {
-	F_DECLARE_REFLECTION(CMonsterStats)
+	F_DECLARE_REFLECTION_CREATE(CMonsterStats)
 
 public:
 

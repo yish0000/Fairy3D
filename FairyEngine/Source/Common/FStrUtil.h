@@ -113,6 +113,9 @@ struct AStringUtil
 	// For example: "Hello \r world!\n" -> "Hello \\r world!\\n"
     static bool InvTranslate( AString& str );
 
+	// Get a unique name.
+	static AString UniqueName();
+
     // Format a string.
     static AString Format( const char* format, ... );
 	static void Format(AString& str, const char* format, ...);
@@ -174,6 +177,9 @@ struct WStringUtil
 	// Translate the escape characters in string.
 	// For example: "Hello \r world!\n" -> "Hello \\r world!\\n"
     static bool InvTranslate( WString& str );
+
+	// Get a unique name.
+	static WString UniqueName();
 
 	// Format a string.
 	static WString Format( const wchar_t* format, ... );

@@ -93,7 +93,7 @@ F3DImage* F3DJPGCodec::Load( const char* filename )
     }
 
     size_t srcSize = file.GetFileSize();
-    fbyte* pSrcBuf = new fbyte[srcSize];
+    FBYTE* pSrcBuf = new FBYTE[srcSize];
     file.Read(pSrcBuf, srcSize);
     file.Close();
 
@@ -159,7 +159,7 @@ F3DImage* F3DJPGCodec::Load( const char* filename )
     size_t bufSize = (jpeg.DIBWidth*jpeg.DIBChannels+jpeg.DIBPadBytes)*jpeg.DIBHeight;
 
     // 读取像素数据
-    fbyte* imageData = new fbyte[bufSize];
+    FBYTE* imageData = new FBYTE[bufSize];
     jpeg.DIBBytes = imageData;
     funcRead( &jpeg,IJL_JFILE_READWHOLEIMAGE );
 
@@ -210,7 +210,7 @@ void F3DJPGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
 		return;
     }
 
-    fbyte* destBuf;
+    FBYTE* destBuf;
     EPixelFormat destFormat;
     size_t destSize,pxSize;
 
@@ -227,7 +227,7 @@ void F3DJPGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
     // 将数据转换为指定像素格式
     pxSize = F3D_PixelSize( destFormat );
     destSize = width*height*pxSize;
-    destBuf = new fbyte[destSize];
+    destBuf = new FBYTE[destSize];
     F3D_ConvertPixelFormat( image->GetImageData(level),srcFormat,destBuf,destFormat,width,height );
 
     // 保存数据到JPEG文件
@@ -345,7 +345,7 @@ F3DImage* F3DJPGCodec::Load( const char* filename )
 
     // 指定数据源
     size_t srcSize = file.GetFileSize();
-    fbyte* pSrcData = new fbyte[srcSize];
+    FBYTE* pSrcData = new FBYTE[srcSize];
     file.Read(pSrcData, srcSize);
     jpeg_mem_src(&cinfo, pSrcData, (unsigned long)srcSize);
 
@@ -371,7 +371,7 @@ F3DImage* F3DJPGCodec::Load( const char* filename )
 
     // 读取每一行数据
     int iCurLine = 0;
-    fbyte* pImageData = pImage->GetImageData();
+    FBYTE* pImageData = pImage->GetImageData();
     while( cinfo.output_scanline < cinfo.output_height )
     {
         jpeg_read_scanlines(&cinfo, buffer, 1);
@@ -395,7 +395,7 @@ F3DImage* F3DJPGCodec::Load( const char* filename )
 */
 void F3DJPGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level )
 {
-    fbyte* destBuf;
+    FBYTE* destBuf;
     unsigned long destSize;
 
     const int JPEG_QUALITY = 0;     // 输出JPEG质量
@@ -407,7 +407,7 @@ void F3DJPGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
 
     // 将数据转换为R8G8B8
     destSize = (unsigned long)(width*height*3);
-    destBuf = new fbyte[destSize];
+    destBuf = new FBYTE[destSize];
     F3D_ConvertPixelFormat( image->GetImageData(level),srcFormat,destBuf,PFT_R8G8B8,width,height );
 
     struct jpeg_compress_struct cinfo;

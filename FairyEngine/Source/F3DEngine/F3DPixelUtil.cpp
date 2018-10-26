@@ -20,91 +20,91 @@ extern "C" {
 ///////////////////////////////////////////////////////////////////////////
 // 模块内部使用的辅助函数
 
-typedef void (*ARGB8888ToFormatFunc) ( fbyte* src,fbyte* dest,size_t numPixels );
-typedef void (*FormatToARGB8888Func) ( fbyte* src,fbyte* dest,size_t numPixels );
-typedef void (*GenMipmapFunc) ( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-typedef void (*StretchLinearFunc) ( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
+typedef void (*ARGB8888ToFormatFunc) ( FBYTE* src,FBYTE* dest,size_t numPixels );
+typedef void (*FormatToARGB8888Func) ( FBYTE* src,FBYTE* dest,size_t numPixels );
+typedef void (*GenMipmapFunc) ( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+typedef void (*StretchLinearFunc) ( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
 
 // 亮度图分量计算比率常量
 static const float L_R = 0.299f;
 static const float L_G = 0.587f;
 static const float L_B = 0.114f;
 
-static void ARGB8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
+static void ARGB8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
 
 // 将PFT_A8R8G8B8转换为其他像素格式
-static void ARGB8888ToRGB888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToABGR8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToXRGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToXBGR8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToRGB565( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToXRGB1555( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToARGB1555( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToARGB4444( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToRGB332( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToL8( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToL16( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToAL44( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToAL88( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToA8( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToVU88( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB8888ToQWVU8888( fbyte* src,fbyte* dest,size_t numPixels );
+static void ARGB8888ToRGB888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToABGR8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToXRGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToXBGR8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToRGB565( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToXRGB1555( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToARGB1555( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToARGB4444( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToRGB332( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToL8( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToL16( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToAL44( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToAL88( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToA8( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToVU88( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB8888ToQWVU8888( FBYTE* src,FBYTE* dest,size_t numPixels );
 
 // 将其他像素格式转换为PFT_A8R8G8B8
-static void RGB888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ABGR8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void XRGB8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void XBGR8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void RGB565ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void XRGB1555ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB1555ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void ARGB4444ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void RGB332ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void L8ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void L16ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void AL44ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void AL88ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void A8ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void VU88ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
-static void QWVU8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels );
+static void RGB888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ABGR8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void XRGB8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void XBGR8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void RGB565ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void XRGB1555ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB1555ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void ARGB4444ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void RGB332ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void L8ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void L16ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void AL44ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void AL88ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void A8ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void VU88ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
+static void QWVU8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels );
 
 // 生成Mipmap的函数
-static void GenMipmapRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapABGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapXRGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapXBGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapXRGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapL16( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapAL88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapA8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapVU88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void GenMipmapQWVU8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
+static void GenMipmapRGB888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapARGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapABGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapXRGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapXBGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapRGB565( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapXRGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapARGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapARGB4444( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapRGB332( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapL8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapL16( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapAL44( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapAL88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapA8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapVU88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void GenMipmapQWVU8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
 
 // 线性拉伸图像的函数
-static void StretchLinearRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearABGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearXRGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearXBGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearXRGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearL16( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearAL88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearA8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearVU88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
-static void StretchLinearQWVU8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH );
+static void StretchLinearRGB888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearARGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearABGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearXRGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearXBGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearRGB565( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearXRGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearARGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearARGB4444( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearRGB332( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearL8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearL16( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearAL44( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearAL88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearA8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearVU88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
+static void StretchLinearQWVU8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH );
 
 /** 获取指定的像素转换函数
 @Param 目标像素格式
@@ -400,7 +400,7 @@ size_t F3D_NumMipmaps( size_t width,size_t height )
 @Param 图像的宽度
 @Param 图像的高度
 */
-void F3D_ConvertPixelFormat( fbyte* src,EPixelFormat srcFormat,fbyte* dest,EPixelFormat destFormat,
+void F3D_ConvertPixelFormat( FBYTE* src,EPixelFormat srcFormat,FBYTE* dest,EPixelFormat destFormat,
                              size_t width,size_t height )
 {
     if( srcFormat == destFormat )
@@ -416,7 +416,7 @@ void F3D_ConvertPixelFormat( fbyte* src,EPixelFormat srcFormat,fbyte* dest,EPixe
         ARGB8888ToFormatFunc func2 = GetARGB8888ToFormatFunc( destFormat );
 
         // 分配一块临时内存
-        fbyte* tempBuf = new fbyte[4*width];
+        FBYTE* tempBuf = new FBYTE[4*width];
 
         if( func1 && func2 )
         {
@@ -440,8 +440,8 @@ void F3D_ConvertPixelFormat( fbyte* src,EPixelFormat srcFormat,fbyte* dest,EPixe
 @Param 目标图像的宽度
 @Param 目标图像的高度
 */
-void F3D_GenerateMipmap( fbyte* src,size_t srcWidth,size_t srcHeight,EPixelFormat format,
-                         fbyte* dest,size_t destWidth,size_t destHeight )
+void F3D_GenerateMipmap( FBYTE* src,size_t srcWidth,size_t srcHeight,EPixelFormat format,
+                         FBYTE* dest,size_t destWidth,size_t destHeight )
 {
     GenMipmapFunc func;
 
@@ -461,8 +461,8 @@ void F3D_GenerateMipmap( fbyte* src,size_t srcWidth,size_t srcHeight,EPixelForma
 @Param 目标图像的宽度
 @Param 目标图像的高度
 */
-void F3D_StretchLinear( fbyte* src,size_t srcWidth,size_t srcHeight,EPixelFormat format,
-                        fbyte* dest,size_t destWidth,size_t destHeight )
+void F3D_StretchLinear( FBYTE* src,size_t srcWidth,size_t srcHeight,EPixelFormat format,
+                        FBYTE* dest,size_t destWidth,size_t destHeight )
 {
     StretchLinearFunc func;
 
@@ -481,7 +481,7 @@ void F3D_StretchLinear( fbyte* src,size_t srcWidth,size_t srcHeight,EPixelFormat
 @Param 每行多余填充的字节数
 @Param 是否对图像进行翻转
 */
-void F3D_1BitToARGB1555( fbyte* src,ushort* dest,size_t width,size_t height,
+void F3D_1BitToARGB1555( FBYTE* src,ushort* dest,size_t width,size_t height,
                          size_t linePad,bool flip )
 {
     if( flip )
@@ -523,7 +523,7 @@ void F3D_1BitToARGB1555( fbyte* src,ushort* dest,size_t width,size_t height,
 @Param 每行多余填充的字节数
 @Param 是否对图像进行翻转
 */
-void F3D_4BitToARGB1555( fbyte* src,ushort* dest,size_t width,size_t height,
+void F3D_4BitToARGB1555( FBYTE* src,ushort* dest,size_t width,size_t height,
                          uint32* palette,size_t linePad,bool flip )
 {
 #define XRGB8888ToARGB1555(c) (0x8000 | (((c) & 0xf80000) >> 9) | (((c) & 0xf800) >> 6) | (((c) & 0xf8) >> 3))
@@ -569,7 +569,7 @@ void F3D_4BitToARGB1555( fbyte* src,ushort* dest,size_t width,size_t height,
 @Param 每行多余填充的字节数
 @Param 是否对图像进行翻转
 */
-void F3D_8BitToARGB1555( fbyte* src,ushort* dest,size_t width,size_t height,
+void F3D_8BitToARGB1555( FBYTE* src,ushort* dest,size_t width,size_t height,
                          uint32* palette,size_t linePad,bool flip )
 {
 #define XRGB8888ToARGB1555(c) (0x8000 | (((c) & 0xf80000) >> 9) | (((c) & 0xf800) >> 6) | (((c) & 0xf8) >> 3))
@@ -603,7 +603,7 @@ void F3D_8BitToARGB1555( fbyte* src,ushort* dest,size_t width,size_t height,
 @Param 每行多余填充的字节数
 @Param 是否对图像进行翻转
 */
-void F3D_16BitToImage( fbyte* src,fbyte* dest,size_t width,size_t height,
+void F3D_16BitToImage( FBYTE* src,FBYTE* dest,size_t width,size_t height,
                        size_t linePad,bool flip )
 {
     const size_t lineSize = width * 2;
@@ -636,7 +636,7 @@ void F3D_16BitToImage( fbyte* src,fbyte* dest,size_t width,size_t height,
 @Param 是否交换红蓝通道
 @Param 是否自动补齐为32位(X8R8G8B8)
 */
-void F3D_24BitToImage( fbyte* src,fbyte* dest,size_t width,size_t height,
+void F3D_24BitToImage( FBYTE* src,FBYTE* dest,size_t width,size_t height,
                        size_t linePad,bool flip,bool bgr,bool b32 )
 {
     const size_t srcLineSize = width * 3;
@@ -682,7 +682,7 @@ void F3D_24BitToImage( fbyte* src,fbyte* dest,size_t width,size_t height,
 @Param 每行多余填充的字节数
 @Param 是否对图像进行翻转
 */
-void F3D_32BitToImage( fbyte* src,fbyte* dest,size_t width,size_t height,
+void F3D_32BitToImage( FBYTE* src,FBYTE* dest,size_t width,size_t height,
                        size_t linePad,bool flip )
 {
     const size_t lineSize = width * 4;
@@ -709,14 +709,14 @@ void F3D_32BitToImage( fbyte* src,fbyte* dest,size_t width,size_t height,
 ///////////////////////////////////////////////////////////////////////////
 // 转换像素辅助函数的实现
 
-void ARGB8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     memcpy( dest,src,numPixels*4 );
 }
 
-void ARGB8888ToRGB888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToRGB888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=3 )
     {
         dest[0] = src[0];
@@ -725,9 +725,9 @@ void ARGB8888ToRGB888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToABGR8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToABGR8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[2];
@@ -737,9 +737,9 @@ void ARGB8888ToABGR8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToXRGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToXRGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[0];
@@ -749,9 +749,9 @@ void ARGB8888ToXRGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToXBGR8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToXBGR8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[2];
@@ -761,10 +761,10 @@ void ARGB8888ToXBGR8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToRGB565( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToRGB565( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* destW = (ushort*)dest;
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,destW++ )
     {
         *destW = (ushort)(((src[2] >> 3) << 11) |
@@ -772,10 +772,10 @@ void ARGB8888ToRGB565( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToXRGB1555( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToXRGB1555( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* destW = (ushort*)dest;
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,destW++ )
     {
         *destW = (ushort)((0x1 << 15) | ((src[2] >> 3) << 10) |
@@ -783,10 +783,10 @@ void ARGB8888ToXRGB1555( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToARGB1555( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToARGB1555( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* destW = (ushort*)dest;
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,destW++ )
     {
         *destW = (ushort)(((src[3] >> 7) << 15) | ((src[2] >> 3) << 10) |
@@ -794,10 +794,10 @@ void ARGB8888ToARGB1555( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToARGB4444( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToARGB4444( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* destW = (ushort*)dest;
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,destW++ )
     {
         *destW = (ushort)(((src[3] >> 4) << 12) | ((src[2] >> 4) << 8) |
@@ -805,28 +805,28 @@ void ARGB8888ToARGB4444( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToRGB332( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToRGB332( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest++ )
     {
         *dest = ((src[2] >> 5) << 5) | ((src[1] >> 5) << 2) | (src[0] >> 6);
     }
 }
 
-void ARGB8888ToL8( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToL8( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest++ )
     {
         *dest = src[2] * L_R + src[1] * L_G + src[0] * L_B;
     }
 }
 
-void ARGB8888ToL16( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToL16( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* destW = (ushort*)dest;
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,destW++ )
     {
         ushort srcW = (ushort)(src[2] * L_R + src[1] * L_G + src[0] * L_B);
@@ -834,19 +834,19 @@ void ARGB8888ToL16( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToAL44( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToAL44( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest++ )
     {
-        fbyte srcL = src[2] * L_R + src[1] * L_G + src[0] * L_B;
+        FBYTE srcL = src[2] * L_R + src[1] * L_G + src[0] * L_B;
         *dest = ((src[3] >> 4) << 4) | (srcL >> 4);
     }
 }
 
-void ARGB8888ToAL88( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToAL88( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=2 )
     {
         dest[0] = src[2] * L_R + src[1] * L_G + src[0] * L_B;
@@ -854,9 +854,9 @@ void ARGB8888ToAL88( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToA8( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToA8( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest++ )
     {
         *dest = src[3];
@@ -864,9 +864,9 @@ void ARGB8888ToA8( fbyte* src,fbyte* dest,size_t numPixels )
 }
 
 // 当转换为凹凸贴图时，r=u,g=v,b=w,alpha=q
-void ARGB8888ToVU88( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToVU88( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=2 )
     {
         dest[0] = src[2];
@@ -874,9 +874,9 @@ void ARGB8888ToVU88( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB8888ToQWVU8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB8888ToQWVU8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[2];
@@ -886,9 +886,9 @@ void ARGB8888ToQWVU8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void RGB888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void RGB888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 3;
+    FBYTE* srcEnd = src + numPixels * 3;
     for( ;src<srcEnd;src+=3,dest+=4 )
     {
         dest[0] = src[0];
@@ -898,9 +898,9 @@ void RGB888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ABGR8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ABGR8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[2];
@@ -910,9 +910,9 @@ void ABGR8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void XRGB8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void XRGB8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[0];
@@ -922,9 +922,9 @@ void XRGB8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void XBGR8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void XBGR8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[2];
@@ -934,7 +934,7 @@ void XBGR8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void RGB565ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void RGB565ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* srcW = (ushort*)src;
     ushort* srcEnd = srcW + numPixels;
@@ -951,7 +951,7 @@ void RGB565ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void XRGB1555ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void XRGB1555ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* srcW = (ushort*)src;
     ushort* srcEnd = srcW + numPixels;
@@ -968,7 +968,7 @@ void XRGB1555ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB1555ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB1555ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* srcW = (ushort*)src;
     ushort* srcEnd = srcW + numPixels;
@@ -986,7 +986,7 @@ void ARGB1555ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void ARGB4444ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void ARGB4444ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* srcW = (ushort*)src;
     ushort* srcEnd = srcW + numPixels;
@@ -1004,14 +1004,14 @@ void ARGB4444ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void RGB332ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void RGB332ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels;
+    FBYTE* srcEnd = src + numPixels;
     for( ;src<srcEnd;src++,dest+=4 )
     {
-        fbyte r = (*src & 0xe0) >> 5;
-        fbyte g = (*src & 0x1c) >> 2;
-        fbyte b = (*src & 0x3);
+        FBYTE r = (*src & 0xe0) >> 5;
+        FBYTE g = (*src & 0x1c) >> 2;
+        FBYTE b = (*src & 0x3);
 
         dest[0] = (b << 6) | (b << 4) | (b << 2) | b;
         dest[1] = (g << 5) | (g << 2) | (g >> 1);
@@ -1020,9 +1020,9 @@ void RGB332ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void L8ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void L8ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels;
+    FBYTE* srcEnd = src + numPixels;
     for( ;src<srcEnd;src++,dest+=4 )
     {
         dest[0] = src[0];
@@ -1032,7 +1032,7 @@ void L8ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void L16ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void L16ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
     ushort* srcW = (ushort*)src;
     ushort* srcEnd = srcW + numPixels;
@@ -1045,13 +1045,13 @@ void L16ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void AL44ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void AL44ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels;
+    FBYTE* srcEnd = src + numPixels;
     for( ;src<srcEnd;src++,dest+=4 )
     {
-        fbyte luminance = (*src & 0xf);
-        fbyte alpha = (*src & 0xf0) >> 4;
+        FBYTE luminance = (*src & 0xf);
+        FBYTE alpha = (*src & 0xf0) >> 4;
 
         dest[0] = (luminance << 4) | luminance;
         dest[1] = (luminance << 4) | luminance;
@@ -1060,9 +1060,9 @@ void AL44ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void AL88ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void AL88ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 2;
+    FBYTE* srcEnd = src + numPixels * 2;
     for( ;src<srcEnd;src+=2,dest+=4 )
     {
         dest[0] = src[0];
@@ -1072,9 +1072,9 @@ void AL88ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void A8ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void A8ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels;
+    FBYTE* srcEnd = src + numPixels;
     for( ;src<srcEnd;src++,dest+=4 )
     {
         dest[0] = 0xff;
@@ -1085,9 +1085,9 @@ void A8ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
 }
 
 // 当转换为凹凸贴图时，r=u,g=v,b=w,alpha=q
-void VU88ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void VU88ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 2;
+    FBYTE* srcEnd = src + numPixels * 2;
     for( ;src<srcEnd;src+=2,dest+=4 )
     {
         dest[0] = 0;
@@ -1097,9 +1097,9 @@ void VU88ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
     }
 }
 
-void QWVU8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
+void QWVU8888ToARGB8888( FBYTE* src,FBYTE* dest,size_t numPixels )
 {
-    fbyte* srcEnd = src + numPixels * 4;
+    FBYTE* srcEnd = src + numPixels * 4;
     for( ;src<srcEnd;src+=4,dest+=4 )
     {
         dest[0] = src[2];
@@ -1113,7 +1113,7 @@ void QWVU8888ToARGB8888( fbyte* src,fbyte* dest,size_t numPixels )
 ///////////////////////////////////////////////////////////////////////////
 // 生成Mipmap辅助函数的实现
 
-void GenMipmapARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapARGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y,c)     (4*((y)*srcW+(x))+(c))
 #define DESTINDEX(x,y,c)    (4*((y)*destW+(x))+(c))
@@ -1155,7 +1155,7 @@ void GenMipmapARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
 #undef DESTINDEX
 }
 
-void GenMipmapRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapRGB888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y,c)     (3*((y)*srcW+(x))+(c))
 #define DESTINDEX(x,y,c)    (3*((y)*destW+(x))+(c))
@@ -1192,22 +1192,22 @@ void GenMipmapRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t dest
 #undef DESTINDEX
 }
 
-void GenMipmapABGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapABGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapARGB8888( src,srcW,srcH,dest,destW,destH );
 }
 
-void GenMipmapXRGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapXRGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapARGB8888( src,srcW,srcH,dest,destW,destH );
 }
 
-void GenMipmapXBGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapXBGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapARGB8888( src,srcW,srcH,dest,destW,destH );
 }
 
-void GenMipmapRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapRGB565( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
@@ -1253,12 +1253,12 @@ void GenMipmapRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t dest
 #undef BLUE
 }
 
-void GenMipmapXRGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapXRGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapARGB1555( src,srcW,srcH,dest,destW,destH );
 }
 
-void GenMipmapARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapARGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
@@ -1310,7 +1310,7 @@ void GenMipmapARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
 #undef BLUE
 }
 
-void GenMipmapARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapARGB4444( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
@@ -1362,7 +1362,7 @@ void GenMipmapARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
 #undef BLUE
 }
 
-void GenMipmapRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapRGB332( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
@@ -1370,7 +1370,7 @@ void GenMipmapRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t dest
 #define GREEN(c)        (((c) & 0x1c) >> 2)
 #define BLUE(c)         ((c) & 0x3)
 
-    fbyte r,g,b;
+    FBYTE r,g,b;
 
     const size_t dx = srcW / destW;
     const size_t dy = srcH / destH;
@@ -1406,7 +1406,7 @@ void GenMipmapRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t dest
 #undef BLUE
 }
 
-void GenMipmapL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapL8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
@@ -1433,7 +1433,7 @@ void GenMipmapL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,si
 #undef DESTINDEX
 }
 
-void GenMipmapL16( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapL16( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
@@ -1463,14 +1463,14 @@ void GenMipmapL16( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,s
 #undef DESTINDEX
 }
 
-void GenMipmapAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapAL44( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y)   ((y)*srcW+(x))
 #define DESTINDEX(x,y)  ((y)*destW+(x))
 #define ALPHA(c)        (((c) & 0xf0) >> 4)
 #define LUMINANCE(c)    ((c) & 0x0f)
 
-    fbyte alpha,luminance;
+    FBYTE alpha,luminance;
 
     const size_t dx = srcW / destW;
     const size_t dy = srcH / destH;
@@ -1501,7 +1501,7 @@ void GenMipmapAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,
 #undef LUMINANCE
 }
 
-void GenMipmapAL88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapAL88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define SRCINDEX(x,y,c)   (2*((y)*srcW+(x))+(c))
 #define DESTINDEX(x,y,c)  (2*((y)*destW+(x))+(c))
@@ -1536,17 +1536,17 @@ void GenMipmapAL88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,
 #undef DESTINDEX
 }
 
-void GenMipmapA8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapA8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapL8( src,srcW,srcH,dest,destW,destH );
 }
 
-void GenMipmapVU88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapVU88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapAL88( src,srcW,srcH,dest,destW,destH );
 }
 
-void GenMipmapQWVU8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void GenMipmapQWVU8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     GenMipmapARGB8888( src,srcW,srcH,dest,destW,destH );
 }
@@ -1555,7 +1555,7 @@ void GenMipmapQWVU8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
 ///////////////////////////////////////////////////////////////////////////
 // 线性拉伸图像辅助函数的实现
 
-void StretchLinearARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearARGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define RED(c)      (((c) & 0x00ff0000) >> 16)
 #define GREEN(c)    (((c) & 0x0000ff00) >> 8)
@@ -1605,10 +1605,10 @@ void StretchLinearARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            fbyte r = (fbyte)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
-            fbyte g = (fbyte)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
-            fbyte b = (fbyte)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
-            fbyte a = (fbyte)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
+            FBYTE r = (FBYTE)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
+            FBYTE g = (FBYTE)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
+            FBYTE b = (FBYTE)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
+            FBYTE a = (FBYTE)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
 
             destData[dy*(destH)+dx] = (a << 24) | (r << 16) | (g << 8) | b;
         }
@@ -1620,7 +1620,7 @@ void StretchLinearARGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_
 #undef ALPHA
 }
 
-void StretchLinearRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearRGB888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define RED(c)      (((c) & 0x00ff0000) >> 16)
 #define GREEN(c)    (((c) & 0x0000ff00) >> 8)
@@ -1637,27 +1637,27 @@ void StretchLinearRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
             int sx = static_cast<int>(srcx);
             int sy = static_cast<int>(srcy);
 
-            fbyte color0[3] = {0};
-            fbyte color1[3] = {0};
-            fbyte color2[3] = {0};
-            fbyte color3[3] = {0};
+            FBYTE color0[3] = {0};
+            FBYTE color1[3] = {0};
+            FBYTE color2[3] = {0};
+            FBYTE color3[3] = {0};
             bool inSrc = true;
 
             inSrc = (sx >= (int)srcW || sx < 0) ? false : true;
             inSrc = (sy >= (int)srcH || sy < 0) ? false : true;
-            if( inSrc ) memcpy( color0,&src[3*(sy*srcW+sx)],sizeof(fbyte)*3 );
+            if( inSrc ) memcpy( color0,&src[3*(sy*srcW+sx)],sizeof(FBYTE)*3 );
 
             inSrc = (sx+1 >= (int)srcW || sx+1 < 0) ? false : true;
             inSrc = (sy >= (int)srcH || sy < 0) ? false : true;
-            if( inSrc ) memcpy( color1,&src[3*(sy*srcW+sx+1)],sizeof(fbyte)*3 );
+            if( inSrc ) memcpy( color1,&src[3*(sy*srcW+sx+1)],sizeof(FBYTE)*3 );
 
             inSrc = (sx >= (int)srcW || sx < 0) ? false : true;
             inSrc = (sy+1 >= (int)srcH || sy+1 < 0) ? false : true;
-            if( inSrc ) memcpy( color2,&src[3*((sy+1)*srcW+sx)],sizeof(fbyte)*3 );
+            if( inSrc ) memcpy( color2,&src[3*((sy+1)*srcW+sx)],sizeof(FBYTE)*3 );
 
             inSrc = (sx+1 >= (int)srcW || sx+1 < 0) ? false : true;
             inSrc = (sy+1 >= (int)srcH || sy+1 < 0) ? false : true;
-            if( inSrc ) memcpy( color3,&src[3*((sy+1)*srcW+(sx+1))],sizeof(fbyte)*3 );
+            if( inSrc ) memcpy( color3,&src[3*((sy+1)*srcW+(sx+1))],sizeof(FBYTE)*3 );
 
             float u = srcx - sx;
             float v = srcy - sy;
@@ -1666,9 +1666,9 @@ void StretchLinearRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            dest[3*(dy*destW+dx)+0] = (fbyte)(pm0*color0[0] + pm1*color1[0] + pm2*color2[0] + pm3*color3[0]);
-            dest[3*(dy*destW+dx)+1] = (fbyte)(pm0*color0[1] + pm1*color1[1] + pm2*color2[1] + pm3*color3[1]);
-            dest[3*(dy*destW+dx)+2] = (fbyte)(pm0*color0[2] + pm1*color1[2] + pm2*color2[2] + pm3*color3[2]);
+            dest[3*(dy*destW+dx)+0] = (FBYTE)(pm0*color0[0] + pm1*color1[0] + pm2*color2[0] + pm3*color3[0]);
+            dest[3*(dy*destW+dx)+1] = (FBYTE)(pm0*color0[1] + pm1*color1[1] + pm2*color2[1] + pm3*color3[1]);
+            dest[3*(dy*destW+dx)+2] = (FBYTE)(pm0*color0[2] + pm1*color1[2] + pm2*color2[2] + pm3*color3[2]);
         }
     }
 
@@ -1677,22 +1677,22 @@ void StretchLinearRGB888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
 #undef BLUE
 }
 
-void StretchLinearABGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearABGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearARGB8888( src,srcW,srcH,dest,destW,destH );
 }
 
-void StretchLinearXRGB8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearXRGB8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearARGB8888( src,srcW,srcH,dest,destW,destH );
 }
 
-void StretchLinearXBGR8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearXBGR8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearARGB8888( src,srcW,srcH,dest,destW,destH );
 }
 
-void StretchLinearRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearRGB565( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define RED(c)      (((c) & 0xf800) >> 11)
 #define GREEN(c)    (((c) & 0x7e0) >> 5)
@@ -1741,9 +1741,9 @@ void StretchLinearRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            fbyte r = (fbyte)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
-            fbyte g = (fbyte)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
-            fbyte b = (fbyte)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
+            FBYTE r = (FBYTE)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
+            FBYTE g = (FBYTE)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
+            FBYTE b = (FBYTE)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
 
             destData[dy*destW+dx] = (r << 11) | (g << 5) | b;
         }
@@ -1754,7 +1754,7 @@ void StretchLinearRGB565( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
 #undef BLUE
 }
 
-void StretchLinearARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearARGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define RED(c)      (((c) & 0x7c00) >> 10)
 #define GREEN(c)    (((c) & 0x3e0) >> 5)
@@ -1804,10 +1804,10 @@ void StretchLinearARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            fbyte r = (fbyte)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
-            fbyte g = (fbyte)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
-            fbyte b = (fbyte)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
-            fbyte a = (fbyte)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
+            FBYTE r = (FBYTE)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
+            FBYTE g = (FBYTE)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
+            FBYTE b = (FBYTE)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
+            FBYTE a = (FBYTE)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
 
             destData[dy*destH+dx] = (a << 15) | (r << 5) | (g << 5) | b;
         }
@@ -1819,12 +1819,12 @@ void StretchLinearARGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_
 #undef ALPHA
 }
 
-void StretchLinearXRGB1555( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearXRGB1555( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearARGB1555( src,srcW,srcH,dest,destW,destH );
 }
 
-void StretchLinearARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearARGB4444( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define RED(c)      (((c) & 0x0f00) >> 8)
 #define GREEN(c)    (((c) & 0x00f0) >> 4)
@@ -1874,10 +1874,10 @@ void StretchLinearARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            fbyte r = (fbyte)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
-            fbyte g = (fbyte)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
-            fbyte b = (fbyte)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
-            fbyte a = (fbyte)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
+            FBYTE r = (FBYTE)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
+            FBYTE g = (FBYTE)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
+            FBYTE b = (FBYTE)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm2*BLUE(color2) + pm3*BLUE(color3));
+            FBYTE a = (FBYTE)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
 
             destData[dy*destW+dx] = (a << 12) | (r << 8) | (g << 4) | b;
         }
@@ -1889,7 +1889,7 @@ void StretchLinearARGB4444( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_
 #undef ALPHA
 }
 
-void StretchLinearRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearRGB332( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define RED(c)      (((c) & 0xe0) >> 5)
 #define GREEN(c)    (((c) & 0x1c) >> 2)
@@ -1906,10 +1906,10 @@ void StretchLinearRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
             int sx = static_cast<int>(srcx);
             int sy = static_cast<int>(srcy);
 
-            fbyte color0 = 0;
-            fbyte color1 = 0;
-            fbyte color2 = 0;
-            fbyte color3 = 0;
+            FBYTE color0 = 0;
+            FBYTE color1 = 0;
+            FBYTE color2 = 0;
+            FBYTE color3 = 0;
             bool inSrc = true;
 
             inSrc = (sx >= (int)srcW || sx < 0) ? false : true;
@@ -1935,9 +1935,9 @@ void StretchLinearRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            fbyte r = (fbyte)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
-            fbyte g = (fbyte)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
-            fbyte b = (fbyte)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm3*BLUE(color2) + pm3*BLUE(color3));
+            FBYTE r = (FBYTE)(pm0*RED(color0) + pm1*RED(color1) + pm2*RED(color2) + pm3*RED(color3));
+            FBYTE g = (FBYTE)(pm0*GREEN(color0) + pm1*GREEN(color1) + pm2*GREEN(color2) + pm3*GREEN(color3));
+            FBYTE b = (FBYTE)(pm0*BLUE(color0) + pm1*BLUE(color1) + pm3*BLUE(color2) + pm3*BLUE(color3));
 
             dest[dy*destW+dx] = (r << 5) | (g << 2) | b;
         }
@@ -1948,7 +1948,7 @@ void StretchLinearRGB332( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t 
 #undef ALPHA
 }
 
-void StretchLinearL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearL8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     for( size_t dy=0;dy<destH;dy++ )
     {
@@ -1961,10 +1961,10 @@ void StretchLinearL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t dest
             int sx = static_cast<int>(srcx);
             int sy = static_cast<int>(srcy);
 
-            fbyte color0 = 0;
-            fbyte color1 = 0;
-            fbyte color2 = 0;
-            fbyte color3 = 0;
+            FBYTE color0 = 0;
+            FBYTE color1 = 0;
+            FBYTE color2 = 0;
+            FBYTE color3 = 0;
             bool inSrc = true;
 
             inSrc = (sx >= (int)srcx || sx < 0) ? false : true;
@@ -1995,7 +1995,7 @@ void StretchLinearL8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t dest
     }
 }
 
-void StretchLinearL16( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearL16( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     ushort* srcData = (ushort*)src;
     ushort* destData = (ushort*)dest;
@@ -2045,7 +2045,7 @@ void StretchLinearL16( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t des
     }
 }
 
-void StretchLinearAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearAL44( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define ALPHA(c)        (((c) & 0xf0) >> 4)
 #define LUMINANCE(c)    ((c) & 0x0f)
@@ -2061,10 +2061,10 @@ void StretchLinearAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
             int sx = static_cast<int>(srcx);
             int sy = static_cast<int>(srcy);
 
-            fbyte color0 = 0;
-            fbyte color1 = 0;
-            fbyte color2 = 0;
-            fbyte color3 = 0;
+            FBYTE color0 = 0;
+            FBYTE color1 = 0;
+            FBYTE color2 = 0;
+            FBYTE color3 = 0;
             bool inSrc = true;
 
             inSrc = (sx >= (int)srcW || sx < 0) ? false : true;
@@ -2090,8 +2090,8 @@ void StretchLinearAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
             float pm2 = v * (1.0f - u);
             float pm3 = u * v;
 
-            fbyte a = (fbyte)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
-            fbyte l = (fbyte)(pm0*LUMINANCE(color0) + pm1*LUMINANCE(color1) + pm2*LUMINANCE(color2) + pm3*LUMINANCE(color3));
+            FBYTE a = (FBYTE)(pm0*ALPHA(color0) + pm1*ALPHA(color1) + pm2*ALPHA(color2) + pm3*ALPHA(color3));
+            FBYTE l = (FBYTE)(pm0*LUMINANCE(color0) + pm1*LUMINANCE(color1) + pm2*LUMINANCE(color2) + pm3*LUMINANCE(color3));
 
             dest[dy*destW+dx] = (a << 4) | l;
         }
@@ -2101,7 +2101,7 @@ void StretchLinearAL44( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
 #undef LUMINANCE
 }
 
-void StretchLinearAL88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearAL88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
 #define ALPHA(c)        (((c) & 0xff00) >> 8)
 #define LUMINANCE(c)    ((c) & 0x00ff)
@@ -2160,17 +2160,17 @@ void StretchLinearAL88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t de
 #undef LUMINANCE
 }
 
-void StretchLinearA8( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearA8( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearL8( src,srcW,srcH,dest,destW,destH );
 }
 
-void StretchLinearVU88( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearVU88( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearAL88( src,srcW,srcH,dest,destW,destH );
 }
 
-void StretchLinearQWVU8888( fbyte* src,size_t srcW,size_t srcH,fbyte* dest,size_t destW,size_t destH )
+void StretchLinearQWVU8888( FBYTE* src,size_t srcW,size_t srcH,FBYTE* dest,size_t destW,size_t destH )
 {
     StretchLinearARGB8888( src,srcW,srcH,dest,destW,destH );
 }

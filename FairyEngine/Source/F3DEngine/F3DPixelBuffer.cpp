@@ -55,14 +55,14 @@ bool F3DPixelBuffer::Blit( F3DPixelBuffer* pBuffer )
 
 /** 从指定内存中拷贝数据到缓冲区的全部
 */
-bool F3DPixelBuffer::BlitFromMemory( EPixelFormat Format, fbyte* pData, uint32 nSlice, const F2DRECT& rcSrc )
+bool F3DPixelBuffer::BlitFromMemory( EPixelFormat Format, FBYTE* pData, uint32 nSlice, const F2DRECT& rcSrc )
 {
 	return BlitFromMemory(Format, pData, nSlice, rcSrc, F2DRECT(0, 0, m_nWidth, m_nHeight));
 }
 
 /** 拷贝整个缓冲区到内存
 */
-bool F3DPixelBuffer::BlitToMemory( fbyte** ppData, uint32* nSlice )
+bool F3DPixelBuffer::BlitToMemory( FBYTE** ppData, uint32* nSlice )
 {
 	return BlitToMemory(F2DRECT(0, 0, m_nWidth, m_nHeight), ppData, nSlice);
 }

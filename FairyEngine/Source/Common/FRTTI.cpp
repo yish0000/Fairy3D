@@ -57,7 +57,13 @@ void FRTTI::EnumProperties(std::vector<FBaseProperty*>& result)
 */
 FObject* FRTTI::CreateObject()
 {
-	return m_pObjectFactory ? m_pObjectFactory() : NULL;
+	if (!m_pObjectFactory)
+	{
+		FASSERT(!"m_pObjectFactory == null");
+		return NULL;
+	}
+
+	return m_pObjectFactory();
 }
 
 /** Find the RTTI by class name.

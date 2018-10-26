@@ -257,7 +257,7 @@ F3DImage* F3DDDSCodec::LoadImageFromVFile( FVFile* pFile )
 */
 void F3DDDSCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level )
 {
-    fbyte* destBuf;
+    FBYTE* destBuf;
     EPixelFormat destFormat;
     size_t destSize,pxSize;
 
@@ -274,7 +274,7 @@ void F3DDDSCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
     // 将数据转换为指定像素格式
     pxSize = F3D_PixelSize( destFormat );
     destSize = width*height*pxSize;
-    destBuf = new fbyte[destSize];
+    destBuf = new FBYTE[destSize];
     F3D_ConvertPixelFormat( image->GetImageData(level),srcFormat,destBuf,destFormat,width,height );
 
     FVFile file;
@@ -368,7 +368,7 @@ protected:
     size_t m_colorRow;
 
 public:
-    void Setup( const fbyte* pBlock )
+    void Setup( const FBYTE* pBlock )
     {
         m_pBlock = (const typename INFO::Block*)pBlock;
         GetBlockColors( m_pBlock->color,m_colors,INFO::isDXT1 );
@@ -414,7 +414,7 @@ public:
         base::GetColor( x,y,color );
 
         size_t bits = (m_alphaRow >> (x * 4)) & 0xf;
-        color.a = (fbyte)((bits * 0xff) / 0xf);
+        color.a = (FBYTE)((bits * 0xff) / 0xf);
     }
 };
 
@@ -431,7 +431,7 @@ protected:
     size_t m_offset;
 
 public:
-    void Setup( const fbyte* pBlock )
+    void Setup( const FBYTE* pBlock )
     {
         base::Setup( pBlock );
 
@@ -476,7 +476,7 @@ public:
         base::GetColor( x,y,color );
 
         size_t bits = (m_alphaBits >> (x * 3 + m_offset)) & 7;
-        color.a = (fbyte)m_alphas[bits];
+        color.a = (FBYTE)m_alphas[bits];
     }
 };
 
@@ -496,9 +496,9 @@ void GetBlockColors( const DXTColBlock& block,Color8888 colors[4],bool isDXT1 )
         colors[i].g = (BYTE)(block.colors[i].g * 0xff / 0x3f);
         colors[i].b = (BYTE)(block.colors[i].b * 0xff / 0x1f);
         */
-        colors[i].r = (fbyte)((block.colors[i].r << 3U) | (block.colors[i].r >> 2U));
-        colors[i].g = (fbyte)((block.colors[i].g << 2U) | (block.colors[i].g >> 4U));
-        colors[i].b = (fbyte)((block.colors[i].b << 3U) | (block.colors[i].b >> 2U));
+        colors[i].r = (FBYTE)((block.colors[i].r << 3U) | (block.colors[i].r >> 2U));
+        colors[i].g = (FBYTE)((block.colors[i].g << 2U) | (block.colors[i].g >> 4U));
+        colors[i].b = (FBYTE)((block.colors[i].b << 3U) | (block.colors[i].b >> 2U));
     }
 
     ushort* wCol = (ushort*)block.colors;
@@ -508,18 +508,18 @@ void GetBlockColors( const DXTColBlock& block,Color8888 colors[4],bool isDXT1 )
         for( i=0;i<2;i++ )
         {
             colors[i+2].a = 0xff;
-            colors[i+2].r = (fbyte)((ushort(colors[0].r) * (2 - i) + ushort(colors[1].r) * (1 + i)) / 3);
-            colors[i+2].g = (fbyte)((ushort(colors[0].g) * (2 - i) + ushort(colors[1].g) * (1 + i)) / 3);
-            colors[i+2].b = (fbyte)((ushort(colors[0].b) * (2 - i) + ushort(colors[1].b) * (1 + i)) / 3);
+            colors[i+2].r = (FBYTE)((ushort(colors[0].r) * (2 - i) + ushort(colors[1].r) * (1 + i)) / 3);
+            colors[i+2].g = (FBYTE)((ushort(colors[0].g) * (2 - i) + ushort(colors[1].g) * (1 + i)) / 3);
+            colors[i+2].b = (FBYTE)((ushort(colors[0].b) * (2 - i) + ushort(colors[1].b) * (1 + i)) / 3);
         }
     }
     else
     {
         // 3 color block, number 4 is transparent
         colors[2].a = 0xff;
-        colors[2].r = (fbyte)((ushort(colors[0].r) + ushort(colors[1].r)) / 2);
-        colors[2].g = (fbyte)((ushort(colors[0].g) + ushort(colors[1].g)) / 2);
-        colors[2].b = (fbyte)((ushort(colors[0].b) + ushort(colors[1].b)) / 2);
+        colors[2].r = (FBYTE)((ushort(colors[0].r) + ushort(colors[1].r)) / 2);
+        colors[2].g = (FBYTE)((ushort(colors[0].g) + ushort(colors[1].g)) / 2);
+        colors[2].b = (FBYTE)((ushort(colors[0].b) + ushort(colors[1].b)) / 2);
 
         colors[3].a = 0x00;
         colors[3].g = 0x00;
@@ -530,7 +530,7 @@ void GetBlockColors( const DXTColBlock& block,Color8888 colors[4],bool isDXT1 )
 
 // 对指定的DXT块进行解码
 template <typename DECODER>
-void DecodeDXTBlock( fbyte* destData,const fbyte* srcBlock,size_t width,
+void DecodeDXTBlock( FBYTE* destData,const FBYTE* srcBlock,size_t width,
                      size_t height,size_t pitch )
 {
     DECODER decoder;
@@ -538,7 +538,7 @@ void DecodeDXTBlock( fbyte* destData,const fbyte* srcBlock,size_t width,
     decoder.Setup( srcBlock );
     for( size_t y=0;y<height;y++ )
     {
-        fbyte* dest = destData + y * pitch;
+        FBYTE* dest = destData + y * pitch;
 
         decoder.SetY( y );
         for( size_t x=0;x<width;x++ )
@@ -584,7 +584,7 @@ F3DImage* LoadRGBImage( FVFile* file,const SDDSSurfaceDesc2& desc )
     // 读取像素数据
     for( size_t y=0;y<desc.dwHeight;y++ )
     {
-        fbyte* dest = image->GetImageData() + lineSize;
+        FBYTE* dest = image->GetImageData() + lineSize;
 
         file->Read( dest,lineSize );
         file->Seek( (long)lineRest,FVFile::CURRENT );
@@ -654,8 +654,8 @@ void LoadDXTHelper( FVFile* file,F3DImage* image,size_t width,
         {
             file->Read( input_buffer,sizeof(Block)*inputLine );
 
-            fbyte* src = (fbyte*)input_buffer;
-            fbyte* dest = image->GetImageData() + pitch * y;
+            FBYTE* src = (FBYTE*)input_buffer;
+            FBYTE* dest = image->GetImageData() + pitch * y;
 
             if( width >= 4 )
             {
@@ -678,8 +678,8 @@ void LoadDXTHelper( FVFile* file,F3DImage* image,size_t width,
     {
         file->Read( input_buffer,sizeof(Block)*inputLine );
 
-        fbyte* src = (fbyte*)input_buffer;
-        fbyte* dest = image->GetImageData() + pitch * y;
+        FBYTE* src = (FBYTE*)input_buffer;
+        FBYTE* dest = image->GetImageData() + pitch * y;
 
         if( width >= 4 )
         {

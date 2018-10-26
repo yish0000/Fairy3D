@@ -67,9 +67,6 @@
     <Filter Include="Render\Light">
       <UniqueIdentifier>{666ca4ce-6c52-4716-abc2-1c71753383c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Render\Light\LPP">
-      <UniqueIdentifier>{8bb09745-8e46-45f1-b244-20f6c5951a66}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Render\2D">
       <UniqueIdentifier>{e5772779-356b-4bd6-95a1-6199b35270fc}</UniqueIdentifier>
     </Filter>

@@ -36,7 +36,7 @@ FCRC32::FCRC32()
 */
 uint32 FCRC32::CrcMem( const void* data, int iLen, uint32 crc )
 {
-	fbyte* pData = (fbyte*)data;
+	FBYTE* pData = (FBYTE*)data;
 	crc = ~crc;
 	for( int i=0;i<iLen;i++ )
 		crc = (crc << 8) ^ CRC_TABLE[(crc >> 24) ^ pData[i]];
@@ -82,7 +82,7 @@ uint32 FCRC32::StrHash( const char* str, bool bCaseSensitive/* =true */ )
 	while( *str )
 	{
 		char ch = bCaseSensitive ? *str++ : toupper(*str++);
-		fbyte B = ch;
+		FBYTE B = ch;
 		hash = ((hash >> 8) & 0x00ffffff) ^ CRC_TABLE[(hash ^ B) & 0x000000ff];
 	}
 	return hash;
@@ -96,7 +96,7 @@ uint32 FCRC32::StrHash( const wchar_t* str, bool bCaseSensitive/* =true */ )
 	while( *str )
 	{
 		wchar_t Ch = bCaseSensitive ? *str++ : towupper(*str++);
-		fbyte B = Ch;
+		FBYTE B = Ch;
 		hash = ((hash >> 8) & 0x00ffffff) ^ CRC_TABLE[(hash ^ B) & 0x000000ff];
 		B = Ch >> 8;
 		hash = ((hash >> 8) & 0x00ffffff) ^ CRC_TABLE[(hash ^ B) & 0x000000ff];

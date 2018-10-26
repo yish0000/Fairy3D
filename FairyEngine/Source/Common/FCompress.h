@@ -36,9 +36,9 @@ public:
 	virtual uint32 CompressBound( uint32 srcLen ) = 0;
 	
 	// Compress the data
-	virtual bool Compress( const fbyte* src, uint32 srcLen, fbyte* dest, uint32& destLen ) = 0;
+	virtual bool Compress( const FBYTE* src, uint32 srcLen, FBYTE* dest, uint32& destLen ) = 0;
 	// Decompress the data
-	virtual bool Decompress( const fbyte* src, uint32 srcLen, fbyte* dest, uint32& destLen ) = 0;
+	virtual bool Decompress( const FBYTE* src, uint32 srcLen, FBYTE* dest, uint32& destLen ) = 0;
 
 	// Get the type of compressor
 	ECompressType GetType() const { return m_Type; }

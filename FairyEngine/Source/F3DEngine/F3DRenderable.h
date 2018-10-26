@@ -14,9 +14,8 @@
 
 //// HEADERS OF THIS FILE /////////////////////////////////////////////////
 #include "F3DTypes.h"
-
+#include "F3DComponent.h"
 #include "F3DMaterial.h"
-//#include "FlyRenderMaterial.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -24,8 +23,10 @@
 @remarks
     这是引擎进行几何渲染的最小单元
 */
-class FAIRY_API F3DRenderable : public FGeneralAlloc
+class FAIRY_API F3DRenderable : public F3DComponent
 {
+	F_DECLARE_RTTI(F3DRenderable)
+
 protected:
     uint32 m_nPriorityQueue;        // 该渲染对象的优先级
     F3DSphere m_Bounds;             // 渲染对象的包围球
@@ -49,10 +50,6 @@ public:
 
     // 获取渲染对象的世界矩阵
     virtual uint32 GetWorldMatrices( F3DMatrix4* pMatrices ) const = 0;
-
-    // 获取渲染对象所受设备光照的数据
-    virtual size_t GetLightCount(void) const = 0;
-    virtual F3DLightObject* GetLightObject( size_t nIndex ) = 0;
 
     // 获取渲染对象的包围球
     const F3DSphere& GetBoundingSphere(void) const { return m_Bounds; }

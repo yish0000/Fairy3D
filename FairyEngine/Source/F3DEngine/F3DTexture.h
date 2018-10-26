@@ -83,7 +83,7 @@ public:
 	// Load the texture from image.
 	virtual bool LoadTextureFromImage(F3DImage* image, uint32 numMipmaps = 0);
 	// Load the texture from memory.
-	virtual bool LoadTextureFromMemory(fbyte* data, uint32 width, uint32 height, EPixelFormat format, uint32 numMipmaps = 0);
+	virtual bool LoadTextureFromMemory(FBYTE* data, uint32 width, uint32 height, EPixelFormat format, uint32 numMipmaps = 0);
 
 	// Save the texture to a specified file.
 	virtual void SaveTexture( const char* filename );
@@ -105,7 +105,7 @@ public:
 	virtual bool CreateTexture(uint32 width, uint32 height, uint32 depth, ETextureUsage usage,
 		EPixelFormat format, uint32 numMipmaps) = 0;
 	// Load the texture from memory.
-	virtual bool LoadTextureFromMemory(fbyte* data, uint32 width, uint32 height, uint32 depth,
+	virtual bool LoadTextureFromMemory(FBYTE* data, uint32 width, uint32 height, uint32 depth,
 		EPixelFormat format, uint32 numMipmaps = 0);
 
 	// Access the texture.

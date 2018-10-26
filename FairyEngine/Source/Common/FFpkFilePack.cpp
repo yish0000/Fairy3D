@@ -224,9 +224,9 @@ int FFpkFilePack::AddEntry( const AString& entry, uint32 nSize, void* data, uint
 		{
 			// Compress the entire file.
 			compressedSize = pCompress->CompressBound( nSize );
-			fbyte* dest = (fbyte*)F_MALLOC( compressedSize );
+			FBYTE* dest = (FBYTE*)F_MALLOC( compressedSize );
 			FASSERT_RET2( dest, false );
-			pCompress->Compress( (fbyte*)data, nSize, dest, compressedSize );
+			pCompress->Compress( (FBYTE*)data, nSize, dest, compressedSize );
 			fseek_64( m_pFile, newFile.nOffset, SEEK_SET );
 			fwrite( dest, compressedSize, 1, m_pFile );
 			F_FREE( dest );
@@ -234,7 +234,7 @@ int FFpkFilePack::AddEntry( const AString& entry, uint32 nSize, void* data, uint
 		else
 		{
 			// Compress the each blocks.
-			fbyte* tempMem = NULL;
+			FBYTE* tempMem = NULL;
 			uint32 numBlocks, blockSize, lastSize, curCompSize;
 
 			switch( quality )
@@ -255,15 +255,15 @@ int FFpkFilePack::AddEntry( const AString& entry, uint32 nSize, void* data, uint
 			lastSize = nSize % blockSize;
 			if( lastSize ) ++numBlocks;
 			uint32 destSize = pCompress->CompressBound( blockSize );
-			tempMem = new fbyte[destSize];
+			tempMem = new FBYTE[destSize];
 			FASSERT( tempMem );
 			fseek_64( m_pFile, m_FileHeader.nEntryOffset, SEEK_SET );
-			fbyte* pCurOffset = (fbyte*)data;
+			FBYTE* pCurOffset = (FBYTE*)data;
 			while( numBlocks > 0 )
 			{
 				uint32 curBlkSize = ((numBlocks != 1) || !lastSize) ? blockSize : lastSize;
 				curCompSize = destSize;
-				pCompress->Compress( (fbyte*)pCurOffset, curBlkSize, tempMem, curCompSize );
+				pCompress->Compress( (FBYTE*)pCurOffset, curBlkSize, tempMem, curCompSize );
 				fwrite( &curCompSize, sizeof(uint32), 1, m_pFile );
 				fwrite( tempMem, curCompSize, 1, m_pFile );
 				compressedSize += sizeof(uint32) + curCompSize;
@@ -271,7 +271,7 @@ int FFpkFilePack::AddEntry( const AString& entry, uint32 nSize, void* data, uint
 				--numBlocks;
 			}
 
-			FASSERT( pCurOffset == reinterpret_cast<fbyte*>(data) + nSize );
+			FASSERT( pCurOffset == reinterpret_cast<FBYTE*>(data) + nSize );
 			F_SAFE_DELETE_ARRAY( tempMem );
 		}
 	}
@@ -384,13 +384,13 @@ int FFpkFilePack::AddEntry( const AString& entry, const AString& filename, uint3
 		{
 			// Load the source file.
 			FILE* pSrcFile = fopen(filename.c_str(), "rb");
-			fbyte* src_temp = (fbyte*)F_MALLOC_TEMP(nSrcFileSize);
-			fread(src_temp, sizeof(fbyte), nSrcFileSize, pSrcFile);
+			FBYTE* src_temp = (FBYTE*)F_MALLOC_TEMP(nSrcFileSize);
+			fread(src_temp, sizeof(FBYTE), nSrcFileSize, pSrcFile);
 			fclose(pSrcFile);
 
 			// Compress the data.
 			compressedSize = pCompress->CompressBound( nSrcFileSize );
-			fbyte* dest = (fbyte*)F_MALLOC_TEMP( compressedSize );
+			FBYTE* dest = (FBYTE*)F_MALLOC_TEMP( compressedSize );
 			FASSERT_RET2( dest, false );
 			pCompress->Compress( src_temp, nSrcFileSize, dest, compressedSize );
 			fseek_64( m_pFile, newFile.nOffset, SEEK_SET );
@@ -402,8 +402,8 @@ int FFpkFilePack::AddEntry( const AString& entry, const AString& filename, uint3
 		else
 		{
 			// Compress the each blocks.
-			fbyte* tempMem = NULL;
-			fbyte* srcTempMem = NULL;
+			FBYTE* tempMem = NULL;
+			FBYTE* srcTempMem = NULL;
 			uint32 numBlocks, blockSize, lastSize, curCompSize;
 
 			switch( quality )
@@ -425,16 +425,16 @@ int FFpkFilePack::AddEntry( const AString& entry, const AString& filename, uint3
 			numBlocks = nSrcFileSize / blockSize;
 			lastSize = nSrcFileSize % blockSize;
 			if( lastSize ) ++numBlocks;
-			srcTempMem = (fbyte*)F_MALLOC_TEMP(blockSize);
+			srcTempMem = (FBYTE*)F_MALLOC_TEMP(blockSize);
 			uint32 destSize = pCompress->CompressBound( blockSize );
-			tempMem = (fbyte*)F_MALLOC_TEMP(destSize);
+			tempMem = (FBYTE*)F_MALLOC_TEMP(destSize);
 			fseek_64( m_pFile, m_FileHeader.nEntryOffset, SEEK_SET );
 			int curSrcOffset = 0;
 			while( numBlocks > 0 )
 			{
 				uint32 curBlkSize = ((numBlocks != 1) || !lastSize) ? blockSize : lastSize;
 				fseek_64(pSrcFile, curSrcOffset, SEEK_SET);
-				fread(srcTempMem, sizeof(fbyte), curBlkSize, pSrcFile);
+				fread(srcTempMem, sizeof(FBYTE), curBlkSize, pSrcFile);
 				curCompSize = destSize;
 				pCompress->Compress( srcTempMem, curBlkSize, tempMem, curCompSize );
 				fwrite( &curCompSize, sizeof(uint32), 1, m_pFile );

@@ -23,7 +23,10 @@
 */
 class FAIRY_API F3DSceneObject : public F3DSceneNode
 {
+	F_DECLARE_CREATE(F3DSceneObject)
+
 public:
+	F3DSceneObject();
     F3DSceneObject( const AString& name, const AString& type );
     virtual ~F3DSceneObject(void);
 

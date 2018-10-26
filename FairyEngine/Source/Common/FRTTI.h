@@ -92,10 +92,18 @@ protected:
 		static const FRTTI class##class_name; \
 	public: \
 		static FRTTI* GetClassRTTI(); \
-		virtual FRTTI* GetRTTI() const; \
-		static FObject* CreateObject();
+		virtual FRTTI* GetRTTI() const;
 
 #define F_IMPLEMENT_RTTI(class_name, base_class_name) \
+	const FRTTI class_name::class##class_name(#class_name, base_class_name::GetClassRTTI(), NULL, NULL); \
+	FRTTI* class_name::GetClassRTTI() { return (FRTTI*)&class_name::class##class_name; } \
+	FRTTI* class_name::GetRTTI() const { return (FRTTI*)&class_name::class##class_name; } \
+
+#define F_DECLARE_RTTI_CREATE(class_name) \
+	F_DECLARE_RTTI(class_name) \
+	static FObject* CreateObject();
+
+#define F_IMPLEMENT_RTTI_CREATE(class_name, base_class_name) \
 	const FRTTI class_name::class##class_name(#class_name, base_class_name::GetClassRTTI(), class_name::CreateObject, NULL); \
 	FRTTI* class_name::GetClassRTTI() { return (FRTTI*)&class_name::class##class_name; } \
 	FRTTI* class_name::GetRTTI() const { return (FRTTI*)&class_name::class##class_name; } \
@@ -106,7 +114,19 @@ protected:
 	protected: \
 		static void RegisterReflection();
 
+#define F_DECLARE_REFLECTION_CREATE(class_name) \
+	F_DECLARE_REFLECTION(class_name) \
+	public: \
+		static FObject* CreateObject();
+
 #define F_REFLECTION_BEGIN(class_name, base_class_name) \
+	const FRTTI class_name::class##class_name(#class_name, base_class_name::GetClassRTTI(), NULL, class_name::RegisterReflection); \
+	FRTTI* class_name::GetClassRTTI() { return (FRTTI*)&class_name::class##class_name; } \
+	FRTTI* class_name::GetRTTI() const { return (FRTTI*)&class_name::class##class_name; } \
+	void class_name::RegisterReflection() { \
+		typedef class_name T;
+
+#define F_REFLECTION_CREATE_BEGIN(class_name, base_class_name) \
 	const FRTTI class_name::class##class_name(#class_name, base_class_name::GetClassRTTI(), class_name::CreateObject, class_name::RegisterReflection); \
 	FRTTI* class_name::GetClassRTTI() { return (FRTTI*)&class_name::class##class_name; } \
 	FRTTI* class_name::GetRTTI() const { return (FRTTI*)&class_name::class##class_name; } \
@@ -118,8 +138,6 @@ protected:
 	FRTTI::RegisterProperty<T, type>(#name, &T::Get##name, &T::Set##name);
 #define F_REFLECTION_READONLY(type, name) \
 	FRTTI::RegisterProperty<T, type>(#name, &T::Get##name, NULL);
-#define F_REFLECTION_WRITEONLY(type, name) \
-	FRTTI::RegisterProperty<T, type>(#name, NULL, &T::Set##name);
 
 #define F_REFLECTION_END() }
 

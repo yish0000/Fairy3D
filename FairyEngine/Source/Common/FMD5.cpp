@@ -32,7 +32,7 @@ enum { S42 = 10 };
 enum { S43 = 15 };
 enum { S44 = 21 };
 
-static fbyte PADDING[64] = {
+static FBYTE PADDING[64] = {
 	0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -98,7 +98,7 @@ void FMD5::Init( Context* context )
 // MD5 block update operation.  Continues an MD5 message-digest operation,
 // processing another message block, and updating the context.
 //
-void FMD5::Update( Context* context, fbyte* input, int len )
+void FMD5::Update( Context* context, FBYTE* input, int len )
 {
 	int i,index,partLen;
 
@@ -135,9 +135,9 @@ void FMD5::Update( Context* context, fbyte* input, int len )
 // the message digest and zeroizing the context.
 // Digest is 16 BYTEs.
 //
-void FMD5::Final( fbyte* digest, Context* context )
+void FMD5::Final( FBYTE* digest, Context* context )
 {
-	fbyte bits[8];
+	FBYTE bits[8];
 	int index,padLen;
 
 	// Save number of bits.
@@ -161,7 +161,7 @@ void FMD5::Final( fbyte* digest, Context* context )
 //
 // MD5 basic transformation. Transforms state based on block.
 //
-void FMD5::Transform( uint32* state, fbyte* block )
+void FMD5::Transform( uint32* state, FBYTE* block )
 {
 	uint32 a = state[0], b = state[1], c = state[2], d = state[3], x[16];
 
@@ -249,27 +249,27 @@ void FMD5::Transform( uint32* state, fbyte* block )
 }
 
 //
-// Encodes input (uint32) into output (fbyte).
+// Encodes input (uint32) into output (FBYTE).
 // Assumes len is a multiple of 4.
 //
-void FMD5::Encode( fbyte* output, uint32* input, int len )
+void FMD5::Encode( FBYTE* output, uint32* input, int len )
 {
 	int i, j;
 
 	for( i=0,j=0;j<len;i++,j+=4 )
 	{
-		output[j] = (fbyte)(input[i] & 0xff);
-		output[j+1] = (fbyte)((input[i] >> 8) & 0xff);
-		output[j+2] = (fbyte)((input[i] >> 16) & 0xff);
-		output[j+3] = (fbyte)((input[i] >> 24) & 0xff);
+		output[j] = (FBYTE)(input[i] & 0xff);
+		output[j+1] = (FBYTE)((input[i] >> 8) & 0xff);
+		output[j+2] = (FBYTE)((input[i] >> 16) & 0xff);
+		output[j+3] = (FBYTE)((input[i] >> 24) & 0xff);
 	}
 }
 
 //
-// Decodes input (fbyte) into output (uint32).
+// Decodes input (FBYTE) into output (uint32).
 // Assumes len is a multiple of 4.
 //
-void FMD5::Decode( uint32* output, fbyte* input, int len )
+void FMD5::Decode( uint32* output, FBYTE* input, int len )
 {
 	int i, j;
 
@@ -290,8 +290,8 @@ uint32 FMD5::GetHash( const void* input, int len )
 	Context ctx;
 
 	Init( &ctx );
-	Update( &ctx,(fbyte*)input,len );
-	Final( (fbyte*)digest,&ctx );
+	Update( &ctx,(FBYTE*)input,len );
+	Final( (FBYTE*)digest,&ctx );
 
 	val = digest[0] ^ digest[1] ^ digest[2] ^ digest[3];
 	return val;

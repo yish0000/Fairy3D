@@ -71,7 +71,7 @@ F3DImage* F3DPNGCodec::Load( const char* filename )
 		return NULL;
     }
 
-    fbyte** row_pointers;
+    FBYTE** row_pointers;
     png_byte buffer[8];
 
     // 判断是否为一个正确的PNG文件
@@ -147,7 +147,7 @@ F3DImage* F3DPNGCodec::Load( const char* filename )
         image = new F3DImage( width,height,PFT_R8G8B8 );
 
     row_pointers = new png_bytep[height];
-    fbyte* imageData = image->GetImageData();
+    FBYTE* imageData = image->GetImageData();
     for( size_t i=0;i<height;i++ )
     {
         row_pointers[i] = imageData;
@@ -182,7 +182,7 @@ F3DImage* F3DPNGCodec::Load( const char* filename )
 */
 void F3DPNGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level )
 {
-    fbyte* destBuf;
+    FBYTE* destBuf;
     EPixelFormat destFormat;
     size_t destSize,pxSize;
 
@@ -225,7 +225,7 @@ void F3DPNGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
     // 将数据转换为指定像素格式
     pxSize = F3D_PixelSize( destFormat );
     destSize = width*height*pxSize;
-    destBuf = new fbyte[destSize];
+    destBuf = new FBYTE[destSize];
     F3D_ConvertPixelFormat( image->GetImageData(level),srcFormat,destBuf,destFormat,width,height );
 
     // 设置PNG图像的信息
@@ -242,9 +242,9 @@ void F3DPNGCodec::SaveMipmap( const char* filename,F3DImage* image,size_t level 
             PNG_COMPRESSION_TYPE_DEFAULT,PNG_FILTER_TYPE_DEFAULT );
     }
 
-    fbyte** row_pointers = new png_bytep[height];
+    FBYTE** row_pointers = new png_bytep[height];
 
-    fbyte* data = destBuf;
+    FBYTE* data = destBuf;
     for( size_t i=0;i<height;i++ )
     {
         row_pointers[i] = data;

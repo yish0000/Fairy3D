@@ -27,7 +27,7 @@ class FAIRY_API F3DImage : public FGeneralAlloc
     struct SMipmap
     {
         size_t bufferSize;  // Mipmap数据缓冲区大小
-        fbyte* data;        // Mipmap像素数据缓冲区
+        FBYTE* data;        // Mipmap像素数据缓冲区
     };
 
     typedef std::vector<SMipmap> MipmapList;
@@ -37,7 +37,7 @@ protected:
     uint32          m_nHeight;      // 图像的高度(以像素为单位)
     EPixelFormat    m_Format;       // 该图像的像素格式
     size_t          m_nBufferSize;  // 数据缓冲区的大小
-    fbyte*          m_pBuffer;      // 像素数据缓冲区的指针
+    FBYTE*          m_pBuffer;      // 像素数据缓冲区的指针
 
     MipmapList      m_Mipmaps;      // 手动生成的Mipmap链
 
@@ -60,7 +60,7 @@ public:
 	// Create a image with the specified color.
     bool CreateImage( uint32 width, uint32 height, EPixelFormat format, const F3DColor& color = F3DColor::Black );
 	// Create a image with the specified data.
-    bool CreateImageFromMemory( fbyte* pData, EPixelFormat format, uint32 width, uint32 height );
+    bool CreateImageFromMemory( FBYTE* pData, EPixelFormat format, uint32 width, uint32 height );
 
 	// Flip the image around y axis.
     void FlipAroundY(void);
@@ -86,8 +86,8 @@ public:
     uint32 GetHeight( uint32 level = 0 ) const;
 
     // Get the image data of specified mipmap.
-    fbyte* GetImageData( uint32 level = 0 );
-    const fbyte* GetImageData( uint32 level = 0 ) const;
+    FBYTE* GetImageData( uint32 level = 0 );
+    const FBYTE* GetImageData( uint32 level = 0 ) const;
 
 	// Get the buffer size of specified mipmap.
     size_t GetBufferSize( uint32 level = 0 ) const;

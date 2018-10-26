@@ -15,6 +15,8 @@
 #include "F3DRenderer.h"
 #include "F3DEngine.h"
 
+F_IMPLEMENT_RTTI(F3DRenderable, F3DComponent)
+
 /** ¹¹Ôìº¯Êý
 */
 F3DRenderable::F3DRenderable(void)

@@ -24,7 +24,7 @@
 @note
     用户可以通过派生此类来实现自己的场景类型。
 */
-class FAIRY_API F3DSceneManager : public FGeneralAlloc
+class FAIRY_API F3DSceneManager
 {
 public:
     typedef std::map<AString, F3DSceneObject*> SceneObjectMap;

@@ -41,9 +41,9 @@ private:
     // 从虚拟文件中加载图像对象
     F3DImage* LoadImageFromVFile( FVFile* pFile );
     // 针对压缩模式1的解压缩算法
-    void Decompress8Bit( fbyte*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch );
+    void Decompress8Bit( FBYTE*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch );
     // 针对压缩模式2的解压缩算法
-    void Decompress4Bit( fbyte*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch );
+    void Decompress4Bit( FBYTE*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch );
 };
 
 ///////////////////////////////////////////////////////////////////////////

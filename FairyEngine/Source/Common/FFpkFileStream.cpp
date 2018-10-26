@@ -69,11 +69,11 @@ void FFpkFileStream::InitStream( FILE* pakFile,SFPKFileEntry* pInfo )
     else if( quality == FPK_QUALITY_ENTIRE )
     {
         // 读取所有数据
-        m_pFileBuf = (fbyte*)F_MALLOC( pInfo->nCompressedSize );
+        m_pFileBuf = (FBYTE*)F_MALLOC( pInfo->nCompressedSize );
         fseek_64( m_pFPKStream,pInfo->nOffset,SEEK_SET );
         fread( m_pFileBuf,1,pInfo->nCompressedSize,m_pFPKStream );
 
-        m_pTempMem = (fbyte*)F_MALLOC( m_nStreamSize );
+        m_pTempMem = (FBYTE*)F_MALLOC( m_nStreamSize );
         curDecompSize = (uint32)m_nStreamSize;
         m_pCompress->Decompress(m_pFileBuf, pInfo->nCompressedSize, m_pTempMem, curDecompSize);
         FASSERT( curDecompSize == (uint32)m_nStreamSize );
@@ -97,11 +97,11 @@ void FFpkFileStream::InitStream( FILE* pakFile,SFPKFileEntry* pInfo )
         numBlocks = (uint32)m_nStreamSize / m_nBlockSize;
         lastSize = (uint32)m_nStreamSize % m_nBlockSize;
         if( lastSize ) ++numBlocks;
-        m_pTempMem = (fbyte*)F_MALLOC( m_nBlockSize );
+        m_pTempMem = (FBYTE*)F_MALLOC( m_nBlockSize );
 
         // 暂存从文件中读取的数据块
         uint32 destSize = m_pCompress->CompressBound( m_nBlockSize );
-        m_pFileBuf = (fbyte*)F_MALLOC( destSize );
+        m_pFileBuf = (FBYTE*)F_MALLOC( destSize );
 
         uint32 curOffset = pInfo->nOffset;
         while( numBlocks > 0 )
@@ -197,7 +197,7 @@ size_t FFpkFileStream::Read( void* pBuf, size_t nSize )
         // 用于暂存从文件中读出的数据
         uint32 decompSize;
         uint32 outOffset = 0;
-        fbyte* outBuf = static_cast<fbyte*>(pBuf);
+        FBYTE* outBuf = static_cast<FBYTE*>(pBuf);
 
         readSize = nSize;
         while( nSize > 0 )

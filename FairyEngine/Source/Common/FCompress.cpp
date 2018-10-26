@@ -35,7 +35,7 @@ public:
 	}
 
 	// Compress the data
-	bool Compress( const fbyte* src, uint32 srcLen, fbyte* dest, uint32& destLen )
+	bool Compress( const FBYTE* src, uint32 srcLen, FBYTE* dest, uint32& destLen )
 	{
 		if( !src || !srcLen || !dest )
 		{
@@ -50,7 +50,7 @@ public:
 	}
 
 	// Decompress the data
-	bool Decompress( const fbyte* src, uint32 srcLen, fbyte* dest, uint32& destLen )
+	bool Decompress( const FBYTE* src, uint32 srcLen, FBYTE* dest, uint32& destLen )
 	{
 		if( !src || !srcLen || !dest )
 		{
@@ -86,7 +86,7 @@ public:
 	}
 
 	// Compress the data
-	bool Compress( const fbyte* src, uint32 srcLen, fbyte* dest, uint32& destLen )
+	bool Compress( const FBYTE* src, uint32 srcLen, FBYTE* dest, uint32& destLen )
 	{
 		if( !src || !srcLen || !dest )
 		{
@@ -103,7 +103,7 @@ public:
 	}
 
 	// Decompress the data
-	bool Decompress( const fbyte* src, uint32 srcLen, fbyte* dest, uint32& destLen )
+	bool Decompress( const FBYTE* src, uint32 srcLen, FBYTE* dest, uint32& destLen )
 	{
 		if( !src || !srcLen || !dest )
 		{

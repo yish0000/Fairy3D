@@ -17,6 +17,14 @@
 #include "F3DCamera.h"
 #include "F3DEngine.h"
 
+F_IMPLEMENT_CREATE(F3DSceneObject, F3DSceneNode)
+
+/** Default constructor.
+*/
+F3DSceneObject::F3DSceneObject() : F3DSceneNode(AStringUtil::UniqueName())
+{
+}
+
 /** Constructor.
 @Param Name of the scene object.
 */

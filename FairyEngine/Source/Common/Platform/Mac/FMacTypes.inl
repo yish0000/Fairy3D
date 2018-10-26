@@ -51,10 +51,11 @@
 ///////////////////////////////////////////////////////////////////////////
 
 typedef unsigned char uchar;
-typedef unsigned char fbyte;
 typedef unsigned short ushort;
 typedef unsigned int uint32;
 typedef unsigned long ulong;
+
+typedef unsigned char FBYTE;
 
 #if FAIRY_COMPILER == FAIRY_COMPILER_MSVC
 	typedef __int64 int64;

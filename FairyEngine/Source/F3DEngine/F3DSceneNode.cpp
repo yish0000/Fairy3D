@@ -13,6 +13,8 @@
 #include "F3DSceneManager.h"
 #include "F3DEngine.h"
 
+F_IMPLEMENT_RTTI(F3DSceneNode, FObject)
+
 /** Construction of the class.
 @Param Name of the scene node.
 @Param Pointer to the scene manager.

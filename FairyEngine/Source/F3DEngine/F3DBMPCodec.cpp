@@ -105,10 +105,10 @@ F3DImage* F3DBMPCodec::LoadImageFromVFile( FVFile* pFile )
     size_t pos = pFile->Tell();
     size_t paletteSize = (bmpHead.bfOffBits - pos);
 
-    fbyte* paletteData = NULL;
+    FBYTE* paletteData = NULL;
     if( paletteSize > 0 )
     {
-        paletteData = new fbyte[paletteSize];
+        paletteData = new FBYTE[paletteSize];
         pFile->Read( paletteData,paletteSize );
     }
 
@@ -131,7 +131,7 @@ F3DImage* F3DBMPCodec::LoadImageFromVFile( FVFile* pFile )
     size_t pitch = lineData - widthBytes;
 
     // 读取像素数据
-    fbyte* bmpData = new fbyte[bmpHead.bfSize];
+    FBYTE* bmpData = new FBYTE[bmpHead.bfSize];
     pFile->Seek( bmpHead.bfOffBits,FVFile::START );
     pFile->Read( bmpData,bmpHead.bfSize );
 
@@ -192,7 +192,7 @@ F3DImage* F3DBMPCodec::LoadImageFromVFile( FVFile* pFile )
 */
 void F3DBMPCodec::SaveMipmap( const char* filename, F3DImage* image, size_t level )
 {
-    fbyte* destBuf;
+    FBYTE* destBuf;
     EPixelFormat destFormat;
     size_t destSize, pxSize;
 
@@ -209,7 +209,7 @@ void F3DBMPCodec::SaveMipmap( const char* filename, F3DImage* image, size_t leve
     // 将数据转换为指定像素格式
     pxSize = F3D_PixelSize( destFormat );
     destSize = width*height*pxSize;
-    destBuf = new fbyte[destSize];
+    destBuf = new FBYTE[destSize];
     F3D_ConvertPixelFormat( image->GetImageData(level),srcFormat,destBuf,destFormat,width,height );
 
 	FVFile file;
@@ -247,7 +247,7 @@ void F3DBMPCodec::SaveMipmap( const char* filename, F3DImage* image, size_t leve
 
     for( size_t i=height-1;i>=0;i-- )
     {
-        fbyte* pData = &destBuf[width*pxSize*i];
+        FBYTE* pData = &destBuf[width*pxSize*i];
 
         size_t nBytes;
 		file.Write( pData,width*pxSize );
@@ -276,12 +276,12 @@ void F3DBMPCodec::SaveMipmap( const char* filename, F3DImage* image, size_t leve
 
 /** 针对压缩模式1的解压缩算法
 */
-void F3DBMPCodec::Decompress8Bit( fbyte*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch )
+void F3DBMPCodec::Decompress8Bit( FBYTE*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch )
 {
-    fbyte* p = data;
-    fbyte* newBmp = new fbyte[(width+pitch)*height];
-    fbyte* d = newBmp;
-    fbyte* destEnd = newBmp + (width+pitch) * height;
+    FBYTE* p = data;
+    FBYTE* newBmp = new FBYTE[(width+pitch)*height];
+    FBYTE* d = newBmp;
+    FBYTE* destEnd = newBmp + (width+pitch) * height;
     size_t line = 0;
 
     while( (size_t)(data - p) < bufSize && d < destEnd )
@@ -325,7 +325,7 @@ void F3DBMPCodec::Decompress8Bit( fbyte*& data, size_t bufSize, uint32 width, ui
         else
         {
             size_t count = (size_t)*p; p++;
-            fbyte color = *p; p++;
+            FBYTE color = *p; p++;
             for( size_t i=0;i<count;i++ )
             {
                 *d = color;
@@ -340,13 +340,13 @@ void F3DBMPCodec::Decompress8Bit( fbyte*& data, size_t bufSize, uint32 width, ui
 
 /** 针对压缩模式2的解压缩算法
 */
-void F3DBMPCodec::Decompress4Bit( fbyte*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch )
+void F3DBMPCodec::Decompress4Bit( FBYTE*& data, size_t bufSize, uint32 width, uint32 height, uint32 pitch )
 {
     size_t lineWidth = (width + 1) / 2 + pitch;
-    fbyte* p = data;
-    fbyte* newBmp = new fbyte[lineWidth*height];
-    fbyte* d = newBmp;
-    fbyte* destEnd = newBmp + lineWidth * height;
+    FBYTE* p = data;
+    FBYTE* newBmp = new FBYTE[lineWidth*height];
+    FBYTE* d = newBmp;
+    FBYTE* destEnd = newBmp + lineWidth * height;
     size_t line = 0;
     size_t shift = 4;
 
@@ -393,8 +393,8 @@ void F3DBMPCodec::Decompress4Bit( fbyte*& data, size_t bufSize, uint32 width, ui
                             readShift = 4;
                         }
 
-                        fbyte mask = (fbyte)(0x0f << shift);
-                        *d = (*d & (~mask)) | (fbyte)((color << shift) & mask);
+                        FBYTE mask = (FBYTE)(0x0f << shift);
+                        *d = (*d & (~mask)) | (FBYTE)((color << shift) & mask);
 
                         shift -= 4;
                         if( shift < 0 )
@@ -418,8 +418,8 @@ void F3DBMPCodec::Decompress4Bit( fbyte*& data, size_t bufSize, uint32 width, ui
 
             for( size_t i=0;i<count;i++ )
             {
-                fbyte mask = (fbyte)(0x0f << shift);
-                fbyte toSet = (fbyte)((shift == 0 ? color1 : color2) << shift);
+                FBYTE mask = (FBYTE)(0x0f << shift);
+                FBYTE toSet = (FBYTE)((shift == 0 ? color1 : color2) << shift);
                 *d = (*d & (~mask)) | (toSet & mask);
 
                 shift -= 4;
