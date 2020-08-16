@@ -43,6 +43,9 @@ int main( int argc,char* argv[] )
 
     cout << "DLL模块单元测试程序 (" << getdate() << ")" << endl << endl;
 
+	char szPath[MAX_PATH];
+	GetCurrentDirectoryA(MAX_PATH, szPath);
+
     // 遍历当前目录下的所有DLL
     HANDLE hFind = FindFirstFile( "*.dll",&data );
 

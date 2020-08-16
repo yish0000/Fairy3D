@@ -13,47 +13,47 @@
 #include "TestRTTI.h"
 
 F_REFLECTION_CREATE_BEGIN(CWeapon, FObject)
- 	F_REFLECTION(AString, Name)
-	F_REFLECTION(int, MinDmg)
-	F_REFLECTION(int, MaxDmg)
-	F_REFLECTION(float, AreaOfEffect)
+ 	F_PROPERTY_FIELD(AString, Name)
+	F_PROPERTY_FIELD(int, MinDmg)
+	F_PROPERTY_FIELD(int, MaxDmg)
+	F_PROPERTY_FIELD(float, AreaOfEffect)
 F_REFLECTION_END()
 
 CWeapon::CWeapon()
 {
-	m_szName = "Big Ass Whooping Weapon";
-	m_iMinDmg = 10;
-	m_iMaxDmg = 140;
-	m_fAreaOfEffect = 4.5f;
+	Name = "Big Ass Whooping Weapon";
+	MinDmg = 10;
+	MaxDmg = 140;
+	AreaOfEffect = 4.5f;
 }
 
 ///////////////////////////////////////////////////////////////////////////
 
 F_REFLECTION_CREATE_BEGIN(CBaseMonsterStats, FObject)
-	F_REFLECTION(AString, Name)
+	F_PROPERTY_FIELD(AString, Name)
 F_REFLECTION_END()
 
 CBaseMonsterStats::CBaseMonsterStats()
 {
-	m_szName = "Four-legged furry zombie giant";
+	Name = "Four-legged furry zombie giant";
 }
 
 ///////////////////////////////////////////////////////////////////////////
 
 F_REFLECTION_CREATE_BEGIN(CMonsterStats, CBaseMonsterStats)
-	F_REFLECTION(int, Level)
-	F_REFLECTION(int, HitPoints)
-	F_REFLECTION(bool, Flatulent)
-	F_REFLECTION(float, Speed)
+	F_PROPERTY_FIELD(int, Level)
+	F_PROPERTY_FIELD(int, HitPoints)
+	F_PROPERTY_FIELD(bool, Flatulent)
+	F_PROPERTY_FIELD(float, Speed)
 	F_REFLECTION_READONLY(CWeapon*, Weapon)
 F_REFLECTION_END()
 
 CMonsterStats::CMonsterStats()
 {
-	m_iLevel = 15;
-	m_iHitPoints = 4000;
-	m_fSpeed = 2.75;
-	m_bFlatulent = true;
+	Level = 15;
+	HitPoints = 4000;
+	Speed = 2.75;
+	Flatulent = true;
 }
 
 ///////////////////////////////////////////////////////////////////////////

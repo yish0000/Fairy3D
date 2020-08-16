@@ -43,10 +43,13 @@ bool FRTTI::IsDerivedFrom(const FRTTI* pRTTI) const
 
 /** Fills a vector with all properties of the represented class type, including all ancestor types.
 */
-void FRTTI::EnumProperties(std::vector<FBaseProperty*>& result)
+void FRTTI::EnumProperties(std::vector<FBaseProperty*>& result, bool bIncludeBase)
 {
-	if (m_pBaseRTTI)
-		m_pBaseRTTI->EnumProperties(result);
+	if (bIncludeBase)
+	{
+		if (m_pBaseRTTI)
+			m_pBaseRTTI->EnumProperties(result);
+	}
 
 	PropertyList::iterator it = m_Properties.begin();
 	for (; it != m_Properties.end(); ++it)

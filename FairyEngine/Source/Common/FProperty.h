@@ -89,6 +89,39 @@ public:
 	virtual EPropertyType GetType() const { return FPropertyType<T>::TypeID; }
 };
 
+/** Property (Member of the class)
+*/
+template <class OwnerType, class T>
+class FFieldProperty : public FTypedProperty<T>
+{
+public:
+	FFieldProperty(const char* name, uint32 offset)
+		: FTypedProperty<T>(name), m_offset(offset)
+	{
+	}
+
+	// Get the value of this property
+	virtual T GetValue(FObject* pObject)
+	{
+		return *(T*)((FBYTE*)pObject + m_offset);
+	}
+
+	// Set the value of this property.
+	virtual void SetValue(FObject* pObject, const T& val)
+	{
+		*(T*)((FBYTE*)pObject + m_offset) = val;
+	}
+
+	// Is this property readonly ?
+	virtual bool IsReadOnly() const
+	{
+		return true;
+	}
+
+protected:
+	uint32 m_offset;
+};
+
 /** Property
 */
 template <class OwnerType, class T>

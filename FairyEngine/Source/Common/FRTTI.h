@@ -43,7 +43,7 @@ public:
 	PropertyList::iterator GetLastProperty() { return m_Properties.end(); }
 
 	// Fills a vector with all properties of the represented class type, including all ancestor types.
-	void EnumProperties(std::vector<FBaseProperty*>& result);
+	void EnumProperties(std::vector<FBaseProperty*>& result, bool bIncludeBase = true);
 
 	// Is it derived from the specified type ?
 	bool IsDerivedFrom(const FRTTI* pRTTI) const;
@@ -65,10 +65,19 @@ public:
 	// Registers a property. Takes in the property name, its getter and setter functions, and the property
 	// type as a template parameter. Should be called from within a user-defined RegisterReflection function.
 	template <class T, class PropertyType>
-	static void RegisterProperty(const char* szName, typename FProperty<T, PropertyType>::GetterFunc Getter,
+	static void RegisterProperty(const char* szName,
+		typename FProperty<T, PropertyType>::GetterFunc Getter,
 		typename FProperty<T, PropertyType>::SetterFunc Setter)
 	{
 		FProperty<T, PropertyType>* pProperty = new FProperty<T, PropertyType>(szName, Getter, Setter);
+		T::GetClassRTTI()->GetProperties().push_back(pProperty);
+		FPropertyList::GetInstance().AddProperty(pProperty);
+	}
+
+	template <class T, class PropertyType>
+	static void RegisterProperty(const char* szName, uint32 offset)
+	{
+		FFieldProperty<T, PropertyType>* pProperty = new FFieldProperty<T, PropertyType>(szName, offset);
 		T::GetClassRTTI()->GetProperties().push_back(pProperty);
 		FPropertyList::GetInstance().AddProperty(pProperty);
 	}
@@ -138,6 +147,8 @@ protected:
 	FRTTI::RegisterProperty<T, type>(#name, &T::Get##name, &T::Set##name);
 #define F_REFLECTION_READONLY(type, name) \
 	FRTTI::RegisterProperty<T, type>(#name, &T::Get##name, NULL);
+#define F_PROPERTY_FIELD(type, name) \
+	FRTTI::RegisterProperty<T, type>(#name, F_STRUCT_OFFSET(T, name));
 
 #define F_REFLECTION_END() }
 

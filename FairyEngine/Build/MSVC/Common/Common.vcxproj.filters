@@ -52,7 +52,7 @@
     <Filter Include="Event">
       <UniqueIdentifier>{6ef83480-13f8-43b9-bc74-e5252b88c551}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RTTI">
+    <Filter Include="Object">
       <UniqueIdentifier>{f0d31f32-2315-49c9-ac12-53248e9e3cc8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -209,13 +209,13 @@
       <Filter>Event</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FObject.h">
-      <Filter>RTTI</Filter>
+      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FProperty.h">
-      <Filter>RTTI</Filter>
+      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FRTTI.h">
-      <Filter>RTTI</Filter>
+      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Source\Common\FMemThreadLock.h">
       <Filter>Memory\InternalManager</Filter>
@@ -340,13 +340,13 @@
       <Filter>Event</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FObject.cpp">
-      <Filter>RTTI</Filter>
+      <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FProperty.cpp">
-      <Filter>RTTI</Filter>
+      <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Common\FRTTI.cpp">
-      <Filter>RTTI</Filter>
+      <Filter>Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
