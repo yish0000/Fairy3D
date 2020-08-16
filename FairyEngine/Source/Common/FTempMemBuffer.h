@@ -5,7 +5,7 @@
  *  Author: Yish
  *  Date:   2013/12/31
  *  ----------------------------------------------------------------------
- *  CopyRight (C) Fairy & Pear Studio. All right Observed.
+ *  CopyRight (C) Yish Studio. All right Observed.
  * ------------------------------------------------------------------------
  */
 

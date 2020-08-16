@@ -23,7 +23,7 @@ public:
 	virtual ~FObject() {}
 
 	// Enumerate all the properties.
-	void EnumProperties(std::vector<FBaseProperty*>& result);
+	void EnumProperties(std::vector<FBaseProperty*>& result, bool bIncludeBase = true);
 
 	// Get the RTTI.
 	virtual FRTTI* GetRTTI() const;

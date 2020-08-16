@@ -170,8 +170,7 @@ void FEventProcessQueue::AddEvent(FEvent* pEvent)
 
 void FEventProcessQueue::Update()
 {
-    FScopedLock keeper(m_mutexQueue);
-    
+	FScopedLock keeper(m_mutexQueue);    
     while( !m_dispatchQueue.empty() )
     {
         FEvent* pEvent = m_dispatchQueue.front();

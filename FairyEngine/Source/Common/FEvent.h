@@ -193,7 +193,7 @@ protected:
 typedef void (FEventListener::*FEventCallback) (FEvent* pEvent);
 #define FCALLBACK_MAKE(func) (FEventCallback)(&func)
 
-/** This class can dispatch an  event.
+/** This class can dispatch an event.
  */
 class FEventDispatcher
 {

@@ -6,7 +6,7 @@
  *  Author: Yish
  *  Date:   2015/2/21
  *  ----------------------------------------------------------------------
- *  CopyRight (C) Fairy & Pear Studio All right Observed.
+ *  CopyRight (C) Yish Studio All right Observed.
  * ------------------------------------------------------------------------
  */
 

@@ -51,9 +51,9 @@ const char* FObject::TypeName() const
 
 /** Enumerate all the properties.
 */
-void FObject::EnumProperties(std::vector<FBaseProperty*>& result)
+void FObject::EnumProperties(std::vector<FBaseProperty*>& result, bool bIncludeBase)
 {
 	FRTTI* pRTTIThis = GetRTTI();
 	if (pRTTIThis)
-		pRTTIThis->EnumProperties(result);
+		pRTTIThis->EnumProperties(result, bIncludeBase);
 }
